@@ -1,0 +1,10 @@
+[17:47:49] [INIT] KubeJS 2001.6.5-build.16; MC 2001 forge
+[17:47:49] [INIT] Loaded plugins:
+[17:47:49] [INIT] - dev.latvian.mods.kubejs.forge.BuiltinKubeJSForgePlugin
+[17:47:49] [INIT] - com.jesz.createdieselgenerators.compat.kubejs.CDGKubeJSPlugin
+[17:47:49] [INIT] - com.tom.createores.kubejs.KubeJSExcavation
+[17:47:49] [INIT] - dev.latvian.mods.kubejs.create.KubeJSCreatePlugin
+[17:47:49] [INIT] - snownee.lychee.compat.kubejs.LycheeKubeJSPlugin
+[17:47:50] [INFO] example.js#5: Hello, World! (Loaded startup scripts)
+[17:47:50] [INFO] Loaded script startup_scripts:example.js in 0.16 s
+[17:47:50] [INFO] Loaded 1/1 KubeJS startup scripts in 0.895 s with 0 errors and 0 warnings

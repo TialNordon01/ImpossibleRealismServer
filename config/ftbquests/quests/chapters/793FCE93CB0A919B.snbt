@@ -1,0 +1,631 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "793FCE93CB0A919B"
+	group: ""
+	icon: {
+		Count: 1
+		ForgeCaps: {
+			"tfc:item_heat": {
+				heat: 0.0f
+				ticks: 0L
+			}
+		}
+		id: "tfc:metal/ingot/wrought_iron"
+	}
+	id: "793FCE93CB0A919B"
+	order_index: 3
+	quest_links: [
+		{
+			id: "1AF48AA532CF7402"
+			linked_quest: "17115CE550ADED64"
+			size: 2.0d
+			x: -6.0d
+			y: -1.0d
+		}
+		{
+			id: "43AB0CA75ED67FBB"
+			linked_quest: "7CB8AA6F8D362CD0"
+			size: 2.0d
+			x: -6.0d
+			y: 1.0d
+		}
+		{
+			id: "25A9E08D62987658"
+			linked_quest: "77B2C1D9A9DF6F52"
+			x: -2.5d
+			y: 10.0d
+		}
+	]
+	quests: [
+		{
+			dependencies: ["462BA432EBF019DA"]
+			id: "475DDA192C4EEE18"
+			subtitle: "Низкое содержание CO2"
+			tasks: [{
+				id: "70F2552E388DE9F0"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/ingot/wrought_iron"
+				}
+				type: "item"
+			}]
+			title: "Кованное железо"
+			x: -1.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["475DDA192C4EEE18"]
+			id: "0441351C1F56DFCE"
+			tasks: [{
+				id: "7950F20CEE87293A"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/double_ingot/wrought_iron"
+				}
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["475DDA192C4EEE18"]
+			id: "3293F7B90B374C10"
+			subtitle: "Железная лошадь"
+			tasks: [{
+				id: "576BBD239E2A20E3"
+				item: {
+					Count: 1
+					id: "tfccanes:refined_walking_cane"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "Железная трость"
+			x: -2.5d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"184340E792F47CD9"
+				"72B53635AA55C278"
+			]
+			dependency_requirement: "one_started"
+			id: "51D92B45B42AF113"
+			subtitle: "Воздухан"
+			tasks: [{
+				id: "53CF762756D03B19"
+				item: "tfc:bellows"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["51D92B45B42AF113"]
+			id: "24C810EAB40A9F84"
+			subtitle: "Хрупкий, много CO2"
+			tasks: [{
+				id: "04956A252492A11C"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/ingot/cast_iron"
+				}
+				type: "item"
+			}]
+			x: -3.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["24C810EAB40A9F84"]
+			id: "6387A021C024B657"
+			subtitle: "Хрупкий чугун..."
+			tasks: [{
+				id: "7D60F742A76C95B0"
+				item: {
+					Count: 1
+					id: "artisanal:stone/flint_and/cut_pyrite"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "Кремень и кресало"
+			x: -1.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["0441351C1F56DFCE"]
+			id: "5ECE04225827B4D8"
+			shape: "square"
+			size: 2.0d
+			subtitle: "Новый век"
+			tasks: [{
+				id: "49A5E5B48E5A2A29"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/anvil/wrought_iron"
+				}
+				type: "item"
+			}]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"4F75A63F9A1F12C9"
+				"36A07E8900014466"
+				"5AE4D041A92F9C64"
+			]
+			dependency_requirement: "one_completed"
+			id: "6A2D831720311AB8"
+			subtitle: "Дорогой материал"
+			tasks: [{
+				id: "5F2B555981B5C405"
+				item: "tfc:fire_clay"
+				type: "item"
+			}]
+			title: "Огнеупорная глина"
+			x: -3.5d
+			y: 7.5d
+		}
+		{
+			id: "36A07E8900014466"
+			subtitle: "Синтетическая огнеупорная смесь"
+			tasks: [{
+				id: "567703CDDDEAC42E"
+				item: "tfcckc:kaolinite_bloom"
+				type: "item"
+			}]
+			title: "Каолинитовая смесь"
+			x: -5.0d
+			y: 6.0d
+		}
+		{
+			id: "5AE4D041A92F9C64"
+			subtitle: "Аргилит нам в помощь"
+			tasks: [
+				{
+					id: "4EE12B514FA74B3D"
+					item: "tfc:powder/graphite"
+					type: "item"
+				}
+				{
+					id: "0E8C879410D794FB"
+					item: "tfc:rock/loose/claystone"
+					type: "item"
+				}
+			]
+			title: "Графит"
+			x: -5.0d
+			y: 9.0d
+		}
+		{
+			id: "4F75A63F9A1F12C9"
+			subtitle: "Природная огнеупорная смесь"
+			tasks: [{
+				id: "6CB584BA1528FD04"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:kaolin_clay"
+				}
+				type: "item"
+			}]
+			x: -6.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["6A2D831720311AB8"]
+			id: "322E5C57B07CF52D"
+			subtitle: "Моя печь - моя крепость, а стоп..."
+			tasks: [{
+				id: "1CF0647A994EFDA3"
+				item: "tfc:fire_bricks"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 8.5d
+		}
+		{
+			dependencies: ["322E5C57B07CF52D"]
+			id: "2F2785B034872AC6"
+			subtitle: "Источник высокой температуры"
+			tasks: [
+				{
+					count: 27L
+					id: "7CC43C1A66A2D704"
+					item: "immersiveengineering:cokebrick"
+					type: "item"
+				}
+				{
+					id: "48862E740578F0C7"
+					item: {
+						Count: 1
+						id: "immersiveengineering:hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Коксовая печь"
+			x: -1.0d
+			y: 10.0d
+		}
+		{
+			dependencies: [
+				"322E5C57B07CF52D"
+				"600E61639C85730F"
+			]
+			id: "710ED3E3E49FBE71"
+			shape: "square"
+			size: 2.0d
+			subtitle: "Ваша первая сталь"
+			tasks: [
+				{
+					id: "7832676300B57989"
+					item: "tfc:blast_furnace"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "70B681CC6C8A62CE"
+					item: { Count: 4, id: "tfc:fire_bricks" }
+					type: "item"
+				}
+				{
+					count: 12L
+					id: "1FE6CA353CE9DE09"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+						id: "tfc:metal/sheet/wrought_iron"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["322E5C57B07CF52D"]
+			id: "2730C5FFA4EE5685"
+			shape: "square"
+			size: 2.0d
+			subtitle: "Залог на индустриализацию"
+			tasks: [
+				{
+					count: 27L
+					id: "6B80B622474B5314"
+					item: { Count: 27, id: "immersiveengineering:blastbrick_reinforced" }
+					type: "item"
+				}
+				{
+					id: "65435079C3F3A514"
+					item: "minecraft:hopper"
+					type: "item"
+				}
+				{
+					id: "19C16B6542147FFD"
+					item: {
+						Count: 1
+						id: "immersiveengineering:hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Продвинутая доменная печь"
+			x: 2.0d
+			y: 9.5d
+		}
+		{
+			dependencies: ["6A2D831720311AB8"]
+			id: "600E61639C85730F"
+			subtitle: "Жидкий метал в чане"
+			tasks: [{
+				id: "76115C0DBA0EAD4B"
+				item: "tfc:crucible"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 6.5d
+		}
+		{
+			dependencies: ["600E61639C85730F"]
+			id: "537DDE8FBEFD3C01"
+			shape: "square"
+			size: 2.0d
+			subtitle: "Огнестойкая автоматизация"
+			tasks: [{
+				id: "444095B2A4FED729"
+				item: "create:basin"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["475DDA192C4EEE18"]
+			id: "1CA050ADC72E90B1"
+			subtitle: "Тарзанка"
+			tasks: [{
+				id: "021BA5643DBB6FBE"
+				item: {
+					Count: 1
+					id: "grapplemod:grapplinghook"
+					tag: {
+						Damage: 0
+						custom: {
+							angle: 20.0d
+							attract: 0b
+							attractradius: 3.0d
+							crc32: 2252267022L
+							detachonkeyrelease: 0b
+							doublehook: 0b
+							enderstaff: 0b
+							hookgravity: 1.0d
+							maxlen: 30.0d
+							motor: 0b
+							motoracceleration: 0.2d
+							motordampener: 0b
+							motormaxspeed: 4.0d
+							motorwhencrouching: 0b
+							motorwhennotcrouching: 1b
+							oneropepull: 0b
+							phaserope: 0b
+							playermovementmult: 1.0d
+							pullbackwards: 1b
+							reelin: 1b
+							repel: 0b
+							repelforce: 1.0d
+							rocket: 0b
+							rocket_active_time: 0.5d
+							rocket_force: 1.0d
+							rocket_refuel_ratio: 15.0d
+							rocket_vertical_angle: 0.0d
+							smartdoublemotor: 1b
+							smartmotor: 0b
+							sneakingangle: 10.0d
+							sneakingverticalthrowangle: 0.0d
+							sticky: 0b
+							throwspeed: 2.0d
+							verticalthrowangle: 0.0d
+						}
+					}
+				}
+				type: "item"
+			}]
+			title: "Крюк скалолаза"
+			x: -0.5d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"17115CE550ADED64"
+				"7CB8AA6F8D362CD0"
+			]
+			id: "4B1B51C54242FB15"
+			tasks: [{
+				id: "20F72F8CDB6B8B22"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:raw_iron_bloom"
+				}
+				type: "item"
+			}]
+			x: -4.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4B1B51C54242FB15"]
+			id: "462BA432EBF019DA"
+			tasks: [{
+				id: "727D7E03807ED3EB"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:refined_iron_bloom"
+				}
+				type: "item"
+			}]
+			x: -3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["475DDA192C4EEE18"]
+			id: "18FD2B0AB5DA916C"
+			subtitle: "Ручная пила"
+			tasks: [{
+				id: "0805C5EA2E69B05B"
+				item: "minecraft:stonecutter"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["475DDA192C4EEE18"]
+			id: "27A8B9703438F5F9"
+			subtitle: "Норматив сборка-разборка"
+			tasks: [{
+				id: "1A11D4324AC176A4"
+				item: "cgm:workbench"
+				type: "item"
+			}]
+			title: "Оружейный верстак"
+			x: -0.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["27A8B9703438F5F9"]
+			id: "1A2C02A55FA0B72A"
+			subtitle: "Огнестрельное"
+			tasks: [
+				{
+					id: "39E4654536DFFC92"
+					item: {
+						Count: 1
+						id: "cgm:pistol"
+						tag: {
+							AmmoCount: 16
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "712517D59FAAD800"
+					item: {
+						Count: 1
+						id: "cgm:machine_pistol"
+						tag: {
+							AmmoCount: 80
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "470A3E44193325E0"
+					item: {
+						Count: 1
+						id: "cgm:rifle"
+						tag: {
+							AmmoCount: 10
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "06BEA91CE63B2C4D"
+					item: {
+						Count: 1
+						id: "cgm:assault_rifle"
+						tag: {
+							AmmoCount: 40
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "1C70886CA9A83937"
+					item: {
+						Count: 1
+						id: "cgm:heavy_rifle"
+						tag: {
+							AmmoCount: 4
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "29DA7B54005805FB"
+					item: {
+						Count: 1
+						id: "cgm:grenade_launcher"
+						tag: {
+							AmmoCount: 1
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "28CF3CF37A1F02F5"
+					item: {
+						Count: 1
+						id: "cgm:bazooka"
+						tag: {
+							AmmoCount: 1
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Оружие"
+			x: 1.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["27A8B9703438F5F9"]
+			id: "570698D640F0CAD1"
+			subtitle: "Взрываются"
+			tasks: [
+				{
+					id: "07B335E3CB4FB257"
+					item: "cgm:basic_bullet"
+					type: "item"
+				}
+				{
+					id: "6EAD654C59CBC28B"
+					item: "cgm:advanced_bullet"
+					type: "item"
+				}
+				{
+					id: "4634C388441BA75A"
+					item: "cgm:shell"
+					type: "item"
+				}
+				{
+					id: "2943376D5EC2B5FA"
+					item: "cgm:missile"
+					type: "item"
+				}
+			]
+			title: "Боеприпасы"
+			x: 0.5d
+			y: 3.0d
+		}
+	]
+	title: "Железный век"
+}

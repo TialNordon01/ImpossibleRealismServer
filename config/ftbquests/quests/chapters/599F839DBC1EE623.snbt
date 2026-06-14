@@ -1,0 +1,772 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "599F839DBC1EE623"
+	group: ""
+	icon: "projectred_core:red_ingot"
+	id: "599F839DBC1EE623"
+	order_index: 6
+	quest_links: [{
+		id: "695A1C6BB04BCA63"
+		linked_quest: "5AE4D041A92F9C64"
+		x: -1.0d
+		y: 4.5d
+	}]
+	quests: [
+		{
+			dependencies: [
+				"367FE8155E582F98"
+				"43CCAFBB4C5677AE"
+				"616B547C35F96CF5"
+			]
+			dependency_requirement: "one_started"
+			id: "37E8F7C7E89A5D3D"
+			subtitle: "Пыль подходящая для травления дорожек на платах"
+			tasks: [{
+				id: "1EC80E21C53DFC24"
+				item: "minecraft:redstone"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -2.0d
+		}
+		{
+			id: "789829916384467C"
+			subtitle: "Пьезоэлектрик"
+			tasks: [
+				{
+					id: "436C9EB9916CADF1"
+					item: "minecraft:quartz"
+					type: "item"
+				}
+				{
+					id: "6529A3A3C2E6CA0B"
+					item: "tfc_ie_addon:mineral/quartz_shard"
+					type: "item"
+				}
+			]
+			title: "Кварц"
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["37E8F7C7E89A5D3D"]
+			id: "3E179BA684C58E4E"
+			subtitle: "Играй мой клависин"
+			tasks: [{
+				id: "304E44148C6F0873"
+				item: "minecraft:note_block"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 0.0d
+		}
+		{
+			id: "616B547C35F96CF5"
+			tasks: [{
+				id: "76A746C52D3293B8"
+				item: "tfc:ore/cryolite"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -3.0d
+		}
+		{
+			id: "43CCAFBB4C5677AE"
+			tasks: [{
+				id: "1E8A121A1E6F387B"
+				item: "tfc:ore/cinnabar"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -3.5d
+		}
+		{
+			dependencies: [
+				"606339C741CF7ABE"
+				"39DE9D984F3D5029"
+				"145605B140FE751A"
+			]
+			dependency_requirement: "one_started"
+			id: "367FE8155E582F98"
+			tasks: [{
+				id: "767EAEBD0FD4F0A8"
+				item: "artisanal:bucket/mercury"
+				type: "item"
+			}]
+			title: "Ртуть"
+			x: -2.0d
+			y: -3.0d
+		}
+		{
+			id: "606339C741CF7ABE"
+			tasks: [{
+				id: "016BE6AA2D8EF7BF"
+				item: "immersiveengineering:dust_copper"
+				type: "item"
+			}]
+			x: -2.0d
+			y: -4.5d
+		}
+		{
+			id: "39DE9D984F3D5029"
+			tasks: [{
+				id: "52C7A39B1B407CCD"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:powder/sulfur"
+				}
+				type: "item"
+			}]
+			title: "Серная пыль"
+			x: -3.0d
+			y: -4.0d
+		}
+		{
+			id: "145605B140FE751A"
+			tasks: [{
+				id: "7215EE76D1B03B9B"
+				item: "immersiveengineering:dust_iron"
+				type: "item"
+			}]
+			x: -3.5d
+			y: -3.0d
+		}
+		{
+			dependencies: [
+				"37E8F7C7E89A5D3D"
+				"789829916384467C"
+			]
+			dependency_requirement: "one_started"
+			id: "447D1E654C2593A5"
+			tasks: [{
+				id: "786A2855FA1C6427"
+				item: "create:electron_tube"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["789829916384467C"]
+			dependency_requirement: "one_started"
+			id: "5C090A72E2747DF7"
+			subtitle: "Реакционная политика"
+			tasks: [{
+				id: "0FCEE1B1F55E426E"
+				item: "minecraft:observer"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"09547F3B21D578BF"
+				"333353B79A530BFB"
+				"762AC118AF773D2E"
+			]
+			dependency_requirement: "one_started"
+			id: "2A32998FB2875F74"
+			subtitle: "Основа микросхем"
+			tasks: [
+				{
+					id: "5EC7088ECA4D02BB"
+					item: "projectred_core:plate"
+					type: "item"
+				}
+				{
+					id: "0A41D36D8A806DAF"
+					item: "immersiveengineering:circuit_board"
+					type: "item"
+				}
+			]
+			title: "Печатная плата"
+			x: -2.5d
+			y: 2.0d
+		}
+		{
+			id: "72F8369511B39FDB"
+			tasks: [{
+				id: "286C51150E805A1B"
+				item: "create:mechanical_crafter"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 4.5d
+		}
+		{
+			dependencies: [
+				"322E5C57B07CF52D"
+				"72F8369511B39FDB"
+			]
+			id: "6AB0211949B09B76"
+			subtitle: "Где-то я это уже видел..."
+			tasks: [{
+				id: "7639BCBD6D21F4BA"
+				item: "minecraft:furnace"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["6AB0211949B09B76"]
+			id: "6DC9FEAC8F37F127"
+			tasks: [{
+				id: "7A9B9E30FAA0F3BD"
+				item: "minecraft:blast_furnace"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["72F8369511B39FDB"]
+			id: "6F60BFB8BA1394BF"
+			tasks: [{
+				id: "67F5B6F5AE8EA2B7"
+				item: "createaddition:electric_motor"
+				type: "item"
+			}]
+			x: -6.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["6F60BFB8BA1394BF"]
+			id: "342E7088557CBF39"
+			subtitle: "Электрический"
+			tasks: [{
+				id: "4C8931880BD477B4"
+				item: "minecraft:dropper"
+				type: "item"
+			}]
+			x: -5.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["6F60BFB8BA1394BF"]
+			id: "303D6F32871CA155"
+			subtitle: "Электрический"
+			tasks: [{
+				id: "50B2EC82D42C89C6"
+				item: "minecraft:piston"
+				type: "item"
+			}]
+			x: -6.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["6F60BFB8BA1394BF"]
+			id: "7D68E0E4D08653E6"
+			subtitle: "Громофон"
+			tasks: [{
+				id: "691843496D39E073"
+				item: "minecraft:jukebox"
+				type: "item"
+			}]
+			x: -7.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["342E7088557CBF39"]
+			id: "691918219A429071"
+			subtitle: "Электрический"
+			tasks: [{
+				id: "173223E4C1F394FC"
+				item: "minecraft:dispenser"
+				type: "item"
+			}]
+			x: -4.5d
+			y: 7.5d
+		}
+		{
+			id: "34130EFCFFC0D140"
+			tasks: [{
+				id: "1279C82FDB0B51A7"
+				item: "create_new_age:magnetite_block"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 4.5d
+		}
+		{
+			dependencies: [
+				"34130EFCFFC0D140"
+				"5AE4D041A92F9C64"
+			]
+			id: "7977822849C47808"
+			tasks: [{
+				id: "19E7A7FB7569557B"
+				item: "create_new_age:generator_coil"
+				type: "item"
+			}]
+			title: "Динамо-машина"
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["34130EFCFFC0D140"]
+			id: "488A2EDA655056E2"
+			tasks: [{
+				id: "03BA495B60989130"
+				item: "immersiveengineering:dynamo"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["34130EFCFFC0D140"]
+			id: "13788EA25116B5D0"
+			tasks: [{
+				id: "628F34C1D27122B5"
+				item: "createaddition:alternator"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: [
+				"7977822849C47808"
+				"488A2EDA655056E2"
+				"13788EA25116B5D0"
+			]
+			dependency_requirement: "one_started"
+			id: "18CF40F1EB850DF3"
+			subtitle: "Для подсоединения к реле"
+			tasks: [{
+				id: "3488CF486DF78176"
+				item: "immersiveengineering:connector_lv"
+				type: "item"
+			}]
+			title: "Коннектор"
+			x: 1.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["18CF40F1EB850DF3"]
+			id: "7917AC62B3E462CD"
+			subtitle: "Для передачи энергии"
+			tasks: [{
+				id: "57B19EC98DD39FE7"
+				item: "immersiveengineering:connector_lv_relay"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["447D1E654C2593A5"]
+			id: "7F6F3357A47BE14B"
+			subtitle: "Программирование на плате"
+			tasks: [{
+				id: "4DE92E6F7FB83351"
+				item: "create_connected:control_chip"
+				type: "item"
+			}]
+			x: -0.5d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"7F6F3357A47BE14B"
+				"2A32998FB2875F74"
+			]
+			id: "37EBC617EF0A7E8F"
+			subtitle: "Собственный функционал"
+			tasks: [{
+				id: "04FDD7AC0AB8D8C9"
+				item: "integrated_circuit:integrated_circuit"
+				type: "item"
+			}]
+			title: "Схема"
+			x: -1.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["447D1E654C2593A5"]
+			id: "67D67B4F0D2F3DEE"
+			tasks: [{
+				id: "09401636A27F54FB"
+				item: "minecraft:redstone_torch"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["447D1E654C2593A5"]
+			id: "090EAE048FD40111"
+			tasks: [{
+				id: "2C0B7E8EBFB2092F"
+				item: "minecraft:redstone_block"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["447D1E654C2593A5"]
+			id: "155EBE1F3209C6EA"
+			tasks: [{
+				id: "10D35A2284E5BE2C"
+				item: "minecraft:tripwire_hook"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			id: "15A2AAB01DFE973E"
+			tasks: [{
+				id: "7A2B8BEE0040057C"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "immersiveengineering:wire_copper"
+				}
+				type: "item"
+			}]
+			x: -12.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["15A2AAB01DFE973E"]
+			id: "1E5986911D42801A"
+			tasks: [{
+				id: "19686F0D1669ACA9"
+				item: "projectred_transmission:orange_insulated_wire"
+				type: "item"
+			}]
+			title: "Оранжевый логический провод"
+			x: -10.5d
+			y: -2.0d
+		}
+		{
+			id: "19E9E9539A7ED6CA"
+			tasks: [{
+				id: "68F79BC25F23401C"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "immersiveengineering:wire_electrum"
+				}
+				type: "item"
+			}]
+			x: -12.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["19E9E9539A7ED6CA"]
+			id: "43B88E6E7B340A94"
+			tasks: [{
+				id: "5E3BF7E8D3ED1262"
+				item: "projectred_transmission:yellow_insulated_wire"
+				type: "item"
+			}]
+			title: "Жёлтый логический провод"
+			x: -10.5d
+			y: -1.0d
+		}
+		{
+			id: "2657C343F1AEEDD3"
+			tasks: [{
+				id: "1A436A562E8CAA10"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "immersiveengineering:wire_aluminum"
+				}
+				type: "item"
+			}]
+			x: -12.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2657C343F1AEEDD3"]
+			id: "1DE231A9B953882F"
+			tasks: [{
+				id: "7B2DD9949BAD4D76"
+				item: "projectred_transmission:white_insulated_wire"
+				type: "item"
+			}]
+			title: "Белый логический провод"
+			x: -10.5d
+			y: 0.0d
+		}
+		{
+			id: "2426B15AD779A7F3"
+			tasks: [{
+				id: "534CFA01C162845E"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "immersiveengineering:wire_steel"
+				}
+				type: "item"
+			}]
+			x: -12.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["2426B15AD779A7F3"]
+			id: "264A8E87E39C48B7"
+			tasks: [{
+				id: "4649AE845612FADF"
+				item: "projectred_transmission:black_insulated_wire"
+				type: "item"
+			}]
+			title: "Чёрный логический провод"
+			x: -10.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["12C0EB6D4136F88B"]
+			id: "3DB1D6DDA93C5722"
+			tasks: [{
+				id: "02DD07D04254D338"
+				item: "projectred_transmission:gray_insulated_wire"
+				type: "item"
+			}]
+			title: "Серый логический провод"
+			x: -10.5d
+			y: 2.0d
+		}
+		{
+			id: "12C0EB6D4136F88B"
+			tasks: [{
+				id: "3D8F4D60583768C3"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "immersiveengineering:wire_lead"
+				}
+				type: "item"
+			}]
+			x: -12.0d
+			y: 2.0d
+		}
+		{
+			id: "762AC118AF773D2E"
+			tasks: [{
+				id: "5E523E526CF39D65"
+				item: {
+					Count: 1
+					id: "immersiveengineering:blueprint"
+					tag: {
+						blueprint: "components"
+					}
+				}
+				type: "item"
+			}]
+			x: -2.5d
+			y: 0.5d
+		}
+		{
+			dependencies: [
+				"76409626F5D1BE53"
+				"4E0D7A82626EAF93"
+				"5D30C0840BD66185"
+			]
+			dependency_requirement: "one_started"
+			id: "333353B79A530BFB"
+			tasks: [{
+				id: "6A31ABD3DFA0266F"
+				item: "immersiveengineering:plate_duroplast"
+				type: "item"
+			}]
+			title: "Лист дюропласта"
+			x: -4.0d
+			y: 0.5d
+		}
+		{
+			id: "09547F3B21D578BF"
+			tasks: [{
+				id: "29DBD771A3062499"
+				item: "immersiveengineering:plate_copper"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"77B2C1D9A9DF6F52"
+				"522B9C15D82DC7E1"
+			]
+			dependency_requirement: "one_started"
+			id: "76409626F5D1BE53"
+			tasks: [{
+				amount: 1000L
+				fluid: "immersiveengineering:phenolic_resin"
+				id: "40ADAED2DDD5516E"
+				type: "fluid"
+			}]
+			title: "Фенопласт"
+			x: -5.0d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"54B06556EB23543F"
+				"6D3518B81EE1EEE5"
+				"61F660307E7630B9"
+				"764F207779F0820F"
+			]
+			dependency_requirement: "one_started"
+			id: "522B9C15D82DC7E1"
+			tasks: [{
+				amount: 1000L
+				fluid: "immersiveengineering:acetaldehyde"
+				id: "2C28ACAE255DA029"
+				type: "fluid"
+			}]
+			title: "Ацеталдегид"
+			x: -6.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["2F2785B034872AC6"]
+			id: "77B2C1D9A9DF6F52"
+			tasks: [{
+				amount: 1000L
+				fluid: "immersiveengineering:creosote"
+				id: "4CC457F9FD4A9120"
+				type: "fluid"
+			}]
+			title: "Креозот"
+			x: -4.5d
+			y: -1.5d
+		}
+		{
+			id: "5D30C0840BD66185"
+			tasks: [{
+				id: "2D98FD947184D1F0"
+				item: {
+					Count: 1
+					id: "createdieselgenerators:mold"
+					tag: {
+						Mold: "createdieselgenerators:bar"
+					}
+				}
+				type: "item"
+			}]
+			x: -5.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["2DBFFBF91C59757E"]
+			id: "4E0D7A82626EAF93"
+			tasks: [{
+				id: "677C3604A10EFD39"
+				item: "immersiveengineering:mold_plate"
+				type: "item"
+			}]
+			x: -3.5d
+			y: -0.5d
+		}
+		{
+			id: "6D3518B81EE1EEE5"
+			tasks: [
+				{
+					amount: 1000L
+					fluid: "createdieselgenerators:ethanol"
+					id: "47806D3F5E9C4A90"
+					type: "fluid"
+				}
+				{
+					amount: 1000L
+					fluid: "immersiveengineering:ethanol"
+					id: "41399604481F2759"
+					type: "fluid"
+				}
+			]
+			title: "Этанол"
+			x: -7.5d
+			y: -1.5d
+		}
+		{
+			id: "54B06556EB23543F"
+			tasks: [{
+				id: "7A4089E221204882"
+				item: "immersiveengineering:plate_silver"
+				type: "item"
+			}]
+			x: -6.5d
+			y: -2.0d
+		}
+		{
+			id: "61F660307E7630B9"
+			tasks: [{
+				amount: 1000L
+				fluid: "immersivepetroleum:petroleum_gas"
+				id: "2B46A9F10C1F94A8"
+				type: "fluid"
+			}]
+			title: "Нефтяной газ"
+			x: -7.5d
+			y: 0.5d
+		}
+		{
+			id: "764F207779F0820F"
+			tasks: [{
+				id: "32A3196A4307A6EF"
+				item: "immersiveengineering:plate_constantan"
+				type: "item"
+			}]
+			x: -6.5d
+			y: 1.0d
+		}
+		{
+			id: "2DBFFBF91C59757E"
+			tasks: [{
+				id: "0176D0B2F137D26C"
+				item: {
+					Count: 1
+					id: "immersiveengineering:blueprint"
+					tag: {
+						blueprint: "molds"
+					}
+				}
+				type: "item"
+			}]
+			title: "Чертёж пресс-форм"
+			x: -2.5d
+			y: -1.0d
+		}
+	]
+	title: "Электронная эпоха"
+}

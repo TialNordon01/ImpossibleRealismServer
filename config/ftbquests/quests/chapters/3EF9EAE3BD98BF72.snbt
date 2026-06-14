@@ -1,0 +1,493 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "3EF9EAE3BD98BF72"
+	group: ""
+	icon: {
+		Count: 1
+		ForgeCaps: {
+			"tfc:item_heat": {
+				heat: 0.0f
+				ticks: 0L
+			}
+		}
+		id: "tfc:metal/ingot/blue_steel"
+	}
+	id: "3EF9EAE3BD98BF72"
+	order_index: 7
+	quest_links: [ ]
+	quests: [
+		{
+			id: "23FABB363C0C6FC5"
+			subtitle: "Делаем чертежи с умом"
+			tasks: [{
+				id: "2BA48BFDB986261D"
+				item: "creatingspace:rocket_engineer_table"
+				type: "item"
+			}]
+			title: "Стол ракетного инженера"
+			x: -6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["23FABB363C0C6FC5"]
+			id: "02AA3E335A2A9C57"
+			subtitle: "Инженерный гений"
+			tasks: [{
+				id: "23C9C1A15576CF6A"
+				item: {
+					Count: 1
+					id: "creatingspace:engine_blueprint"
+					tag: {
+						blockEntity: {
+							efficiency: 0.61721957f
+							mass: 277
+							propellantType: "creatingspace:methalox"
+							thrust: 1001
+						}
+						engineRecipeData: {
+							exhaustPackType: "creatingspace:bell_nozzle"
+							expansionRatio: 38
+							materialLevel: 3
+							powerPackType: "creatingspace:open_cycle"
+							size: 100
+						}
+					}
+				}
+				type: "item"
+			}]
+			title: "Чертёж двигателя ракеты"
+			x: -4.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["02AA3E335A2A9C57"]
+			id: "5B33ED10E26EC789"
+			subtitle: "Автосборка"
+			tasks: [{
+				id: "2C4596B0AA421625"
+				item: "create:deployer"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"59B1D321F6F6E287"
+				"66DF44465C23A249"
+				"22BAD3E16A980167"
+				"1F7450B4409D9E68"
+				"35368EED37E2644E"
+				"34EC4B051A577C39"
+				"445B500008716F12"
+				"058B538C4503B8FF"
+				"5773A574A4CCA537"
+			]
+			id: "4EA2D6E2913B853D"
+			tasks: [{
+				id: "4F62892A8AAAFEC7"
+				item: "creatingspace:small_rocket_engine"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 0.0d
+		}
+		{
+			id: "2B79D17A2CAEA40D"
+			tasks: [{
+				id: "1D389DD6FDE8C16F"
+				item: "creatingspace:air_liquefier"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"0B72D3C8EB4C0105"
+				"355467F5B50ED645"
+			]
+			id: "16FE9505347D495D"
+			tasks: [{
+				id: "37055841282D4BC9"
+				item: "create:fluid_tank"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["4EA2D6E2913B853D"]
+			id: "3C94D9C1EE2D83CE"
+			tasks: [{
+				id: "4ADDEF6D65E7F627"
+				item: {
+					Count: 1
+					id: "creatingspace:rocket_controls"
+					tag: {
+						initialPosMap: { }
+					}
+				}
+				type: "item"
+			}]
+			x: 5.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["4EA2D6E2913B853D"]
+			id: "05C82BC557E55742"
+			tasks: [{
+				id: "17709C3E6C1765CC"
+				item: "creatingspace:oxygen_sealer"
+				type: "item"
+			}]
+			x: 5.5d
+			y: -1.5d
+		}
+		{
+			id: "198B9A06DE4B11CA"
+			tasks: [{
+				id: "36486D48D1272826"
+				item: "creatingspace:mechanical_electrolyzer"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			id: "0716444D8DFD76F7"
+			tasks: [{
+				id: "08B83F2A15CBEDA8"
+				item: "creatingspace:catalyst_carrier"
+				type: "item"
+			}]
+			title: "Катализатор"
+			x: 2.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["4EA2D6E2913B853D"]
+			id: "6D2EAF543DA01712"
+			tasks: [{
+				id: "58F7ACCAB4E2EEBD"
+				item: "creatingspace:flight_recorder"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 0.5d
+		}
+		{
+			dependencies: [
+				"67904CE1C88E237C"
+				"3C94D9C1EE2D83CE"
+				"6D2EAF543DA01712"
+				"05C82BC557E55742"
+				"16FE9505347D495D"
+				"7AA5A8B1FE1C0574"
+			]
+			id: "2E7F9B42715F82E4"
+			subtitle: "Космические сокровища"
+			tasks: [{
+				id: "4E17C01A2251D407"
+				item: "creatingspace:cobalt_ingot"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5B33ED10E26EC789"]
+			id: "66DF44465C23A249"
+			tasks: [{
+				id: "12DEA5C86297FD91"
+				item: "creatingspace:andesite_engine_wall"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["5B33ED10E26EC789"]
+			id: "1F7450B4409D9E68"
+			tasks: [{
+				id: "47BC13AA45A459F3"
+				item: "creatingspace:iron_engine_wall"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["5B33ED10E26EC789"]
+			id: "5773A574A4CCA537"
+			tasks: [{
+				id: "6360F4AAFAE823C5"
+				item: "creatingspace:copper_engine_wall"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["5B33ED10E26EC789"]
+			id: "058B538C4503B8FF"
+			tasks: [{
+				id: "3828C21A9A547F9A"
+				item: "creatingspace:brass_engine_wall"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["5B33ED10E26EC789"]
+			id: "22BAD3E16A980167"
+			tasks: [{
+				id: "0F7C0FB256F40F38"
+				item: "creatingspace:reinforced_copper_engine_wall"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5B33ED10E26EC789"]
+			id: "59B1D321F6F6E287"
+			tasks: [{
+				id: "2AD8BA0223B84EC4"
+				item: "creatingspace:copronickel_engine_wall"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["5B33ED10E26EC789"]
+			id: "445B500008716F12"
+			tasks: [{
+				id: "3A83842E4220A5C9"
+				item: "creatingspace:monel_engine_wall"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["5B33ED10E26EC789"]
+			id: "35368EED37E2644E"
+			tasks: [{
+				id: "56D3AA93C34A02F9"
+				item: "creatingspace:inconel_engine_wall"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["5B33ED10E26EC789"]
+			id: "34EC4B051A577C39"
+			tasks: [{
+				id: "3608ADC407199AFE"
+				item: "creatingspace:hastelloy_engine_wall"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["2B79D17A2CAEA40D"]
+			id: "2102FF38DD9F0B6C"
+			subtitle: "Вечный огонь"
+			tasks: [{
+				id: "7E3B329AE286E6BB"
+				item: "minecraft:campfire"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["198B9A06DE4B11CA"]
+			id: "3B1910996B6F71C3"
+			tasks: [{
+				amount: 1000L
+				fluid: "creatingspace:liquid_oxygen"
+				id: "394A334C2D741386"
+				type: "fluid"
+			}]
+			title: "Жидкий кислород"
+			x: 4.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["198B9A06DE4B11CA"]
+			id: "0B72D3C8EB4C0105"
+			tasks: [{
+				amount: 1000L
+				fluid: "creatingspace:liquid_hydrogen"
+				id: "1754B4AC01CBB356"
+				type: "fluid"
+			}]
+			title: "Жидкий водород"
+			x: 4.0d
+			y: 2.5d
+		}
+		{
+			dependencies: [
+				"0716444D8DFD76F7"
+				"33EAAB210AD87A71"
+				"0B72D3C8EB4C0105"
+			]
+			id: "355467F5B50ED645"
+			tasks: [{
+				amount: 1000L
+				fluid: "creatingspace:liquid_methane"
+				id: "093328E567B9094E"
+				type: "fluid"
+			}]
+			title: "Жидкий метан"
+			x: 4.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["3B1910996B6F71C3"]
+			id: "67904CE1C88E237C"
+			tasks: [{
+				id: "573244F4116AEDC4"
+				item: "create:fluid_tank"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["2102FF38DD9F0B6C"]
+			id: "33EAAB210AD87A71"
+			tasks: [{
+				amount: 1000L
+				fluid: "creatingspace:liquid_co2"
+				id: "16A7655951D8CDA0"
+				type: "fluid"
+			}]
+			title: "Жидкий углекислый газ"
+			x: 4.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["4EA2D6E2913B853D"]
+			id: "7AA5A8B1FE1C0574"
+			tasks: [
+				{
+					id: "4F4C2D9957B7A27F"
+					item: {
+						Count: 1
+						id: "creatingspace:basic_spacesuit_helmet"
+						tag: {
+							Damage: 0
+							upgradeElement: { }
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "4E078EFE75E48D3A"
+					item: {
+						Count: 1
+						id: "creatingspace:copper_oxygen_backtank"
+						tag: {
+							Oxygen: 900.0f
+							prevOxygen: 900.0f
+							upgradeElement: { }
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "349E4029F0C7E906"
+					item: {
+						Count: 1
+						id: "creatingspace:basic_spacesuit_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "4231C24D5AB4CCC3"
+					item: {
+						Count: 1
+						id: "creatingspace:basic_spacesuit_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			x: 5.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["2E7F9B42715F82E4"]
+			id: "1655809C3B5C0FB0"
+			shape: "gear"
+			size: 3.0d
+			subtitle: "Конец?..."
+			tasks: [
+				{
+					id: "79B78B453361D734"
+					item: {
+						Count: 1
+						id: "creatingspace:advanced_spacesuit_helmet"
+						tag: {
+							Damage: 0
+							upgradeElement: { }
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "43E46FFCAA872F3F"
+					item: {
+						Count: 1
+						id: "creatingspace:netherite_oxygen_backtank"
+						tag: {
+							Oxygen: 900.0f
+							prevOxygen: 900.0f
+							upgradeElement: { }
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "4B9828C99099270B"
+					item: {
+						Count: 1
+						id: "creatingspace:advanced_spacesuit_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "7C1378A5110B7C76"
+					item: {
+						Count: 1
+						id: "creatingspace:advanced_spacesuit_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Улучшенный скафандр"
+			x: 10.5d
+			y: 0.0d
+		}
+	]
+	title: "Космическая эпоха"
+}

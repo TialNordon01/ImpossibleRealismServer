@@ -1,0 +1,19 @@
+
+[config_v1]
+	#Show Patchouli fumo as books list button icon
+	patchouliFumoAsButtonIcon = false
+	#Horizontal offset for the book button, relative to left of inventory panel.
+	#Range: > -2147483648
+	buttonXOffset = 4
+	#Vertical offset for the book button, relative to top of inventory panel.
+	#Range: > -2147483648
+	buttonYOffset = -24
+	#Horizontal offset for the pinned books buttons, relative to left of inventory panel.
+	#Range: > -2147483648
+	pinnedBooksXOffset = -21
+	#Vertical offset for the pinned books buttons, relative to top of inventory panel.
+	#Range: > -2147483648
+	pinnedBooksYOffset = -24
+	#Pinned book ids.
+	pinnedBooks = ["immersiveengineering:manual", "dynamictrees:guide", "tfc:field_guide"]
+

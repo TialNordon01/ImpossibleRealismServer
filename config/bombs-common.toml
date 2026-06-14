@@ -1,0 +1,55 @@
+
+["Enable/Disable Bombs"]
+	#Enable/Disable Dynamite crafting.
+	enableDynamite = true
+	#Enable/Disable Grenade crafting.
+	enableGrenades = true
+
+["Bomb Base Damage"]
+	#Base explosion power of any basic Bomb (default: 2.0)
+	#Range: 0.0 ~ 100.0
+	bombBasePower = 2.0
+	#Base explosion power of any Bomb II (default: 3.0)
+	#Range: 0.0 ~ 100.0
+	bombIIBasePower = 3.0
+	#Base explosion power of any Bomb III (default: 4.0)
+	#Range: 0.0 ~ 100.0
+	bombIIIBasePower = 4.0
+	#Base explosion power of any Soul Bomb (default: 5.0)
+	#Range: 0.0 ~ 100.0
+	soulBombBasePower = 5.0
+	#Base explosion power of any Soul Bomb II (default: 6.0)
+	#Range: 0.0 ~ 100.0
+	soulBombIIBasePower = 6.0
+	#Base explosion power of any Soul Bomb III (default: 7.0)
+	#Range: 0.0 ~ 100.0
+	soulBombIIIBasePower = 7.0
+
+[Modifiers]
+	#List of modifiers applied to dynamite by default
+	defaultModifiers = []
+	#List of modifiers that are not allowed to be applied
+	restrictedModifiers = []
+
+[Performance]
+	#How many ticks should a bomb exist before it despawns? (default: 1200)
+	#Range: > 40
+	bombTimeoutTime = 1200
+
+[Mobs]
+	#(Experimental) What is the chance for prospectors and honses to spawn per minute? (default: 0.0)
+	#Range: 0.0 ~ 1.0
+	prospectorSpawnChance = 0.0
+	#Minimum number of groups (1 honse, 2 prospectors) that try to spawn at a time (default: 2)
+	#Range: > 0
+	prospectorGroupMin = 2
+	#Maximum number of groups (1 honse, 2 prospectors) that try to spawn at a time (default: 3)
+	#Range: > 0
+	prospectorGroupMax = 3
+	#List of modifiers applied to prospector's dynamite on spawn (default: ['contained'])
+	prospectorDefaultModifiers = ["contained"]
+	#How aggressive should Prospectors be? (default: false)
+	#0 = no targetting, 1 = targets players, 2 = targets players + villagers + iron golems, 3 = targets almost everything
+	#Range: 0 ~ 3
+	prospectorAggression = 1
+

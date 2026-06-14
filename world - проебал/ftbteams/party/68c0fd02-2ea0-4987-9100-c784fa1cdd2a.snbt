@@ -1,0 +1,22 @@
+{
+	id: "68c0fd02-2ea0-4987-9100-c784fa1cdd2a"
+	type: "party"
+	owner: "34aab2f9-ace1-3087-9140-925077c18be3"
+	ranks: {
+		a54fa332-ab6c-3ffe-9e0a-24f42463f326: "member"
+		34aab2f9-ace1-3087-9140-925077c18be3: "owner"
+	}
+	properties: {
+		"ftbteams:display_name": "patty"
+		"ftbteams:description": ""
+		"ftbteams:color": "#FF59B8"
+		"ftbteams:free_to_join": 0b
+		"ftbteams:max_msg_history_size": 1000
+	}
+	message_history: [
+		{ from: "00000000-0000-0000-0000-000000000000", date: 1776607907146L, text: "{\"color\":\"yellow\",\"translate\":\"ftbteams.message.joined\",\"with\":[{\"text\":\"tial_nordon\"}]}" }
+		{ from: "34aab2f9-ace1-3087-9140-925077c18be3", date: 1776607907174L, text: "{\"color\":\"green\",\"translate\":\"ftbteams.message.invited\",\"with\":[{\"color\":\"yellow\",\"text\":\"Cyxapik_k\"}]}" }
+		{ from: "00000000-0000-0000-0000-000000000000", date: 1776608180238L, text: "{\"color\":\"green\",\"translate\":\"ftbteams.message.joined\",\"with\":[{\"text\":\"Cyxapik_k\"}]}" }
+	]
+	extra: { }
+}

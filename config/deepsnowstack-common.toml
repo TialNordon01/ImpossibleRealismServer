@@ -1,0 +1,32 @@
+
+[accumulation]
+	#Real precip intensity (0..1) at which snow accumulation becomes heavy.
+	#Range: 0.0 ~ 1.0
+	heavyThreshold = 0.5
+	#Real precip intensity (0..1) at which extreme multiplier applies.
+	#Range: 0.0 ~ 1.0
+	extremeThreshold = 0.75
+	#Max stacking steps per tick in heavy precip before the extreme multiplier.
+	#Range: 1 ~ 32
+	maxStepsNormal = 3
+	#Max stacking steps per tick when the extreme multiplier applies.
+	#Range: 1 ~ 64
+	maxStepsExtreme = 6
+	#During heavy precip, chance to add +1 step so the total becomes 2.
+	#Range: 0.0 ~ 1.0
+	chanceSecondStep = 0.5
+	#During heavy precip, additional chance to add +1 step so the total becomes 3.
+	#Range: 0.0 ~ 1.0
+	chanceThirdStep = 0.25
+	#Blend intensity into accumulation so stronger storms produce more consistent extra steps.
+	enableIntensityWeightedSteps = true
+	#If true, when intensity >= extremeThreshold, steps are doubled up to maxStepsExtreme.
+	extremeDoublesSteps = true
+	#Prefer vertical stacking over TFC spreading when snow is at the weather accumulation cap.
+	enableVerticalOverSpread = true
+	#Allow snow layers to survive when placed on top of a full 8-layer snow layer.
+	enableSurviveOnFullSnow = true
+	#Safety cap for searching upward in a snow column.
+	#Range: 8 ~ 256
+	maxVerticalSearch = 64
+

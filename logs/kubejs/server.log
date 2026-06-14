@@ -1,0 +1,18 @@
+[17:48:02] [INIT] KubeJS 2001.6.5-build.16; MC 2001 forge
+[17:48:02] [INIT] Loaded plugins:
+[17:48:02] [INIT] - dev.latvian.mods.kubejs.forge.BuiltinKubeJSForgePlugin
+[17:48:02] [INIT] - com.jesz.createdieselgenerators.compat.kubejs.CDGKubeJSPlugin
+[17:48:02] [INIT] - com.tom.createores.kubejs.KubeJSExcavation
+[17:48:02] [INIT] - dev.latvian.mods.kubejs.create.KubeJSCreatePlugin
+[17:48:02] [INIT] - snownee.lychee.compat.kubejs.LycheeKubeJSPlugin
+[17:48:03] [INFO] Loaded script server_scripts:example.js in 0.015 s
+[17:48:03] [INFO] Loaded 1/1 KubeJS server scripts in 0.036 s with 0 errors and 0 warnings
+[17:48:03] [INFO] Scripts loaded
+[17:48:03] [INFO] Initializing recipe event...
+[17:48:07] [INFO] Processing recipes...
+[17:48:08] [WARN] Failed to parse recipe 'tfc_smelting_cobble:steel_blast_furnace_insulation[minecraft:crafting_shaped]'! Falling back to vanilla: ItemStack 'result' can't be empty!
+[17:48:08] [WARN] Failed to parse recipe 'tfc_medicine:hasted_bandage_r_2[minecraft:crafting_shaped]'! Falling back to vanilla: ItemStack 'result' can't be empty!
+[17:48:08] [INFO] Found 20247 recipes in 537.1 ms
+[17:48:09] [INFO] Posted recipe events in 823.9 ms
+[17:48:09] [INFO] Added 3 recipes, removed 5 recipes, modified 3 recipes, with 0 failed recipes in 262.5 ms
+[17:48:28] [INFO] Server resource reload complete!

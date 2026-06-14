@@ -1,0 +1,226 @@
+---- Minecraft Crash Report ----
+// Why did you do that?
+
+Time: 2026-04-21 20:30:28
+Description: Exception in server tick loop
+
+java.util.ConcurrentModificationException: null
+	at java.util.HashMap.forEach(HashMap.java:1433) ~[?:?] {re:mixin}
+	at net.minecraft.world.level.storage.DimensionDataStorage.m_78151_(DimensionDataStorage.java:126) ~[server-1.20.1-20230612.114412-srg.jar%23367!/:?] {re:mixin,re:classloading,pl:mixin:APP:railways-common.mixins.json:MixinDimensionDataStorage,pl:mixin:A}
+	at net.minecraft.server.level.ServerLevel.m_8806_(ServerLevel.java:759) ~[server-1.20.1-20230612.114412-srg.jar%23367!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.cache_strongholds.ServerLevelMixin,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.faster_structure_location.ServerLevelMixin,pl:mixin:APP:railways-common.mixins.json:MixinServerLevel,pl:mixin:APP:starlight.mixins.json:common.world.ServerWorldMixin,pl:mixin:APP:crafttweaker.mixins.json:common.transform.world.level.MixinServerLevel,pl:mixin:APP:tfc.mixins.json:ServerLevelMixin,pl:mixin:APP:kubejs-common.mixins.json:ServerLevelMixin,pl:mixin:APP:immersiveengineering.mixins.json:coremods.ServerWorldMixin,pl:mixin:APP:createbigcannons-common.mixins.json:ServerLevelMixin,pl:mixin:APP:valkyrienskies-common.mixins.json:feature.shipyard_entities.MixinServerLevel,pl:mixin:APP:valkyrienskies-common.mixins.json:feature.world_weather.MixinServerLevel,pl:mixin:APP:valkyrienskies-common.mixins.json:server.world.MixinServerLevel,pl:mixin:APP:create.mixins.json:accessor.ServerLevelAccessor,pl:mixin:A}
+	at net.minecraft.server.level.ServerLevel.m_8643_(ServerLevel.java:738) ~[server-1.20.1-20230612.114412-srg.jar%23367!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.cache_strongholds.ServerLevelMixin,pl:mixin:APP:modernfix-modernfix.mixins.json:perf.faster_structure_location.ServerLevelMixin,pl:mixin:APP:railways-common.mixins.json:MixinServerLevel,pl:mixin:APP:starlight.mixins.json:common.world.ServerWorldMixin,pl:mixin:APP:crafttweaker.mixins.json:common.transform.world.level.MixinServerLevel,pl:mixin:APP:tfc.mixins.json:ServerLevelMixin,pl:mixin:APP:kubejs-common.mixins.json:ServerLevelMixin,pl:mixin:APP:immersiveengineering.mixins.json:coremods.ServerWorldMixin,pl:mixin:APP:createbigcannons-common.mixins.json:ServerLevelMixin,pl:mixin:APP:valkyrienskies-common.mixins.json:feature.shipyard_entities.MixinServerLevel,pl:mixin:APP:valkyrienskies-common.mixins.json:feature.world_weather.MixinServerLevel,pl:mixin:APP:valkyrienskies-common.mixins.json:server.world.MixinServerLevel,pl:mixin:APP:create.mixins.json:accessor.ServerLevelAccessor,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_129885_(MinecraftServer.java:507) ~[server-1.20.1-20230612.114412-srg.jar%23367!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_195514_(MinecraftServer.java:532) ~[server-1.20.1-20230612.114412-srg.jar%23367!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_5705_(MinecraftServer.java:824) ~[server-1.20.1-20230612.114412-srg.jar%23367!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_130011_(MinecraftServer.java:661) ~[server-1.20.1-20230612.114412-srg.jar%23367!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_206580_(MinecraftServer.java:251) ~[server-1.20.1-20230612.114412-srg.jar%23367!/:?] {re:mixin,pl:accesstransformer:B,re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at java.lang.Thread.run(Thread.java:1575) ~[?:?] {re:mixin}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 23.0.2, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 510480880 bytes (486 MiB) / 1891631104 bytes (1804 MiB) up to 4282384384 bytes (4084 MiB)
+	CPUs: 12
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 5 2600 Six-Core Processor            
+	Identifier: AuthenticAMD Family 23 Model 8 Stepping 2
+	Microarchitecture: Zen+
+	Frequency (GHz): 3.39
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 12
+	Graphics card #0 name: NVIDIA GeForce GTX 1660 SUPER
+	Graphics card #0 vendor: NVIDIA (0x10de)
+	Graphics card #0 VRAM (MB): 4095.00
+	Graphics card #0 deviceId: 0x21c4
+	Graphics card #0 versionInfo: DriverVersion=32.0.15.9186
+	Memory slot #0 capacity (MB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 3.00
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MB): 8192.00
+	Memory slot #1 clockSpeed (GHz): 3.00
+	Memory slot #1 type: DDR4
+	Virtual memory max (MB): 35787.93
+	Virtual memory used (MB): 34914.53
+	Swap memory total (MB): 19456.00
+	Swap memory used (MB): 3510.07
+	JVM Flags: 0 total; 
+	Server Running: true
+	Player Count: 1 / 20; [ServerPlayer['tial_nordon'/220818, l='ServerLevel[world]', x=672.63, y=63.00, z=-14935.78]]
+	Data Packs: vanilla, mod:grapplemod (incompatible), mod:treechop (incompatible), mod:scena (incompatible), mod:barrels_2012 (incompatible), mod:dynamiclights, mod:immersive_aircraft (incompatible), mod:xaeroworldmap (incompatible), mod:controlling (incompatible), mod:modernfix (incompatible), mod:weather2 (incompatible), mod:emitrades (incompatible), mod:uteamcore, mod:textile, mod:cartography (incompatible), mod:railways, mod:carryon (incompatible), mod:jeresources, mod:cloth_config (incompatible), mod:fzzy_config (incompatible), mod:embeddium, mod:auto_third_person (incompatible), mod:corpse, mod:create_connected, mod:tfc_support_indicator (incompatible), mod:farmersdelight, mod:usefulbackpacks, mod:fastipping (incompatible), mod:symbols_n_stuff (incompatible), mod:alekiships (incompatible), mod:tfcambiental, mod:curios (incompatible), mod:patchouli (incompatible), mod:searchables (incompatible), mod:inventoryprofilesnext (incompatible), mod:architectury (incompatible), mod:emiffect (incompatible), mod:itemphysic, mod:framework, mod:smallships (incompatible), mod:tfships (incompatible), mod:playerrevive, mod:betteradvancements (incompatible), mod:creatingspace, mod:rhino (incompatible), mod:ftblibrary (incompatible), mod:ftbteams (incompatible), mod:tfcah, mod:visualworkbench, mod:xaerolib (incompatible), mod:easy_tweaker (incompatible), mod:blazemap (incompatible), mod:starlight (incompatible), mod:jeitweaker (incompatible), mod:corpsecurioscompat, mod:baguettelib (incompatible), mod:crafttweaker (incompatible), mod:patchouli_library, mod:puzzlesaccessapi, mod:ftbchunks (incompatible), mod:forge, mod:woodencog (incompatible), mod:jeimultiblocks, mod:tfc, mod:waterflasks (incompatible), mod:farmersdelight_tfc, mod:creepycrawlies, mod:tfc_medicine, mod:tfc_real_world, mod:tfcdesirepaths, mod:tfc_hammer_time, mod:esc, mod:tfclunchbox, mod:sns, mod:dnum, mod:tfcckc, mod:tfcrf, mod:tfccanes (incompatible), mod:terrafly, mod:emi_create_schematics (incompatible), mod:emi (incompatible), mod:emi_loot, mod:jei, mod:kubejs (incompatible), mod:cgm, mod:coralstfc, mod:libipn (incompatible), mod:advancedtfctech, mod:forgeconfigscreens, mod:immersiveengineering (incompatible), mod:jerintegration, mod:tfc_ie_addon, mod:createoreexcavation (incompatible), mod:tfc_ore_excavation, mod:jade (incompatible), mod:creativecore, mod:alekiroofs, mod:hardrock_samples, mod:firmaciv (incompatible), mod:kelvin (incompatible), mod:invocore, mod:astikorcarts (incompatible), mod:tfcastikorcarts, mod:kotlinforforge (incompatible), mod:flywheel, mod:ponder (incompatible), mod:create, mod:xaerominimap (incompatible), mod:afc, mod:immediatelyfast (incompatible), mod:coroutil (incompatible), mod:tfcweather, mod:emi_enchanting, mod:ferritecore (incompatible), mod:puzzleslib, mod:ihearttfc, mod:firmalife (incompatible), mod:castirongrill, mod:artisanal, mod:tfcchannelcasting (incompatible), mod:betterf3, mod:rrls, mod:valkyrienskies (incompatible), mod:vs_eureka (incompatible), mod:vs_clockwork (incompatible), mod:trackwork (incompatible), mod:tfcvesseltooltip (incompatible), mod:tfcgenviewer, mod:emi_ores, mod:tfchotornot, mod:chiselsandbits (incompatible), mod:chiselsandbits_tfc, mod:createaddition (incompatible), create:dynamic_data, firmalife_compat_data, mod:create_new_age, mod:esl, mod:immersivepetroleum (incompatible), mod:create_mixed_nuclear, mod:petrolpark (incompatible), mod:petrolsparts (incompatible), builtin/tfc_ie_addon_immersivepetroleum_compat, mod:ritchiesprojectilelib (incompatible), mod:createbigcannons (incompatible)
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Experimental
+	Is Modded: Definitely; Server brand changed to 'forge'
+	Type: Dedicated Server (map_server.txt)
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeserver
+	ModLauncher naming: srg
+	ModLauncher services: 
+		mixin-0.8.5.jar mixin PLUGINSERVICE 
+		eventbus-6.0.5.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.10.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.10.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.10.jar runtime_enum_extender PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.10.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.10.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		kotlinforforge@4.12.0
+		javafml@null
+	Mod List: 
+		grapplingHookMod-Reforged-1.2.jar                 |Grappling Hook Mod            |grapplemod                    |1.20.1-v13          |DONE      |Manifest: NOSIGNATURE
+		TreeChop-1.20.1-forge-0.19.0.jar                  |HT's TreeChop                 |treechop                      |0.18.8              |DONE      |Manifest: NOSIGNATURE
+		scena-forge-1.0.103.jar                           |Scena                         |scena                         |1.0.103             |DONE      |Manifest: NOSIGNATURE
+		barrels_2012-2.1.jar                              |Barrels 2012                  |barrels_2012                  |2.1                 |DONE      |Manifest: NOSIGNATURE
+		dynamiclights-v1.9-mc1.17-1.21.9-mod.jar          |Dynamic Lights                |dynamiclights                 |1.9+mod             |DONE      |Manifest: NOSIGNATURE
+		immersive_aircraft-1.4.0+1.20.1-forge.jar         |Immersive Aircraft            |immersive_aircraft            |1.4.0+1.20.1        |DONE      |Manifest: NOSIGNATURE
+		ritchiesprojectilelib-2.1.1-mc.1.20.1-forge.jar   |Ritchie's Projectile Library  |ritchiesprojectilelib         |2.1.1               |DONE      |Manifest: NOSIGNATURE
+		xaeroworldmap-forge-1.20.1-1.40.11.jar            |Xaero's World Map             |xaeroworldmap                 |1.40.11             |DONE      |Manifest: NOSIGNATURE
+		Controlling-forge-1.20.1-12.0.2.jar               |Controlling                   |controlling                   |12.0.2              |DONE      |Manifest: NOSIGNATURE
+		modernfix-forge-5.27.8+mc1.20.1.jar               |ModernFix                     |modernfix                     |5.27.8+mc1.20.1     |DONE      |Manifest: NOSIGNATURE
+		weather2-1.20.1-2.8.3.jar                         |Weather2                      |weather2                      |1.20.1-2.8.3        |DONE      |Manifest: NOSIGNATURE
+		emitrades-forge-1.2.1+mc1.20.1.jar                |EMI Trades                    |emitrades                     |1.2.1+mc1.20.1      |DONE      |Manifest: NOSIGNATURE
+		u_team_core-forge-1.20.1-5.1.4.382.jar            |U Team Core                   |uteamcore                     |5.1.4.382           |DONE      |Manifest: f4:a6:0b:ee:cb:8a:1a:ea:9f:9d:45:91:8f:8b:b3:ae:26:f3:bf:05:86:1d:90:9e:f6:32:2a:1a:ed:1d:ce:b0
+		textile-2.2.3.jar                                 |TFC Textile                   |textile                       |2.2.3               |DONE      |Manifest: NOSIGNATURE
+		Cartography-1.20.1-0.5.3-beta.jar                 |Cartography                   |cartography                   |0.5.3-beta          |DONE      |Manifest: NOSIGNATURE
+		Steam_Rails-1.7.2+forge-mc1.20.1.jar              |Create: Steam 'n' Rails       |railways                      |1.7.2+forge-mc1.20.1|DONE      |Manifest: NOSIGNATURE
+		create-new-age-1.1.7f+forge-mc1.20.1.jar          |Create: New Age               |create_new_age                |1.1.7f+mc1.20.1     |DONE      |Manifest: NOSIGNATURE
+		carryon-forge-1.20.1-2.1.2.7.jar                  |Carry On                      |carryon                       |2.1.2.7             |DONE      |Manifest: NOSIGNATURE
+		JustEnoughResources-1.20.1-1.4.0.247.jar          |Just Enough Resources         |jeresources                   |1.4.0.247           |DONE      |Manifest: NOSIGNATURE
+		cloth-config-11.1.136-forge.jar                   |Cloth Config v10 API          |cloth_config                  |11.1.136            |DONE      |Manifest: NOSIGNATURE
+		fzzy_config-0.7.6+1.20.1+forge.jar                |Fzzy Config                   |fzzy_config                   |0.7.6+1.20.1+forge  |DONE      |Manifest: NOSIGNATURE
+		embeddium-0.3.31+mc1.20.1.jar                     |Embeddium                     |embeddium                     |0.3.31+mc1.20.1     |DONE      |Manifest: NOSIGNATURE
+		auto_third_person-forge-1.20.1-2.1.jar            |Auto Third Person             |auto_third_person             |2.1                 |DONE      |Manifest: NOSIGNATURE
+		corpse-forge-1.20.1-1.0.23.jar                    |Corpse                        |corpse                        |1.20.1-1.0.23       |DONE      |Manifest: NOSIGNATURE
+		create_connected-1.1.13-mc1.20.1-all.jar          |Create: Connected             |create_connected              |1.1.13-mc1.20.1     |DONE      |Manifest: NOSIGNATURE
+		tfc_support_indicator-1.0.6+mc1.20.1.jar          |TFC Support Indicator         |tfc_support_indicator         |1.0.6+mc1.20.1      |DONE      |Manifest: NOSIGNATURE
+		FarmersDelight-1.20.1-1.2.11.jar                  |Farmer's Delight              |farmersdelight                |1.20.1-1.2.11       |DONE      |Manifest: NOSIGNATURE
+		useful_backpacks-forge-1.20.1-2.0.1.124.jar       |Useful Backpacks              |usefulbackpacks               |2.0.1.124           |DONE      |Manifest: f4:a6:0b:ee:cb:8a:1a:ea:9f:9d:45:91:8f:8b:b3:ae:26:f3:bf:05:86:1d:90:9e:f6:32:2a:1a:ed:1d:ce:b0
+		fast-ip-ping-v1.0.11-mc1.20.4-forge.jar           |Fast IP Ping                  |fastipping                    |1.0.11              |DONE      |Manifest: NOSIGNATURE
+		symbols_n_stuff-0.1.2+1.20.1+forge.jar            |Symbols 'n' Stuff             |symbols_n_stuff               |0.1.2+1.20.1+forge  |DONE      |Manifest: NOSIGNATURE
+		alekiNiftyShips-FORGE-1.20.1-1.0.14.jar           |aleki's Nifty Ships           |alekiships                    |1.0.14              |DONE      |Manifest: NOSIGNATURE
+		tfcambiental-1.20.1-3.4.0.jar                     |TFC Ambiental                 |tfcambiental                  |1.20.1-3.4.0        |DONE      |Manifest: NOSIGNATURE
+		curios-forge-5.14.1+1.20.1.jar                    |Curios API                    |curios                        |5.14.1+1.20.1       |DONE      |Manifest: NOSIGNATURE
+		Patchouli-1.20.1-85-FORGE.jar                     |Patchouli                     |patchouli                     |1.20.1-85-FORGE     |DONE      |Manifest: NOSIGNATURE
+		Searchables-forge-1.20.1-1.0.3.jar                |Searchables                   |searchables                   |1.0.3               |DONE      |Manifest: NOSIGNATURE
+		InventoryProfilesNext-forge-1.20-1.10.20.jar      |Inventory Profiles Next       |inventoryprofilesnext         |1.10.20             |DONE      |Manifest: NOSIGNATURE
+		architectury-9.2.14-forge.jar                     |Architectury                  |architectury                  |9.2.14              |DONE      |Manifest: NOSIGNATURE
+		emiffect-forge-1.1.2+mc1.20.1.jar                 |EMIffect                      |emiffect                      |1.1.2+mc1.20.1      |DONE      |Manifest: NOSIGNATURE
+		ItemPhysic_FORGE_v1.8.11_mc1.20.1.jar             |ItemPhysic                    |itemphysic                    |1.8.11              |DONE      |Manifest: NOSIGNATURE
+		framework-forge-1.20.1-0.8.0.jar                  |Framework                     |framework                     |0.8.0               |DONE      |Manifest: 0d:78:5f:44:c0:47:0c:8c:e2:63:a3:04:43:d4:12:7d:b0:7c:35:37:dc:40:b1:c1:98:ec:51:eb:3b:3c:45:99
+		smallships-forge-1.20.1-2.0.0-b1.4.jar            |Small Ships                   |smallships                    |2.0.0-b1.4          |DONE      |Manifest: NOSIGNATURE
+		tfships-1.20.1-1.0.jar                            |TerraFirmaShips               |tfships                       |1.20.1-1.0          |DONE      |Manifest: NOSIGNATURE
+		PlayerRevive_FORGE_v2.0.31_mc1.20.1.jar           |PlayerRevive                  |playerrevive                  |2.0.31              |DONE      |Manifest: NOSIGNATURE
+		BetterAdvancements-1.20.1-0.3.2.161.jar           |Better Advancements           |betteradvancements            |0.3.2.161           |DONE      |Manifest: NOSIGNATURE
+		esl-forge-1.20.1-1.1.3+forge-mc1.20.1.jar         |ESL                           |esl                           |1.1.3               |DONE      |Manifest: NOSIGNATURE
+		creatingspace-1.20.1-1.7.13.jar                   |Creating Space                |creatingspace                 |1.20.1_1.7.13       |DONE      |Manifest: NOSIGNATURE
+		rhino-forge-2001.2.3-build.10.jar                 |Rhino                         |rhino                         |2001.2.3-build.10   |DONE      |Manifest: NOSIGNATURE
+		ftb-library-forge-2001.2.12.jar                   |FTB Library                   |ftblibrary                    |2001.2.12           |DONE      |Manifest: NOSIGNATURE
+		ftb-teams-forge-2001.3.2.jar                      |FTB Teams                     |ftbteams                      |2001.3.2            |DONE      |Manifest: NOSIGNATURE
+		TerraFirmaCraftAnvilHelper-1.0.2.jar              |TerraFirmaCraftAnvilHelper    |tfcah                         |1.0.2               |DONE      |Manifest: NOSIGNATURE
+		VisualWorkbench-v8.0.1-1.20.1-Forge.jar           |Visual Workbench              |visualworkbench               |8.0.1               |DONE      |Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		xaerolib-forge-1.20.1-1.1.0.jar                   |XaeroLib                      |xaerolib                      |1.1.0               |DONE      |Manifest: NOSIGNATURE
+		EasyTweaker 1.20.1-1.0.4.jar                      |EasyTweaker                   |easy_tweaker                  |1.0.4               |DONE      |Manifest: NOSIGNATURE
+		BlazeMap-1.20.1-0.7.5-beta.jar                    |Blaze Map                     |blazemap                      |0.7.5-beta          |DONE      |Manifest: NOSIGNATURE
+		starlight-1.1.2+forge.1cda73c.jar                 |Starlight                     |starlight                     |1.1.2+forge.1cda73c |DONE      |Manifest: NOSIGNATURE
+		JeiTweaker-forge-1.20.1-8.0.6.jar                 |JeiTweaker                    |jeitweaker                    |8.0.6               |DONE      |Manifest: NOSIGNATURE
+		corpsecurioscompat-1.20.1-Forge-4.0.1.jar         |Corpse Curios Compatibility   |corpsecurioscompat            |4.0.1               |DONE      |Manifest: NOSIGNATURE
+		baguettelib-1.20.1-Forge-1.1.6.jar                |BaguetteLib                   |baguettelib                   |1.1.6               |DONE      |Manifest: NOSIGNATURE
+		CraftTweaker-forge-1.20.1-14.0.60.jar             |CraftTweaker                  |crafttweaker                  |14.0.60             |DONE      |Manifest: NOSIGNATURE
+		patchouli_library-1.1.0.jar                       |Patchouli's Library           |patchouli_library             |1.1.0               |DONE      |Manifest: NOSIGNATURE
+		puzzlesaccessapi-forge-20.1.1.jar                 |Puzzles Access Api            |puzzlesaccessapi              |20.1.1              |DONE      |Manifest: NOSIGNATURE
+		ImmersivePetroleum-1.20.1-4.3.1-36.jar            |Immersive Petroleum           |immersivepetroleum            |4.3.0-36            |DONE      |Manifest: NOSIGNATURE
+		ftb-chunks-forge-2001.3.7.jar                     |FTB Chunks                    |ftbchunks                     |2001.3.7            |DONE      |Manifest: NOSIGNATURE
+		forge-1.20.1-47.4.10-universal.jar                |Forge                         |forge                         |47.4.10             |DONE      |Manifest: 84:ce:76:e8:45:35:e4:0e:63:86:df:47:59:80:0f:67:6c:c1:5f:6e:5f:4d:b3:54:47:1a:9f:7f:ed:5e:f2:90
+		woodencog-1.2.6-1.20.1-all.jar                    |Wooden Cog                    |woodencog                     |1.2.6-1.20.1        |DONE      |Manifest: NOSIGNATURE
+		jeimultiblocks-1.20.1-1.0.6.jar                   |Just Enough Immersive Multiblo|jeimultiblocks                |1.0.6               |DONE      |Manifest: NOSIGNATURE
+		server-1.20.1-20230612.114412-srg.jar             |Minecraft                     |minecraft                     |1.20.1              |DONE      |Manifest: NOSIGNATURE
+		create_mixed_nuclear-1.0.0-forge-1.20.1.jar       |Create: Mixed Nuclear         |create_mixed_nuclear          |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		TerraFirmaCraft-Forge-1.20.1-3.2.21.jar           |TerraFirmaCraft               |tfc                           |3.2.21              |DONE      |Manifest: NOSIGNATURE
+		waterflasks-3.0.10.jar                            |TFC Water Flasks              |waterflasks                   |3.0.10              |DONE      |Manifest: NOSIGNATURE
+		FarmersDelightTFC-1.0.6-forge-1.20.1.jar          |Farmers Delight TFC           |farmersdelight_tfc            |1.0.6               |DONE      |Manifest: NOSIGNATURE
+		creepycrawlies-1.1.0.jar                          |TFC: Creepy-crawlies          |creepycrawlies                |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		tfc_medicine-0.2.jar                              |TFC: Medicine                 |tfc_medicine                  |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		TFC-Real-World-Forge-1.20.1-3.0.5.jar             |TFC: Real World               |tfc_real_world                |3.0.5               |DONE      |Manifest: NOSIGNATURE
+		TFCDesirePaths-1.20.1-1.3.jar                     |TFC Desire Paths              |tfcdesirepaths                |1.3                 |DONE      |Manifest: NOSIGNATURE
+		tfc_hammer_time-1.20.1-1.0.3.jar                  |TFC: Hammer Time              |tfc_hammer_time               |0.0.1               |DONE      |Manifest: NOSIGNATURE
+		Extended-Slot-Capacity-1.20.1-1.3.jar             |Extended Slot Capacity lib    |esc                           |1.3                 |DONE      |Manifest: NOSIGNATURE
+		tfclunchbox-1.20.1-1.0.0.29.jar                   |TFC Lunch Box                 |tfclunchbox                   |1.0.0.29            |DONE      |Manifest: NOSIGNATURE
+		Sacks 'N Such-1.20.1-1.2.4.jar                    |Sacks 'N Such                 |sns                           |1.2.4               |DONE      |Manifest: NOSIGNATURE
+		dnum-1.4.jar                                      |No Unreal Mobs                |dnum                          |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		tfcckc-5.0.jar                                    |TFC: Craftable Kaolin Clay    |tfcckc                        |1.0                 |DONE      |Manifest: NOSIGNATURE
+		TFCRegrowingForests-1.20.1-2.1.jar                |TFC Regrowing Forests         |tfcrf                         |2.1                 |DONE      |Manifest: NOSIGNATURE
+		tfccanes-2.1.2.jar                                |TFC Canes                     |tfccanes                      |2.0.2               |DONE      |Manifest: NOSIGNATURE
+		terrafly-1.0.0-forge-1.20.1.jar                   |TERRAFLY                      |terrafly                      |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		emi_create_schematics-1.0.4.jar                   |Create: EMI Schematics        |emi_create_schematics         |1.0.4               |DONE      |Manifest: NOSIGNATURE
+		emi-1.1.22+1.20.1+forge.jar                       |EMI                           |emi                           |1.1.22+1.20.1+forge |DONE      |Manifest: NOSIGNATURE
+		emi_loot-0.7.9+1.20.1+forge.jar                   |EMI Loot                      |emi_loot                      |0.7.9+1.20.1+forge  |DONE      |Manifest: NOSIGNATURE
+		jei-1.20.1-forge-15.20.0.130.jar                  |Just Enough Items             |jei                           |15.20.0.130         |DONE      |Manifest: NOSIGNATURE
+		kubejs-forge-2001.6.5-build.16.jar                |KubeJS                        |kubejs                        |2001.6.5-build.16   |DONE      |Manifest: NOSIGNATURE
+		cgm-unofficial-1.4.19forge1.20.1.jar              |MrCrayfish's Gun Mod          |cgm                           |1.4.19              |DONE      |Manifest: NOSIGNATURE
+		corals-tfc-1.0.0-forge-1.20.1.jar                 |Corals TFC                    |coralstfc                     |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		libIPN-forge-1.20-4.0.2.jar                       |libIPN                        |libipn                        |4.0.2               |DONE      |Manifest: NOSIGNATURE
+		AdvancedTFCTech-1.20.1-2.3.jar                    |Advanced TFC Tech Unofficial  |advancedtfctech               |2.3                 |DONE      |Manifest: NOSIGNATURE
+		ForgeConfigScreens-v8.0.2-1.20.1-Forge.jar        |Forge Config Screens          |forgeconfigscreens            |8.0.2               |DONE      |Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		ImmersiveEngineering-1.20.1-10.2.0-183.jar        |Immersive Engineering         |immersiveengineering          |1.20.1-10.2.0-183   |DONE      |Manifest: 44:39:94:cf:1d:8c:be:3c:7f:a9:ee:f4:1e:63:a5:ac:61:f9:c2:87:d5:5b:d9:d6:8c:b5:3e:96:5d:8e:3f:b7
+		jerintegration-5.5.0.jar                          |JER Integration               |jerintegration                |5.5.0               |DONE      |Manifest: NOSIGNATURE
+		TFC-IE-Crossover-1.20.1-1.3.1.jar                 |TFC + IE Crossover            |tfc_ie_addon                  |1.3.1               |DONE      |Manifest: NOSIGNATURE
+		createoreexcavation-1.20-1.6.5.jar                |Create Ore Excavation         |createoreexcavation           |1.6.5               |DONE      |Manifest: NOSIGNATURE
+		tfc-ore-excavation-1.20.1-forge-1.0.jar           |TFC Ore Excavation            |tfc_ore_excavation            |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		Jade-1.20.1-Forge-11.13.2.jar                     |Jade                          |jade                          |11.13.2+forge       |DONE      |Manifest: NOSIGNATURE
+		CreativeCore_FORGE_v2.12.35_mc1.20.1.jar          |CreativeCore                  |creativecore                  |2.12.35             |DONE      |Manifest: NOSIGNATURE
+		alekis-ridiculously-simple-roofs-1010046-5310531.j|AlekiRoofs-FORGE              |alekiroofs                    |1.0.1-1.20.1        |DONE      |Manifest: NOSIGNATURE
+		hardrock-tfc-samples-forge-1.20.1-1.0.jar         |HardRock Ore Samples          |hardrock_samples              |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		FirmaCivilization-1.20.1-1.0.9.jar                |Firma: Civilization           |firmaciv                      |1.0.9               |DONE      |Manifest: NOSIGNATURE
+		kelvin-forge-1.20.1-0.5.0+b79a61b0b5.jar          |Kelvin                        |kelvin                        |1.20.1-0.5.0+b79a61b|DONE      |Manifest: NOSIGNATURE
+		invocore-1.20.1-4.3.2.jar                         |Invocore                      |invocore                      |4.3.2               |DONE      |Manifest: NOSIGNATURE
+		astikorcarts-1.20.1-1.1.8.jar                     |AstikorCarts Redux            |astikorcarts                  |1.1.8               |DONE      |Manifest: NOSIGNATURE
+		TFCAstikorCarts-1.20.1-1.1.8.1.jar                |TFC Astikor Carts             |tfcastikorcarts               |1.1.8.1             |DONE      |Manifest: NOSIGNATURE
+		kffmod-4.12.0.jar                                 |Kotlin For Forge              |kotlinforforge                |4.12.0              |DONE      |Manifest: NOSIGNATURE
+		flywheel-forge-1.20.1-1.0.5.jar                   |Flywheel                      |flywheel                      |1.0.5               |DONE      |Manifest: NOSIGNATURE
+		Ponder-Forge-1.20.1-1.0.91.jar                    |Ponder                        |ponder                        |1.0.91              |DONE      |Manifest: NOSIGNATURE
+		create-1.20.1-6.0.8.jar                           |Create                        |create                        |6.0.8               |DONE      |Manifest: NOSIGNATURE
+		petrolpark-1.20.1-1.4.27-all.jar                  |Petrolpark's Library          |petrolpark                    |1.4.27              |DONE      |Manifest: NOSIGNATURE
+		createbigcannons-5.11.2-mc.1.20.1-forge.jar       |Create Big Cannons            |createbigcannons              |5.11.2              |DONE      |Manifest: NOSIGNATURE
+		petrolsparts-1.20.1-1.2.3-all.jar                 |Petrol's Parts                |petrolsparts                  |1.2.3               |DONE      |Manifest: NOSIGNATURE
+		xaerominimap-forge-1.20.1-25.3.10.jar             |Xaero's Minimap               |xaerominimap                  |25.3.10             |DONE      |Manifest: NOSIGNATURE
+		afc-1.0.21-1.20.1.jar                             |ArborFirmaCraft               |afc                           |1.0.21-1.20.1       |DONE      |Manifest: NOSIGNATURE
+		ImmediatelyFast-Forge-1.5.4+1.20.4.jar            |ImmediatelyFast               |immediatelyfast               |1.5.4+1.20.4        |DONE      |Manifest: NOSIGNATURE
+		coroutil-forge-1.20.1-1.3.7.jar                   |CoroUtil                      |coroutil                      |1.20.1-1.3.7        |DONE      |Manifest: NOSIGNATURE
+		TFCWeather-1.20.1-1.6.12.jar                      |TFC Weather                   |tfcweather                    |1.6.12              |DONE      |Manifest: NOSIGNATURE
+		emi_enchanting-0.1.2+1.20.1+forge.jar             |EMI Enchanting                |emi_enchanting                |0.1.2+1.20.1+forge  |DONE      |Manifest: NOSIGNATURE
+		ferritecore-6.0.1-forge.jar                       |Ferrite Core                  |ferritecore                   |6.0.1               |DONE      |Manifest: 41:ce:50:66:d1:a0:05:ce:a1:0e:02:85:9b:46:64:e0:bf:2e:cf:60:30:9a:fe:0c:27:e0:63:66:9a:84:ce:8a
+		PuzzlesLib-v8.1.33-1.20.1-Forge.jar               |Puzzles Lib                   |puzzleslib                    |8.1.33              |DONE      |Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		ihearttfc-1.20.1-1.0.2.jar                        |I <3 TFC                      |ihearttfc                     |1.0.2               |DONE      |Manifest: NOSIGNATURE
+		Firmalife-1.20.1-2.1.26.jar                       |Firmalife                     |firmalife                     |2.1.26              |DONE      |Manifest: NOSIGNATURE
+		CastIronGrill-1.20.1-2.3.jar                      |TFC Cast Iron Grill           |castirongrill                 |2.3                 |DONE      |Manifest: NOSIGNATURE
+		artisanal-1.7.3.jar                               |TFC Artisanal                 |artisanal                     |1.7.3               |DONE      |Manifest: NOSIGNATURE
+		tfcchannelcasting-0.2.3-beta.jar                  |TFC Casting with Channels     |tfcchannelcasting             |0.2.3-beta          |DONE      |Manifest: NOSIGNATURE
+		BetterF3-7.0.2-Forge-1.20.1.jar                   |BetterF3                      |betterf3                      |7.0.2               |DONE      |Manifest: NOSIGNATURE
+		rrls-4.0.6.1+mc1.20.1-forge.jar                   |Remove Reloading Screen       |rrls                          |4.0.6.1+mc1.20.1-for|DONE      |Manifest: NOSIGNATURE
+		valkyrienskies-120-2.4.11.jar                     |Valkyrien Skies 2             |valkyrienskies                |2.4.11              |DONE      |Manifest: NOSIGNATURE
+		eureka-1201-1.6.2.jar                             |VS Eureka Mod                 |vs_eureka                     |1.6.2               |DONE      |Manifest: NOSIGNATURE
+		clockwork-0.5.5.2.jar                             |Clockwork                     |vs_clockwork                  |0.5.5.2             |DONE      |Manifest: NOSIGNATURE
+		trackwork-1.20.1-1.2.3.jar                        |Trackwork Mod                 |trackwork                     |1.2.3               |DONE      |Manifest: NOSIGNATURE
+		TFCVesselTooltip-1.20.1-1.1.jar                   |TFC Vessel Tooltip            |tfcvesseltooltip              |1.1                 |DONE      |Manifest: NOSIGNATURE
+		tfcgenviewer-1.20.1-1.5.1.jar                     |TFCGenViewer                  |tfcgenviewer                  |1.5.1               |DONE      |Manifest: NOSIGNATURE
+		emi_ores-1.2+1.20.1+forge.jar                     |EMI Ores                      |emi_ores                      |1.2+1.20.1+forge    |DONE      |Manifest: NOSIGNATURE
+		TFCHotOrNot-1.20.1-1.0.13.jar                     |TFC Hot or Not                |tfchotornot                   |1.0.13              |DONE      |Manifest: NOSIGNATURE
+		chisels-and-bits-forge-20.1.20.jar                |chisels-and-bits              |chiselsandbits                |20.1.20             |DONE      |Manifest: NOSIGNATURE
+		ChiselsBitsTFC-1.0.0-forge-1.20.1.jar             |Chisels & Bits TFC            |chiselsandbits_tfc            |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		createaddition-1.20.1-1.3.3.jar                   |Create Crafts & Additions     |createaddition                |1.20.1-1.3.3        |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: 1c9ab0b5-6f87-4a7c-a8da-2b17a7dffc27
+	FML: 47.4
+	Forge: net.minecraftforge:47.4.10

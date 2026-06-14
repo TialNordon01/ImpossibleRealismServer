@@ -1,0 +1,447 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "2D98D533E052CFB8"
+	group: ""
+	icon: "immersiveengineering:ingot_hop_graphite"
+	id: "2D98D533E052CFB8"
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["59D1FD32AE3B9AE4"]
+			id: "1F3EDD6B27528465"
+			subtitle: "Электрический насос для нефти"
+			tasks: [{
+				icon: {
+					Count: 1
+					ForgeCaps: {
+						Parent: {
+							Items: [ ]
+							Size: 0
+						}
+					}
+					id: "immersivepetroleum:projector"
+				}
+				id: "559768BF7BA6712E"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersivepetroleum:pumpjack"
+				type: "observation"
+			}]
+			title: "Насосный домкрат"
+			x: 3.0d
+			y: -0.5d
+		}
+		{
+			id: "59D1FD32AE3B9AE4"
+			subtitle: "Дробовик для нефти"
+			tasks: [{
+				id: "6EC7FED8B2201ACF"
+				item: "immersivepetroleum:seismic_survey"
+				type: "item"
+			}]
+			title: "Инструмент для сейсморазведки"
+			x: 3.0d
+			y: -2.0d
+		}
+		{
+			id: "31DA2309F1758382"
+			subtitle: "Геофизический прибор для разведки недр"
+			tasks: [{
+				id: "7DADA32D03C49AF5"
+				item: "createdieselgenerators:oil_scanner"
+				type: "item"
+			}]
+			x: 6.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["31DA2309F1758382"]
+			id: "2AF2B404EC4E43A1"
+			subtitle: "Механический насос для нефти"
+			tasks: [
+				{
+					id: "469C08CB0130DFD6"
+					item: "createdieselgenerators:pumpjack_bearing"
+					type: "item"
+				}
+				{
+					id: "5C2848C56FCA0372"
+					item: "createdieselgenerators:pumpjack_crank"
+					type: "item"
+				}
+				{
+					id: "3617412146C5B34C"
+					item: "createdieselgenerators:pumpjack_head"
+					type: "item"
+				}
+			]
+			title: "Станок-качалка"
+			x: 6.0d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"1F3EDD6B27528465"
+				"2AF2B404EC4E43A1"
+				"464AA46129776A4A"
+			]
+			dependency_requirement: "one_started"
+			id: "1809D777E0C58292"
+			subtitle: "Нефть разлагается на множители"
+			tasks: [{
+				icon: "createdieselgenerators:distillation_controller"
+				id: "419E244620606ECB"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersivepetroleum:distillation_tower"
+				type: "observation"
+			}]
+			title: "Дистилляционная колонна"
+			x: 4.5d
+			y: 2.0d
+		}
+		{
+			id: "464AA46129776A4A"
+			size: 2.0d
+			tasks: [
+				{
+					amount: 1000L
+					fluid: "createdieselgenerators:crude_oil"
+					id: "593326E8D2BEC5A6"
+					type: "fluid"
+				}
+				{
+					amount: 1000L
+					fluid: "immersivepetroleum:crudeoil"
+					id: "7FC6977FFEF173CB"
+					type: "fluid"
+				}
+			]
+			title: "Сырая нефть"
+			x: 4.535714285714278d
+			y: -1.1428571428571423d
+		}
+		{
+			dependencies: ["1809D777E0C58292"]
+			dependency_requirement: "one_started"
+			id: "59D701CE5541DD40"
+			subtitle: "Легковоспламеняющаяся жидкая углеводородная смесь"
+			tasks: [{
+				amount: 1000L
+				fluid: "immersivepetroleum:naphtha"
+				id: "6471A3EFD8C6CFB8"
+				type: "fluid"
+			}]
+			title: "Нафта"
+			x: 2.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["1809D777E0C58292"]
+			dependency_requirement: "one_started"
+			id: "228705D6ABAEEA18"
+			subtitle: "Моторное топливо для газотурбинных двигателей различных летательных аппаратов"
+			tasks: [{
+				amount: 1000L
+				fluid: "immersivepetroleum:kerosene"
+				id: "0BDC6CCD31DF08A7"
+				type: "fluid"
+			}]
+			title: "Керосин"
+			x: 3.0d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"228705D6ABAEEA18"
+				"0704D5275CB2625B"
+				"630728325A6D1A1E"
+				"1809D777E0C58292"
+				"79415FAD79B950F7"
+				"50C692B34DD25E31"
+				"281834A4BFA7CE72"
+			]
+			dependency_requirement: "one_started"
+			id: "53E7B1D89EB9CA05"
+			subtitle: "Требует очистки"
+			tasks: [{
+				amount: 1000L
+				fluid: "immersivepetroleum:diesel_sulfur"
+				id: "4D25DB3FAD1F3DD4"
+				type: "fluid"
+			}]
+			title: "Сернистый дизель"
+			x: 5.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["1809D777E0C58292"]
+			dependency_requirement: "one_started"
+			id: "630728325A6D1A1E"
+			subtitle: "Для ускорения работы машин из IE"
+			tasks: [{
+				amount: 1000L
+				fluid: "immersivepetroleum:lubricant"
+				id: "55CA1D56FF564ECE"
+				type: "fluid"
+			}]
+			title: "Смазка"
+			x: 6.0d
+			y: 3.5d
+		}
+		{
+			id: "41B5A5B0B31DD243"
+			tasks: [{
+				icon: "createdieselgenerators:bulk_fermenter"
+				id: "703AC95F6E4F6A1E"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersiveengineering:refinery"
+				type: "observation"
+			}]
+			title: "Очиститель"
+			x: -1.0d
+			y: 6.0d
+		}
+		{
+			id: "281834A4BFA7CE72"
+			tasks: [{
+				icon: {
+					Count: 1
+					id: "createdieselgenerators:canister"
+					tag: { }
+				}
+				id: "1C587E8C7C255D48"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersivepetroleum:hydrotreater"
+				type: "observation"
+			}]
+			title: "Нефтеперерабатывающая установка высокого давления"
+			x: 9.5d
+			y: 6.0d
+		}
+		{
+			dependencies: [
+				"228705D6ABAEEA18"
+				"1809D777E0C58292"
+			]
+			dependency_requirement: "one_started"
+			id: "48BACC64D1491418"
+			subtitle: "Органическое химическое соединение, бесцветная жидкость со специфическим сладковатым запахом"
+			tasks: [{
+				amount: 1000L
+				fluid: "immersivepetroleum:benzol"
+				id: "3F23D780A33904F2"
+				type: "fluid"
+			}]
+			title: "Бензол"
+			x: 3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"48BACC64D1491418"
+				"546740179ED57C04"
+				"41B5A5B0B31DD243"
+			]
+			dependency_requirement: "one_started"
+			id: "03A46DD71A36AA30"
+			subtitle: "Нормальное топливо"
+			tasks: [{
+				amount: 1000L
+				fluid: "immersivepetroleum:gasoline"
+				id: "34B22F1E249F5C0C"
+				type: "fluid"
+			}]
+			title: "Бензин"
+			x: 3.0d
+			y: 7.5d
+		}
+		{
+			dependency_requirement: "one_started"
+			id: "0704D5275CB2625B"
+			tasks: [{
+				amount: 1000L
+				fluid: "minecraft:water"
+				id: "0E26437D6037602F"
+				type: "fluid"
+			}]
+			title: "Вода"
+			x: 4.364285714285714d
+			y: 5.307142857142857d
+		}
+		{
+			dependencies: [
+				"0704D5275CB2625B"
+				"53E7B1D89EB9CA05"
+				"281834A4BFA7CE72"
+			]
+			dependency_requirement: "one_started"
+			id: "6D5AD6631FEA23AD"
+			subtitle: "Хорошее топливо"
+			tasks: [{
+				amount: 1000L
+				fluid: "immersivepetroleum:diesel"
+				id: "73766B11DBE3A3E6"
+				type: "fluid"
+			}]
+			title: "Дизель"
+			x: 5.0d
+			y: 7.5d
+		}
+		{
+			dependencies: [
+				"0704D5275CB2625B"
+				"53E7B1D89EB9CA05"
+			]
+			dependency_requirement: "one_started"
+			id: "11A73FD72F0A6E6A"
+			tasks: [{
+				id: "5FEF44A0006D5FF6"
+				item: "immersiveengineering:dust_sulfur"
+				type: "item"
+			}]
+			x: 5.935714285714283d
+			y: 5.335714285714282d
+		}
+		{
+			dependencies: [
+				"59D701CE5541DD40"
+				"0704D5275CB2625B"
+				"281834A4BFA7CE72"
+			]
+			dependency_requirement: "one_started"
+			id: "546740179ED57C04"
+			subtitle: "Это смесь газообразных углеводородов"
+			tasks: [{
+				amount: 1000L
+				fluid: "immersivepetroleum:petroleum_gas"
+				id: "59F3D99E5E194A8D"
+				type: "fluid"
+			}]
+			title: "Нефтяной газ"
+			x: 2.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["1809D777E0C58292"]
+			dependency_requirement: "one_started"
+			id: "79415FAD79B950F7"
+			tasks: [{
+				id: "21EC64C27EC5DDEF"
+				item: "immersivepetroleum:bitumen"
+				type: "item"
+			}]
+			title: "Битум"
+			x: 6.0d
+			y: 2.5d
+		}
+		{
+			dependencies: [
+				"0704D5275CB2625B"
+				"79415FAD79B950F7"
+				"50C692B34DD25E31"
+			]
+			dependency_requirement: "one_started"
+			id: "2494BE090697D032"
+			tasks: [{
+				id: "3829FB1AAD8BE9DB"
+				item: "immersivepetroleum:petcoke"
+				type: "item"
+			}]
+			title: "Нефтяной кокс"
+			x: 7.5d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"03A46DD71A36AA30"
+				"61BF4231D69EDA23"
+				"1A1C8A9A3178BCED"
+			]
+			dependency_requirement: "one_started"
+			id: "3E821B7628AE6FD5"
+			subtitle: "Для огненного шоу"
+			tasks: [{
+				amount: 1000L
+				fluid: "immersivepetroleum:napalm"
+				id: "5C71CED2050FC3A9"
+				type: "fluid"
+			}]
+			title: "Напалм"
+			x: 1.0d
+			y: 7.5d
+		}
+		{
+			id: "61BF4231D69EDA23"
+			tasks: [{
+				id: "7BE134900C146C9F"
+				item: "immersiveengineering:dust_aluminum"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 5.5d
+		}
+		{
+			icon: "minecraft:cauldron"
+			id: "1A1C8A9A3178BCED"
+			tasks: [{
+				id: "4C318B3046D44661"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersiveengineering:mixer"
+				type: "observation"
+			}]
+			title: "Смеситель"
+			x: -1.0d
+			y: 7.5d
+		}
+		{
+			icon: "createdieselgenerators:oil_barrel"
+			id: "50C692B34DD25E31"
+			tasks: [{
+				id: "14CF08AAC16DD40B"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersivepetroleum:coker_unit"
+				type: "observation"
+			}]
+			title: "Установка для крекинга"
+			x: 9.5d
+			y: 7.5d
+		}
+		{
+			dependencies: [
+				"03A46DD71A36AA30"
+				"6D5AD6631FEA23AD"
+			]
+			dependency_requirement: "one_started"
+			id: "5A08E5B1608B6432"
+			shape: "hexagon"
+			subtitle: "Двигатель для автомобиля"
+			tasks: [
+				{
+					id: "1C619E49D8172976"
+					item: "createdieselgenerators:diesel_engine"
+					type: "item"
+				}
+				{
+					id: "7A552A4F123BB2B9"
+					item: "createdieselgenerators:large_diesel_engine"
+					type: "item"
+				}
+				{
+					id: "26CBCD65C13B7D82"
+					item: "createdieselgenerators:huge_diesel_engine"
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 9.0d
+		}
+	]
+	title: "Нефтяная эпоха"
+}

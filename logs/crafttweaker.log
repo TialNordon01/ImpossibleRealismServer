@@ -1,0 +1,354 @@
+[17:47:46.315][INFO][CraftTweaker-EarlyInit]: CraftTweaker is running on a Minecraft 1.20.1 production server modded with platform Forge
+[17:47:46.347][INFO][CraftTweaker-EarlyInit]: Successfully injected RecipeFS file system
+[17:47:46.461][INFO][CraftTweaker-Plugins]: Successfully identified and loaded plugin jeitweaker:common
+[17:47:46.565][INFO][CraftTweaker-Plugins]: Successfully identified and loaded plugin crafttweaker:builtin
+[17:47:46.566][INFO][CraftTweaker-Plugins]: Successfully identified and loaded plugin crafttweaker:builtin_forge
+[17:47:46.568][INFO][CraftTweaker-Plugins]: Successfully identified and loaded plugin farmersdelight:crafttweaker_plugin
+[17:47:46.604][INFO][JEITweaker]: Identified JeiTweaker plugin 'jeitweaker:forge': loading scheduled
+[17:47:46.605][INFO][JEITweaker]: Identified JeiTweaker plugin 'jeitweaker:common': loading scheduled
+[17:47:46.623][INFO][JEITweaker]: JEITweaker Environmental Check: the combination of mods [jei] is fully supported
+[17:47:46.623][INFO][JEITweaker]: Running JeiTweaker plugin initialization
+[17:47:46.639][INFO][JEITweaker]: JeiTweaker plugin initialization completed successfully
+[17:47:49.182][INFO][CraftTweaker]: The following mods have explicit CraftTweaker support through the default plugin:
+[17:47:49.184][INFO][CraftTweaker]: - 'crafttweaker' at version '14.0.60'
+[17:47:49.184][INFO][CraftTweaker]: - 'farmersdelight' at version '1.20.1-1.2.11'
+[17:47:49.184][INFO][CraftTweaker]: - 'immersiveengineering' at version '1.20.1-10.2.0-183'
+[17:47:49.184][INFO][CraftTweaker]: - 'immersivepetroleum' at version '4.3.0-36'
+[17:47:49.184][INFO][CraftTweaker]: - 'jeitweaker' at version '8.0.6'
+[17:47:58.565][INFO][CraftTweaker-ZenCode]: Started loading scripts for loader 'initialize'
+[17:47:59.017][INFO][CraftTweaker-ZenCode]: Compiling and executing scripts
+[17:47:59.053][INFO][CraftTweaker-ZenCode]: Successfully initialized modules [crafttweaker, expansions]
+[17:47:59.165][INFO][CraftTweaker-ZenCode]: Execution for loader 'initialize' completed successfully
+[17:48:07.206][INFO][CraftTweaker-ZenCode]: Started loading scripts for loader 'tags'
+[17:48:07.246][INFO][CraftTweaker-ZenCode]: Compiling and executing scripts
+[17:48:07.267][INFO][CraftTweaker-ZenCode]: Successfully initialized modules [crafttweaker, expansions]
+[17:48:07.279][INFO][CraftTweaker-ZenCode]: Execution for loader 'tags' completed successfully
+[17:48:10.230][INFO][CraftTweaker]: crafttweaker.reload.start
+[17:48:10.246][INFO][CraftTweaker-ZenCode]: Started loading scripts for loader 'crafttweaker'
+[17:48:10.295][INFO][CraftTweaker-ZenCode]: Compiling and executing scripts
+[17:48:11.004][INFO][CraftTweaker-ZenCode]: Successfully initialized modules [mods, crafttweaker, expansions]
+[17:48:11.012][INFO][CraftTweaker-ZenCode]: Loading file 'script.zs' with priority 0
+[17:48:11.240][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_grapplemod_grapplinghook' contains null or empty ingredients, removing entries!
+[17:48:11.245][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_grapplemod_grapplinghook' that outputs: '<item:grapplemod:grapplinghook>'
+[17:48:11.246][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:block_create_new_age_magnetite_block' that outputs: '<item:create_new_age:magnetite_block>'
+[17:48:11.246][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_tfc_ore_rich_magnetite' contains null or empty ingredients, removing entries!
+[17:48:11.246][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_tfc_ore_rich_magnetite' that outputs: '<item:tfc:ore/rich_magnetite> * 9'
+[17:48:11.247][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_create_small_crushed_raw_uranium' that outputs: '<item:create_mixed_nuclear:raw_reactive_uranium>'
+[17:48:11.247][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_create_poor_crushed_raw_uranium' contains null or empty ingredients, removing entries!
+[17:48:11.248][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_create_poor_crushed_raw_uranium' that outputs: '<item:create_mixed_nuclear:raw_reactive_uranium>'
+[17:48:11.248][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_create_normal_crushed_raw_uranium' contains null or empty ingredients, removing entries!
+[17:48:11.248][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_create_normal_crushed_raw_uranium' that outputs: '<item:create_mixed_nuclear:raw_reactive_uranium>'
+[17:48:11.248][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_create_rich_crushed_raw_uranium' contains null or empty ingredients, removing entries!
+[17:48:11.248][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_create_rich_crushed_raw_uranium' that outputs: '<item:create_mixed_nuclear:raw_reactive_uranium>'
+[17:48:11.248][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_minecraft_glowstone_dust' contains null or empty ingredients, removing entries!
+[17:48:11.248][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_minecraft_glowstone_dust' that outputs: '<item:minecraft:glowstone_dust>'
+[17:48:11.249][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_vs_clockwork_wanderlite_matrix' contains null or empty ingredients, removing entries!
+[17:48:11.249][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_vs_clockwork_wanderlite_matrix' that outputs: '<item:vs_clockwork:wanderlite_matrix>'
+[17:48:11.250][INFO][CraftTweaker]: Removing all recipes that output <item:vs_clockwork:physics_infuser>
+[17:48:11.293][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.303][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:physics_infuser' that outputs: '<item:vs_clockwork:physics_infuser>'
+[17:48:11.303][INFO][CraftTweaker]: Removing all recipes that output <item:vs_clockwork:wanderwand>
+[17:48:11.323][INFO][CraftTweaker]: Removed 0 recipes registered in these 0 recipe managers: []
+[17:48:11.324][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:wanderwand' that outputs: '<item:vs_clockwork:wanderwand>'
+[17:48:11.324][INFO][CraftTweaker]: Removing all recipes that output <item:vs_clockwork:balloon_casing>
+[17:48:11.344][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.344][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:balloon_casing' that outputs: '<item:vs_clockwork:balloon_casing>'
+[17:48:11.345][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_minecraft_dried_kelp' contains null or empty ingredients, removing entries!
+[17:48:11.345][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_minecraft_dried_kelp' that outputs: '<item:minecraft:dried_kelp>'
+[17:48:11.345][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:item_minecraft_lead' that outputs: '<item:minecraft:lead> * 2'
+[17:48:11.346][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_createaddition_diamond_grit_sandpaper' contains null or empty ingredients, removing entries!
+[17:48:11.346][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_createaddition_diamond_grit_sandpaper' that outputs: '<item:createaddition:diamond_grit_sandpaper>'
+[17:48:11.346][INFO][CraftTweaker]: Removing all recipes that output <item:createdieselgenerators:oil_scanner>
+[17:48:11.364][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.365][INFO][CraftTweaker]: Removing all recipes that output <item:createdieselgenerators:pumpjack_bearing>
+[17:48:11.373][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.373][INFO][CraftTweaker]: Removing all recipes that output <item:createdieselgenerators:pumpjack_crank>
+[17:48:11.383][INFO][CraftTweaker]: Removed 0 recipes registered in these 0 recipe managers: []
+[17:48:11.383][INFO][CraftTweaker]: Removing all recipes that output <item:createdieselgenerators:pumpjack_head>
+[17:48:11.392][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.392][INFO][CraftTweaker]: Removing all recipes that output <item:createdieselgenerators:distillation_controller>
+[17:48:11.400][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.400][INFO][CraftTweaker]: Removing all recipes that output <item:createdieselgenerators:hammer>
+[17:48:11.409][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.409][INFO][CraftTweaker]: Removing all recipes that output <item:createdieselgenerators:wire_cutters>
+[17:48:11.418][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.418][INFO][CraftTweaker]: Removing all recipes that output <item:create_new_age:reinforced_motor>
+[17:48:11.427][INFO][CraftTweaker]: Removed 0 recipes registered in these 0 recipe managers: []
+[17:48:11.427][INFO][CraftTweaker]: Removing all recipes that output <item:create_new_age:advanced_motor>
+[17:48:11.435][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.435][INFO][CraftTweaker]: Removing all recipes that output <item:create_new_age:basic_motor>
+[17:48:11.444][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.445][INFO][CraftTweaker]: Removing all recipes that output <item:create_new_age:redstone_magnet>
+[17:48:11.452][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.452][INFO][CraftTweaker]: Removing all recipes that output <item:create_new_age:layered_magnet>
+[17:48:11.460][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.461][INFO][CraftTweaker]: Removing all recipes that output <item:create_new_age:fluxuated_magnetite>
+[17:48:11.469][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.469][INFO][CraftTweaker]: Removing all recipes that output <item:create_new_age:netherite_magnet>
+[17:48:11.478][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.478][INFO][CraftTweaker]: Removing all recipes that output <item:create_new_age:basic_energiser>
+[17:48:11.487][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.487][INFO][CraftTweaker]: Removing all recipes that output <item:create_new_age:advanced_energiser>
+[17:48:11.497][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.497][INFO][CraftTweaker]: Removing all recipes that output <item:create_new_age:reinforced_energiser>
+[17:48:11.507][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.507][INFO][CraftTweaker]: Removing all recipes that output <item:create_new_age:advanced_motor_extension>
+[17:48:11.515][INFO][CraftTweaker]: Removed 0 recipes registered in these 0 recipe managers: []
+[17:48:11.515][INFO][CraftTweaker]: Removing all recipes that output <item:create_new_age:basic_motor_extension>
+[17:48:11.525][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.525][INFO][CraftTweaker]: Removing all recipes that output <item:createaddition:small_light_connector>
+[17:48:11.534][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.534][INFO][CraftTweaker]: Removing all recipes that output <item:createaddition:large_connector>
+[17:48:11.552][INFO][CraftTweaker]: Removed 2 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 2]
+[17:48:11.552][INFO][CraftTweaker]: Removing all recipes that output <item:createaddition:connector>
+[17:48:11.559][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.560][INFO][CraftTweaker]: Removing all recipes that output <item:create_new_age:electrical_connector>
+[17:48:11.567][INFO][CraftTweaker]: Removed 2 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 2]
+[17:48:11.567][INFO][CraftTweaker]: Removing all recipes that output <item:createaddition:modular_accumulator>
+[17:48:11.576][INFO][CraftTweaker]: Removed 2 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 2]
+[17:48:11.577][INFO][CraftTweaker]: Removing all recipes that output <item:create_new_age:heater>
+[17:48:11.583][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.583][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_create_new_age_heater' that outputs: '<item:create_new_age:heater>'
+[17:48:11.583][INFO][CraftTweaker]: Removing all recipes that output <item:create_new_age:heat_pump>
+[17:48:11.591][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.592][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:heat_pump' that outputs: '<item:create_new_age:heat_pump>'
+[17:48:11.592][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_forge_magma_block' contains null or empty ingredients, removing entries!
+[17:48:11.592][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_forge_magma_block' that outputs: '<item:minecraft:magma_block>'
+[17:48:11.592][INFO][CraftTweaker]: Removing all recipes that output <item:weather2:weather_item>
+[17:48:11.600][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.600][INFO][CraftTweaker]: Removing all recipes that output <item:vs_clockwork:gravitron>
+[17:48:11.607][INFO][CraftTweaker]: Removed 0 recipes registered in these 0 recipe managers: []
+[17:48:11.607][INFO][CraftTweaker]: Removing all recipes that output <item:afc:wood/boat/baobab>
+[17:48:11.614][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.614][INFO][CraftTweaker]: Removing all recipes that output <item:afc:wood/boat/eucalyptus>
+[17:48:11.620][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.621][INFO][CraftTweaker]: Removing all recipes that output <item:afc:wood/boat/mahogany>
+[17:48:11.627][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.627][INFO][CraftTweaker]: Removing all recipes that output <item:afc:wood/boat/hevea>
+[17:48:11.632][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.632][INFO][CraftTweaker]: Removing all recipes that output <item:afc:wood/boat/tualang>
+[17:48:11.638][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.639][INFO][CraftTweaker]: Removing all recipes that output <item:afc:wood/boat/teak>
+[17:48:11.645][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.645][INFO][CraftTweaker]: Removing all recipes that output <item:afc:wood/boat/cypress>
+[17:48:11.650][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.650][INFO][CraftTweaker]: Removing all recipes that output <item:afc:wood/boat/fig>
+[17:48:11.657][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.657][INFO][CraftTweaker]: Removing all recipes that output <item:afc:wood/boat/ironwood>
+[17:48:11.664][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.664][INFO][CraftTweaker]: Removing all recipes that output <item:afc:wood/boat/ipe>
+[17:48:11.669][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.669][INFO][CraftTweaker]: Removing all recipes that output <item:bombs:demolition_table>
+[17:48:11.675][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.675][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_bombs_demolition_table' that outputs: '<item:bombs:demolition_table>'
+[17:48:11.676][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_minecraft_tnt' that outputs: '<item:minecraft:tnt>'
+[17:48:11.676][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_minecraft_amethyst_shard' contains null or empty ingredients, removing entries!
+[17:48:11.676][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_minecraft_amethyst_shard' that outputs: '<item:minecraft:amethyst_shard>'
+[17:48:11.676][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_minecraft_sponge' that outputs: '<item:minecraft:sponge>'
+[17:48:11.676][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_minecraft_amethyst_shard' contains null or empty ingredients, removing entries!
+[17:48:11.676][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_minecraft_amethyst_shard' that outputs: '<item:minecraft:amethyst_shard>'
+[17:48:11.676][WARN][CraftTweaker]: A recipe with the name 'item_minecraft_amethyst_shard' already exists and will be overwritten: this is most likely an error in your scripts
+[17:48:11.676][INFO][CraftTweaker]: Removing all recipes that output <item:minecraft:amethyst_block>
+[17:48:11.681][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.682][INFO][CraftTweaker]: Removing all recipes that output <item:minecraft:tinted_glass>
+[17:48:11.686][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.687][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_tfc_medicine_dressing' contains null or empty ingredients, removing entries!
+[17:48:11.687][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_tfc_medicine_dressing' that outputs: '<item:tfc_medicine:dressing> * 6'
+[17:48:11.688][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_minecraft_paper_blue' contains null or empty ingredients, removing entries!
+[17:48:11.688][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_minecraft_paper_blue' that outputs: '<item:minecraft:paper> * 2'
+[17:48:11.688][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_minecraft_paper_red' contains null or empty ingredients, removing entries!
+[17:48:11.689][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_minecraft_paper_red' that outputs: '<item:minecraft:paper> * 2'
+[17:48:11.689][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_minecraft_paper_wood' contains null or empty ingredients, removing entries!
+[17:48:11.689][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_minecraft_paper_wood' that outputs: '<item:minecraft:paper> * 2'
+[17:48:11.689][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_minecraft_paper_jug' contains null or empty ingredients, removing entries!
+[17:48:11.689][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_minecraft_paper_jug' that outputs: '<item:minecraft:paper> * 2'
+[17:48:11.689][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_minecraft_paper' contains null or empty ingredients, removing entries!
+[17:48:11.689][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_minecraft_paper' that outputs: '<item:minecraft:paper> * 2'
+[17:48:11.690][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_projectred_core_plate' contains null or empty ingredients, removing entries!
+[17:48:11.690][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_projectred_core_plate' that outputs: '<item:projectred_core:plate>'
+[17:48:11.690][INFO][CraftTweaker]: Removing all recipes that output <item:projectred_core:plate>
+[17:48:11.695][INFO][CraftTweaker]: Removed 2 recipes registered in these 2 recipe managers: [<recipetype:minecraft:crafting>: 1, <recipetype:minecraft:smelting>: 1]
+[17:48:11.696][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_projectred_core_plate' contains null or empty ingredients, removing entries!
+[17:48:11.696][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_projectred_core_plate' that outputs: '<item:projectred_core:plate>'
+[17:48:11.696][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_projectred_transmission_orange_insulated_wire' contains null or empty ingredients, removing entries!
+[17:48:11.696][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_projectred_transmission_orange_insulated_wire' that outputs: '<item:projectred_transmission:orange_insulated_wire>'
+[17:48:11.696][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_projectred_transmission_yellow_insulated_wire' contains null or empty ingredients, removing entries!
+[17:48:11.696][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_projectred_transmission_yellow_insulated_wire' that outputs: '<item:projectred_transmission:yellow_insulated_wire>'
+[17:48:11.697][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_projectred_transmission_white_insulated_wire' contains null or empty ingredients, removing entries!
+[17:48:11.697][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_projectred_transmission_white_insulated_wire' that outputs: '<item:projectred_transmission:white_insulated_wire>'
+[17:48:11.697][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_projectred_transmission_gray_insulated_wire' contains null or empty ingredients, removing entries!
+[17:48:11.697][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_projectred_transmission_gray_insulated_wire' that outputs: '<item:projectred_transmission:gray_insulated_wire>'
+[17:48:11.697][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_projectred_transmission_black_insulated_wire' contains null or empty ingredients, removing entries!
+[17:48:11.697][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_projectred_transmission_black_insulated_wire' that outputs: '<item:projectred_transmission:black_insulated_wire>'
+[17:48:11.697][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_projectred_core_infused_silicon' contains null or empty ingredients, removing entries!
+[17:48:11.697][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_projectred_core_infused_silicon' that outputs: '<item:projectred_core:infused_silicon>'
+[17:48:11.697][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_projectred_core_energized_silicon' contains null or empty ingredients, removing entries!
+[17:48:11.697][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_projectred_core_energized_silicon' that outputs: '<item:projectred_core:energized_silicon>'
+[17:48:11.697][INFO][CraftTweaker]: Removing all recipes that output <item:projectred_core:multimeter>
+[17:48:11.703][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.704][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:item_projectred_core_multimeter' that outputs: '<item:projectred_core:multimeter>'
+[17:48:11.704][INFO][CraftTweaker]: Removing all recipes that output <item:projectred_core:screwdriver>
+[17:48:11.710][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.711][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:item_projectred_core_screwdriver' that outputs: '<item:projectred_core:screwdriver>'
+[17:48:11.711][INFO][CraftTweaker]: Removing all recipes that output <item:integrated_circuit:integrated_circuit>
+[17:48:11.717][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.718][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:integrated_circuit' that outputs: '<item:integrated_circuit:integrated_circuit>'
+[17:48:11.718][INFO][CraftTweaker]: Removing all recipes that output <item:minecraft:repeater>
+[17:48:11.723][INFO][CraftTweaker]: Removed 2 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 2]
+[17:48:11.723][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_minecraft_repeater' that outputs: '<item:minecraft:repeater>'
+[17:48:11.723][INFO][CraftTweaker]: Removing all recipes that output <item:minecraft:comparator>
+[17:48:11.728][INFO][CraftTweaker]: Removed 2 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 2]
+[17:48:11.728][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_minecraft_comparator' that outputs: '<item:minecraft:comparator>'
+[17:48:11.728][INFO][CraftTweaker]: Removing all recipes that output <item:minecraft:redstone_block>
+[17:48:11.733][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.733][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_minecraft_redstone_block' that outputs: '<item:minecraft:redstone_block>'
+[17:48:11.733][INFO][CraftTweaker]: Removing all recipes that output <item:minecraft:tripwire_hook>
+[17:48:11.738][INFO][CraftTweaker]: Removed 2 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 2]
+[17:48:11.739][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_minecraft_tripwire_hook' that outputs: '<item:minecraft:tripwire_hook>'
+[17:48:11.739][INFO][CraftTweaker]: Removing all recipes that output <item:minecraft:redstone_torch>
+[17:48:11.744][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.744][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:block_minecraft_redstone_torch' contains null or empty ingredients, removing entries!
+[17:48:11.744][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:block_minecraft_redstone_torch' that outputs: '<item:minecraft:redstone_torch>'
+[17:48:11.745][INFO][CraftTweaker]: Removing all recipes that output <item:minecraft:lever>
+[17:48:11.749][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.749][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_minecraft_lever' that outputs: '<item:minecraft:lever>'
+[17:48:11.749][INFO][CraftTweaker]: Removing all recipes that output <item:create:transmitter>
+[17:48:11.754][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.755][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:item_create_transmitter' that outputs: '<item:create:transmitter>'
+[17:48:11.755][INFO][CraftTweaker]: Removing all recipes that output <item:create:pulse_timer>
+[17:48:11.760][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.760][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_create_pulse_timer' that outputs: '<item:create:pulse_timer>'
+[17:48:11.760][INFO][CraftTweaker]: Removing all recipes that output <item:create:pulse_repeater>
+[17:48:11.765][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.765][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_create_pulse_repeater' that outputs: '<item:create:pulse_repeater>'
+[17:48:11.766][INFO][CraftTweaker]: Removing all recipes that output <item:create:powered_latch>
+[17:48:11.770][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.770][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_create_powered_latch' that outputs: '<item:create:powered_latch>'
+[17:48:11.770][INFO][CraftTweaker]: Removing all recipes that output <item:create:powered_toggle_latch>
+[17:48:11.776][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.776][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_create_powered_toggle_latch' that outputs: '<item:create:powered_toggle_latch>'
+[17:48:11.776][INFO][CraftTweaker]: Removing all recipes that output <item:create:pulse_extender>
+[17:48:11.781][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.781][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_create_pulse_extender' that outputs: '<item:create:pulse_extender>'
+[17:48:11.781][INFO][CraftTweaker]: Removing all recipes that output <item:minecraft:daylight_detector>
+[17:48:11.786][INFO][CraftTweaker]: Removed 2 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 2]
+[17:48:11.786][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_minecraft_daylight_detector' that outputs: '<item:minecraft:daylight_detector>'
+[17:48:11.786][INFO][CraftTweaker]: Removing all recipes that output <item:minecraft:piston>
+[17:48:11.791][INFO][CraftTweaker]: Removed 3 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 3]
+[17:48:11.791][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_minecraft_piston' that outputs: '<item:minecraft:piston>'
+[17:48:11.791][INFO][CraftTweaker]: Removing all recipes that output <item:create:analog_lever>
+[17:48:11.796][INFO][CraftTweaker]: Removed 2 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 2]
+[17:48:11.797][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_create_analog_lever' that outputs: '<item:create:analog_lever>'
+[17:48:11.797][INFO][CraftTweaker]: Removing all recipes that output <item:create_connected:sequenced_pulse_generator>
+[17:48:11.801][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.802][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_create_connected_sequenced_pulse_generator' that outputs: '<item:create_connected:sequenced_pulse_generator>'
+[17:48:11.802][INFO][CraftTweaker]: Removing all recipes that output <item:projectred_core:red_ingot>
+[17:48:11.807][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:smelting>: 1]
+[17:48:11.808][INFO][CraftTweaker]: Removing all recipes that output <item:projectred_core:red_iron_comp>
+[17:48:11.813][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.813][INFO][CraftTweaker]: Removing all recipes that output <item:integrated_circuit:white_integrated_circuit>
+[17:48:11.818][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.818][INFO][CraftTweaker]: Removing all recipes that output <item:integrated_circuit:light_gray_integrated_circuit>
+[17:48:11.824][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.824][INFO][CraftTweaker]: Removing all recipes that output <item:integrated_circuit:orange_integrated_circuit>
+[17:48:11.829][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.829][INFO][CraftTweaker]: Removing all recipes that output <item:integrated_circuit:magenta_integrated_circuit>
+[17:48:11.833][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.833][INFO][CraftTweaker]: Removing all recipes that output <item:integrated_circuit:light_blue_integrated_circuit>
+[17:48:11.838][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.839][INFO][CraftTweaker]: Removing all recipes that output <item:integrated_circuit:yellow_integrated_circuit>
+[17:48:11.843][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.843][INFO][CraftTweaker]: Removing all recipes that output <item:integrated_circuit:lime_integrated_circuit>
+[17:48:11.847][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.848][INFO][CraftTweaker]: Removing all recipes that output <item:integrated_circuit:pink_integrated_circuit>
+[17:48:11.853][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.853][INFO][CraftTweaker]: Removing all recipes that output <item:integrated_circuit:gray_integrated_circuit>
+[17:48:11.857][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.858][INFO][CraftTweaker]: Removing all recipes that output <item:integrated_circuit:cyan_integrated_circuit>
+[17:48:11.863][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.863][INFO][CraftTweaker]: Removing all recipes that output <item:integrated_circuit:purple_integrated_circuit>
+[17:48:11.867][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.867][INFO][CraftTweaker]: Removing all recipes that output <item:integrated_circuit:blue_integrated_circuit>
+[17:48:11.872][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.872][INFO][CraftTweaker]: Removing all recipes that output <item:integrated_circuit:brown_integrated_circuit>
+[17:48:11.877][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.877][INFO][CraftTweaker]: Removing all recipes that output <item:integrated_circuit:green_integrated_circuit>
+[17:48:11.881][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.881][INFO][CraftTweaker]: Removing all recipes that output <item:integrated_circuit:red_integrated_circuit>
+[17:48:11.885][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.885][INFO][CraftTweaker]: Removing all recipes that output <item:integrated_circuit:black_integrated_circuit>
+[17:48:11.889][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.890][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_create_electron_tube' contains null or empty ingredients, removing entries!
+[17:48:11.890][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_create_electron_tube' that outputs: '<item:create:electron_tube>'
+[17:48:11.890][INFO][CraftTweaker]: Removing all recipes that output <item:create:haunted_bell>
+[17:48:11.894][INFO][CraftTweaker]: Removed 0 recipes registered in these 0 recipe managers: []
+[17:48:11.894][INFO][CraftTweaker]: Removing all recipes that output <item:create:peculiar_bell>
+[17:48:11.898][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.898][INFO][CraftTweaker]: Removing all recipes that output <item:cb_microblock:diamond_saw>
+[17:48:11.905][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.905][INFO][CraftTweaker]: Removing all recipes that output <item:cb_microblock:stone_saw>
+[17:48:11.913][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.913][INFO][CraftTweaker]: Removing all recipes that output <item:cb_microblock:iron_saw>
+[17:48:11.918][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.919][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_cb_microblock_iron_saw' contains null or empty ingredients, removing entries!
+[17:48:11.919][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_cb_microblock_iron_saw' that outputs: '<item:cb_microblock:iron_saw>'
+[17:48:11.919][INFO][CraftTweaker]: Removing all recipes that output <item:projectred_transmission:red_alloy_wire>
+[17:48:11.924][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.924][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_projectred_transmission_red_alloy_wire_copper' contains null or empty ingredients, removing entries!
+[17:48:11.924][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_projectred_transmission_red_alloy_wire_copper' that outputs: '<item:projectred_transmission:red_alloy_wire>'
+[17:48:11.924][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_projectred_transmission_red_alloy_wire_steel' contains null or empty ingredients, removing entries!
+[17:48:11.924][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_projectred_transmission_red_alloy_wire_steel' that outputs: '<item:projectred_transmission:red_alloy_wire>'
+[17:48:11.924][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_projectred_transmission_red_alloy_wire_iron' contains null or empty ingredients, removing entries!
+[17:48:11.924][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_projectred_transmission_red_alloy_wire_iron' that outputs: '<item:projectred_transmission:red_alloy_wire>'
+[17:48:11.925][WARN][CraftTweaker]: Shapeless recipe with ID 'crafttweaker:item_projectred_transmission_red_alloy_wire_alluminium' contains null or empty ingredients, removing entries!
+[17:48:11.925][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:item_projectred_transmission_red_alloy_wire_alluminium' that outputs: '<item:projectred_transmission:red_alloy_wire>'
+[17:48:11.925][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_firmalife_drying_mat_fallen' that outputs: '<item:firmalife:drying_mat>'
+[17:48:11.925][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_firmalife_drying_mat_leaves' that outputs: '<item:firmalife:drying_mat>'
+[17:48:11.925][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_firmalife_drying_mat_dark' that outputs: '<item:firmalife:drying_mat>'
+[17:48:11.925][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_firmalife_drying_mat_light' that outputs: '<item:firmalife:drying_mat>'
+[17:48:11.925][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_firmalife_drying_mat_plants' that outputs: '<item:firmalife:drying_mat>'
+[17:48:11.925][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:block_firmalife_drying_mat_kelp' that outputs: '<item:firmalife:drying_mat>'
+[17:48:11.925][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:strudy_sheet' that outputs: '<item:create:sturdy_sheet>'
+[17:48:11.926][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:steel_sheet' that outputs: '<item:tfc:metal/sheet/steel>'
+[17:48:11.927][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:bronze' that outputs: '<item:createbigcannons:bronze_ingot>'
+[17:48:11.927][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:black_bronze' that outputs: '<item:createbigcannons:bronze_ingot>'
+[17:48:11.928][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:bismuth_bronze' that outputs: '<item:createbigcannons:bronze_ingot>'
+[17:48:11.928][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:zinc_create' that outputs: '<item:create:zinc_ingot>'
+[17:48:11.928][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:zinc_tfc' that outputs: '<item:tfc:metal/ingot/zinc>'
+[17:48:11.928][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:nickel_create' that outputs: '<item:creatingspace:nickel_ingot>'
+[17:48:11.929][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:nickel_tfc' that outputs: '<item:tfc:metal/ingot/nickel>'
+[17:48:11.929][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:copper_minecraft' that outputs: '<item:minecraft:copper_ingot>'
+[17:48:11.929][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:copper_tfc' that outputs: '<item:tfc:metal/ingot/copper>'
+[17:48:11.929][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:brass_create' that outputs: '<item:create:brass_ingot>'
+[17:48:11.929][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:brass_tfc' that outputs: '<item:tfc:metal/ingot/brass>'
+[17:48:11.930][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:iron_minecraft' that outputs: '<item:minecraft:iron_ingot>'
+[17:48:11.930][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:iron_tfc' that outputs: '<item:tfc:metal/ingot/wrought_iron>'
+[17:48:11.930][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:uranium_nuclear' that outputs: '<item:create_mixed_nuclear:reactive_uranium_ingot>'
+[17:48:11.930][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:uranium_tfc' that outputs: '<item:immersiveengineering:ingot_uranium>'
+[17:48:11.930][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:smooth_stone' that outputs: '<item:minecraft:smooth_stone>'
+[17:48:11.930][INFO][CraftTweaker]: Removing all recipes that output <item:createdieselgenerators:diesel_engine>
+[17:48:11.935][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.935][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:diesel_engine' that outputs: '<item:createdieselgenerators:diesel_engine>'
+[17:48:11.935][INFO][CraftTweaker]: Removing all recipes that output <item:createdieselgenerators:large_diesel_engine>
+[17:48:11.940][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.941][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shaped", with name: 'crafttweaker:large_diesel_engine' that outputs: '<item:createdieselgenerators:large_diesel_engine>'
+[17:48:11.941][INFO][CraftTweaker]: Removing all recipes that output <item:tfc_kac:purple_steel_crate>
+[17:48:11.945][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.945][INFO][CraftTweaker]: Removing all recipes that output <item:tfc_kac:purple_steel_kiln>
+[17:48:11.949][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.950][INFO][CraftTweaker]: Removing all recipes that output <item:firmalife:vat>
+[17:48:11.954][INFO][CraftTweaker]: Removed 1 recipes registered in these 1 recipe managers: [<recipetype:minecraft:crafting>: 1]
+[17:48:11.955][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:vat_steel' that outputs: '<item:firmalife:vat>'
+[17:48:11.955][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:vat_blue_steel' that outputs: '<item:firmalife:vat>'
+[17:48:11.955][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:vat_black_steel' that outputs: '<item:firmalife:vat>'
+[17:48:11.955][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:vat_red_steel' that outputs: '<item:firmalife:vat>'
+[17:48:11.956][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:vat_bronze' that outputs: '<item:firmalife:vat>'
+[17:48:11.956][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:vat_black_bronze' that outputs: '<item:firmalife:vat>'
+[17:48:11.956][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:vat_bismuth_bronze' that outputs: '<item:firmalife:vat>'
+[17:48:11.956][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:vat_brass' that outputs: '<item:firmalife:vat>'
+[17:48:11.956][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:vat_gold' that outputs: '<item:firmalife:vat>'
+[17:48:11.956][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:vat_silver' that outputs: '<item:firmalife:vat>'
+[17:48:11.957][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:wrought_iron_vat' that outputs: '<item:firmalife:vat>'
+[17:48:11.957][INFO][CraftTweaker]: Adding 'minecraft:crafting' recipe, of type: "shapeless", with name: 'crafttweaker:cast_iron_vat' that outputs: '<item:firmalife:vat>'
+[17:48:11.962][INFO][CraftTweaker-ZenCode]: Execution for loader 'crafttweaker' completed successfully
+[17:48:11.964][INFO][CraftTweaker]: crafttweaker.reload.complete

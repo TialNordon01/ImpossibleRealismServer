@@ -1,0 +1,567 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "456C4CB120AD6439"
+	group: ""
+	icon: "tfc:brick/andesite"
+	id: "456C4CB120AD6439"
+	order_index: 0
+	quest_links: [
+		{
+			id: "4685200802985114"
+			linked_quest: "45785EFFBCC1FE82"
+			x: -11.0d
+			y: -2.0d
+		}
+		{
+			id: "3ED04C4A85973041"
+			linked_quest: "4342BFB6231210DD"
+			x: -10.0d
+			y: -2.0d
+		}
+		{
+			id: "49C40B77A6FDEC61"
+			linked_quest: "410F9593FE44D08B"
+			x: -9.0d
+			y: -2.0d
+		}
+		{
+			id: "523B443813B03136"
+			linked_quest: "22AE241ED2DE48F9"
+			x: -12.0d
+			y: -1.5d
+		}
+	]
+	quests: [
+		{
+			id: "2C2B768AA589B7AD"
+			size: 2.0d
+			subtitle: "Сделайте каменные инструменты"
+			tasks: [
+				{
+					id: "13023B40AFA99B8A"
+					item: "tfc:rock/loose/granite"
+					type: "item"
+				}
+				{
+					id: "719123A6583FDD19"
+					item: "tfc:rock/loose/diorite"
+					type: "item"
+				}
+				{
+					id: "2501988237FDFE66"
+					item: "tfc:rock/loose/gabbro"
+					type: "item"
+				}
+				{
+					id: "2253DF22C840E6CD"
+					item: "tfc:rock/loose/shale"
+					type: "item"
+				}
+				{
+					id: "6E6CFDB264044C37"
+					item: "tfc:rock/loose/claystone"
+					type: "item"
+				}
+				{
+					id: "4B7C335DA99C823D"
+					item: "tfc:rock/loose/limestone"
+					type: "item"
+				}
+				{
+					id: "35EDFE6489401FEE"
+					item: "tfc:rock/loose/conglomerate"
+					type: "item"
+				}
+				{
+					id: "5BA88496A7EAD512"
+					item: "tfc:rock/loose/dolomite"
+					type: "item"
+				}
+				{
+					id: "69E33234E9BDB723"
+					item: "tfc:rock/loose/chert"
+					type: "item"
+				}
+				{
+					id: "4F0394CF16ABB8FE"
+					item: "tfc:rock/loose/chalk"
+					type: "item"
+				}
+				{
+					id: "0DFFC25BA399F9CC"
+					item: "tfc:rock/loose/rhyolite"
+					type: "item"
+				}
+				{
+					id: "504AFD6502A51E5B"
+					item: "tfc:rock/loose/basalt"
+					type: "item"
+				}
+				{
+					id: "56ACEC8A25330DEE"
+					item: "tfc:rock/loose/andesite"
+					type: "item"
+				}
+				{
+					id: "46D7C06A27ADCD99"
+					item: "tfc:rock/loose/dacite"
+					type: "item"
+				}
+				{
+					id: "22FB4D69D346D1B5"
+					item: "tfc:rock/loose/quartzite"
+					type: "item"
+				}
+				{
+					id: "518D93FCA67ED7AB"
+					item: "tfc:rock/loose/slate"
+					type: "item"
+				}
+				{
+					id: "4F5993E42D5DD62E"
+					item: "tfc:rock/loose/phyllite"
+					type: "item"
+				}
+				{
+					id: "784C41FBDF650C13"
+					item: "tfc:rock/loose/schist"
+					type: "item"
+				}
+				{
+					id: "693A79372D590638"
+					item: "tfc:rock/loose/gneiss"
+					type: "item"
+				}
+				{
+					id: "67F5204905292771"
+					item: "tfc:rock/loose/marble"
+					type: "item"
+				}
+			]
+			title: "Каменная обработка"
+			x: -5.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2C2B768AA589B7AD"]
+			dependency_requirement: "one_started"
+			id: "041A1A019616A41F"
+			subtitle: "Сделайте кровать из грязи и сена"
+			tasks: [{
+				id: "05E6D18691CAFD26"
+				item: "tfcsleep:straw_bed"
+				type: "item"
+			}]
+			title: "Место для сна"
+			x: -5.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["2C2B768AA589B7AD"]
+			id: "0D98545A9A71429D"
+			subtitle: "Разведите костёр!"
+			tasks: [{
+				icon: {
+					Count: 1
+					id: "tfc:firestarter"
+					tag: {
+						Damage: 0
+					}
+				}
+				id: "788EB3160837FCF3"
+				observe_type: 0
+				timer: 0L
+				to_observe: "tfc:firepit"
+				type: "observation"
+			}]
+			title: "Огонь"
+			x: -5.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["2C2B768AA589B7AD"]
+			dependency_requirement: "one_started"
+			id: "0D6659EECD4A2118"
+			subtitle: "Ваш первый металл"
+			tasks: [
+				{
+					id: "6BB2FC35B9EA67A8"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+						id: "tfc:ore/small_native_copper"
+					}
+					type: "item"
+				}
+				{
+					id: "08266E3CEF85F016"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+						id: "tfc:ore/small_tetrahedrite"
+					}
+					type: "item"
+				}
+				{
+					id: "6DC5EABE6DBC15A6"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+						id: "tfc:ore/small_malachite"
+					}
+					type: "item"
+				}
+			]
+			title: "Медь"
+			x: -3.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["2C2B768AA589B7AD"]
+			dependency_requirement: "one_started"
+			id: "21A0FD074C618AA4"
+			subtitle: "Лепите ваши первые творения!"
+			tasks: [{
+				id: "4604D81AA22DA971"
+				item: "minecraft:clay_ball"
+				type: "item"
+			}]
+			title: "Керамика"
+			x: -7.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["61ADC86E119F11B8"]
+			id: "25D9F6BFC527F5C5"
+			subtitle: "Ваша первая ёмкость для воды"
+			tasks: [{
+				id: "454B6A3D6836542F"
+				item: "tfc:ceramic/jug"
+				type: "item"
+			}]
+			x: -12.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"0D98545A9A71429D"
+				"61ADC86E119F11B8"
+			]
+			id: "0ED058529DD5EBD0"
+			subtitle: "Вскипятите воду и сварите суп"
+			tasks: [{
+				id: "4ED57CFE2942C731"
+				item: "tfc:ceramic/pot"
+				type: "item"
+			}]
+			title: "Вода и суп"
+			x: -10.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["61ADC86E119F11B8"]
+			id: "5B3109DD8DEB92E1"
+			subtitle: "Ваша первая ёмкость для жидкого металла"
+			tasks: [{
+				id: "6F111DA8D0373F9A"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						Parent: {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:ceramic/vessel"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -11.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["61ADC86E119F11B8"]
+			id: "44AC90CF09268EBF"
+			subtitle: "Сохраняет еду немного дольше обычного"
+			tasks: [{
+				id: "7D6F2437F181D3FD"
+				item: "tfc:ceramic/large_vessel"
+				type: "item"
+			}]
+			x: -11.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["2C2B768AA589B7AD"]
+			dependency_requirement: "one_started"
+			id: "68455E83BBB35FA4"
+			subtitle: "Сделайте угольную яму и получите ваш первый уголёк"
+			tasks: [{
+				id: "6AA9C513DA03A4EA"
+				item: "minecraft:charcoal"
+				type: "item"
+			}]
+			title: "Угольная кузня"
+			x: -3.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"0D6659EECD4A2118"
+				"68455E83BBB35FA4"
+			]
+			dependency_requirement: "one_started"
+			id: "4657FDFB872572EA"
+			subtitle: "Пора добывать глубинные сокровища!"
+			tasks: [{
+				id: "3D801E8B4C9F0608"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/pickaxe/copper"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -1.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"4657FDFB872572EA"
+				"28AD72C437AD1249"
+			]
+			dependency_requirement: "one_started"
+			id: "38D7A061EEE68F3B"
+			shape: "square"
+			size: 2.0d
+			subtitle: "Билет в новую эру!"
+			tasks: [
+				{
+					icon: "tfc:rock/raw/rhyolite"
+					id: "06799608AA10330C"
+					observe_type: 0
+					timer: 0L
+					to_observe: "tfc:rock/anvil/rhyolite"
+					type: "observation"
+				}
+				{
+					icon: "tfc:rock/raw/andesite"
+					id: "2F2071AC1E50725E"
+					observe_type: 0
+					timer: 0L
+					to_observe: "tfc:rock/anvil/andesite"
+					type: "observation"
+				}
+				{
+					icon: "tfc:rock/raw/basalt"
+					id: "238BC38178972B58"
+					observe_type: 0
+					timer: 0L
+					to_observe: "tfc:rock/anvil/basalt"
+					type: "observation"
+				}
+				{
+					icon: "tfc:rock/raw/dacite"
+					id: "58587798291EF5CA"
+					observe_type: 0
+					timer: 0L
+					to_observe: "tfc:rock/anvil/dacite"
+					type: "observation"
+				}
+				{
+					icon: "tfc:rock/raw/gabbro"
+					id: "45EF3CDD251E17A2"
+					observe_type: 0
+					timer: 0L
+					to_observe: "tfc:rock/anvil/gabbro"
+					type: "observation"
+				}
+				{
+					icon: "tfc:rock/raw/diorite"
+					id: "01137BD5959C4674"
+					observe_type: 0
+					timer: 0L
+					to_observe: "tfc:rock/anvil/diorite"
+					type: "observation"
+				}
+				{
+					icon: "tfc:rock/raw/granite"
+					id: "4E8D13DD13133371"
+					observe_type: 0
+					timer: 0L
+					to_observe: "tfc:rock/anvil/granite"
+					type: "observation"
+				}
+			]
+			title: "Примитивная наковальня"
+			x: 1.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["21A0FD074C618AA4"]
+			id: "61ADC86E119F11B8"
+			subtitle: "Обожгите, но не обожгитесь"
+			tasks: [{
+				icon: "tfc:thatch"
+				id: "2F889794A293F651"
+				observe_type: 0
+				timer: 0L
+				to_observe: "tfc:pit_kiln"
+				type: "observation"
+			}]
+			title: "Яма для обжига"
+			x: -10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2C2B768AA589B7AD"]
+			dependency_requirement: "one_started"
+			id: "081FBA3E09CAC227"
+			subtitle: "Ваш первый крепкий блок!"
+			tasks: [
+				{
+					id: "690BFB07223902DB"
+					item: "minecraft:mud_bricks"
+					type: "item"
+				}
+				{
+					id: "5EBCAF5ED48946FC"
+					item: "tfc:mud_bricks/silt"
+					type: "item"
+				}
+				{
+					id: "34390AAE9AFD5740"
+					item: "tfc:mud_bricks/loam"
+					type: "item"
+				}
+				{
+					id: "5525285488F9C11E"
+					item: "tfc:mud_bricks/sandy_loam"
+					type: "item"
+				}
+				{
+					id: "075EA572824CDCBD"
+					item: "tfc:mud_bricks/silty_loam"
+					type: "item"
+				}
+			]
+			x: -6.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["2C2B768AA589B7AD"]
+			dependency_requirement: "one_started"
+			id: "6930ABCD5B9EDEBC"
+			subtitle: "Укрепление дерева глиной"
+			tasks: [
+				{
+					id: "763CCEA50B71E213"
+					item: "tfc:wattle"
+					type: "item"
+				}
+				{
+					id: "5124888E62DDF645"
+					item: "tfc:daub"
+					type: "item"
+				}
+			]
+			title: "Плетень"
+			x: -3.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["21A0FD074C618AA4"]
+			id: "6E3A9A10EFFC905A"
+			subtitle: "Удобная готовка"
+			tasks: [
+				{
+					id: "2B1288B3E5FD2EAB"
+					item: "firmalife:oven_bottom"
+					type: "item"
+				}
+				{
+					id: "6C2597CFEFE8E5B6"
+					item: "firmalife:oven_top"
+					type: "item"
+				}
+				{
+					id: "3BF654BAA1B5D4B0"
+					item: "firmalife:oven_chimney"
+					type: "item"
+				}
+			]
+			title: "Печь"
+			x: -8.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["2C2B768AA589B7AD"]
+			id: "28AD72C437AD1249"
+			subtitle: "Хорош для сварки и ковки"
+			tasks: [
+				{
+					id: "4B393185980BC8A6"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+						id: "tfc:powder/flux"
+					}
+					type: "item"
+				}
+				{
+					id: "30D68C2E2D0A1AEE"
+					item: "tfc:rock/loose/chalk"
+					type: "item"
+				}
+				{
+					id: "3966E52895473D5F"
+					item: "tfc:rock/loose/limestone"
+					type: "item"
+				}
+				{
+					id: "476C05CA2ACD0989"
+					item: "tfc:rock/loose/marble"
+					type: "item"
+				}
+				{
+					id: "7A4E4C4D86EBB6B0"
+					item: "tfc:rock/loose/dolomite"
+					type: "item"
+				}
+			]
+			x: -3.0d
+			y: 2.5d
+		}
+	]
+	title: "Каменный век"
+}

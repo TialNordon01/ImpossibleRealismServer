@@ -1,0 +1,26 @@
+
+[fog]
+	#Enable blizzard fog on the client during snow and never during rain.
+	enableSnowFog = true
+	#Intensity where fog starts (0..1). Below this, fog is off.
+	#Range: 0.0 ~ 1.0
+	fogStartIntensity = 0.5
+	#Intensity treated as max fog (0..1).
+	#Range: 0.0 ~ 1.0
+	fogMaxIntensity = 0.9
+	#Fog curve exponent. Higher values ramp the fog faster after the start threshold.
+	#Range: 0.2 ~ 8.0
+	fogCurve = 3.0
+	#Fog end distance at max fog in blocks.
+	#Range: 2.0 ~ 128.0
+	fogTargetFar = 8.0
+	#Fog start distance tweak at max fog.
+	#Range: 0.0 ~ 10.0
+	fogTargetNear = 0.1
+	#Range: 0.0 ~ 1.0
+	fogTargetR = 0.92
+	#Range: 0.0 ~ 1.0
+	fogTargetG = 0.92
+	#Range: 0.0 ~ 1.0
+	fogTargetB = 0.97
+

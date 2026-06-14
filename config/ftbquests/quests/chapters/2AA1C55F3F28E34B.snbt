@@ -1,0 +1,1594 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "2AA1C55F3F28E34B"
+	group: ""
+	icon: {
+		Count: 1
+		ForgeCaps: {
+			"tfc:item_heat": {
+				heat: 0.0f
+				ticks: 0L
+			}
+		}
+		id: "tfc:metal/ingot/steel"
+	}
+	id: "2AA1C55F3F28E34B"
+	order_index: 4
+	quest_links: [
+		{
+			id: "4CB057D9848D483D"
+			linked_quest: "710ED3E3E49FBE71"
+			size: 2.0d
+			x: -17.5d
+			y: 8.5d
+		}
+		{
+			id: "496CE422489425A4"
+			linked_quest: "5ECE04225827B4D8"
+			size: 2.0d
+			x: -19.5d
+			y: 8.5d
+		}
+		{
+			id: "2C3584C589F5D568"
+			linked_quest: "2730C5FFA4EE5685"
+			size: 2.0d
+			x: -22.5d
+			y: 8.5d
+		}
+	]
+	quests: [
+		{
+			dependencies: [
+				"710ED3E3E49FBE71"
+				"5ECE04225827B4D8"
+			]
+			id: "5DE2E1F12C9429B5"
+			tasks: [{
+				id: "4848CDC0E5E3AE49"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/ingot/pig_iron"
+				}
+				type: "item"
+			}]
+			x: -18.5d
+			y: 11.0d
+		}
+		{
+			dependencies: ["5DE2E1F12C9429B5"]
+			id: "27697723C30991F7"
+			tasks: [{
+				id: "13E667A5EAB8309C"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/ingot/high_carbon_steel"
+				}
+				type: "item"
+			}]
+			x: -20.0d
+			y: 13.0d
+		}
+		{
+			dependencies: [
+				"2730C5FFA4EE5685"
+				"27697723C30991F7"
+			]
+			dependency_requirement: "one_started"
+			id: "7BF51754438A7219"
+			subtitle: "Одно из двух"
+			tasks: [
+				{
+					id: "0D111857EA4197AA"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+						id: "tfc:metal/ingot/steel"
+					}
+					type: "item"
+				}
+				{
+					id: "7517D7D04CBA9E17"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+						id: "immersiveengineering:ingot_steel"
+					}
+					type: "item"
+				}
+			]
+			x: -21.5d
+			y: 15.0d
+		}
+		{
+			id: "3CE8A9E597F2990C"
+			tasks: [{
+				id: "39D7CD07D681F039"
+				item: "create:mechanical_mixer"
+				type: "item"
+			}]
+			x: -22.5d
+			y: 17.0d
+		}
+		{
+			dependencies: ["781C454C5FA963FF"]
+			id: "74008094394E6FC1"
+			tasks: [{
+				id: "29C025259156CFA3"
+				item: "create:mechanical_saw"
+				type: "item"
+			}]
+			x: -10.5d
+			y: 21.5d
+		}
+		{
+			dependencies: ["221592F1B5A038B8"]
+			id: "611F5856E76AF6DD"
+			tasks: [{
+				id: "124C9FB7A6B85517"
+				item: "create:mechanical_press"
+				type: "item"
+			}]
+			x: -10.5d
+			y: 24.0d
+		}
+		{
+			dependencies: [
+				"622EEE32DEA03D0E"
+				"7952BD692A164B91"
+			]
+			id: "155E1ADFB4686DAE"
+			tasks: [{
+				id: "537BCBCFD85DC2AB"
+				item: "createaddition:rolling_mill"
+				type: "item"
+			}]
+			x: -10.5d
+			y: 18.5d
+		}
+		{
+			dependencies: [
+				"3CA2AAF2C60CA5DF"
+				"4EEEE86C20614F87"
+			]
+			dependency_requirement: "one_started"
+			id: "463A16FED38ED9CA"
+			subtitle: "Маленькие куски"
+			tasks: [
+				{
+					id: "1A1EFE6EA672C958"
+					item: "tfc:rock/gravel/andesite"
+					type: "item"
+				}
+				{
+					id: "7F624E8F85C63D47"
+					item: "tfc:rock/gravel/claystone"
+					type: "item"
+				}
+				{
+					id: "45DD9707DA3544FC"
+					item: "tfc:rock/gravel/basalt"
+					type: "item"
+				}
+				{
+					id: "5E66AD3E1CBE8601"
+					item: "tfc:rock/gravel/gabbro"
+					type: "item"
+				}
+				{
+					id: "1C291C33A2F17B43"
+					item: "tfc:rock/gravel/gneiss"
+					type: "item"
+				}
+				{
+					id: "40AE8B878C818503"
+					item: "tfc:rock/gravel/schist"
+					type: "item"
+				}
+				{
+					id: "140C5CD108F0683D"
+					item: "tfc:rock/gravel/chert"
+					type: "item"
+				}
+				{
+					id: "4CC78F6F80119680"
+					item: "tfc:rock/gravel/slate"
+					type: "item"
+				}
+				{
+					id: "23E6C49431A2A2C8"
+					item: "tfc:rock/gravel/granite"
+					type: "item"
+				}
+				{
+					id: "20CDF73B419B3DC1"
+					item: "tfc:rock/gravel/dacite"
+					type: "item"
+				}
+				{
+					id: "201B32B127533289"
+					item: "tfc:rock/gravel/diorite"
+					type: "item"
+				}
+				{
+					id: "78A314D63D10AACB"
+					item: "tfc:rock/gravel/dolomite"
+					type: "item"
+				}
+				{
+					id: "6577E5BD3156B223"
+					item: "tfc:rock/gravel/limestone"
+					type: "item"
+				}
+				{
+					id: "10910845DA8D9AB7"
+					item: "tfc:rock/gravel/quartzite"
+					type: "item"
+				}
+				{
+					id: "2ED96E8528C14682"
+					item: "tfc:rock/gravel/conglomerate"
+					type: "item"
+				}
+				{
+					id: "6048C9DB439436C4"
+					item: "tfc:rock/gravel/chalk"
+					type: "item"
+				}
+				{
+					id: "4B9AB96E66EC4AA2"
+					item: "tfc:rock/gravel/marble"
+					type: "item"
+				}
+				{
+					id: "67018ED68B3B045F"
+					item: "tfc:rock/gravel/rhyolite"
+					type: "item"
+				}
+				{
+					id: "385ACC52E792FCD8"
+					item: "tfc:rock/gravel/shale"
+					type: "item"
+				}
+				{
+					id: "54946894304304A5"
+					item: "tfc:rock/gravel/phyllite"
+					type: "item"
+				}
+			]
+			title: "Гравий"
+			x: -7.0d
+			y: 13.5d
+		}
+		{
+			dependencies: [
+				"5CBBB2BE1CCF5726"
+				"455C17208912A699"
+			]
+			dependency_requirement: "one_started"
+			id: "77B064C385DBB1D8"
+			subtitle: "Мельчайшие кусочки"
+			tasks: [
+				{
+					id: "135A1F9B4433B53A"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+						id: "tfc:sand/white"
+					}
+					type: "item"
+				}
+				{
+					id: "7FBE8B83842D2A51"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+						id: "tfc:sand/yellow"
+					}
+					type: "item"
+				}
+				{
+					id: "16A028A7DF76C9C1"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+						id: "tfc:sand/green"
+					}
+					type: "item"
+				}
+				{
+					id: "54DD888C656323A3"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+						id: "tfc:sand/brown"
+					}
+					type: "item"
+				}
+				{
+					id: "209D32B564150283"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+						id: "tfc:sand/red"
+					}
+					type: "item"
+				}
+				{
+					id: "082BC1CCE46AE8AB"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+						id: "tfc:sand/black"
+					}
+					type: "item"
+				}
+			]
+			title: "Песок"
+			x: -7.0d
+			y: 16.0d
+		}
+		{
+			dependencies: [
+				"67A73BB9DEA8845F"
+				"5BB71CECFE8EA2A9"
+			]
+			dependency_requirement: "one_started"
+			id: "5414C44441319E4E"
+			subtitle: "Большие куски"
+			tasks: [
+				{
+					id: "2AA6B204E9477F5F"
+					item: "tfc:rock/cobble/andesite"
+					type: "item"
+				}
+				{
+					id: "6AD7B47FDB5054CD"
+					item: "tfc:rock/cobble/claystone"
+					type: "item"
+				}
+				{
+					id: "3DDFA93BD81ADE40"
+					item: "tfc:rock/cobble/basalt"
+					type: "item"
+				}
+				{
+					id: "43DCB707E751954C"
+					item: "tfc:rock/cobble/schist"
+					type: "item"
+				}
+				{
+					id: "06AAB68D9E3E13D4"
+					item: "tfc:rock/cobble/chert"
+					type: "item"
+				}
+				{
+					id: "71F0DBAFF9D8E1E2"
+					item: "tfc:rock/cobble/slate"
+					type: "item"
+				}
+				{
+					id: "59CA55F14AEB4723"
+					item: "tfc:rock/cobble/gabbro"
+					type: "item"
+				}
+				{
+					id: "3CECDA988B746257"
+					item: "tfc:rock/cobble/gneiss"
+					type: "item"
+				}
+				{
+					id: "7A5086BE2EB5A6EA"
+					item: "tfc:rock/cobble/granite"
+					type: "item"
+				}
+				{
+					id: "655A8A59E1578608"
+					item: "tfc:rock/cobble/dacite"
+					type: "item"
+				}
+				{
+					id: "10EBE41269FBCE1D"
+					item: "tfc:rock/cobble/diorite"
+					type: "item"
+				}
+				{
+					id: "287D52593F5B34AF"
+					item: "tfc:rock/cobble/dolomite"
+					type: "item"
+				}
+				{
+					id: "43EE818D00EB2AB7"
+					item: "tfc:rock/cobble/limestone"
+					type: "item"
+				}
+				{
+					id: "180F9EBA57B6E6BC"
+					item: "tfc:rock/cobble/quartzite"
+					type: "item"
+				}
+				{
+					id: "0E24CEC590578C9F"
+					item: "tfc:rock/cobble/conglomerate"
+					type: "item"
+				}
+				{
+					id: "4C7EC112CADF31C5"
+					item: "tfc:rock/cobble/chalk"
+					type: "item"
+				}
+				{
+					id: "7F2EEA46F8AD4D7B"
+					item: "tfc:rock/cobble/marble"
+					type: "item"
+				}
+				{
+					id: "3797E32793B36287"
+					item: "tfc:rock/cobble/rhyolite"
+					type: "item"
+				}
+				{
+					id: "4A305F80B7AEC7EB"
+					item: "tfc:rock/cobble/shale"
+					type: "item"
+				}
+				{
+					id: "2E19AE4959FA0D68"
+					item: "tfc:rock/cobble/phyllite"
+					type: "item"
+				}
+			]
+			title: "Булыжник"
+			x: -7.0d
+			y: 11.0d
+		}
+		{
+			id: "03C96953F8CF6C9A"
+			subtitle: "Пласт породы"
+			tasks: [
+				{
+					id: "031E99ED66521839"
+					item: "tfc:rock/raw/andesite"
+					type: "item"
+				}
+				{
+					id: "7FCB8577EC24F8D2"
+					item: "tfc:rock/raw/claystone"
+					type: "item"
+				}
+				{
+					id: "57E033C6F37A613C"
+					item: "tfc:rock/raw/schist"
+					type: "item"
+				}
+				{
+					id: "574A250AA91746CF"
+					item: "tfc:rock/raw/basalt"
+					type: "item"
+				}
+				{
+					id: "77D9C5595C47F907"
+					item: "tfc:rock/raw/gabbro"
+					type: "item"
+				}
+				{
+					id: "170529381FFC172E"
+					item: "tfc:rock/raw/gneiss"
+					type: "item"
+				}
+				{
+					id: "3BA4B281C49C0457"
+					item: "tfc:rock/raw/granite"
+					type: "item"
+				}
+				{
+					id: "54EB590C8C686C09"
+					item: "tfc:rock/raw/dacite"
+					type: "item"
+				}
+				{
+					id: "3AB4E7588A0CD7D8"
+					item: "tfc:rock/raw/diorite"
+					type: "item"
+				}
+				{
+					id: "115D1B0075C03776"
+					item: "tfc:rock/raw/dolomite"
+					type: "item"
+				}
+				{
+					id: "36946D5E65AA36AB"
+					item: "tfc:rock/raw/limestone"
+					type: "item"
+				}
+				{
+					id: "71D2F362E540ADC1"
+					item: "tfc:rock/raw/quartzite"
+					type: "item"
+				}
+				{
+					id: "3A865F7B66A9F50C"
+					item: "tfc:rock/raw/conglomerate"
+					type: "item"
+				}
+				{
+					id: "14DC8D78E9AE2EA5"
+					item: "tfc:rock/raw/chert"
+					type: "item"
+				}
+				{
+					id: "6C5F10E947C54709"
+					item: "tfc:rock/raw/chalk"
+					type: "item"
+				}
+				{
+					id: "320F8629FF6CF5AE"
+					item: "tfc:rock/raw/marble"
+					type: "item"
+				}
+				{
+					id: "07EC1E1841FA7F06"
+					item: "tfc:rock/raw/rhyolite"
+					type: "item"
+				}
+				{
+					id: "46E95E2356FA2B3B"
+					item: "tfc:rock/raw/shale"
+					type: "item"
+				}
+				{
+					id: "7B665EAC6FE67971"
+					item: "tfc:rock/raw/phyllite"
+					type: "item"
+				}
+				{
+					id: "47BF54DE739FA407"
+					item: "tfc:rock/raw/slate"
+					type: "item"
+				}
+			]
+			title: "Камень"
+			x: -7.0d
+			y: 8.5d
+		}
+		{
+			dependencies: ["03C96953F8CF6C9A"]
+			dependency_requirement: "one_started"
+			id: "67A73BB9DEA8845F"
+			tasks: [{
+				count: 2L
+				id: "0F4013798A35895C"
+				item: "create:crushing_wheel"
+				type: "item"
+			}]
+			title: "Механический дробитель"
+			x: -6.0d
+			y: 9.5d
+		}
+		{
+			dependencies: ["03C96953F8CF6C9A"]
+			dependency_requirement: "one_started"
+			id: "5BB71CECFE8EA2A9"
+			tasks: [{
+				icon: "minecraft:hopper"
+				id: "17FAC0DDDC734552"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersiveengineering:crusher"
+				type: "observation"
+			}]
+			title: "Электрический дробитель"
+			x: -8.0d
+			y: 9.5d
+		}
+		{
+			id: "70000F0F32E3E521"
+			tasks: [{
+				id: "14D2B064724ED5A2"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:sand/brown"
+				}
+				type: "item"
+			}]
+			x: -12.0d
+			y: 8.5d
+		}
+		{
+			dependencies: ["70000F0F32E3E521"]
+			dependency_requirement: "one_started"
+			id: "5DF9A4A7422E6E21"
+			tasks: [
+				{
+					id: "084B0961DEB8F3A9"
+					item: "tfc:rock/raw/phyllite"
+					type: "item"
+				}
+				{
+					id: "711A50802AC7B3DD"
+					item: "tfc:rock/raw/slate"
+					type: "item"
+				}
+				{
+					id: "7C65473C49843837"
+					item: "tfc:rock/raw/claystone"
+					type: "item"
+				}
+				{
+					id: "644BA94019DEB88C"
+					item: "tfc:rock/raw/granite"
+					type: "item"
+				}
+			]
+			title: "Коричневые породы"
+			x: -10.0d
+			y: 8.5d
+		}
+		{
+			id: "26AB24FD46832E27"
+			tasks: [{
+				id: "717DC0B9E808239A"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:sand/white"
+				}
+				type: "item"
+			}]
+			x: -12.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["26AB24FD46832E27"]
+			dependency_requirement: "one_started"
+			id: "6F9A94A40F26F9AC"
+			tasks: [
+				{
+					id: "5A8E9EBD8F5B54A5"
+					item: "tfc:rock/raw/marble"
+					type: "item"
+				}
+				{
+					id: "29CB44AD00C90E24"
+					item: "tfc:rock/raw/chalk"
+					type: "item"
+				}
+				{
+					id: "4663ECB2A090E3F0"
+					item: "tfc:rock/raw/limestone"
+					type: "item"
+				}
+				{
+					id: "69E0E5FB87906CDD"
+					item: "tfc:rock/raw/diorite"
+					type: "item"
+				}
+			]
+			title: "Белые породы"
+			x: -10.0d
+			y: 10.0d
+		}
+		{
+			id: "72E88FA6BD2AEF41"
+			tasks: [{
+				id: "1A415359AEE818E9"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:sand/black"
+				}
+				type: "item"
+			}]
+			x: -12.0d
+			y: 11.5d
+		}
+		{
+			dependencies: ["72E88FA6BD2AEF41"]
+			dependency_requirement: "one_started"
+			id: "19F24CCD830E30C5"
+			tasks: [
+				{
+					id: "24E9064BDD29131D"
+					item: "tfc:rock/raw/gabbro"
+					type: "item"
+				}
+				{
+					id: "125A0C2B21A3A69E"
+					item: "tfc:rock/raw/shale"
+					type: "item"
+				}
+				{
+					id: "78AF1904F1462147"
+					item: "tfc:rock/raw/dolomite"
+					type: "item"
+				}
+			]
+			title: "Чёрные породы"
+			x: -10.0d
+			y: 11.5d
+		}
+		{
+			id: "7EAC0455C01ECA2C"
+			tasks: [{
+				id: "01AC4E0C0B6FCADE"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:sand/red"
+				}
+				type: "item"
+			}]
+			x: -12.0d
+			y: 13.0d
+		}
+		{
+			dependencies: ["7EAC0455C01ECA2C"]
+			dependency_requirement: "one_started"
+			id: "5E6304BF0C97278B"
+			tasks: [
+				{
+					id: "737F87A53F5A08D6"
+					item: "tfc:rock/raw/rhyolite"
+					type: "item"
+				}
+				{
+					id: "223E10FBE3284F97"
+					item: "tfc:rock/raw/basalt"
+					type: "item"
+				}
+				{
+					id: "2BEA5D75EA89547D"
+					item: "tfc:rock/raw/andesite"
+					type: "item"
+				}
+				{
+					id: "7516071A398D64D6"
+					item: "tfc:rock/raw/dacite"
+					type: "item"
+				}
+			]
+			title: "Красные породы"
+			x: -10.0d
+			y: 13.0d
+		}
+		{
+			dependencies: ["5414C44441319E4E"]
+			dependency_requirement: "one_started"
+			id: "4EEEE86C20614F87"
+			tasks: [{
+				icon: "minecraft:hopper"
+				id: "5729E389A8723226"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersiveengineering:crusher"
+				type: "observation"
+			}]
+			title: "Электрический дробитель"
+			x: -8.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["463A16FED38ED9CA"]
+			dependency_requirement: "one_started"
+			id: "455C17208912A699"
+			tasks: [{
+				icon: "minecraft:hopper"
+				id: "185C24DC7A7D65A5"
+				observe_type: 0
+				timer: 0L
+				to_observe: "immersiveengineering:crusher"
+				type: "observation"
+			}]
+			title: "Электрический дробитель"
+			x: -8.0d
+			y: 15.0d
+		}
+		{
+			dependencies: ["5414C44441319E4E"]
+			dependency_requirement: "one_started"
+			id: "3CA2AAF2C60CA5DF"
+			tasks: [{
+				count: 2L
+				id: "7D54BCAC20C53E75"
+				item: "create:crushing_wheel"
+				type: "item"
+			}]
+			title: "Механический дробитель"
+			x: -6.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["463A16FED38ED9CA"]
+			dependency_requirement: "one_started"
+			id: "5CBBB2BE1CCF5726"
+			tasks: [{
+				count: 2L
+				id: "624F8F86D3CAFBAD"
+				item: "create:crushing_wheel"
+				type: "item"
+			}]
+			title: "Механический дробитель"
+			x: -6.0d
+			y: 15.0d
+		}
+		{
+			id: "001A4DB6D775EB79"
+			tasks: [{
+				id: "4A891DC61E5341C0"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:sand/yellow"
+				}
+				type: "item"
+			}]
+			x: -12.0d
+			y: 14.5d
+		}
+		{
+			dependencies: ["001A4DB6D775EB79"]
+			dependency_requirement: "one_started"
+			id: "016880BB99CC9E6B"
+			tasks: [
+				{
+					id: "09B0FB5868CFCB02"
+					item: "tfc:rock/raw/chert"
+					type: "item"
+				}
+				{
+					id: "5C24D696AC677D81"
+					item: "tfc:rock/raw/quartzite"
+					type: "item"
+				}
+			]
+			title: "Жёлтые породы"
+			x: -10.0d
+			y: 14.5d
+		}
+		{
+			id: "37E02A07FBE8B191"
+			tasks: [{
+				id: "29639310A0FCD880"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:sand/green"
+				}
+				type: "item"
+			}]
+			x: -12.0d
+			y: 16.0d
+		}
+		{
+			dependencies: ["37E02A07FBE8B191"]
+			dependency_requirement: "one_started"
+			id: "67A72EA6A9B2418E"
+			tasks: [
+				{
+					id: "0F5CDB5813CED539"
+					item: "tfc:rock/raw/conglomerate"
+					type: "item"
+				}
+				{
+					id: "42BC829D53C633C3"
+					item: "tfc:rock/raw/schist"
+					type: "item"
+				}
+				{
+					id: "69A2BE260F2D3ED7"
+					item: "tfc:rock/raw/gneiss"
+					type: "item"
+				}
+			]
+			title: "Зелёные породы"
+			x: -10.0d
+			y: 16.0d
+		}
+		{
+			dependencies: ["7BF51754438A7219"]
+			dependency_requirement: "one_started"
+			id: "31FA1B055716B571"
+			tasks: [{
+				id: "7FFDD7397E6B663A"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/double_ingot/steel"
+				}
+				type: "item"
+			}]
+			x: -20.071428571428584d
+			y: 14.289285714285704d
+		}
+		{
+			dependencies: ["31FA1B055716B571"]
+			id: "30ADCFE6C60995F1"
+			size: 2.0d
+			tasks: [{
+				id: "254ACC0FEB95E649"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/anvil/steel"
+				}
+				type: "item"
+			}]
+			x: -18.5d
+			y: 13.5d
+		}
+		{
+			dependencies: [
+				"36481F819085721C"
+				"757BD6583484B718"
+				"7BF51754438A7219"
+			]
+			dependency_requirement: "one_started"
+			id: "335E7B3F49A7D3AF"
+			tasks: [{
+				id: "4ACF86631405F10B"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/ingot/weak_steel"
+				}
+				type: "item"
+			}]
+			x: -18.5d
+			y: 16.0d
+		}
+		{
+			id: "36481F819085721C"
+			subtitle: "Теплостойкий"
+			tasks: [{
+				id: "2FEB84E19779FFDA"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "immersiveengineering:ingot_nickel"
+				}
+				type: "item"
+			}]
+			x: -19.5d
+			y: 16.5d
+		}
+		{
+			id: "757BD6583484B718"
+			subtitle: "Редкие металы"
+			tasks: [{
+				id: "12D73B96BF89B7FF"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/ingot/black_bronze"
+				}
+				type: "item"
+			}]
+			x: -17.5d
+			y: 16.5d
+		}
+		{
+			dependencies: [
+				"5DE2E1F12C9429B5"
+				"30ADCFE6C60995F1"
+				"335E7B3F49A7D3AF"
+			]
+			id: "70343B2E342BA5E1"
+			shape: "square"
+			tasks: [{
+				id: "2F35B8E4802FA829"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/ingot/black_steel"
+				}
+				type: "item"
+			}]
+			x: -15.5d
+			y: 15.0d
+		}
+		{
+			id: "1457DE531C53C75A"
+			tasks: [{
+				id: "28D2CABE330C4E74"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/ingot/bismuth_bronze"
+				}
+				type: "item"
+			}]
+			x: -21.0d
+			y: 20.5d
+		}
+		{
+			dependencies: [
+				"1457DE531C53C75A"
+				"7BF51754438A7219"
+				"70343B2E342BA5E1"
+				"40FCA17F8F48B7BA"
+			]
+			dependency_requirement: "all_started"
+			id: "4F72A187C7865DDA"
+			tasks: [{
+				id: "7BAA35174E328EF3"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/ingot/weak_blue_steel"
+				}
+				type: "item"
+			}]
+			x: -19.5d
+			y: 21.0d
+		}
+		{
+			dependencies: ["70343B2E342BA5E1"]
+			id: "68E4905BA7EFCEB1"
+			tasks: [{
+				id: "5F4D0323D18994A5"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/double_ingot/black_steel"
+				}
+				type: "item"
+			}]
+			x: -15.5d
+			y: 23.0d
+		}
+		{
+			dependencies: ["68E4905BA7EFCEB1"]
+			id: "49D140599466A462"
+			size: 2.0d
+			tasks: [{
+				id: "7A4FCAC4F9980E14"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/anvil/black_steel"
+				}
+				type: "item"
+			}]
+			x: -19.535714285714278d
+			y: 23.089285714285715d
+		}
+		{
+			dependencies: [
+				"4F72A187C7865DDA"
+				"70343B2E342BA5E1"
+				"49D140599466A462"
+			]
+			id: "76AA9924245DC35D"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "39C94D919F907878"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/ingot/blue_steel"
+				}
+				type: "item"
+			}]
+			x: -22.571428571428562d
+			y: 25.660714285714292d
+		}
+		{
+			dependencies: [
+				"4B2AB05F8F22391B"
+				"0CEFEE1A83CADA02"
+			]
+			id: "40FCA17F8F48B7BA"
+			subtitle: "Стерлинговое серебро"
+			tasks: [{
+				id: "7B969176C7474B42"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/ingot/sterling_silver"
+				}
+				type: "item"
+			}]
+			x: -19.345238095238095d
+			y: 19.36071428571428d
+		}
+		{
+			id: "0CEFEE1A83CADA02"
+			tasks: [{
+				id: "1B3DECB4BE7EF040"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/ingot/silver"
+				}
+				type: "item"
+			}]
+			x: -21.0d
+			y: 18.5d
+		}
+		{
+			id: "4B2AB05F8F22391B"
+			tasks: [{
+				id: "34C52BFAA2893836"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/ingot/copper"
+				}
+				type: "item"
+			}]
+			x: -18.5d
+			y: 17.5d
+		}
+		{
+			dependencies: [
+				"7BF51754438A7219"
+				"70343B2E342BA5E1"
+				"104018666AE5864F"
+				"1FB0C320DA89D361"
+			]
+			id: "081BCE6F0E560A4D"
+			tasks: [{
+				id: "5F5E46120F66506C"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/ingot/weak_red_steel"
+				}
+				type: "item"
+			}]
+			x: -17.5d
+			y: 21.0d
+		}
+		{
+			id: "1FB0C320DA89D361"
+			tasks: [{
+				id: "1645582C99173ECB"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/ingot/brass"
+				}
+				type: "item"
+			}]
+			x: -16.0d
+			y: 20.5d
+		}
+		{
+			dependencies: [
+				"1CC4960A53E54678"
+				"4B2AB05F8F22391B"
+			]
+			id: "104018666AE5864F"
+			tasks: [{
+				id: "608A414DBDAFAF61"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/ingot/rose_gold"
+				}
+				type: "item"
+			}]
+			x: -17.66666666666667d
+			y: 19.44999999999999d
+		}
+		{
+			id: "1CC4960A53E54678"
+			tasks: [{
+				id: "48D1585E629341D1"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/ingot/gold"
+				}
+				type: "item"
+			}]
+			x: -16.0d
+			y: 18.5d
+		}
+		{
+			dependencies: [
+				"70343B2E342BA5E1"
+				"49D140599466A462"
+				"081BCE6F0E560A4D"
+			]
+			id: "1968E61EBB720EC3"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "647D3E4B343090DA"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/ingot/red_steel"
+				}
+				type: "item"
+			}]
+			x: -19.071428571428562d
+			y: 25.696428571428577d
+		}
+		{
+			dependencies: [
+				"158F973BD79C42B7"
+				"3CE8A9E597F2990C"
+			]
+			id: "129989E6F15E36C7"
+			size: 2.0d
+			subtitle: "Все сплавы можно автоматизировать тут"
+			tasks: [{
+				id: "3D7309A82A871604"
+				item: "create:basin"
+				type: "item"
+			}]
+			x: -24.0d
+			y: 18.0d
+		}
+		{
+			dependencies: ["6A2D831720311AB8"]
+			id: "158F973BD79C42B7"
+			subtitle: "Все сплавы можно делать тут"
+			tasks: [{
+				id: "73F8E50E61E59D3F"
+				item: "tfc:crucible"
+				type: "item"
+			}]
+			x: -24.0d
+			y: 16.5d
+		}
+		{
+			dependencies: ["7BF51754438A7219"]
+			id: "0B795D999E51E954"
+			subtitle: "Автоматизация ковки"
+			tasks: [{
+				id: "5C3C379C95D8B37D"
+				item: "tfc:trip_hammer"
+				type: "item"
+			}]
+			x: -24.0d
+			y: 15.0d
+		}
+		{
+			id: "7952BD692A164B91"
+			tasks: [
+				{
+					id: "20D4F2E3E8A86FF8"
+					item: "immersiveengineering:plate_copper"
+					type: "item"
+				}
+				{
+					id: "6A46FD3EE0F9BAA1"
+					item: "create:copper_sheet"
+					type: "item"
+				}
+			]
+			x: -12.0d
+			y: 17.5d
+		}
+		{
+			dependencies: ["155E1ADFB4686DAE"]
+			id: "7DB155B48048CCE1"
+			tasks: [{
+				id: "10B3F0D78A419C7D"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "createaddition:copper_wire"
+				}
+				type: "item"
+			}]
+			x: -9.0d
+			y: 17.5d
+		}
+		{
+			id: "622EEE32DEA03D0E"
+			tasks: [{
+				id: "711A95A3A703842B"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/ingot/copper"
+				}
+				type: "item"
+			}]
+			x: -12.0d
+			y: 19.5d
+		}
+		{
+			dependencies: ["155E1ADFB4686DAE"]
+			id: "3BC739C4E7DE0957"
+			tasks: [{
+				id: "784EB59E533B2006"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "createaddition:copper_rod"
+				}
+				type: "item"
+			}]
+			x: -9.0d
+			y: 19.5d
+		}
+		{
+			id: "781C454C5FA963FF"
+			tasks: [
+				{
+					id: "75AAA301087EA18B"
+					item: "immersiveengineering:plate_copper"
+					type: "item"
+				}
+				{
+					id: "2F28F674331DBDD3"
+					item: "create:copper_sheet"
+					type: "item"
+				}
+			]
+			x: -12.0d
+			y: 21.5d
+		}
+		{
+			dependencies: ["74008094394E6FC1"]
+			id: "161595C38E249E45"
+			tasks: [{
+				id: "40FE6F9AC3C93684"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "immersiveengineering:wire_copper"
+				}
+				type: "item"
+			}]
+			x: -9.0d
+			y: 21.0d
+		}
+		{
+			dependencies: ["74008094394E6FC1"]
+			id: "3D5AEB6027B496B3"
+			tasks: [{
+				id: "46261F0115035F6B"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "immersiveengineering:wire_copper"
+				}
+				type: "item"
+			}]
+			x: -9.0d
+			y: 22.0d
+		}
+		{
+			id: "221592F1B5A038B8"
+			tasks: [{
+				id: "340DEB5EA12BE9F8"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/ingot/copper"
+				}
+				type: "item"
+			}]
+			x: -12.0d
+			y: 24.0d
+		}
+		{
+			dependencies: ["611F5856E76AF6DD"]
+			id: "5B2AE990726FE174"
+			tasks: [{
+				id: "745E0A9B71A817D5"
+				item: "create:copper_sheet"
+				type: "item"
+			}]
+			x: -9.0d
+			y: 24.0d
+		}
+	]
+	title: "Индустриальная эпоха"
+}
