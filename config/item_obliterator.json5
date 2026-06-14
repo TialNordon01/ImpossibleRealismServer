@@ -146,9 +146,6 @@
 
     //Хлеб, выпечка, десерты
     "minecraft:bread",
-    "minecraft:cookie",
-    "minecraft:cake",
-    "minecraft:pumpkin_pie",
 
     //Супы и рагу
     "minecraft:mushroom_stew",
@@ -574,20 +571,6 @@
     "minecraft:copper_ore",
     "minecraft:deepslate_copper_ore",
     "minecraft:raw_copper_block",
-    "minecraft:copper_block",
-    "minecraft:exposed_copper",
-    "minecraft:weathered_copper",
-    "minecraft:oxidized_copper",
-    "minecraft:waxed_copper_block",
-    "minecraft:waxed_exposed_copper",
-    "minecraft:waxed_weathered_copper",
-    "minecraft:waxed_oxidized_copper",
-    "minecraft:cut_copper",
-    "minecraft:cut_copper_stairs",
-    "minecraft:cut_copper_slab",
-    "minecraft:waxed_cut_copper",
-    "minecraft:waxed_cut_copper_stairs",
-    "minecraft:waxed_cut_copper_slab",
     
     "minecraft:coal_ore",
     "minecraft:deepslate_coal_ore",
@@ -698,7 +681,9 @@
 
     //Ванильные зелья и ингредиенты
     "minecraft:potion",
-    
+    "minecraft:splash_potion",
+    "minecraft:lingering_potion",
+
     "minecraft:awkward_potion",
     "minecraft:mundane_potion",
     "minecraft:thick_potion",
@@ -963,7 +948,223 @@
     "minecraft:deepslate_lapis_ore",
     
     "minecraft:redstone_ore",
-    "minecraft:deepslate_redstone_ore"
+    "minecraft:deepslate_redstone_ore",
+
+    // ==========================================
+    // Ванильный чернит (Blackstone) и его вариации
+    // ==========================================
+    "minecraft:blackstone",
+    "minecraft:blackstone_stairs",
+    "minecraft:blackstone_slab",
+    "minecraft:blackstone_wall",
+    "minecraft:polished_blackstone",
+    "minecraft:polished_blackstone_stairs",
+    "minecraft:polished_blackstone_slab",
+    "minecraft:polished_blackstone_wall",
+    "minecraft:polished_blackstone_bricks",
+    "minecraft:polished_blackstone_brick_stairs",
+    "minecraft:polished_blackstone_brick_slab",
+    "minecraft:polished_blackstone_brick_wall",
+    "minecraft:cracked_polished_blackstone_bricks",
+    "minecraft:chiseled_polished_blackstone",
+    "minecraft:gilded_blackstone",
+
+    // Базальт и его вариации
+    "minecraft:basalt",
+    "minecraft:polished_basalt",
+    "minecraft:smooth_basalt",
+
+    // Незерские вариации дёрна
+    "minecraft:crimson_nylium",
+    "minecraft:warped_nylium",
+
+    // Душевные источники света
+    "minecraft:soul_torch",
+    "minecraft:soul_lantern",
+    "minecraft:soul_wall_torch",
+    "minecraft:soul_campfire",
+
+    // Ванильные магические и специальные блоки
+    "minecraft:grindstone",
+    "minecraft:enchanting_table",      // Чародейский стол
+    "minecraft:lodestone",              // Ванильный магнетит (Lodestone)
+    "minecraft:beacon",                 // Маяк
+    "minecraft:sea_lantern",            // Морской источник
+    "minecraft:brewing_stand",
+    "minecraft:sniffer_egg",
+    "minecraft:recovery_compass",
+
+    //Подозрительности и заражённости
+    "minecraft:suspicious_sand",
+    "minecraft:suspicious_gravel",
+    "minecraft:infested_stone",
+    "minecraft:infested_cobblestone",
+    "minecraft:infested_stone_bricks",
+    "minecraft:infested_mossy_stone_bricks",
+    "minecraft:infested_cracked_stone_bricks",
+    "minecraft:infested_chiseled_stone_bricks",
+    "minecraft:infested_deepslate",
+    "minecraft:suspicious_sand",
+    "minecraft:suspicious_sand",
+
+    //Излишки редстоуна
+    "minecraft:stone_pressure_plate",
+    "minecraft:stone_button",
+    "minecraft:polished_blackstone_pressure_plate",
+    "minecraft:polished_blackstone_button",
+
+    //Головы
+    "minecraft:wither_skeleton_skull",
+    "minecraft:zombie_head",
+    "minecraft:creeper_head",
+    "minecraft:piglin_head",
+
+    // Ванильная наковальня (в TFC есть своя система)
+    "minecraft:anvil",
+    "minecraft:chipped_anvil",
+    "minecraft:damaged_anvil",
+
+    // Ванильные ульи (в TFC своя система пчеловодства)
+    "minecraft:beehive",
+    "minecraft:bee_nest",
+
+    // Ванильная коптильня
+    "minecraft:smoker",
+
+    //Project RED
+    "projectred_core:red_ingot",
+    "projectred_core:electrotine_ingot",
+    "projectred_core:electrotine_dust",
+    "projectred_core:electrotine_generator",
+    "projectred_core:ruby",
+    "projectred_core:sapphire",
+    "projectred_core:peridot",
+    "projectred_core:sand_coal_comp",
+    "projectred_core:red_iron_comp",
+    "projectred_core:electrotine_iron_comp",
+    "projectred_core:boule",
+    "projectred_core:silicon",
+    "projectred_core:red_silicon_comp",
+    "projectred_core:glow_silicon_comp",
+    "projectred_core:electrotine_silicon_comp",
+    "projectred_core:copper_coil",
+    "projectred_core:iron_coil",
+    "projectred_core:gold_coil",
+    "projectred_core:motor",
+    "projectred_core:woven_cloth",
+    "projectred_core:sail",
+    "projectred_core:draw_plate",
+
+    //Яйца спауна
+    "immersiveengineering:fusilier_spawn_egg",
+    "immersiveengineering:commando_spawn_egg",
+    "immersiveengineering:bulwark_spawn_egg",
+    "bombs:prospector_spawn_egg",
+    "bombs:honse_spawn_egg",
+
+    //Дистиллятор
+    "createdieselgenerators:distillation_controller",
+
+    //Clockwork
+    "vs_clockwork:lodefocus",
+    "vs_clockwork:wanderlite_deepslate_ore",
+    "vs_clockwork:wanderlite_end_ore",
+    "vs_clockwork:wanderlite_nyx_ore",
+    "vs_clockwork:nyx",
+    "vs_clockwork:cobbled_nyx",
+    "vs_clockwork:charged_nyx",
+    "vs_clockwork:wanderlite_block",
+    "vs_clockwork:chiseled_wanderlite",
+    "vs_clockwork:smooth_wanderlite",
+    "vs_clockwork:smooth_wanderlite_slab",
+    "vs_clockwork:smooth_wanderlite_stairs",
+    "vs_clockwork:wanderlite_bricks",
+    "vs_clockwork:wanderglass",
+    "vs_clockwork:wanderlite_cube",
+    "vs_clockwork:wanderlite_matrix",
+    "vs_clockwork:incomplete_wanderwand",
+    "vs_clockwork:wanderlite_crystal",
+    "vs_clockwork:aeronaut_goggles",
+    "vs_clockwork:aeronaut_jacket",
+    "vs_clockwork:aeronaut_jumpers",
+    "vs_clockwork:aeronaut_boots",
+    "vs_clockwork:handheld_drill",
+    "vs_clockwork:handheld_saw",
+
+    //Weather2
+    "weather2:weather_item",
+
+    //Alekiships
+    "alekiships:cannon",
+    "alekiships:watercraft_frame_angled",
+    "alekiships:watercraft_frame_flat",
+
+    //Create Ore Excavation
+    "createoreexcavation:raw_diamond",
+    "createoreexcavation:raw_emerald",
+    "createoreexcavation:raw_redstone",
+    "createoreexcavation:netherite_drill",
+
+    //Grapplehook mod
+    "grapplemod:launcheritem",
+    "grapplemod:repeller",
+    "grapplemod:baseupgradeitem",
+    "grapplemod:doubleupgradeitem",
+    "grapplemod:forcefieldupgradeitem",
+    "grapplemod:magnetupgradeitem",
+    "grapplemod:ropeupgradeitem",
+    "grapplemod:staffupgradeitem",
+    "grapplemod:swingupgradeitem",
+    "grapplemod:throwupgradeitem",
+    "grapplemod:limitsupgradeitem",
+    "grapplemod:rocketupgradeitem",
+    "grapplemod:longfallboots",
+    "grapplemod:block_grapple_modifier",
+
+    //Create Additions
+    "createaddition:large_connector",
+    "createaddition:small_light_connector",
+    "createaddition:connector",
+    "createaddition:diamond_grit",
+    "createaddition:straw",
+    "createaddition:electrum_amulet",
+
+    //Create New Age
+    "create_new_age:electrical_connector",
+    "create_new_age:basic_energiser",
+    "create_new_age:advanced_energiser",
+    "create_new_age:reinforced_energiser",
+    "create_new_age:thorium_ore",
+    "create_new_age:thorium",
+    "create_new_age:radioactive_thorium",
+    "create_new_age:overcharged_iron",
+    "create_new_age:overcharged_gold",
+    "create_new_age:overcharged_diamond",
+    "create_new_age:overcharged_diamond_wire",
+    "create_new_age:overcharged_iron_wire",
+    "create_new_age:overcharged_golden_wire",
+    "create_new_age:overcharged_iron_sheet",
+    "create_new_age:overcharged_golden_sheet",
+    "create_new_age:overcharged_iron_wire_block",
+    "create_new_age:overcharged_golden_wire_block",
+    "create_new_age:overcharged_diamond_wire_block",
+
+    //Create
+    "create:blaze_cake",
+    "create:creative_blaze_cake",
+    "create:blaze_burner",
+    "create:wheat_flour",
+    "create:dough",
+    "create:cinder_flour",
+    "create:powdered_obsidian",
+    "create:red_sand_paper",
+    "create:tree_fertilizer",
+    "create:experience_nugget",
+
+    //Create diesel generators
+    "createdieselgenerators:asphalt_block",
+    "createdieselgenerators:asphalt_stairs",
+    "createdieselgenerators:asphalt_slab"
   ],
 
 

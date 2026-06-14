@@ -253,11 +253,6 @@ ServerEvents.recipes(event => {
     'tfc:powder/native_gold'
   ])
 
-  // Физическая матрица
-  event.shapeless('vs_clockwork:wanderlite_matrix', [
-    'minecraft:redstone'
-  ])
-
   // Палка для выделения физических объектов
   event.shapeless('vs_clockwork:wanderwand', [
     '#tfc:lumber',
@@ -2090,6 +2085,7 @@ ServerEvents.recipes(event => {
   //Замена ванильных самородков
   event.replaceInput({}, 'minecraft:iron_nugget', `#forge:nuggets/wrought_iron`)
   event.replaceInput({}, 'create:brass_nugget', `#forge:nuggets/brass`)
+  event.replaceInput({}, 'minecraft:gold_nugget', '#forge:nuggets/gold')
 
   //Пыль и порошок
   //Уголь
@@ -2224,7 +2220,60 @@ ServerEvents.recipes(event => {
     .transitionalItem('creatingspace:basic_spacesuit_fabric') // Предмет, который визуально лежит на ленте между шагами
     .loops(1)                                                 // 1 полный цикл = 1 готовая продвинутая обшивка
 
+  //Create
+  event.remove({
+        mod: 'create',
+        output: [
+          'create:wrench',
+          'create:wand_of_symmetry',
+          'create:mechanical_press',
+          'create:netherite_backtank',
+          'create:blaze_burner',
+          'create:copper_backtank',
+          'create:schematic_table'
+        ]
+    })
+    // Удаляем оригинальный рецепт создания шоколада
+    event.remove({ type: 'create:mixing', output: 'create:chocolate' })
+    // Создаем новый рецепт
+    event.recipes.create.mixing(
+        Fluid.of('create:chocolate', 250), // Выход: 250 мБ шоколада (стандарт Create)
+        [
+            'firmalife:food/cocoa_beans',  // Какао-бобы из Firmalife
+            '#tfc:sweetener'               // Сахар (обычно требуется в рецепте Create)
+        ]
+    )
+    .heated() // Важно: шоколад в Create плавится только в нагретой чаше (от Горелки всполоха)
+    // Создаем рецепт плавки в Чаше (Basin)
+    event.recipes.create.mixing(
+        Fluid.of('create:honey', 250), // Выход: 1000 мБ (1 ведро) жидкого мёда Create
+        'firmalife:raw_honey'          // Вход: Банка мёда из Firmalife
+    ).heated() // Требование: Чаша должна быть нагрета (Blaze Burner на уровне Heated или выше)
+    //Тесто
+    event.replaceInput({}, 'create:dough', '#firmalife:foods/extra_dough')
 
+    // Удаляем старые ванильные рецепты взвешенных нажимных плит
+    event.remove({ output: 'minecraft:light_weighted_pressure_plate' })
+    event.remove({ output: 'minecraft:heavy_weighted_pressure_plate' })
+    // Новый рецепт для ЛЕГКОЙ взвешенной нажимной плиты (Золото + Лампа)
+    event.shaped('minecraft:light_weighted_pressure_plate', [
+        'G G',
+        ' E ',
+        '   '
+    ], {
+        G: '#forge:ingots/gold',
+        E: 'create:electron_tube'
+    })
+    // Новый рецепт для ТЯЖЕЛОЙ взвешенной нажимной плиты (Железо + Лампа)
+    // Примечание: Если хочешь использовать кованое железо из TFC, замени 'minecraft:iron_ingot' на '#forge:ingots/wrought_iron'
+    event.shaped('minecraft:heavy_weighted_pressure_plate', [
+        'I I',
+        ' E ',
+        '   '
+    ], {
+        I: '#forge:ingots/wrought_iron', 
+        E: 'create:electron_tube'
+    })
 })
 
 
