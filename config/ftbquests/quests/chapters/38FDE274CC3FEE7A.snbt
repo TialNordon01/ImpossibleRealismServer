@@ -1084,7 +1084,11 @@
 			y: -2.0d
 		}
 		{
-			dependencies: ["004B04A0E9D0F80B"]
+			dependencies: [
+				"004B04A0E9D0F80B"
+				"6D01A4152415A944"
+			]
+			dependency_requirement: "one_started"
 			id: "7AEFB8801E22EFEB"
 			subtitle: "Окна"
 			tasks: [
@@ -1361,6 +1365,30 @@
 			]
 			x: 5.0d
 			y: -8.5d
+		}
+		{
+			id: "6D01A4152415A944"
+			subtitle: "Не стоит жечь свои руки"
+			tasks: [
+				{
+					id: "2C8963FA44685874"
+					item: "tfc_kac:bismuth_bronze_kiln"
+					type: "item"
+				}
+				{
+					id: "250BE995B2F534D9"
+					item: "tfc_kac:bronze_kiln"
+					type: "item"
+				}
+				{
+					id: "0465F0B4916DF347"
+					item: "tfc_kac:black_bronze_kiln"
+					type: "item"
+				}
+			]
+			title: "Плавильня для стекла"
+			x: 5.0d
+			y: -3.5d
 		}
 	]
 	title: "Бронзовый век"

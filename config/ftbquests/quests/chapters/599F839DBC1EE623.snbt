@@ -6,12 +6,7 @@
 	icon: "projectred_core:red_ingot"
 	id: "599F839DBC1EE623"
 	order_index: 6
-	quest_links: [{
-		id: "695A1C6BB04BCA63"
-		linked_quest: "5AE4D041A92F9C64"
-		x: -1.0d
-		y: 4.5d
-	}]
+	quest_links: [ ]
 	quests: [
 		{
 			dependencies: [
@@ -300,6 +295,7 @@
 			dependencies: [
 				"34130EFCFFC0D140"
 				"5AE4D041A92F9C64"
+				"13B7C0DBB25A8A23"
 			]
 			id: "7977822849C47808"
 			tasks: [{
@@ -766,6 +762,17 @@
 			title: "Чертёж пресс-форм"
 			x: -2.5d
 			y: -1.0d
+		}
+		{
+			id: "13B7C0DBB25A8A23"
+			tasks: [{
+				id: "11C24AD6203E3149"
+				item: "immersiveengineering:ingot_hop_graphite"
+				type: "item"
+			}]
+			title: "Слиток высокоориентированного графита"
+			x: -1.0d
+			y: 4.5d
 		}
 	]
 	title: "Электронная эпоха"

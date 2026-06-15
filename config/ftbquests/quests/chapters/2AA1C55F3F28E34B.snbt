@@ -135,6 +135,7 @@
 		}
 		{
 			dependencies: ["781C454C5FA963FF"]
+			dependency_requirement: "one_started"
 			id: "74008094394E6FC1"
 			tasks: [{
 				id: "29C025259156CFA3"
@@ -142,10 +143,11 @@
 				type: "item"
 			}]
 			x: -10.5d
-			y: 21.5d
+			y: 21.0d
 		}
 		{
 			dependencies: ["221592F1B5A038B8"]
+			dependency_requirement: "one_started"
 			id: "611F5856E76AF6DD"
 			tasks: [{
 				id: "124C9FB7A6B85517"
@@ -153,13 +155,11 @@
 				type: "item"
 			}]
 			x: -10.5d
-			y: 24.0d
+			y: 23.5d
 		}
 		{
-			dependencies: [
-				"622EEE32DEA03D0E"
-				"7952BD692A164B91"
-			]
+			dependencies: ["622EEE32DEA03D0E"]
+			dependency_requirement: "one_started"
 			id: "155E1ADFB4686DAE"
 			tasks: [{
 				id: "537BCBCFD85DC2AB"
@@ -1427,43 +1427,6 @@
 			y: 15.0d
 		}
 		{
-			id: "7952BD692A164B91"
-			tasks: [
-				{
-					id: "20D4F2E3E8A86FF8"
-					item: "immersiveengineering:plate_copper"
-					type: "item"
-				}
-				{
-					id: "6A46FD3EE0F9BAA1"
-					item: "create:copper_sheet"
-					type: "item"
-				}
-			]
-			x: -12.0d
-			y: 17.5d
-		}
-		{
-			dependencies: ["155E1ADFB4686DAE"]
-			id: "7DB155B48048CCE1"
-			tasks: [{
-				id: "10B3F0D78A419C7D"
-				item: {
-					Count: 1
-					ForgeCaps: {
-						"tfc:item_heat": {
-							heat: 0.0f
-							ticks: 0L
-						}
-					}
-					id: "createaddition:copper_wire"
-				}
-				type: "item"
-			}]
-			x: -9.0d
-			y: 17.5d
-		}
-		{
 			id: "622EEE32DEA03D0E"
 			tasks: [{
 				id: "711A95A3A703842B"
@@ -1480,7 +1443,7 @@
 				type: "item"
 			}]
 			x: -12.0d
-			y: 19.5d
+			y: 18.5d
 		}
 		{
 			dependencies: ["155E1ADFB4686DAE"]
@@ -1500,7 +1463,7 @@
 				type: "item"
 			}]
 			x: -9.0d
-			y: 19.5d
+			y: 19.0d
 		}
 		{
 			id: "781C454C5FA963FF"
@@ -1517,7 +1480,7 @@
 				}
 			]
 			x: -12.0d
-			y: 21.5d
+			y: 21.0d
 		}
 		{
 			dependencies: ["74008094394E6FC1"]
@@ -1537,7 +1500,7 @@
 				type: "item"
 			}]
 			x: -9.0d
-			y: 21.0d
+			y: 20.5d
 		}
 		{
 			dependencies: ["74008094394E6FC1"]
@@ -1557,7 +1520,7 @@
 				type: "item"
 			}]
 			x: -9.0d
-			y: 22.0d
+			y: 21.5d
 		}
 		{
 			id: "221592F1B5A038B8"
@@ -1576,7 +1539,7 @@
 				type: "item"
 			}]
 			x: -12.0d
-			y: 24.0d
+			y: 23.5d
 		}
 		{
 			dependencies: ["611F5856E76AF6DD"]
@@ -1587,7 +1550,95 @@
 				type: "item"
 			}]
 			x: -9.0d
-			y: 24.0d
+			y: 23.5d
+		}
+		{
+			dependencies: ["155E1ADFB4686DAE"]
+			id: "7731DC959DDBBE71"
+			tasks: [{
+				id: "3DD31AA6AB67FA53"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "createaddition:copper_rod"
+				}
+				type: "item"
+			}]
+			x: -9.0d
+			y: 18.0d
+		}
+		{
+			id: "15C69A6ECD9074B6"
+			tasks: [{
+				id: "3F670FAA0228666B"
+				item: "create_new_age:basic_solar_heating_plate"
+				type: "item"
+			}]
+			x: -7.0d
+			y: 18.0d
+		}
+		{
+			id: "7130EC48B1F5F072"
+			tasks: [{
+				id: "5975DF1AF2F81959"
+				item: "create_new_age:advanced_solar_heating_plate"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 18.0d
+		}
+		{
+			dependencies: [
+				"7AE25F115AE1F7D1"
+				"25A2EBFC579D062C"
+				"15C69A6ECD9074B6"
+				"7130EC48B1F5F072"
+			]
+			dependency_requirement: "one_started"
+			id: "7DF7F51CE3DA4358"
+			subtitle: "Теплоноситель"
+			tasks: [{
+				id: "563EB9D9232E22A6"
+				item: "create_new_age:heat_pipe"
+				type: "item"
+			}]
+			x: -6.5d
+			y: 19.5d
+		}
+		{
+			dependencies: [
+				"53B36D742DEA3CAB"
+				"7DF7F51CE3DA4358"
+			]
+			id: "784F55C8D36D20AB"
+			subtitle: "Кипятильник"
+			tasks: [{
+				id: "08E1AF9E117DE28E"
+				item: "create_new_age:heater"
+				type: "item"
+			}]
+			x: -7.0d
+			y: 21.0d
+		}
+		{
+			dependencies: [
+				"53B36D742DEA3CAB"
+				"7DF7F51CE3DA4358"
+			]
+			id: "4FBB95119247071B"
+			subtitle: "Тепловой генератор кручения"
+			tasks: [{
+				id: "311233C8A6C9D529"
+				item: "create_new_age:stirling_engine"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 21.0d
 		}
 	]
 	title: "Индустриальная эпоха"

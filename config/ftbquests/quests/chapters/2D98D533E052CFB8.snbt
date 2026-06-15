@@ -442,6 +442,21 @@
 			x: 4.0d
 			y: 9.0d
 		}
+		{
+			dependencies: [
+				"11A73FD72F0A6E6A"
+				"630728325A6D1A1E"
+				"59D701CE5541DD40"
+			]
+			id: "48078B3888AA9541"
+			tasks: [{
+				id: "68A3B2060A25BA2B"
+				item: "afc:rubber_bar"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 7.5d
+		}
 	]
 	title: "Нефтяная эпоха"
 }

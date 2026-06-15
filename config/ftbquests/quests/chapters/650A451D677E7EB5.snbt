@@ -1,0 +1,149 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "650A451D677E7EB5"
+	group: ""
+	icon: {
+		Count: 1
+		ForgeCaps: {
+			"tfc:item_heat": {
+				heat: 0.0f
+				ticks: 0L
+			}
+		}
+		id: "immersiveengineering:ingot_uranium"
+	}
+	id: "650A451D677E7EB5"
+	order_index: 7
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["4BF97C54F3721B08"]
+			id: "7AE25F115AE1F7D1"
+			subtitle: "Ядерная энергия!"
+			tasks: [
+				{
+					id: "21CEF08C94225CAB"
+					item: "create_new_age:reactor_casing"
+					type: "item"
+				}
+				{
+					id: "2F98F7F25AEE6DA6"
+					item: "create_new_age:reactor_rod"
+					type: "item"
+				}
+				{
+					id: "2AF7464C47017351"
+					item: "create_new_age:reactor_glass"
+					type: "item"
+				}
+				{
+					id: "5BCA18D644F28DE0"
+					item: "create_new_age:reactor_fuel_acceptor"
+					type: "item"
+				}
+				{
+					id: "5902026D37273BF9"
+					item: "create_new_age:reactor_heat_vent"
+					type: "item"
+				}
+			]
+			title: "Реактор"
+			x: 2.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["0C8CA5211FC14882"]
+			id: "25A2EBFC579D062C"
+			subtitle: "Излучает тепло"
+			tasks: [{
+				id: "7C5EA79AC742E69C"
+				item: "create_new_age:nuclear_fuel"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 0.5d
+		}
+		{
+			id: "0C8CA5211FC14882"
+			subtitle: "Бесконечная энергия"
+			tasks: [{
+				id: "322AD6FAF3A0BC6F"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "immersiveengineering:ingot_uranium"
+				}
+				type: "item"
+			}]
+			x: 0.5d
+			y: -1.5d
+		}
+		{
+			id: "4BF97C54F3721B08"
+			subtitle: "Защита от радиации"
+			tasks: [{
+				id: "0F7ACCEEE8321D7A"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "immersiveengineering:ingot_lead"
+				}
+				type: "item"
+			}]
+			x: 2.5d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"7AE25F115AE1F7D1"
+				"25A2EBFC579D062C"
+			]
+			dependency_requirement: "one_started"
+			id: "53B36D742DEA3CAB"
+			subtitle: "Теплоноситель"
+			tasks: [{
+				id: "03E65669543659A0"
+				item: "create_new_age:heat_pipe"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["53B36D742DEA3CAB"]
+			id: "7ED96B5D3465C1C7"
+			subtitle: "Кипятильник"
+			tasks: [{
+				id: "127209021C3DDD8C"
+				item: "create_new_age:heater"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["53B36D742DEA3CAB"]
+			id: "7AFBE40D81F153FB"
+			subtitle: "Тепловой генератор кручения"
+			tasks: [{
+				id: "6BE11641F67A2631"
+				item: "create_new_age:stirling_engine"
+				type: "item"
+			}]
+			x: 2.5d
+			y: 3.5d
+		}
+	]
+	title: "Ядерная эпоха"
+}
