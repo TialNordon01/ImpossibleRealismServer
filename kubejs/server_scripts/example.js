@@ -54,7 +54,7 @@ ServerEvents.tags('item', event => {
     //Добавляем
     event.add(`forge:nuggets/${metal}`, `tfc_nugs:${metal}_nugget`)
   })
-  event.add(`forge:nuggets/iron`, `minecraft:iron_nugget`)
+  event.add(`forge:nuggets/iron`, `tfc_nugs:wrought_iron_nugget`)
   //Удаляем ванильные
   event.remove(`forge:nuggets/iron`, `minecraft:iron_nugget`)
   event.remove(`forge:nuggets/gold`, `minecraft:gold_nugget`)
@@ -2273,6 +2273,41 @@ ServerEvents.recipes(event => {
     ], {
         I: '#forge:ingots/wrought_iron', 
         E: 'create:electron_tube'
+    })
+
+    //Дробление слитков
+    // Массив металлов, для которых есть пыль в Immersive Engineering
+    const ieDustMetals = [
+        'iron',
+        'gold',
+        'copper',
+        'silver',
+        'lead',
+        'nickel',
+        'uranium',
+        'aluminum',
+        'electrum',
+        'constantan',
+        'steel'
+    ]
+    ieDustMetals.forEach(metal => {
+        // Вход: любой слиток из тега #forge:ingots/{metal}
+        // Выход: пыль IE immersiveengineering:dust_{metal}
+        event.recipes.create.crushing(
+            `immersiveengineering:dust_${metal}`,
+            `#forge:ingots/${metal}`
+        )
+        .processingTime(200) // Время обработки в тиках (100 = 5 секунд)
+    })
+
+    //Добавляем новый рецепт: 6 палок + 1 нить = 6 строительных лесов
+    event.shaped('6x minecraft:scaffolding', [
+        'PTP',
+        'P P',
+        'P P'
+    ], {
+        P: '#forge:rods/wooden', // Используем тег палок (включает minecraft:stick и аналоги из TFC)
+        T: '#forge:string'       // Нить
     })
 })
 
