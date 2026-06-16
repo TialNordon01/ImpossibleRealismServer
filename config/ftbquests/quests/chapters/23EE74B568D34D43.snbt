@@ -1612,18 +1612,6 @@
 			y: 7.5d
 		}
 		{
-			dependencies: ["2C2B768AA589B7AD"]
-			id: "7D3D819599357C2F"
-			subtitle: "Кирпич из андезита с мощными способностями"
-			tasks: [{
-				id: "586620B56795D41F"
-				item: "create:andesite_alloy"
-				type: "item"
-			}]
-			x: -12.0d
-			y: 11.0d
-		}
-		{
 			dependencies: ["59DDC9EE65868521"]
 			id: "7926AC60D67F8BB7"
 			subtitle: "Волшебная палочка кладётся в сборщик"
@@ -2303,6 +2291,7 @@
 		}
 		{
 			id: "6ED66EC749E24683"
+			subtitle: "Мало..."
 			tasks: [{
 				id: "549FFC25A8F7FE02"
 				item: {
@@ -2398,6 +2387,7 @@
 		{
 			dependencies: ["05CB32B402002529"]
 			id: "740EFCED42525556"
+			subtitle: "Много!"
 			tasks: [{
 				id: "27E6320C30145EA4"
 				item: {
@@ -2415,6 +2405,18 @@
 			title: "Обожженный кирпич"
 			x: 6.5d
 			y: 7.5d
+		}
+		{
+			dependencies: ["7D3D819599357C2F"]
+			id: "1347E69C5C0D0DDA"
+			subtitle: "Ваш задачник!"
+			tasks: [{
+				id: "28EFCAFA84A70489"
+				item: "create:clipboard"
+				type: "item"
+			}]
+			x: -12.0d
+			y: 13.0d
 		}
 	]
 	title: "Медный век"

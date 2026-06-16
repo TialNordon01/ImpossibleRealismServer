@@ -283,6 +283,7 @@
 		}
 		{
 			id: "34130EFCFFC0D140"
+			subtitle: "Вечный магнит"
 			tasks: [{
 				id: "1279C82FDB0B51A7"
 				item: "create_new_age:magnetite_block"
@@ -765,6 +766,7 @@
 		}
 		{
 			id: "13B7C0DBB25A8A23"
+			subtitle: "Графитовые щётки"
 			tasks: [{
 				id: "11C24AD6203E3149"
 				item: "immersiveengineering:ingot_hop_graphite"

@@ -49,11 +49,15 @@
 				}
 			]
 			title: "Реактор"
-			x: 2.5d
+			x: 3.5d
 			y: 0.5d
 		}
 		{
-			dependencies: ["0C8CA5211FC14882"]
+			dependencies: [
+				"79EF62E03A0EAB7E"
+				"20D71AD542D89042"
+			]
+			dependency_requirement: "one_started"
 			id: "25A2EBFC579D062C"
 			subtitle: "Излучает тепло"
 			tasks: [{
@@ -81,8 +85,8 @@
 				}
 				type: "item"
 			}]
-			x: 0.5d
-			y: -1.5d
+			x: -0.5d
+			y: 2.0d
 		}
 		{
 			id: "4BF97C54F3721B08"
@@ -101,8 +105,8 @@
 				}
 				type: "item"
 			}]
-			x: 2.5d
-			y: -1.5d
+			x: 5.0d
+			y: 0.5d
 		}
 		{
 			dependencies: [
@@ -117,32 +121,482 @@
 				item: "create_new_age:heat_pipe"
 				type: "item"
 			}]
-			x: 1.5d
+			x: 2.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["53B36D742DEA3CAB"]
 			id: "7ED96B5D3465C1C7"
+			shape: "hexagon"
 			subtitle: "Кипятильник"
 			tasks: [{
 				id: "127209021C3DDD8C"
 				item: "create_new_age:heater"
 				type: "item"
 			}]
-			x: 0.5d
+			x: 1.0d
 			y: 3.5d
 		}
 		{
 			dependencies: ["53B36D742DEA3CAB"]
 			id: "7AFBE40D81F153FB"
+			shape: "hexagon"
 			subtitle: "Тепловой генератор кручения"
 			tasks: [{
 				id: "6BE11641F67A2631"
 				item: "create_new_age:stirling_engine"
 				type: "item"
 			}]
-			x: 2.5d
+			x: 3.0d
 			y: 3.5d
+		}
+		{
+			dependencies: ["0C8CA5211FC14882"]
+			id: "1EC7CA5931C4A367"
+			tasks: [{
+				id: "64A15DEEBFAA2DC0"
+				item: "immersiveengineering:dust_uranium"
+				type: "item"
+			}]
+			x: -0.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["1A9DB542338E8E0B"]
+			id: "004BB79C1ADACB51"
+			subtitle: "Гексафторид урана! погодите это же жидкость..."
+			tasks: [{
+				amount: 1000L
+				fluid: "createnuclear:uranium"
+				id: "25427A44F75AEDAA"
+				type: "fluid"
+			}]
+			title: "Урановый газ"
+			x: -3.5d
+			y: 0.5d
+		}
+		{
+			dependencies: [
+				"4BAF215FC4F37C29"
+				"1EC7CA5931C4A367"
+			]
+			id: "1A9DB542338E8E0B"
+			subtitle: "Он же, оксид урана"
+			tasks: [{
+				id: "1A06E18037B65379"
+				item: "createnuclear:yellowcake"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["004BB79C1ADACB51"]
+			id: "0AB5D8EC0D776147"
+			subtitle: "Оксид радиоактивного урана"
+			tasks: [{
+				id: "2BAA4E746A3EF1AD"
+				item: "createnuclear:enriched_yellowcake"
+				type: "item"
+			}]
+			x: -3.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["7897C346672669FF"]
+			id: "79EF62E03A0EAB7E"
+			tasks: [{
+				id: "472B80DA030E655B"
+				item: "createnuclear:graphite_rod"
+				type: "item"
+			}]
+			x: 1.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["6A62A9E193C93AAB"]
+			id: "7897C346672669FF"
+			tasks: [{
+				id: "30B58F4227638FE1"
+				item: "createnuclear:graphene"
+				type: "item"
+			}]
+			x: 3.0d
+			y: -1.0d
+		}
+		{
+			id: "6A62A9E193C93AAB"
+			tasks: [{
+				id: "0179C2863850D19E"
+				item: "tfc:powder/graphite"
+				type: "item"
+			}]
+			x: 4.5d
+			y: -1.0d
+		}
+		{
+			id: "4BAF215FC4F37C29"
+			subtitle: "А как её хранить?"
+			tasks: [{
+				amount: 1000L
+				fluid: "artisanal:sulfuric_acid"
+				id: "10F698805CA560F8"
+				type: "fluid"
+			}]
+			title: "Серная кислота"
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0AB5D8EC0D776147"]
+			id: "305CDE55948203CB"
+			tasks: [{
+				id: "76E436FC50385435"
+				item: "create_mixed_nuclear:reactive_uranium_ingot"
+				type: "item"
+			}]
+			title: "Реактивные урановые слитки"
+			x: -2.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["305CDE55948203CB"]
+			id: "20D71AD542D89042"
+			tasks: [{
+				id: "6B3E54D55FE56FB7"
+				item: "createnuclear:uranium_rod"
+				type: "item"
+			}]
+			x: -0.5d
+			y: -1.0d
+		}
+		{
+			id: "37945D40B1D00DE7"
+			tasks: [{
+				id: "609F3AD5860381EF"
+				item: "tfc_ie_addon:powder/uraninite"
+				type: "item"
+			}]
+			x: 7.0d
+			y: -1.0d
+		}
+		{
+			id: "6EB881D9E6C13C32"
+			tasks: [{
+				id: "76713514F7731536"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:powder/native_gold"
+				}
+				type: "item"
+			}]
+			x: 9.0d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"6EB881D9E6C13C32"
+				"37945D40B1D00DE7"
+			]
+			id: "1B0A3D7F2D322BAC"
+			subtitle: "Фотолюминисценция"
+			tasks: [{
+				id: "2D4022422F20C4BF"
+				item: "minecraft:glowstone_dust"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["1B0A3D7F2D322BAC"]
+			id: "18F843592D4FB7EA"
+			subtitle: "Вечный свет"
+			tasks: [{
+				id: "30DAA863173525E5"
+				item: "minecraft:redstone_lamp"
+				type: "item"
+			}]
+			x: 7.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["1B0A3D7F2D322BAC"]
+			id: "790846D2E19A1188"
+			subtitle: "Цветная фотолюминисценция"
+			tasks: [
+				{
+					id: "687807571D909CDE"
+					item: "projectred_core:black_illumar"
+					type: "item"
+				}
+				{
+					id: "2B674CFF09660799"
+					item: "projectred_core:blue_illumar"
+					type: "item"
+				}
+				{
+					id: "4CCA1777076616BE"
+					item: "projectred_core:brown_illumar"
+					type: "item"
+				}
+				{
+					id: "201A29407A1320F7"
+					item: "projectred_core:cyan_illumar"
+					type: "item"
+				}
+				{
+					id: "05C25CA68179199B"
+					item: "projectred_core:gray_illumar"
+					type: "item"
+				}
+				{
+					id: "59F32F1B219F6F20"
+					item: "projectred_core:green_illumar"
+					type: "item"
+				}
+				{
+					id: "4E8564ACD8B0642A"
+					item: "projectred_core:light_blue_illumar"
+					type: "item"
+				}
+				{
+					id: "2D2B8C103E2CBC9F"
+					item: "projectred_core:light_gray_illumar"
+					type: "item"
+				}
+				{
+					id: "2840412AD176842C"
+					item: "projectred_core:lime_illumar"
+					type: "item"
+				}
+				{
+					id: "5A684AD18925EA9C"
+					item: "projectred_core:magenta_illumar"
+					type: "item"
+				}
+				{
+					id: "5E7BE262365D6184"
+					item: "projectred_core:orange_illumar"
+					type: "item"
+				}
+				{
+					id: "1E50C430DD1C8811"
+					item: "projectred_core:pink_illumar"
+					type: "item"
+				}
+				{
+					id: "097459E89D376EAB"
+					item: "projectred_core:purple_illumar"
+					type: "item"
+				}
+				{
+					id: "5C1406B79038A4FB"
+					item: "projectred_core:red_illumar"
+					type: "item"
+				}
+				{
+					id: "76D8C1FA3EE32047"
+					item: "projectred_core:white_illumar"
+					type: "item"
+				}
+				{
+					id: "79EE3309C76FF88F"
+					item: "projectred_core:yellow_illumar"
+					type: "item"
+				}
+			]
+			title: "Цветная световая пыль"
+			x: 9.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["790846D2E19A1188"]
+			dependency_requirement: "one_started"
+			id: "44EF25A2C338391A"
+			subtitle: "Вечная RGB подсветка"
+			tasks: [
+				{
+					id: "5A5F66C03EF55D92"
+					item: "projectred_illumination:black_illumar_lamp"
+					type: "item"
+				}
+				{
+					id: "7D7BA98662DE789E"
+					item: "projectred_illumination:blue_illumar_lamp"
+					type: "item"
+				}
+				{
+					id: "63903C2C65F90CD2"
+					item: "projectred_illumination:brown_illumar_lamp"
+					type: "item"
+				}
+				{
+					id: "56BE06297092113A"
+					item: "projectred_illumination:cyan_illumar_lamp"
+					type: "item"
+				}
+				{
+					id: "0979C74109565FBB"
+					item: "projectred_illumination:gray_illumar_lamp"
+					type: "item"
+				}
+				{
+					id: "69FCA65DAC9BC232"
+					item: "projectred_illumination:green_illumar_lamp"
+					type: "item"
+				}
+				{
+					id: "04A46F062E886AC6"
+					item: "projectred_illumination:light_blue_illumar_lamp"
+					type: "item"
+				}
+				{
+					id: "60D69663B2A488B8"
+					item: "projectred_illumination:light_gray_illumar_lamp"
+					type: "item"
+				}
+				{
+					id: "45E2CC78A894D0BA"
+					item: "projectred_illumination:lime_illumar_lamp"
+					type: "item"
+				}
+				{
+					id: "1A9920E81C23877F"
+					item: "projectred_illumination:magenta_illumar_lamp"
+					type: "item"
+				}
+				{
+					id: "6B8715EA0261E20E"
+					item: "projectred_illumination:orange_illumar_lamp"
+					type: "item"
+				}
+				{
+					id: "658767CD4B2798AC"
+					item: "projectred_illumination:pink_illumar_lamp"
+					type: "item"
+				}
+				{
+					id: "1DB0D40855A5AEDA"
+					item: "projectred_illumination:purple_illumar_lamp"
+					type: "item"
+				}
+				{
+					id: "0FEF9DBA53FCBAAD"
+					item: "projectred_illumination:red_illumar_lamp"
+					type: "item"
+				}
+				{
+					id: "6B59FE7E0B8A2853"
+					item: "projectred_illumination:white_illumar_lamp"
+					type: "item"
+				}
+				{
+					id: "60220475D7F92E0C"
+					item: "projectred_illumination:yellow_illumar_lamp"
+					type: "item"
+				}
+			]
+			title: "Цветная лампа"
+			x: 9.0d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"6DDCC60A8724E5B2"
+				"0C20730C28C52462"
+				"4F26F964582584E9"
+				"6316A8803B9B29A3"
+			]
+			id: "43AC00F17AC3179D"
+			subtitle: "Холод и тепло"
+			tasks: [{
+				id: "5C78A9F7F8F6FE3F"
+				item: "immersiveengineering:thermoelectric_generator"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 0.5d
+		}
+		{
+			id: "0C20730C28C52462"
+			tasks: [{
+				id: "7F43FB4C3CE9FA6D"
+				item: "minecraft:ice"
+				type: "item"
+			}]
+			x: -5.5d
+			y: -1.0d
+		}
+		{
+			id: "4F26F964582584E9"
+			tasks: [{
+				amount: 1000L
+				fluid: "minecraft:water"
+				id: "5B240F393F57D225"
+				type: "fluid"
+			}]
+			title: "Вода"
+			x: -6.5d
+			y: -1.0d
+		}
+		{
+			id: "6DDCC60A8724E5B2"
+			tasks: [
+				{
+					id: "49B1EF8C06100C0D"
+					item: "tfc:rock/magma/granite"
+					type: "item"
+				}
+				{
+					id: "042D515684A4DA73"
+					item: "tfc:rock/magma/diorite"
+					type: "item"
+				}
+				{
+					id: "00222D8FC61CA6B2"
+					item: "tfc:rock/magma/gabbro"
+					type: "item"
+				}
+				{
+					id: "040F9DB33B72FC0B"
+					item: "tfc:rock/magma/rhyolite"
+					type: "item"
+				}
+				{
+					id: "13853DB4458785EF"
+					item: "tfc:rock/magma/basalt"
+					type: "item"
+				}
+				{
+					id: "186FBECF9D18566E"
+					item: "tfc:rock/magma/andesite"
+					type: "item"
+				}
+				{
+					id: "2D52C98113915A1E"
+					item: "tfc:rock/magma/dacite"
+					type: "item"
+				}
+			]
+			x: -5.5d
+			y: 2.0d
+		}
+		{
+			id: "6316A8803B9B29A3"
+			tasks: [{
+				id: "0C8631A3CB10E759"
+				item: "immersiveengineering:storage_uranium"
+				type: "item"
+			}]
+			x: -6.5d
+			y: 2.0d
 		}
 	]
 	title: "Ядерная эпоха"

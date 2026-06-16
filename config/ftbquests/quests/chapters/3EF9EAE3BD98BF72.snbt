@@ -169,11 +169,13 @@
 		{
 			dependencies: ["4EA2D6E2913B853D"]
 			id: "6D2EAF543DA01712"
+			subtitle: "Подскажет, что с вашей ракетой не так"
 			tasks: [{
 				id: "58F7ACCAB4E2EEBD"
 				item: "creatingspace:flight_recorder"
 				type: "item"
 			}]
+			title: "Чёрный ящик"
 			x: 5.5d
 			y: 0.5d
 		}

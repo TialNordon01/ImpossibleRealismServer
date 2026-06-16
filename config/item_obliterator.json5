@@ -554,10 +554,7 @@
     "minecraft:loom",
 
     //Ванильные рудные блоки (железный, золотой, алмазный)
-    "minecraft:iron_ore",
     "minecraft:deepslate_iron_ore",
-    "minecraft:raw_iron_block",
-    "minecraft:iron_block",
     
     "minecraft:gold_ore",
     "minecraft:deepslate_gold_ore",
@@ -574,7 +571,6 @@
     
     "minecraft:coal_ore",
     "minecraft:deepslate_coal_ore",
-    "minecraft:coal_block",
     
     "minecraft:emerald_ore",
     "minecraft:deepslate_emerald_ore",
@@ -1164,7 +1160,136 @@
     //Create diesel generators
     "createdieselgenerators:asphalt_block",
     "createdieselgenerators:asphalt_stairs",
-    "createdieselgenerators:asphalt_slab"
+    "createdieselgenerators:asphalt_slab",
+
+    //Create Nuclear
+    "createnuclear:reactor_casing",
+    "createnuclear:reactor_core",
+    "createnuclear:reactor_frame",
+    "createnuclear:reactor_cooler",
+    "createnuclear:reactor_input",
+    "createnuclear:reactor_output",
+    "createnuclear:reactor_controller",
+    "createdieselgenerators:asphalt_stairs",
+    "createnuclear:reinforced_glass",
+
+    "createnuclear:raw_lead_block",
+    "createnuclear:raw_uranium_block",
+    "createnuclear:lead_nugget",
+    "createnuclear:steel_nugget",
+    "createnuclear:enriching_campfire",
+    "createnuclear:enriched_soul_soil",
+    "createnuclear:raw_lead",
+    "createnuclear:raw_uranium",
+    "createnuclear:lead_ore",
+    "createnuclear:deepslate_lead_ore",
+    "createnuclear:reactor_blueprint_item",
+    "createnuclear:uranium_ore",
+    "createnuclear:uranium_powder",
+    "createnuclear:deepslate_uranium_ore",
+
+    "createnuclear:wolf_irradiated_spawn_egg",
+    "createnuclear:cat_irradiated_spawn_egg",
+    "createnuclear:chicken_irradiated_spawn_egg",
+
+    // ==========================================
+    // Антирадиационная ткань (все 16 цветов)
+    // ==========================================
+    "createnuclear:white_cloth",
+    "createnuclear:orange_cloth",
+    "createnuclear:magenta_cloth",
+    "createnuclear:light_blue_cloth",
+    "createnuclear:yellow_cloth",
+    "createnuclear:lime_cloth",
+    "createnuclear:pink_cloth",
+    "createnuclear:gray_cloth",
+    "createnuclear:light_gray_cloth",
+    "createnuclear:cyan_cloth",
+    "createnuclear:purple_cloth",
+    "createnuclear:blue_cloth",
+    "createnuclear:brown_cloth",
+    "createnuclear:green_cloth",
+    "createnuclear:red_cloth",
+    "createnuclear:black_cloth",
+
+    // Антирадиационный шлем (все 16 цветов)
+    "createnuclear:white_anti_radiation_helmet",
+    "createnuclear:orange_anti_radiation_helmet",
+    "createnuclear:magenta_anti_radiation_helmet",
+    "createnuclear:light_blue_anti_radiation_helmet",
+    "createnuclear:yellow_anti_radiation_helmet",
+    "createnuclear:lime_anti_radiation_helmet",
+    "createnuclear:pink_anti_radiation_helmet",
+    "createnuclear:gray_anti_radiation_helmet",
+    "createnuclear:light_gray_anti_radiation_helmet",
+    "createnuclear:cyan_anti_radiation_helmet",
+    "createnuclear:purple_anti_radiation_helmet",
+    "createnuclear:blue_anti_radiation_helmet",
+    "createnuclear:brown_anti_radiation_helmet",
+    "createnuclear:green_anti_radiation_helmet",
+    "createnuclear:red_anti_radiation_helmet",
+    "createnuclear:black_anti_radiation_helmet",
+
+    // Антирадиационный нагрудник (все 16 цветов)
+    "createnuclear:white_anti_radiation_chestplate",
+    "createnuclear:orange_anti_radiation_chestplate",
+    "createnuclear:magenta_anti_radiation_chestplate",
+    "createnuclear:light_blue_anti_radiation_chestplate",
+    "createnuclear:yellow_anti_radiation_chestplate",
+    "createnuclear:lime_anti_radiation_chestplate",
+    "createnuclear:pink_anti_radiation_chestplate",
+    "createnuclear:gray_anti_radiation_chestplate",
+    "createnuclear:light_gray_anti_radiation_chestplate",
+    "createnuclear:cyan_anti_radiation_chestplate",
+    "createnuclear:purple_anti_radiation_chestplate",
+    "createnuclear:blue_anti_radiation_chestplate",
+    "createnuclear:brown_anti_radiation_chestplate",
+    "createnuclear:green_anti_radiation_chestplate",
+    "createnuclear:red_anti_radiation_chestplate",
+    "createnuclear:black_anti_radiation_chestplate",
+
+    // Антирадиационные поножи (все 16 цветов)
+    "createnuclear:white_anti_radiation_leggings",
+    "createnuclear:orange_anti_radiation_leggings",
+    "createnuclear:magenta_anti_radiation_leggings",
+    "createnuclear:light_blue_anti_radiation_leggings",
+    "createnuclear:yellow_anti_radiation_leggings",
+    "createnuclear:lime_anti_radiation_leggings",
+    "createnuclear:pink_anti_radiation_leggings",
+    "createnuclear:gray_anti_radiation_leggings",
+    "createnuclear:light_gray_anti_radiation_leggings",
+    "createnuclear:cyan_anti_radiation_leggings",
+    "createnuclear:purple_anti_radiation_leggings",
+    "createnuclear:blue_anti_radiation_leggings",
+    "createnuclear:brown_anti_radiation_leggings",
+    "createnuclear:green_anti_radiation_leggings",
+    "createnuclear:red_anti_radiation_leggings",
+    "createnuclear:black_anti_radiation_leggings",
+
+    //Ботинки
+    "createnuclear:anti_radiation_boots",
+
+    //Автунит
+    "createnuclear:autunite",
+    "createnuclear:cut_autunite",
+    "createnuclear:cut_autunite_stairs",
+    "createnuclear:cut_autunite_slab",
+    "createnuclear:cut_autunite_wall",
+    "createnuclear:cut_autunite_bricks",
+    "createnuclear:cut_autunite_brick_slab",
+    "createnuclear:cut_autunite_brick_wall",
+    "createnuclear:autunite_pillar",
+    "createnuclear:small_autunite_brick_wall",
+    "createnuclear:polished_cut_autunite_wall",
+    "createnuclear:small_autunite_brick_slab",
+    "createnuclear:polished_cut_autunite_slab",
+    "createnuclear:polished_cut_autunite",
+    "createnuclear:layered_autunite",
+    "createnuclear:small_autunite_brick_stairs",
+    "createnuclear:polished_cut_autunite_stairs",
+    "createnuclear:cut_autunite_brick_stairs",
+    "createnuclear:small_autunite_brick"
+
   ],
 
 
