@@ -1,4 +1,0 @@
-#The maximum side length a multiforge can reach e.g. 3 = maxmimum size 3x3
-#Range: 2 ~ 14
-maxMultiforgeSize = 3
-
