@@ -154,7 +154,7 @@
 				type: "item"
 			}]
 			title: "Место для сна"
-			x: -5.0d
+			x: -5.5d
 			y: -2.5d
 		}
 		{
@@ -561,6 +561,92 @@
 			]
 			x: -3.0d
 			y: 2.5d
+		}
+		{
+			dependencies: ["2C2B768AA589B7AD"]
+			dependency_requirement: "one_started"
+			id: "73E49BAAB9A0D3FF"
+			subtitle: "Место для вашего барахла"
+			tasks: [{
+				id: "3E798E09EABE368E"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						Parent: {
+							Items: [ ]
+							voidSlots: [I; ]
+						}
+					}
+					id: "sns:straw_basket"
+				}
+				type: "item"
+			}]
+			title: "Корзинка"
+			x: -4.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["0D98545A9A71429D"]
+			id: "299757E71242AB1B"
+			subtitle: "Да будет свет!"
+			tasks: [{
+				id: "0F8D3F059B5CCE40"
+				item: "tfc:torch"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["299757E71242AB1B"]
+			id: "549B5279C10A3839"
+			subtitle: "Зажигалка!"
+			tasks: [{
+				id: "000C5638E5D38548"
+				item: "tfc_aol:lit_match"
+				type: "item"
+			}]
+			title: "Спичка"
+			x: -6.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["299757E71242AB1B"]
+			id: "2B34550F94DB5435"
+			subtitle: "Теплица..."
+			tasks: [{
+				id: "4231FAB9363CAE5D"
+				item: "tfc_aol:flaming_stake"
+				type: "item"
+			}]
+			title: "Горящая палка"
+			x: -6.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["2C2B768AA589B7AD"]
+			id: "10A62E0BC61961BE"
+			subtitle: "Травяная"
+			tasks: [{
+				id: "7BAC69BFC6CD6B7E"
+				item: "tfc_items:plant_string"
+				type: "item"
+			}]
+			title: "Нить из соломы"
+			x: -6.5d
+			y: 1.5d
+		}
+		{
+			id: "65E55240142DA53D"
+			subtitle: "Стартовая точка - турция, анатолия"
+			tasks: [{
+				icon: "minecraft:crimson_hanging_sign"
+				id: "659141861FCE674E"
+				type: "custom"
+			}]
+			title: "Информация"
+			x: 1.0d
+			y: -2.5d
 		}
 	]
 	title: "Каменный век"

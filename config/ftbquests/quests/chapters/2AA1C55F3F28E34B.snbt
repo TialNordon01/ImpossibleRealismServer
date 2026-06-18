@@ -1640,6 +1640,62 @@
 			x: -6.0d
 			y: 21.0d
 		}
+		{
+			id: "64BA36AD2469AAB4"
+			subtitle: "Мало..."
+			tasks: [{
+				id: "717864B0FB0C7FD4"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:ore/normal_native_copper"
+				}
+				type: "item"
+			}]
+			x: -12.0d
+			y: 25.5d
+		}
+		{
+			dependencies: ["64BA36AD2469AAB4"]
+			id: "78011226FD14A53D"
+			tasks: [{
+				id: "300F6B82D6DFC2CF"
+				item: "create:mechanical_mixer"
+				type: "item"
+			}]
+			x: -10.5d
+			y: 25.5d
+		}
+		{
+			dependencies: [
+				"05CB32B402002529"
+				"78011226FD14A53D"
+			]
+			id: "06BD247ECF8C601A"
+			subtitle: "Много!"
+			tasks: [{
+				id: "20741DDAF6C516BB"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfcoreprocessing:roasted_brick/native_copper"
+				}
+				type: "item"
+			}]
+			title: "Обожженный кирпич"
+			x: -9.0d
+			y: 25.5d
+		}
 	]
 	title: "Индустриальная эпоха"
 }

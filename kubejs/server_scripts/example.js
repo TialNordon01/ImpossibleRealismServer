@@ -2045,7 +2045,7 @@ ServerEvents.recipes(event => {
     })
     // 3. Плавка
     event.recipes.tfc.heating(nugget, temp)
-            .resultFluid(Fluid.of(fluid, 25)) // 25 мБ жидкого металла
+      .resultFluid(Fluid.of(fluid, 25)) // 25 мБ жидкого металла
   })
   //Добавление крафтов ИЗ самородков
   const ieMetals = [
@@ -2206,215 +2206,298 @@ ServerEvents.recipes(event => {
 
   //Create
   event.remove({
-        mod: 'create',
-        output: [
-          'create:wrench',
-          'create:wand_of_symmetry',
-          'create:mechanical_press',
-          'create:netherite_backtank',
-          'create:blaze_burner',
-          'create:copper_backtank',
-          'create:schematic_table'
-        ]
-    })
-    // Удаляем оригинальный рецепт создания шоколада
-    event.remove({ type: 'create:mixing', output: 'create:chocolate' })
-    // Создаем новый рецепт
-    event.recipes.create.mixing(
-        Fluid.of('create:chocolate', 250), // Выход: 250 мБ шоколада (стандарт Create)
-        [
-            'firmalife:food/cocoa_beans',  // Какао-бобы из Firmalife
-            '#tfc:sweetener'               // Сахар (обычно требуется в рецепте Create)
-        ]
-    )
-    .heated() // Важно: шоколад в Create плавится только в нагретой чаше (от Горелки всполоха)
-    // Создаем рецепт плавки в Чаше (Basin)
-    event.recipes.create.mixing(
-        Fluid.of('create:honey', 250), // Выход: 1000 мБ (1 ведро) жидкого мёда Create
-        'firmalife:raw_honey'          // Вход: Банка мёда из Firmalife
-    ).heated() // Требование: Чаша должна быть нагрета (Blaze Burner на уровне Heated или выше)
-    //Тесто
-    event.replaceInput({}, 'create:dough', '#firmalife:foods/extra_dough')
-
-    // Удаляем старые ванильные рецепты взвешенных нажимных плит
-    event.remove({ output: 'minecraft:light_weighted_pressure_plate' })
-    event.remove({ output: 'minecraft:heavy_weighted_pressure_plate' })
-    // Новый рецепт для ЛЕГКОЙ взвешенной нажимной плиты (Золото + Лампа)
-    event.shaped('minecraft:light_weighted_pressure_plate', [
-        'G G',
-        ' E ',
-        '   '
-    ], {
-        G: '#forge:ingots/gold',
-        E: 'create:electron_tube'
-    })
-    // Новый рецепт для ТЯЖЕЛОЙ взвешенной нажимной плиты (Железо + Лампа)
-    // Примечание: Если хочешь использовать кованое железо из TFC, замени 'minecraft:iron_ingot' на '#forge:ingots/wrought_iron'
-    event.shaped('minecraft:heavy_weighted_pressure_plate', [
-        'I I',
-        ' E ',
-        '   '
-    ], {
-        I: '#forge:ingots/wrought_iron', 
-        E: 'create:electron_tube'
-    })
-
-    //Дробление слитков
-    // Массив металлов, для которых есть пыль в Immersive Engineering
-    const ieDustMetals = [
-        'iron',
-        'gold',
-        'copper',
-        'silver',
-        'lead',
-        'nickel',
-        'uranium',
-        'aluminum',
-        'electrum',
-        'constantan',
-        'steel'
+    mod: 'create',
+    output: [
+      'create:wrench',
+      'create:wand_of_symmetry',
+      'create:mechanical_press',
+      'create:netherite_backtank',
+      'create:blaze_burner',
+      'create:copper_backtank',
+      'create:schematic_table'
     ]
-    ieDustMetals.forEach(metal => {
-        // Вход: любой слиток из тега #forge:ingots/{metal}
-        // Выход: пыль IE immersiveengineering:dust_{metal}
-        event.recipes.create.crushing(
-            `immersiveengineering:dust_${metal}`,
-            `#forge:ingots/${metal}`
-        )
-        .processingTime(200) // Время обработки в тиках (100 = 5 секунд)
-    })
+  })
+  // Удаляем оригинальный рецепт создания шоколада
+  event.remove({ type: 'create:mixing', output: 'create:chocolate' })
+  // Создаем новый рецепт
+  event.recipes.create.mixing(
+    Fluid.of('create:chocolate', 250), // Выход: 250 мБ шоколада (стандарт Create)
+    [
+      'firmalife:food/cocoa_beans',  // Какао-бобы из Firmalife
+      '#tfc:sweetener'               // Сахар (обычно требуется в рецепте Create)
+    ]
+  )
+    .heated() // Важно: шоколад в Create плавится только в нагретой чаше (от Горелки всполоха)
+  // Создаем рецепт плавки в Чаше (Basin)
+  event.recipes.create.mixing(
+    Fluid.of('create:honey', 250), // Выход: 1000 мБ (1 ведро) жидкого мёда Create
+    'firmalife:raw_honey'          // Вход: Банка мёда из Firmalife
+  ).heated() // Требование: Чаша должна быть нагрета (Blaze Burner на уровне Heated или выше)
+  //Тесто
+  event.replaceInput({}, 'create:dough', '#firmalife:foods/extra_dough')
 
-    //Добавляем новый рецепт: 6 палок + 1 нить = 6 строительных лесов
-    event.shaped('6x minecraft:scaffolding', [
-        'PTP',
-        'P P',
-        'P P'
-    ], {
-        P: '#forge:rods/wooden', // Используем тег палок (включает minecraft:stick и аналоги из TFC)
-        T: '#forge:string'       // Нить
-    })
+  // Удаляем старые ванильные рецепты взвешенных нажимных плит
+  event.remove({ output: 'minecraft:light_weighted_pressure_plate' })
+  event.remove({ output: 'minecraft:heavy_weighted_pressure_plate' })
+  // Новый рецепт для ЛЕГКОЙ взвешенной нажимной плиты (Золото + Лампа)
+  event.shaped('minecraft:light_weighted_pressure_plate', [
+    'G G',
+    ' E ',
+    '   '
+  ], {
+    G: '#forge:ingots/gold',
+    E: 'create:electron_tube'
+  })
+  // Новый рецепт для ТЯЖЕЛОЙ взвешенной нажимной плиты (Железо + Лампа)
+  // Примечание: Если хочешь использовать кованое железо из TFC, замени 'minecraft:iron_ingot' на '#forge:ingots/wrought_iron'
+  event.shaped('minecraft:heavy_weighted_pressure_plate', [
+    'I I',
+    ' E ',
+    '   '
+  ], {
+    I: '#forge:ingots/wrought_iron',
+    E: 'create:electron_tube'
+  })
 
-    //================
-    //Ядерная энергия
-    //================
-    // ШАГ 0: Производство серной кислоты (Сера + Вода + Нагрев)
-    event.recipes.create.mixing(
-        Fluid.of('artisanal:sulfuric_acid', 500), // Выход: 500 мБ серной кислоты
-        [
-            '#forge:dusts/sulfur',  // Вход: Сера (пыль/порошок). Этот тег включает tfc:powder/sulfur и IE-серу
-            Fluid.of('minecraft:water', 500) // Вход: Вода
-        ]
+  //Дробление слитков
+  // Массив металлов, для которых есть пыль в Immersive Engineering
+  const ieDustMetals = [
+    'iron',
+    'gold',
+    'copper',
+    'silver',
+    'lead',
+    'nickel',
+    'uranium',
+    'aluminum',
+    'electrum',
+    'constantan',
+    'steel'
+  ]
+  ieDustMetals.forEach(metal => {
+    // Вход: любой слиток из тега #forge:ingots/{metal}
+    // Выход: пыль IE immersiveengineering:dust_{metal}
+    event.recipes.create.crushing(
+      `immersiveengineering:dust_${metal}`,
+      `#forge:ingots/${metal}`
     )
+      .processingTime(200) // Время обработки в тиках (100 = 5 секунд)
+  })
+
+  //Добавляем новый рецепт: 6 палок + 1 нить = 6 строительных лесов
+  event.shaped('6x minecraft:scaffolding', [
+    'PTP',
+    'P P',
+    'P P'
+  ], {
+    P: '#forge:rods/wooden', // Используем тег палок (включает minecraft:stick и аналоги из TFC)
+    T: '#forge:string'       // Нить
+  })
+
+  //================
+  //Ядерная энергия
+  //================
+  // ШАГ 0: Производство серной кислоты (Сера + Вода + Нагрев)
+  event.recipes.create.mixing(
+    Fluid.of('artisanal:sulfuric_acid', 500), // Выход: 500 мБ серной кислоты
+    [
+      '#forge:dusts/sulfur',  // Вход: Сера (пыль/порошок). Этот тег включает tfc:powder/sulfur и IE-серу
+      Fluid.of('minecraft:water', 500) // Вход: Вода
+    ]
+  )
     .heated() // Требуется нагрев (имитация экзотермической химической реакции)
     .processingTime(200) // 10 секунд (200 тиков)
 
-    // ШАГ 1: Химическое выщелачивание (Урановая пыль + Кислота = Жёлтый кек)
-    event.remove({ output: 'createnuclear:yellowcake' })
-    event.recipes.create.mixing(
-        'createnuclear:yellowcake', // Выход: Жёлтый кек (U3O8)
-        [
-            '#forge:dusts/uranium',  // Вход: Урановая пыль
-            Fluid.of('artisanal:sulfuric_acid', 250) // Вход: Серная кислота из Шага 0
-        ]
-    )
+  // ШАГ 1: Химическое выщелачивание (Урановая пыль + Кислота = Жёлтый кек)
+  event.remove({ output: 'createnuclear:yellowcake' })
+  event.recipes.create.mixing(
+    'createnuclear:yellowcake', // Выход: Жёлтый кек (U3O8)
+    [
+      '#forge:dusts/uranium',  // Вход: Урановая пыль
+      Fluid.of('artisanal:sulfuric_acid', 250) // Вход: Серная кислота из Шага 0
+    ]
+  )
     .heated() // Требуется нагрев для реакции
     .processingTime(200)
 
-    // ШАГ 2: Сублимация (Жёлтый кек + Нагрев = Урановый "Газ")
-    event.remove({ output: Fluid.of('createnuclear:uranium') })
-    event.recipes.create.mixing(
-        Fluid.of('createnuclear:uranium', 500), // Выход: 500 мБ условного уранового газа
-        'createnuclear:yellowcake'              // Вход: Жёлтый кек из Шага 1
-    )
+  // ШАГ 2: Сублимация (Жёлтый кек + Нагрев = Урановый "Газ")
+  event.remove({ output: Fluid.of('createnuclear:uranium') })
+  event.recipes.create.mixing(
+    Fluid.of('createnuclear:uranium', 500), // Выход: 500 мБ условного уранового газа
+    'createnuclear:yellowcake'              // Вход: Жёлтый кек из Шага 1
+  )
     .heated() // Требуется нагрев для испарения/сублимации
     .processingTime(150)
 
-    // ШАГ 3: Каскадное обогащение (Газ + МАКСИМАЛЬНЫЙ нагрев = Обогащённый кек)
-    event.remove({ output: 'createnuclear:enriched_yellowcake' })
-    event.recipes.create.mixing(
-        [
-            // РЕДКИЙ ВЫХОД: Обогащённый жёлтый кек (маленький шанс, например, 10%)
-            // Игрок должен прогнать газ через несколько миксеров или рециркулировать пыль, чтобы получить его
-            Item.of('createnuclear:enriched_yellowcake').withChance(0.1), 
-            
-            // ОСНОВНОЙ ВЫХОД: обычная урановая пыль (гарантированно 1 шт.)
-            // Это "хвосты" процесса. Игрок должен вернуть их обратно в начало цикла!
-            'createnuclear:yellowcake'
-        ],
-        Fluid.of('createnuclear:uranium', 500) // Вход: Урановый "газ" из Шага 2
-    )
+  // ШАГ 3: Каскадное обогащение (Газ + МАКСИМАЛЬНЫЙ нагрев = Обогащённый кек)
+  event.remove({ output: 'createnuclear:enriched_yellowcake' })
+  event.recipes.create.mixing(
+    [
+      // РЕДКИЙ ВЫХОД: Обогащённый жёлтый кек (маленький шанс, например, 10%)
+      // Игрок должен прогнать газ через несколько миксеров или рециркулировать пыль, чтобы получить его
+      Item.of('createnuclear:enriched_yellowcake').withChance(0.1),
+
+      // ОСНОВНОЙ ВЫХОД: обычная урановая пыль (гарантированно 1 шт.)
+      // Это "хвосты" процесса. Игрок должен вернуть их обратно в начало цикла!
+      'createnuclear:yellowcake'
+    ],
+    Fluid.of('createnuclear:uranium', 500) // Вход: Урановый "газ" из Шага 2
+  )
     .superheated() // ТРЕБУЕТСЯ МАКСИМАЛЬНЫЙ НАГРЕВ (Seething / Кипящий режим Горелки Всполоха!)
     .processingTime(400) // Долгий процесс "разделения изотопов"
 
-    // ШАГ 4: Плавка обогащённого жёлтого кека в реактивный урановый слиток
-    // Используем TFC-нагрев для реалистичности (высокая температура плавления)
-    event.remove({ output: 'create_mixed_nuclear:reactive_uranium_ingot' })
-    event.recipes.tfc.heating(
-        'createnuclear:enriched_yellowcake',  // Что плавим
-        1400                                  // Температура (число!)
-    )
+  // ШАГ 4: Плавка обогащённого жёлтого кека в реактивный урановый слиток
+  // Используем TFC-нагрев для реалистичности (высокая температура плавления)
+  event.remove({ output: 'create_mixed_nuclear:reactive_uranium_ingot' })
+  event.recipes.tfc.heating(
+    'createnuclear:enriched_yellowcake',  // Что плавим
+    1400                                  // Температура (число!)
+  )
     .resultItem('create_mixed_nuclear:reactive_uranium_ingot') // Результат-предмет
 
-    // ШАГ 5: Механическая сборка уранового стержня (5 слитков по диагонали)
-    // Механическая сборка Create поддерживает сетки до 9x9. 
-    // Делаем диагональ из 5 слитков в сетке 5x5 для эпичности и соответствия ТЗ.
-    event.remove({ output: 'createnuclear:uranium_rod' })
-    event.recipes.create.mechanical_crafting('createnuclear:uranium_rod', [
-        'I    ',
-        ' I   ',
-        '  I  ',
-        '   I ',
-        '    I'
-    ], {
-        I: 'create_mixed_nuclear:reactive_uranium_ingot'
-    })
+  // ШАГ 5: Механическая сборка уранового стержня (5 слитков по диагонали)
+  // Механическая сборка Create поддерживает сетки до 9x9. 
+  // Делаем диагональ из 5 слитков в сетке 5x5 для эпичности и соответствия ТЗ.
+  event.remove({ output: 'createnuclear:uranium_rod' })
+  event.recipes.create.mechanical_crafting('createnuclear:uranium_rod', [
+    'I    ',
+    ' I   ',
+    '  I  ',
+    '   I ',
+    '    I'
+  ], {
+    I: 'create_mixed_nuclear:reactive_uranium_ingot'
+  })
 
-    // ШАГ 6: Прессование графена
-    event.remove({ output: 'createnuclear:graphene' })
-    event.recipes.create.pressing(
-        'createnuclear:graphene',
-        '#forge:dusts/graphite' 
-    )
+  // ШАГ 6: Прессование графена
+  event.remove({ output: 'createnuclear:graphene' })
+  event.recipes.create.pressing(
+    'createnuclear:graphene',
+    '#forge:dusts/graphite'
+  )
 
-    // ШАГ 7: Последовательная сборка (Sequenced Assembly) ядерного топлива
-    event.remove({ output: 'create_new_age:nuclear_fuel' })
-    event.recipes.create.sequenced_assembly(
-        'create_new_age:nuclear_fuel',             // Финальный результат
-        'create_mixed_nuclear:empty_nuclear_fuel', // Стартовый предмет на конвейере
-        [
-            // Шаг 1: Устанавливаем 1-й графитовый стержень
-            event.recipes.create.deploying(
-                'create_mixed_nuclear:empty_nuclear_fuel',
-                ['create_mixed_nuclear:empty_nuclear_fuel', 'createnuclear:graphite_rod']
-            ),
-            // Шаг 2: Устанавливаем 2-й графитовый стержень
-            event.recipes.create.deploying(
-                'create_mixed_nuclear:empty_nuclear_fuel',
-                ['create_mixed_nuclear:empty_nuclear_fuel', 'createnuclear:graphite_rod']
-            ),
-            // Шаг 3: Устанавливаем 3-й графитовый стержень
-            event.recipes.create.deploying(
-                'create_mixed_nuclear:empty_nuclear_fuel',
-                ['create_mixed_nuclear:empty_nuclear_fuel', 'createnuclear:graphite_rod']
-            ),
-            // Шаг 4: Устанавливаем 4-й графитовый стержень
-            event.recipes.create.deploying(
-                'create_mixed_nuclear:empty_nuclear_fuel',
-                ['create_mixed_nuclear:empty_nuclear_fuel', 'createnuclear:graphite_rod']
-            ),
-            // Шаг 5: Финальный штрих - установка уранового стержня (превращает предмет в готовое топливо)
-            event.recipes.create.deploying(
-                'create_new_age:nuclear_fuel',
-                ['create_mixed_nuclear:empty_nuclear_fuel', 'createnuclear:uranium_rod']
-            )
-        ]
-    )
+  // ШАГ 7: Последовательная сборка (Sequenced Assembly) ядерного топлива
+  event.remove({ output: 'create_new_age:nuclear_fuel' })
+  event.recipes.create.sequenced_assembly(
+    'create_new_age:nuclear_fuel',             // Финальный результат
+    'create_mixed_nuclear:empty_nuclear_fuel', // Стартовый предмет на конвейере
+    [
+      // Шаг 1: Устанавливаем 1-й графитовый стержень
+      event.recipes.create.deploying(
+        'create_mixed_nuclear:empty_nuclear_fuel',
+        ['create_mixed_nuclear:empty_nuclear_fuel', 'createnuclear:graphite_rod']
+      ),
+      // Шаг 2: Устанавливаем 2-й графитовый стержень
+      event.recipes.create.deploying(
+        'create_mixed_nuclear:empty_nuclear_fuel',
+        ['create_mixed_nuclear:empty_nuclear_fuel', 'createnuclear:graphite_rod']
+      ),
+      // Шаг 3: Устанавливаем 3-й графитовый стержень
+      event.recipes.create.deploying(
+        'create_mixed_nuclear:empty_nuclear_fuel',
+        ['create_mixed_nuclear:empty_nuclear_fuel', 'createnuclear:graphite_rod']
+      ),
+      // Шаг 4: Устанавливаем 4-й графитовый стержень
+      event.recipes.create.deploying(
+        'create_mixed_nuclear:empty_nuclear_fuel',
+        ['create_mixed_nuclear:empty_nuclear_fuel', 'createnuclear:graphite_rod']
+      ),
+      // Шаг 5: Финальный штрих - установка уранового стержня (превращает предмет в готовое топливо)
+      event.recipes.create.deploying(
+        'create_new_age:nuclear_fuel',
+        ['create_mixed_nuclear:empty_nuclear_fuel', 'createnuclear:uranium_rod']
+      )
+    ]
+  )
     .transitionalItem('create_mixed_nuclear:empty_nuclear_fuel') // Визуально на ленте всё это время лежит пустой корпус
     .loops(1)                                                     // 1 полный проход конвейера = 1 готовое топливо
 
-    //Удаляем лишнее
-    event.remove({ output: 'createnuclear:coal_dust' })
-    event.remove({ output: 'createnuclear:steel_ingot' })
+  //Удаляем лишнее
+  event.remove({ output: 'createnuclear:coal_dust' })
+  event.remove({ output: 'createnuclear:steel_ingot' })
+
+  //Крафт корзинки в начале игры
+  event.remove({ output: 'sns:straw_basket' })
+  event.shapeless('sns:straw_basket', [
+    'tfc:straw',
+    'tfc:straw',
+    'tfc:thatch',
+    '#tfc:knives'
+  ]).damageIngredient('#tfc:knives')
+
+  // Умножение металлов через Create
+  // Массив минералов TFC (порошки)
+  const minerals = [
+    'native_copper',
+    'native_gold',
+    'native_silver',
+    'cassiterite',      // Олово (tin)
+    'bismuthinite',
+    'malachite',        // Медь
+    'tetrahedrite',     // Медь
+    'limonite',         // Железо
+    'hematite',         // Железо  
+    'magnetite',        // Железо
+    'sphalerite',       // Цинк
+    'garnierite'        // Никель
+  ]
+
+  minerals.forEach(mineral => {
+    const powder = `tfc:powder/${mineral}`
+    const slurry = `tfcoreprocessing:slurry_${mineral}`
+    const refined = `tfcoreprocessing:refined/${mineral}`
+    const compressed = `tfcoreprocessing:compressed/${mineral}`
+    const roastedBrick = `tfcoreprocessing:roasted_brick/${mineral}`
+
+    // ЭТАП 1: Создание шлама (Slurry)
+    // Порошок минерала + 250 мБ воды = Шлам
+    event.recipes.create.mixing(
+      Fluid.of(slurry, 1000), // Выход: 1000 мБ шлама
+      [
+        powder,
+        Fluid.of('minecraft:water', 250) // Вход: 250 мБ воды
+      ]
+    )
+      .processingTime(150) // 7.5 секунд
+
+    // ЭТАП 2: Очистка шлама (Refined)
+    // 1000 мБ шлама + Нагрев = 4 очищенных материала
+    event.recipes.create.mixing(
+      Item.of(refined, 4), // Выход: 4 очищенных материала
+      Fluid.of(slurry, 1000) // Вход: 1000 мБ шлама
+    )
+      .heated() // Требуется нагрев (Blaze Burner на уровне Heated)
+      .processingTime(200) // 10 секунд
+
+    // ЭТАП 3: Обжиг кирпича (Roasted Brick)
+    // 5 сжатых материалов + 100 мБ воды + Пресс = 5 обожжённых кирпичей
+    event.recipes.create.compacting(
+      Item.of(roastedBrick, 5), // Выход: 5 обожжённых кирпичей
+      [
+        Item.of(compressed, 5), // Вход: 5 сжатых материалов
+        Fluid.of('minecraft:water', 100) // Вход: 100 мБ воды
+      ]
+    )
+      .heated()
+      .processingTime(100) // 5 секунд
+  })
+
+  //Факела и спички
+  event.shapeless('tfc_aol:lit_match', [
+    'tfc:torch'
+  ])
+  event.shapeless('tfc_aol:flaming_stake', [
+    'tfc:torch',
+    'tfc:torch',
+  ])
+
+  //Нитки из травы
+  event.remove({ output: 'tfc_items:plant_string' })
+  event.shapeless('tfc_items:plant_string', [
+    'tfc:straw',
+    'tfc:straw',
+    '#tfc:knives'
+  ]).damageIngredient('#tfc:knives')
 })
 
 

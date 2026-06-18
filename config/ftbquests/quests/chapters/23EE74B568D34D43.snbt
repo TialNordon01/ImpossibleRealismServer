@@ -1535,7 +1535,6 @@
 			y: 13.0d
 		}
 		{
-			dependencies: ["7D3D819599357C2F"]
 			id: "176C4E1D5DDCB3FF"
 			subtitle: "Течение = энергия"
 			tasks: [
@@ -1567,7 +1566,6 @@
 			y: 6.0d
 		}
 		{
-			dependencies: ["7D3D819599357C2F"]
 			id: "7F2A7323AAAE29D6"
 			subtitle: "Ветер = энергия"
 			tasks: [
@@ -1992,7 +1990,6 @@
 			y: 5.0d
 		}
 		{
-			dependencies: ["7D3D819599357C2F"]
 			id: "718E095176E6DC12"
 			subtitle: "Тепло = энергия"
 			tasks: [
@@ -2407,7 +2404,6 @@
 			y: 7.5d
 		}
 		{
-			dependencies: ["7D3D819599357C2F"]
 			id: "1347E69C5C0D0DDA"
 			subtitle: "Ваш задачник!"
 			tasks: [{
@@ -2417,6 +2413,61 @@
 			}]
 			x: -12.0d
 			y: 13.0d
+		}
+		{
+			dependencies: ["7F13C0E3C9635C6B"]
+			id: "20DA0E92963684F4"
+			subtitle: "Для канои"
+			tasks: [
+				{
+					id: "1D9CFBF8DFC349CE"
+					item: "tfc:wood/log/kapok"
+					type: "item"
+				}
+				{
+					id: "072BA3BDD8A9E723"
+					item: "tfc:wood/log/sequoia"
+					type: "item"
+				}
+				{
+					id: "7ADCB1F3B9916D1B"
+					item: "tfc:wood/log/spruce"
+					type: "item"
+				}
+				{
+					id: "41C6713FDBF16C48"
+					item: "tfc:wood/log/palm"
+					type: "item"
+				}
+				{
+					id: "2788D77FE67F2A63"
+					item: "tfc:wood/log/pine"
+					type: "item"
+				}
+				{
+					id: "5190D08A6888BF35"
+					item: "tfc:wood/log/douglas_fir"
+					type: "item"
+				}
+				{
+					id: "2ACBA568F3C53201"
+					item: "tfc:wood/log/willow"
+					type: "item"
+				}
+				{
+					id: "392E5D2380C7321F"
+					item: "tfc:wood/log/white_cedar"
+					type: "item"
+				}
+				{
+					id: "247E351D50FCC579"
+					item: "tfc:wood/log/mangrove"
+					type: "item"
+				}
+			]
+			title: "Мягкая древесина"
+			x: -7.5d
+			y: 4.5d
 		}
 	]
 	title: "Медный век"

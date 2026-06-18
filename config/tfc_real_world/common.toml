@@ -13,25 +13,25 @@
 	#
 	#Geographic longitude for the center position around which the spawn position is chosen (used in GEOGRAPHIC mode)
 	#Range: -360.0 ~ 360.0
-	spawn_center_longitude = 12.4964
+	spawn_center_longitude = 34.0
 	#
 	#Geographic latitude for the center position around which the spawn position is chosen (used in GEOGRAPHIC mode)
 	#Range: -90.0 ~ 90.0
-	spawn_center_latitude = 41.9028
+	spawn_center_latitude = 39.0
 
 [tfc_spawn_settings]
 	#
 	#TFC option. The center X position around which the spawn position is chosen (used in CLASSIC mode)
 	#Range: -100000 ~ 100000
-	spawn_center_x = 486
+	spawn_center_x = 10000
 	#
 	#TFC option. The center Z position around which the spawn position is chosen (used in CLASSIC mode)
 	#Range: -100000 ~ 100000
-	spawn_center_z = -12262
+	spawn_center_z = -60000
 	#
 	#TFC option. The maximum distance from the spawn center the spawn position will be chosen
 	#Range: 256 ~ 100000
-	spawn_distance = 256
+	spawn_distance = 5000
 
 [world_generation]
 	#
@@ -40,7 +40,7 @@
 	#
 	#TFC option. Determines the nature of continents. Smaller values create smaller continents and more islands, larger values create larger, blobbier continents
 	#Range: 0.0 ~ 1.0
-	continentalness = 0.5
+	continentalness = 1.0
 	#
 	#TFC option. Affects how much grass generates in the world. Higher values indicate more grass coverage
 	#Range: 0.0 ~ 1.0
@@ -66,11 +66,11 @@
 	#
 	#Horizontal map radius in blocks
 	#Range: 256 ~ 100000
-	horizontal_scale = 40000
+	horizontal_scale = 100000
 	#
 	#Vertical map radius in blocks
 	#Range: 256 ~ 100000
-	vertical_scale = 20000
+	vertical_scale = 100000
 	#
 	#Generate continents from map or procedurally
 	continent_from_map = true

@@ -704,18 +704,6 @@
 			x: -5.5d
 			y: -4.0d
 		}
-		{
-			dependencies: ["2C2B768AA589B7AD"]
-			id: "7D3D819599357C2F"
-			subtitle: "Кирпич из андезита с мощными способностями"
-			tasks: [{
-				id: "586620B56795D41F"
-				item: "create:andesite_alloy"
-				type: "item"
-			}]
-			x: -4.0d
-			y: 10.5d
-		}
 	]
 	title: "Железный век"
 }

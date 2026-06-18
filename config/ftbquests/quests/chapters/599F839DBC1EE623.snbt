@@ -776,6 +776,70 @@
 			x: -1.0d
 			y: 4.5d
 		}
+		{
+			dependencies: ["6F60BFB8BA1394BF"]
+			id: "60C56C4AE04BA8D8"
+			subtitle: "Электрические качели"
+			tasks: [{
+				id: "6A5BD918D000434B"
+				item: "grapplemod:motorupgradeitem"
+				type: "item"
+			}]
+			title: "Мотор для крюка"
+			x: -8.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["60C56C4AE04BA8D8"]
+			id: "14EEFF76D61F2E2C"
+			subtitle: "Неуправляемый"
+			tasks: [{
+				id: "53C2663BEB26BACC"
+				item: {
+					Count: 1
+					id: "grapplemod:grapplinghook"
+					tag: {
+						Damage: 0
+						custom: {
+							maxlen: 60
+							motor: 1b
+							playermovementmult: 2
+							throwspeed: 3.5d
+						}
+					}
+				}
+				type: "item"
+			}]
+			title: "Электрический крюк"
+			x: -9.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["14EEFF76D61F2E2C"]
+			id: "67C4F794BCE0AECC"
+			subtitle: "Мощная штука"
+			tasks: [{
+				id: "4D3546EBD6AD3219"
+				item: {
+					Count: 1
+					id: "grapplemod:grapplinghook"
+					tag: {
+						Damage: 0
+						custom: {
+							maxlen: 60
+							motor: 1b
+							playermovementmult: 2
+							smartmotor: 1b
+							throwspeed: 3.5d
+						}
+					}
+				}
+				type: "item"
+			}]
+			title: "Умный крюк"
+			x: -11.0d
+			y: 4.5d
+		}
 	]
 	title: "Электронная эпоха"
 }
