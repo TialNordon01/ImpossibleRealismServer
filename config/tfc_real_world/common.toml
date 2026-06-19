@@ -27,7 +27,7 @@
 	#
 	#TFC option. The center Z position around which the spawn position is chosen (used in CLASSIC mode)
 	#Range: -100000 ~ 100000
-	spawn_center_z = -60000
+	spawn_center_z = -30000
 	#
 	#TFC option. The maximum distance from the spawn center the spawn position will be chosen
 	#Range: 256 ~ 100000
@@ -70,7 +70,7 @@
 	#
 	#Vertical map radius in blocks
 	#Range: 256 ~ 100000
-	vertical_scale = 100000
+	vertical_scale = 50000
 	#
 	#Generate continents from map or procedurally
 	continent_from_map = true
