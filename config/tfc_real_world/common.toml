@@ -13,25 +13,25 @@
 	#
 	#Geographic longitude for the center position around which the spawn position is chosen (used in GEOGRAPHIC mode)
 	#Range: -360.0 ~ 360.0
-	spawn_center_longitude = 34.0
+	spawn_center_longitude = 10.0      # 10°E — центральная Германия
 	#
 	#Geographic latitude for the center position around which the spawn position is chosen (used in GEOGRAPHIC mode)
 	#Range: -90.0 ~ 90.0
-	spawn_center_latitude = 39.0
+	spawn_center_latitude = 51.0       # 51°N — центральная Германия
 
 [tfc_spawn_settings]
 	#
 	#TFC option. The center X position around which the spawn position is chosen (used in CLASSIC mode)
 	#Range: -100000 ~ 100000
-	spawn_center_x = 10000
+	spawn_center_x = 0
 	#
 	#TFC option. The center Z position around which the spawn position is chosen (used in CLASSIC mode)
 	#Range: -100000 ~ 100000
-	spawn_center_z = -30000
+	spawn_center_z = -37000
 	#
 	#TFC option. The maximum distance from the spawn center the spawn position will be chosen
 	#Range: 256 ~ 100000
-	spawn_distance = 2000
+	spawn_distance = 5000
 
 [world_generation]
 	#
