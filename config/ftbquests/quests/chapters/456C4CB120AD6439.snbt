@@ -639,18 +639,6 @@
 			x: -6.5d
 			y: 1.5d
 		}
-		{
-			id: "65E55240142DA53D"
-			subtitle: "Стартовая точка - около турции, анатолия"
-			tasks: [{
-				icon: "minecraft:crimson_hanging_sign"
-				id: "659141861FCE674E"
-				type: "custom"
-			}]
-			title: "Информация"
-			x: 1.0d
-			y: -2.5d
-		}
 	]
 	title: "Каменный век"
 }
