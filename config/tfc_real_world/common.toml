@@ -31,7 +31,7 @@
 	#
 	#TFC option. The maximum distance from the spawn center the spawn position will be chosen
 	#Range: 256 ~ 100000
-	spawn_distance = 5000
+	spawn_distance = 2000
 
 [world_generation]
 	#
