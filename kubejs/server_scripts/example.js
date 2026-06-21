@@ -2556,6 +2556,4 @@ PlayerEvents.loggedIn(event => {
   event.player.runCommandSilent("creatingspace addAllDesigns")
   // 3. Сразу забираем права OP обратно для безопасности
   event.server.runCommandSilent(`deop ${username}`)
-  // 4. Пишем красивое сообщение в чат
-  event.player.tell("§a§l[Creating Space] §r§aВсе дизайны ракетных двигателей успешно разблокированы!")
 })
