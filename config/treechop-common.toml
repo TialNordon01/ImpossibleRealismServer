@@ -84,7 +84,7 @@
 	[chopCounting.logarithmic]
 		#Determines the number of chops required to fell a tree; higher values require more chops for bigger trees
 		#Range: 0.0 ~ 10000.0
-		a = 10.0
+		a = 2.0
 
 	#See https://github.com/hammertater/treechop/#linear
 	[chopCounting.linear]
