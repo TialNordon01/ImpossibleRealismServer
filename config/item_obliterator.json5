@@ -1288,7 +1288,19 @@
     "createnuclear:small_autunite_brick_stairs",
     "createnuclear:polished_cut_autunite_stairs",
     "createnuclear:cut_autunite_brick_stairs",
-    "createnuclear:small_autunite_brick"
+    "createnuclear:small_autunite_brick",
+
+    //Big cannons
+    "createbigcannons:nethersteel_ingot",
+
+    //Параплан
+    "vc_gliders:paraglider_gold",
+    "vc_gliders:paraglider_iron",
+    "vc_gliders:paraglider_netherite",
+    "vc_gliders:paraglider_diamond",
+
+    //Биплан
+    "hangglider:reinforced_hang_glider"
 
   ],
 

@@ -1535,6 +1535,7 @@
 			y: 13.0d
 		}
 		{
+			dependencies: ["0C81F63EDE1601DB"]
 			id: "176C4E1D5DDCB3FF"
 			subtitle: "Течение = энергия"
 			tasks: [
@@ -1566,6 +1567,7 @@
 			y: 6.0d
 		}
 		{
+			dependencies: ["0C81F63EDE1601DB"]
 			id: "7F2A7323AAAE29D6"
 			subtitle: "Ветер = энергия"
 			tasks: [
@@ -1904,6 +1906,7 @@
 		}
 		{
 			dependencies: ["1C8F2299E1E71664"]
+			dependency_requirement: "one_started"
 			id: "0A43E9AAFF19E7E9"
 			subtitle: "Ходи как лошадь"
 			tasks: [{
@@ -1923,6 +1926,7 @@
 		}
 		{
 			dependencies: ["1C8F2299E1E71664"]
+			dependency_requirement: "one_started"
 			id: "7935B0CC537B67F9"
 			subtitle: "Сундук на колёсах"
 			tasks: [{
@@ -1990,6 +1994,7 @@
 			y: 5.0d
 		}
 		{
+			dependencies: ["0C81F63EDE1601DB"]
 			id: "718E095176E6DC12"
 			subtitle: "Тепло = энергия"
 			tasks: [
@@ -2260,7 +2265,7 @@
 				}
 				type: "item"
 			}]
-			x: -0.5d
+			x: 0.0d
 			y: 7.5d
 		}
 		{
@@ -2404,6 +2409,7 @@
 			y: 7.5d
 		}
 		{
+			dependencies: ["0C81F63EDE1601DB"]
 			id: "1347E69C5C0D0DDA"
 			subtitle: "Ваш задачник!"
 			tasks: [{
@@ -2468,6 +2474,50 @@
 			title: "Мягкая древесина"
 			x: -7.5d
 			y: 4.5d
+		}
+		{
+			dependencies: ["43726AA73DE9360C"]
+			dependency_requirement: "one_started"
+			id: "5A3C712F387441D2"
+			subtitle: "Большое хранилище больших предметов"
+			tasks: [{
+				id: "53D59639CFE2511C"
+				item: "tfc_kac:copper_crate"
+				type: "item"
+			}]
+			title: "Медный ящик"
+			x: -6.0d
+			y: 6.0d
+		}
+		{
+			id: "0C81F63EDE1601DB"
+			subtitle: "Крепкий камешек"
+			tasks: [{
+				id: "392DC1CA9BDD916D"
+				item: "create:andesite_alloy"
+				type: "item"
+			}]
+			x: -12.0d
+			y: 11.0d
+		}
+		{
+			dependencies: ["184340E792F47CD9"]
+			id: "2B1F22774B682E26"
+			subtitle: "Парашут"
+			tasks: [{
+				id: "6DF53BD1434123E8"
+				item: {
+					Count: 1
+					id: "vc_gliders:paraglider_wood"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "Параплан"
+			x: -1.0d
+			y: 7.5d
 		}
 	]
 	title: "Медный век"

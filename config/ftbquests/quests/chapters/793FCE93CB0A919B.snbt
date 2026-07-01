@@ -494,7 +494,7 @@
 				type: "item"
 			}]
 			x: -2.5d
-			y: 2.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["475DDA192C4EEE18"]
@@ -507,7 +507,7 @@
 			}]
 			title: "Оружейный верстак"
 			x: -0.5d
-			y: 2.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["27A8B9703438F5F9"]
@@ -703,6 +703,25 @@
 			}]
 			x: -5.5d
 			y: -4.0d
+		}
+		{
+			dependencies: ["475DDA192C4EEE18"]
+			id: "3B299C905F754AAA"
+			subtitle: "Крылья для человека"
+			tasks: [{
+				id: "79F7BA6736EB9D80"
+				item: {
+					Count: 1
+					id: "hangglider:hang_glider"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "Биплан"
+			x: -1.5d
+			y: 2.0d
 		}
 	]
 	title: "Железный век"

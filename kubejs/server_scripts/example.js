@@ -83,6 +83,9 @@ ServerEvents.tags('item', event => {
   event.add(`forge:dusts/coal_coke`, 'tfc:powder/charcoal')
   event.add(`forge:dusts/nickel`, 'creatingspace:nickel_dust')
   event.add('forge:dusts/coal_coke', 'tfc:powder/coke')
+
+  // Добавляем чёрную сталь TFC в тег nethersteel
+  event.add('forge:ingots/nethersteel', 'tfc:metal/ingot/black_steel')
 })
 
 ServerEvents.recipes(event => {
@@ -2480,6 +2483,18 @@ ServerEvents.recipes(event => {
     )
       .heated()
       .processingTime(100) // 5 секунд
+
+    //Заменяем незерсталь
+    // Получаем все предметы из тега #forge:ingots/nethersteel
+    const stacksIterator = Ingredient.of('#forge:ingots/nethersteel').stacks
+    const itemsInTag = []
+    for (const stack of stacksIterator) {
+      itemsInTag.push(stack.id)
+    }
+    // Заменяем каждый конкретный предмет на тег во всех рецептах
+    itemsInTag.forEach(itemId => {
+      event.replaceInput({}, itemId, '#forge:ingots/nethersteel')
+    })
   })
 
   //Факела и спички
