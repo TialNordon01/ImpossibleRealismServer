@@ -1929,11 +1929,109 @@
 			dependency_requirement: "one_started"
 			id: "7935B0CC537B67F9"
 			subtitle: "Сундук на колёсах"
-			tasks: [{
-				id: "4B5E197187C9DA22"
-				item: "astikorcarts:supply_cart"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "053405AF9D0232DD"
+					item: "tfcastikorcarts:supply_cart/acacia"
+					type: "item"
+				}
+				{
+					id: "17D6862233D39E90"
+					item: "tfcastikorcarts:supply_cart/ash"
+					type: "item"
+				}
+				{
+					id: "29DA6E479795C64B"
+					item: "tfcastikorcarts:supply_cart/aspen"
+					type: "item"
+				}
+				{
+					id: "6D3333B8F0D4FFC7"
+					item: "tfcastikorcarts:supply_cart/birch"
+					type: "item"
+				}
+				{
+					id: "6B934046A8998141"
+					item: "tfcastikorcarts:supply_cart/blackwood"
+					type: "item"
+				}
+				{
+					id: "29117E8912A25966"
+					item: "tfcastikorcarts:supply_cart/chestnut"
+					type: "item"
+				}
+				{
+					id: "099099AE3042F6AD"
+					item: "tfcastikorcarts:supply_cart/douglas_fir"
+					type: "item"
+				}
+				{
+					id: "7639CA801E974268"
+					item: "tfcastikorcarts:supply_cart/hickory"
+					type: "item"
+				}
+				{
+					id: "1E4F6427FE2DE476"
+					item: "tfcastikorcarts:supply_cart/kapok"
+					type: "item"
+				}
+				{
+					id: "10870B1B6A60B7CC"
+					item: "tfcastikorcarts:supply_cart/mangrove"
+					type: "item"
+				}
+				{
+					id: "36A802C8FC2DCE7A"
+					item: "tfcastikorcarts:supply_cart/maple"
+					type: "item"
+				}
+				{
+					id: "0FC8B60610F0F0DB"
+					item: "tfcastikorcarts:supply_cart/oak"
+					type: "item"
+				}
+				{
+					id: "16447C3B46C1737F"
+					item: "tfcastikorcarts:supply_cart/palm"
+					type: "item"
+				}
+				{
+					id: "70120B820DA2F504"
+					item: "tfcastikorcarts:supply_cart/pine"
+					type: "item"
+				}
+				{
+					id: "78E6E07568942259"
+					item: "tfcastikorcarts:supply_cart/rosewood"
+					type: "item"
+				}
+				{
+					id: "1BE51ECC229B99DB"
+					item: "tfcastikorcarts:supply_cart/sequoia"
+					type: "item"
+				}
+				{
+					id: "15324EEE03B975F4"
+					item: "tfcastikorcarts:supply_cart/spruce"
+					type: "item"
+				}
+				{
+					id: "3472BA34124F70A4"
+					item: "tfcastikorcarts:supply_cart/sycamore"
+					type: "item"
+				}
+				{
+					id: "56A8F50698AEA70C"
+					item: "tfcastikorcarts:supply_cart/white_cedar"
+					type: "item"
+				}
+				{
+					id: "72149F18BB4E403D"
+					item: "tfcastikorcarts:supply_cart/willow"
+					type: "item"
+				}
+			]
+			title: "Телега"
 			x: -4.0d
 			y: 1.5d
 		}

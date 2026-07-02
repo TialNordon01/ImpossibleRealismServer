@@ -1300,8 +1300,12 @@
     "vc_gliders:paraglider_diamond",
 
     //Биплан
-    "hangglider:reinforced_hang_glider"
+    "hangglider:reinforced_hang_glider",
 
+    //Телеги
+    "astikorcarts:animal_cart",
+    "astikorcarts:supply_cart",
+    "astikorcarts:plow"
   ],
 
 
