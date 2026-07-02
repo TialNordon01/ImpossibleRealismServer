@@ -52,11 +52,11 @@
 	#
 	# Value to change the storm spawn frequency of during January.
 	#Range: 0.001 ~ 10000.0
-	valueJanuary = 0.01
+	valueJanuary = 0.001
 	#
 	# Value to change the storm spawn frequency of during February.
 	#Range: 0.001 ~ 10000.0
-	valueFebruary = 0.005
+	valueFebruary = 0.001
 	#
 	# Value to change the storm spawn frequency of during March.
 	#Range: 0.001 ~ 10000.0
@@ -72,31 +72,31 @@
 	#
 	# Value to change the storm spawn frequency of during June.
 	#Range: 0.001 ~ 10000.0
-	valueJune = 0.45
+	valueJune = 0.1
 	#
 	# Value to change the storm spawn frequency of during July.
 	#Range: 0.001 ~ 10000.0
-	valueJuly = 0.85
+	valueJuly = 0.15
 	#
 	# Value to change the storm spawn frequency of during August.
 	#Range: 0.001 ~ 10000.0
-	valueAugust = 1.15
+	valueAugust = 0.2
 	#
 	# Value to change the storm spawn frequency of during September.
 	#Range: 0.001 ~ 10000.0
-	valueSeptember = 1.75
+	valueSeptember = 0.3
 	#
 	# Value to change the storm spawn frequency of during October.
 	#Range: 0.001 ~ 10000.0
-	valueOctober = 1.0
+	valueOctober = 0.15
 	#
 	# Value to change the storm spawn frequency of during November.
 	#Range: 0.001 ~ 10000.0
-	valueNovember = 0.25
+	valueNovember = 0.15
 	#
 	# Value to change the storm spawn frequency of during December.
 	#Range: 0.001 ~ 10000.0
-	valueDecember = 0.05
+	valueDecember = 0.005
 	#
 	# The chance for barrels to fill up during rain events. Lower value --> higher chance.
 	#Range: > 0
