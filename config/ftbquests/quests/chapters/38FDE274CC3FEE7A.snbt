@@ -15,35 +15,17 @@
 	}
 	id: "38FDE274CC3FEE7A"
 	order_index: 2
-	quest_links: [ ]
+	quest_links: [{
+		id: "100B69A7F0EAC84E"
+		linked_quest: "6E54C89647EED808"
+		shape: "circle"
+		size: 2.0d
+		x: -1.0d
+		y: 1.0d
+	}]
 	quests: [
 		{
-			dependencies: [
-				"29F7A897FFD209CB"
-				"59DDC9EE65868521"
-			]
-			id: "322837E02F5087D1"
-			size: 2.0d
-			subtitle: "Работа кузнеца - нелёгкое дело..."
-			tasks: [{
-				id: "49C0E736E8BB8A56"
-				item: {
-					Count: 1
-					ForgeCaps: {
-						"tfc:item_heat": {
-							heat: 0.0f
-							ticks: 0L
-						}
-					}
-					id: "tfc:metal/anvil/copper"
-				}
-				type: "item"
-			}]
-			x: -1.0d
-			y: 1.0d
-		}
-		{
-			dependencies: ["322837E02F5087D1"]
+			dependencies: ["6E54C89647EED808"]
 			id: "2ABB025B53EEFDBC"
 			subtitle: "Олово"
 			tasks: [
@@ -109,7 +91,7 @@
 			y: 1.0d
 		}
 		{
-			dependencies: ["322837E02F5087D1"]
+			dependencies: ["6E54C89647EED808"]
 			id: "1F1DE58E39931B85"
 			subtitle: "Висмут"
 			tasks: [
@@ -175,7 +157,7 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["322837E02F5087D1"]
+			dependencies: ["6E54C89647EED808"]
 			dependency_requirement: "all_started"
 			id: "25DBDD787EE5D587"
 			subtitle: "Цинк"
@@ -242,7 +224,7 @@
 			y: -1.0d
 		}
 		{
-			dependencies: ["322837E02F5087D1"]
+			dependencies: ["6E54C89647EED808"]
 			id: "68AB925C33B3C51C"
 			subtitle: "Золото"
 			tasks: [
@@ -308,7 +290,7 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["322837E02F5087D1"]
+			dependencies: ["6E54C89647EED808"]
 			id: "3D63FAD88456DAFC"
 			subtitle: "Серебро"
 			tasks: [

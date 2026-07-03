@@ -17,14 +17,6 @@
 	order_index: 1
 	quest_links: [
 		{
-			id: "148A77EA17681CB8"
-			linked_quest: "322837E02F5087D1"
-			shape: "square"
-			size: 2.0d
-			x: -1.0d
-			y: 0.0d
-		}
-		{
 			id: "54CC7A56AB931CF3"
 			linked_quest: "38D7A061EEE68F3B"
 			size: 2.0d
@@ -683,20 +675,36 @@
 			dependencies: ["410F9593FE44D08B"]
 			id: "42BA34B0912B22E5"
 			subtitle: "Материал для сварки и ковки"
-			tasks: [{
-				id: "50DE31F0A8D15E80"
-				item: {
-					Count: 1
-					ForgeCaps: {
-						"tfc:item_heat": {
-							heat: 0.0f
-							ticks: 0L
+			tasks: [
+				{
+					id: "50DE31F0A8D15E80"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
 						}
+						id: "tfc:metal/ingot/copper"
 					}
-					id: "tfc:metal/ingot/copper"
+					type: "item"
 				}
-				type: "item"
-			}]
+				{
+					id: "1299A9A18D906EEA"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+						id: "minecraft:copper_ingot"
+					}
+					type: "item"
+				}
+			]
 			x: -6.5d
 			y: -1.0d
 		}
@@ -1339,7 +1347,7 @@
 			y: 13.0d
 		}
 		{
-			dependencies: ["322837E02F5087D1"]
+			dependencies: ["6E54C89647EED808"]
 			id: "7005766ACFE385E3"
 			subtitle: "Автоматически вскармливает ваших животных"
 			tasks: [{
@@ -1352,7 +1360,7 @@
 			y: -2.0d
 		}
 		{
-			dependencies: ["322837E02F5087D1"]
+			dependencies: ["6E54C89647EED808"]
 			id: "375E37476292087E"
 			subtitle: "Т3х3"
 			tasks: [{
@@ -1377,7 +1385,7 @@
 			y: -0.5d
 		}
 		{
-			dependencies: ["322837E02F5087D1"]
+			dependencies: ["6E54C89647EED808"]
 			id: "7BE1480BF31947B1"
 			subtitle: "Т3х3"
 			tasks: [{
@@ -1402,7 +1410,7 @@
 			y: 0.5d
 		}
 		{
-			dependencies: ["322837E02F5087D1"]
+			dependencies: ["6E54C89647EED808"]
 			id: "06BB4F9A1F591B5E"
 			subtitle: "Больше не придётся плавать против течения!"
 			tasks: [{
@@ -2616,6 +2624,33 @@
 			title: "Параплан"
 			x: -1.0d
 			y: 7.5d
+		}
+		{
+			dependencies: [
+				"29F7A897FFD209CB"
+				"59DDC9EE65868521"
+			]
+			dependency_requirement: "all_started"
+			id: "6E54C89647EED808"
+			shape: "square"
+			size: 2.0d
+			subtitle: "Работа кузнеца - нелёгкое дело..."
+			tasks: [{
+				id: "7813D3B7A5AE34BD"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:item_heat": {
+							heat: 0.0f
+							ticks: 0L
+						}
+					}
+					id: "tfc:metal/anvil/copper"
+				}
+				type: "item"
+			}]
+			x: -1.0d
+			y: 0.0d
 		}
 	]
 	title: "Медный век"

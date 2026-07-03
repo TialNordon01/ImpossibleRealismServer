@@ -2617,6 +2617,13 @@ ServerEvents.recipes(event => {
     'minecraft:coal_block'
   ])
 
+  //Андезитовый сплав
+  // Рецепт через Deployer: камешек андезита TFC + зубило TFC → андезитовый сплав Create
+  // 100% шанс на 1 сплав + 25% шанс на дополнительный сплав
+  event.recipes.create.deploying(
+    ['create:andesite_alloy', Item.of('create:andesite_alloy').withChance(0.25)],
+    ['tfc:rock/loose/andesite', '#tfc:chisels']
+  )
 })
 
 
