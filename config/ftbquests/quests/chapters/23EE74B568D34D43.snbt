@@ -2386,7 +2386,10 @@
 			y: -2.0d
 		}
 		{
-			dependencies: ["16C9B35152A51DA1"]
+			dependencies: [
+				"16C9B35152A51DA1"
+				"24C810EAB40A9F84"
+			]
 			id: "23110DCC976A43FD"
 			subtitle: "Хеликоптер, хеликоптер..."
 			tasks: [{

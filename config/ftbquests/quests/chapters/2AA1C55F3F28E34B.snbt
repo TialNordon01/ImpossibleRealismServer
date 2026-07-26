@@ -37,6 +37,13 @@
 			x: -22.5d
 			y: 8.5d
 		}
+		{
+			id: "2518514312308DE1"
+			linked_quest: "43B4539D00CD04E3"
+			size: 2.0d
+			x: -24.5d
+			y: 8.5d
+		}
 	]
 	quests: [
 		{
@@ -84,8 +91,9 @@
 		}
 		{
 			dependencies: [
-				"2730C5FFA4EE5685"
 				"27697723C30991F7"
+				"2730C5FFA4EE5685"
+				"43B4539D00CD04E3"
 			]
 			dependency_requirement: "one_started"
 			id: "7BF51754438A7219"

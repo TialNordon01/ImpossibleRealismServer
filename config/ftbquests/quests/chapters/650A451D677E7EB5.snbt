@@ -216,6 +216,7 @@
 		{
 			dependencies: ["6A62A9E193C93AAB"]
 			id: "7897C346672669FF"
+			subtitle: "Слабая структура"
 			tasks: [{
 				id: "30B58F4227638FE1"
 				item: "createnuclear:graphene"

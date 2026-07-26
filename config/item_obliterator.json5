@@ -1058,9 +1058,6 @@
     "bombs:prospector_spawn_egg",
     "bombs:honse_spawn_egg",
 
-    //Дистиллятор
-    "createdieselgenerators:distillation_controller",
-
     //Clockwork
     "vs_clockwork:lodefocus",
     "vs_clockwork:wanderlite_deepslate_ore",
@@ -1147,8 +1144,8 @@
 
     //Create
     "create:blaze_cake",
+    "create:blaze_cake_base",
     "create:creative_blaze_cake",
-    "create:blaze_burner",
     "create:wheat_flour",
     "create:dough",
     "create:cinder_flour",
@@ -1305,7 +1302,31 @@
     //Телеги
     "astikorcarts:animal_cart",
     "astikorcarts:supply_cart",
-    "astikorcarts:plow"
+    "astikorcarts:plow",
+
+    //TFMG
+    "tfmg:steel_helmet",
+    "tfmg:steel_chestplate",
+    "tfmg:steel_leggings",
+    "tfmg:steel_boots",
+    "tfmg:steel_sword",
+    "tfmg:steel_pickaxe",
+    "tfmg:steel_axe",
+    "tfmg:steel_shovel",
+    "tfmg:steel_hoe",
+
+    "tfmg:aluminum_sword",
+    "tfmg:aluminum_pickaxe",
+    "tfmg:aluminum_axe",
+    "tfmg:aluminum_shovel",
+    "tfmg:aluminum_shovel",
+
+    "tfmg:lead_sword",
+    "tfmg:lead_pickaxe",
+    "tfmg:lead_axe",
+    "tfmg:lead_shovel",
+    "tfmg:lead_hoe"
+
   ],
 
 

@@ -108,5 +108,93 @@
                 "top": 49
             }
         }
+    },
+    "flaxbeard.immersivepetroleum.client.gui.CokerUnitScreen": {
+        "buttonHints": {
+            "SHOW_EDITOR": {
+                "horizontalOffset": 223,
+                "top": 53
+            },
+            "SETTINGS": {
+                "horizontalOffset": 210,
+                "top": 38
+            },
+            "MOVE_TO_CONTAINER": {
+                "horizontalOffset": -1,
+                "bottom": -13
+            },
+            "MOVE_TO_PLAYER": {
+                "top": -17
+            },
+            "SORT": {
+                "top": -17
+            },
+            "SORT_COLUMNS": {
+                "top": -17
+            },
+            "SORT_ROWS": {
+                "top": -17
+            }
+        }
+    },
+    "io.github.vasakot.tfcea.client.screen.RefrigeratorScreen": {
+        "buttonHints": {
+            "MOVE_TO_CONTAINER": {
+                "horizontalOffset": 20,
+                "bottom": -1
+            },
+            "SHOW_EDITOR": {
+                "horizontalOffset": 394,
+                "top": 224
+            },
+            "SETTINGS": {
+                "horizontalOffset": 383,
+                "top": 209
+            }
+        }
+    },
+    "com.rae.creatingspace.content.rocket.engine.table.EngineerTableScreen": {
+        "buttonHints": {
+            "MOVE_TO_CONTAINER": {
+                "horizontalOffset": 148,
+                "bottom": 9
+            },
+            "MOVE_TO_PLAYER": {
+                "horizontalOffset": 54,
+                "top": 129
+            },
+            "SORT": {
+                "horizontalOffset": 54,
+                "top": 129
+            },
+            "SORT_COLUMNS": {
+                "horizontalOffset": 54,
+                "top": 129
+            },
+            "SORT_ROWS": {
+                "horizontalOffset": 54,
+                "top": 129
+            },
+            "SHOW_EDITOR": {
+                "horizontalOffset": 259,
+                "top": 167
+            },
+            "SETTINGS": {
+                "horizontalOffset": 259,
+                "top": 166
+            }
+        }
+    },
+    "net.mcreator.tfckac.client.gui.KilnGUIScreen": {
+        "buttonHints": {
+            "SHOW_EDITOR": {
+                "horizontalOffset": 381,
+                "top": 65
+            },
+            "SETTINGS": {
+                "horizontalOffset": 369,
+                "top": 50
+            }
+        }
     }
 }

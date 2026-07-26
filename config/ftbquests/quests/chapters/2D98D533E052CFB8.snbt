@@ -118,6 +118,12 @@
 					id: "7FC6977FFEF173CB"
 					type: "fluid"
 				}
+				{
+					amount: 1000L
+					fluid: "artisanal:sour_crude_oil"
+					id: "7B7755350E0A8811"
+					type: "fluid"
+				}
 			]
 			title: "Сырая нефть"
 			x: 4.535714285714278d

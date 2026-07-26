@@ -79,10 +79,13 @@ ServerEvents.tags('item', event => {
 
   //Пыль и порошок
   event.add(`forge:dusts/charcoal`, 'creatingspace:coal_dust')
-  event.add(`forge:dusts/coal_coke`, 'creatingspace:coal_dust')
-  event.add(`forge:dusts/coal_coke`, 'tfc:powder/charcoal')
   event.add(`forge:dusts/nickel`, 'creatingspace:nickel_dust')
   event.add('forge:dusts/coal_coke', 'tfc:powder/coke')
+  //Флюс
+  event.add('tfmg:flux', 'tfc:powder/flux')
+  event.add('tfmg:flux', 'tfc:powder/lime')
+  //Кокс
+  event.add('tfmg:blast_furnace_fuel', 'immersiveengineering:dust_coke')
 
   // Добавляем чёрную сталь TFC в тег nethersteel
   event.add('forge:ingots/nethersteel', 'tfc:metal/ingot/black_steel')
@@ -231,9 +234,10 @@ ServerEvents.recipes(event => {
   ])
 
   // Светокамень
-  event.shapeless('minecraft:glowstone_dust', [
-    'tfc_ie_addon:powder/uraninite',
-    'tfc:powder/native_gold'
+  event.shapeless('3x minecraft:glowstone_dust', [
+    'tfcoreprocessing:refined/sphalerite',
+    'immersiveengineering:dust_sulfur',
+    'immersiveengineering:dust_copper'
   ])
 
   // Палка для выделения физических объектов
@@ -1359,11 +1363,6 @@ ServerEvents.recipes(event => {
     '#artisanal:fats'
   ])
 
-  // Крафт ванильной бочки
-  event.shapeless('minecraft:barrel', [
-    '#tfc:barrels',
-  ])
-
   //Крафт ванильного камнереза
   event.remove({ output: 'minecraft:stonecutter' })
   event.shaped('minecraft:stonecutter', [
@@ -1451,7 +1450,7 @@ ServerEvents.recipes(event => {
   //Крафт для доменной печи из IE
   event.shapeless(
     Item.of('immersiveengineering:blastbrick_reinforced', 1),
-    ['#forge:plates/iron', 'tfc:fire_bricks',]
+    ['tfc:metal/double_sheet/wrought_iron', 'tfc:fire_bricks',]
   )
 
   //Ковырялка для червей
@@ -1815,7 +1814,6 @@ ServerEvents.recipes(event => {
   //=========================
   //Нефть из CDG через сталь
   //=========================
-  event.remove({ output: 'createdieselgenerators:distillation_controller' })
   //Геофизический прибор для разведки недр
   event.remove({ output: 'createdieselgenerators:oil_scanner' })
   event.shaped('createdieselgenerators:oil_scanner', [
@@ -1982,25 +1980,6 @@ ServerEvents.recipes(event => {
   })
 
   //Кусочки
-  metals.forEach(metal => {
-    const stacksIteratorNugs = Ingredient.of(`#forge:nuggets/${metal}`).stacks
-    const nugsInTag = []
-    for (const stack of stacksIteratorNugs) {
-      nugsInTag.push(stack.id)
-    }
-    nugsInTag.forEach(itemId => {
-      event.replaceInput({}, itemId, `#forge:nuggets/${metal}`)
-    })
-  })
-  const stacksIteratorNugsIron = Ingredient.of(`#forge:nuggets/iron`).stacks
-  const nugsIronInTag = []
-  for (const stack of stacksIteratorNugsIron) {
-    nugsIronInTag.push(stack.id)
-  }
-  nugsIronInTag.forEach(itemId => {
-    event.replaceInput({}, itemId, `#forge:nuggets/wrought_iron`)
-  })
-  //Удаляем излишки из рецептов
   //Удаляем ванильные
   event.remove({ output: 'minecraft:iron_nugget' })
   event.remove({ output: 'minecraft:gold_nugget' })
@@ -2022,7 +2001,32 @@ ServerEvents.recipes(event => {
   event.remove({ output: 'create:brass_nugget' })
   event.remove({ output: 'create:copper_nugget' })
   event.remove({ output: 'create:zinc_nugget' })
-  //Работа над самородками из IE
+  //Удаляем TFMG
+  event.remove({ output: 'tfmg:steel_nugget' })
+  event.remove({ output: 'tfmg:cast_iron_nugget' })
+  event.remove({ output: 'tfmg:nickel_nugget' })
+
+  //Делаем замену самородков на TFC Nuggets
+  metals.forEach(metal => {
+    const stacksIteratorNugs = Ingredient.of(`#forge:nuggets/${metal}`).stacks
+    const nugsInTag = []
+    for (const stack of stacksIteratorNugs) {
+      nugsInTag.push(stack.id)
+    }
+    nugsInTag.forEach(itemId => {
+      event.replaceInput({}, itemId, `#forge:nuggets/${metal}`)
+    })
+  })
+  const stacksIteratorNugsIron = Ingredient.of(`#forge:nuggets/iron`).stacks
+  const nugsIronInTag = []
+  for (const stack of stacksIteratorNugsIron) {
+    nugsIronInTag.push(stack.id)
+  }
+  nugsIronInTag.forEach(itemId => {
+    event.replaceInput({}, itemId, `#forge:nuggets/wrought_iron`)
+  })
+  
+  //Работа над самородками IE
   const ieNuggets = [
     { metal: 'aluminum', temp: 660 },
     { metal: 'constantan', temp: 1170 },
@@ -2050,7 +2054,7 @@ ServerEvents.recipes(event => {
     event.recipes.tfc.heating(nugget, temp)
       .resultFluid(Fluid.of(fluid, 25)) // 25 мБ жидкого металла
   })
-  //Добавление крафтов ИЗ самородков
+  //Добавление крафтов из самородков для IE
   const ieMetals = [
     'aluminum',
     'constantan',
@@ -2069,10 +2073,21 @@ ServerEvents.recipes(event => {
       A: nugget
     });
   });
+
   //Замена ванильных самородков
   event.replaceInput({}, 'minecraft:iron_nugget', `#forge:nuggets/wrought_iron`)
-  event.replaceInput({}, 'create:brass_nugget', `#forge:nuggets/brass`)
   event.replaceInput({}, 'minecraft:gold_nugget', '#forge:nuggets/gold')
+
+  //Замена Create самородков
+  event.replaceInput({}, 'create:brass_nugget', `#forge:nuggets/brass`)
+  event.replaceInput({}, 'create:zinc_nugget', '#forge:nuggets/zinc')
+
+  //Плавка самородков для Big Cannons
+  event.recipes.tfc.heating('createbigcannons:cast_iron_nugget', 1540)
+    .resultFluid(Fluid.of('tfc:metal/cast_iron', 25)) // 25 мБ жидкого металла
+  event.recipes.tfc.heating('createbigcannons:nethersteel_nugget', 1540)
+    .resultFluid(Fluid.of('tfc:metal/black_steel', 25)) // 25 мБ жидкого металла
+  
 
   //Пыль и порошок
   //Уголь
@@ -2243,24 +2258,18 @@ ServerEvents.recipes(event => {
   event.remove({ output: 'minecraft:light_weighted_pressure_plate' })
   event.remove({ output: 'minecraft:heavy_weighted_pressure_plate' })
   // Новый рецепт для ЛЕГКОЙ взвешенной нажимной плиты (Золото + Лампа)
-  event.shaped('minecraft:light_weighted_pressure_plate', [
-    'G G',
-    ' E ',
-    '   '
-  ], {
-    G: '#forge:ingots/gold',
-    E: 'create:electron_tube'
-  })
+  event.shapeless('minecraft:light_weighted_pressure_plate', [
+    '#forge:ingots/gold',
+    '#forge:ingots/gold',
+    'create:electron_tube'
+  ])
   // Новый рецепт для ТЯЖЕЛОЙ взвешенной нажимной плиты (Железо + Лампа)
   // Примечание: Если хочешь использовать кованое железо из TFC, замени 'minecraft:iron_ingot' на '#forge:ingots/wrought_iron'
-  event.shaped('minecraft:heavy_weighted_pressure_plate', [
-    'I I',
-    ' E ',
-    '   '
-  ], {
-    I: '#forge:ingots/wrought_iron',
-    E: 'create:electron_tube'
-  })
+  event.shapeless('minecraft:heavy_weighted_pressure_plate', [
+    '#forge:ingots/wrought_iron',
+    '#forge:ingots/wrought_iron',
+    'create:electron_tube'
+  ])
 
   //Дробление слитков
   // Массив металлов, для которых есть пыль в Immersive Engineering
@@ -2455,7 +2464,7 @@ ServerEvents.recipes(event => {
     // ЭТАП 1: Создание шлама (Slurry)
     // Порошок минерала + 250 мБ воды = Шлам
     event.recipes.create.mixing(
-      Fluid.of(slurry, 1000), // Выход: 1000 мБ шлама
+      Fluid.of(slurry, 250), // Выход: 1000 мБ шлама
       [
         powder,
         Fluid.of('minecraft:water', 250) // Вход: 250 мБ воды
@@ -2473,11 +2482,11 @@ ServerEvents.recipes(event => {
       .processingTime(200) // 10 секунд
 
     // ЭТАП 3: Обжиг кирпича (Roasted Brick)
-    // 5 сжатых материалов + 100 мБ воды + Пресс = 5 обожжённых кирпичей
+    // 1 сжатых материалов + 100 мБ воды + Пресс = 1 обожжённых кирпичей
     event.recipes.create.compacting(
-      Item.of(roastedBrick, 5), // Выход: 5 обожжённых кирпичей
+      Item.of(roastedBrick, 1), // Выход: 1 обожжённых кирпичей
       [
-        Item.of(compressed, 5), // Вход: 5 сжатых материалов
+        Item.of(compressed, 1), // Вход: 1 сжатых материалов
         Fluid.of('minecraft:water', 100) // Вход: 100 мБ воды
       ]
     )
@@ -2617,13 +2626,132 @@ ServerEvents.recipes(event => {
     'minecraft:coal_block'
   ])
 
-  //Андезитовый сплав
+  // Андезитовый сплав
   // Рецепт через Deployer: камешек андезита TFC + зубило TFC → андезитовый сплав Create
   // 100% шанс на 1 сплав + 25% шанс на дополнительный сплав
   event.recipes.create.deploying(
     ['create:andesite_alloy', Item.of('create:andesite_alloy').withChance(0.25)],
     ['tfc:rock/loose/andesite', '#tfc:chisels']
   )
+
+  // Нефть из artisanal
+  event.replaceInput({}, 'artisanal:sour_crude_oil', '#forge:crude_oil')
+  // Рецепт для artisanal:distillery
+  // Вход: 1000 мБ #forge:crude_oil
+  // Выход: tfc:powder/sulfur + artisanal:sweet_crude_oil
+  event.custom({
+    type: "artisanal:distillery",
+    min_temp: 400,
+    duration: 200,
+    input_fluid: {
+      ingredient: {
+        tag: "forge:crude_oil",
+        amount: 1000
+      }
+    },
+    result_fluid: {
+      fluid: "artisanal:sweet_crude_oil",
+      amount: 900
+    },
+    result_item: {
+      item: "tfc:powder/sulfur",
+      count: 1
+    }
+  })
+
+  //Переходники от TFC механики к Create механике
+  //От TFC в Create 
+  event.remove({ output: 'woodencog:wooden_generator' })
+  event.shapeless('woodencog:wooden_generator', [
+    '#tfc:axles', 'create:shaft'
+  ])
+  //От Create в TFC
+  event.remove({ output: 'woodencog:ct_transformer' })
+  event.shapeless('woodencog:ct_transformer', [
+    'create:andesite_casing', '#tfc:axles'
+  ])
+
+  //Редактируем рецепт стали в чаше
+  event.remove({ type: 'create:mixing', output: 'immersiveengineering:ingot_steel' })
+
+  //Графит
+  event.remove({ type: 'create:milling', input: 'tfc:ore/graphite' })
+  event.remove({ type: 'tfc:quern', input: 'tfc:ore/graphite' })
+  event.recipes.create.milling(
+      '4x tfc:powder/graphite',       // Выход: Графитовая пыль TFC
+      'tfc:ore/graphite'           // Вход: Графит
+  ).processingTime(150)
+  event.recipes.tfc.quern(
+      '4x tfc:powder/graphite',       // Выход: Графитовая пыль TFC
+      'tfc:ore/graphite'           // Вход: Графит
+  )
+
+  // Графитизация кокса (Процесс Ачесона)
+  // ШАГ 1: Смешиваем каменноугольный кокс и креозот (связующее) при СВЕРХНАГРЕВЕ (~3000°C)
+  event.recipes.create.mixing(
+      'immersiveengineering:ingot_hop_graphite', // Выход: Графитовый слиток (HOP-графит)
+      [
+          'immersiveengineering:coal_coke',      // Вход: Каменноугольный кокс
+          Fluid.of('tfmg:creosote', 250)        // Вход: Креозот (побочный продукт коксовой печи)
+      ]
+  ).superheated() // Критически важно: требует максимального нагрева горелки!
+  event.recipes.create.mixing(
+      'immersiveengineering:ingot_hop_graphite', // Выход: Графитовый слиток (HOP-графит)
+      [
+          'immersiveengineering:coal_coke',      // Вход: Каменноугольный кокс
+          Fluid.of('immersiveengineering:creosote', 250)        // Вход: Креозот (побочный продукт коксовой печи)
+      ]
+  ).superheated() // Критически важно: требует максимального нагрева горелки!
+
+  // ШАГ 2: Помол графитового слитка в пыль
+  // Создаем рецепт для Create (Механический жернов)
+  event.recipes.create.milling(
+      '4x tfc:powder/graphite',       // Выход: Графитовая пыль TFC (4 шт. для баланса)
+      'immersiveengineering:ingot_hop_graphite' // Вход: Графитовый слиток
+  ).processingTime(150)
+  // Создаем рецепт для TFC (Ручной жернов / Quern)
+  event.recipes.tfc.quern(
+      '4x tfc:powder/graphite',       // Выход: Графитовая пыль TFC
+      'immersiveengineering:ingot_hop_graphite' // Вход: Графитовый слиток
+  )
+
+  //=====
+  //TFMG
+  //=====
+
+  //КОКСОВАЯ ПЕЧЬ
+  event.remove({ type: 'tfmg:coking' })
+  //Коксовый уголь
+  event.recipes.tfmg.coking(
+      'minecraft:charcoal',
+      ['immersiveengineering:coal_coke', Fluid.of('immersiveengineering:creosote', 1), Fluid.of('tfmg:carbon_dioxide', 30)],
+      1000
+  )
+  event.recipes.tfmg.coking(
+    'tfc:ore/lignite',
+      ['immersiveengineering:coal_coke', Fluid.of('immersiveengineering:creosote', 1), Fluid.of('tfmg:carbon_dioxide', 30)],
+      1000
+  )
+  event.recipes.tfmg.coking(
+      'tfc:ore/bituminous_coal',
+      ['immersiveengineering:coal_coke', Fluid.of('immersiveengineering:creosote', 1), Fluid.of('tfmg:carbon_dioxide', 30)],
+      1000
+  )
+  //Древесный уголь
+  event.recipes.tfmg.coking(
+      '#minecraft:logs',
+      ['minecraft:charcoal', Fluid.of('immersiveengineering:creosote', 2), Fluid.of('tfmg:carbon_dioxide', 20)],
+      1000
+  )
+
+  //ДОМЕННАЯ ПЕЧЬ
+  event.remove({ output: 'tfmg:fireproof_bricks' })
+  event.shapeless('tfmg:fireproof_bricks', [
+    'tfc:fire_bricks', 'tfc:metal/double_sheet/wrought_iron',
+    'tfc:fire_bricks', 'tfc:metal/double_sheet/wrought_iron'
+  ])
+  event.replaceInput({}, 'tfmg:fireproof_brick', 'tfc:ceramic/fire_brick')
+
 })
 
 
@@ -2651,13 +2779,21 @@ ServerEvents.tags('block', event => {
   rocks.forEach(rock => {
     softOres.forEach(ore => {
       const oreBlock = `tfc:ore/${ore}/${rock}`
-
       // Убираем требования железной кирки
       event.remove('minecraft:needs_iron_tool', oreBlock)
     })
   })
 
 })
+
+
+ServerEvents.tags('fluid', event => {
+  // Нефть из artisanal
+  event.add('forge:crude_oil', 'artisanal:sour_crude_oil')
+  // Креозот для доменной печи
+  event.add('tfmg:blast_stove_fuel', 'immersiveengineering:creosote')
+})
+
 
 //Убираем функциональность ванильной губки и редстоуна с бочонком
 BlockEvents.placed('minecraft:redstone_wire', event => {

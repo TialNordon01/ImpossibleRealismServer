@@ -6,7 +6,20 @@
 	icon: "projectred_core:red_ingot"
 	id: "599F839DBC1EE623"
 	order_index: 6
-	quest_links: [ ]
+	quest_links: [
+		{
+			id: "7CA1699AC1AF03BA"
+			linked_quest: "342ED3F640FD5B64"
+			x: -6.0d
+			y: 2.0d
+		}
+		{
+			id: "584EAEDFD569227C"
+			linked_quest: "57EA49F51CAD0D18"
+			x: -1.5d
+			y: 4.5d
+		}
+	]
 	quests: [
 		{
 			dependencies: [
@@ -296,7 +309,7 @@
 			dependencies: [
 				"34130EFCFFC0D140"
 				"5AE4D041A92F9C64"
-				"13B7C0DBB25A8A23"
+				"57EA49F51CAD0D18"
 			]
 			id: "7977822849C47808"
 			tasks: [{
@@ -621,8 +634,8 @@
 		}
 		{
 			dependencies: [
-				"77B2C1D9A9DF6F52"
 				"522B9C15D82DC7E1"
+				"342ED3F640FD5B64"
 			]
 			dependency_requirement: "one_started"
 			id: "76409626F5D1BE53"
@@ -654,19 +667,6 @@
 			title: "Ацеталдегид"
 			x: -6.5d
 			y: -0.5d
-		}
-		{
-			dependencies: ["2F2785B034872AC6"]
-			id: "77B2C1D9A9DF6F52"
-			tasks: [{
-				amount: 1000L
-				fluid: "immersiveengineering:creosote"
-				id: "4CC457F9FD4A9120"
-				type: "fluid"
-			}]
-			title: "Креозот"
-			x: -4.5d
-			y: -1.5d
 		}
 		{
 			id: "5D30C0840BD66185"
@@ -763,18 +763,6 @@
 			title: "Чертёж пресс-форм"
 			x: -2.5d
 			y: -1.0d
-		}
-		{
-			id: "13B7C0DBB25A8A23"
-			subtitle: "Графитовые щётки"
-			tasks: [{
-				id: "11C24AD6203E3149"
-				item: "immersiveengineering:ingot_hop_graphite"
-				type: "item"
-			}]
-			title: "Слиток высокоориентированного графита"
-			x: -1.0d
-			y: 4.5d
 		}
 		{
 			dependencies: ["6F60BFB8BA1394BF"]

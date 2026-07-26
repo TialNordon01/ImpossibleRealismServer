@@ -31,10 +31,10 @@
 			y: 1.0d
 		}
 		{
-			id: "25A9E08D62987658"
-			linked_quest: "77B2C1D9A9DF6F52"
-			x: -2.5d
-			y: 10.0d
+			id: "279E463ECE7D60B4"
+			linked_quest: "23110DCC976A43FD"
+			x: -3.0d
+			y: 5.5d
 		}
 	]
 	quests: [
@@ -153,7 +153,7 @@
 			}]
 			title: "Кремень и кресало"
 			x: -1.0d
-			y: 3.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["0441351C1F56DFCE"]
@@ -324,7 +324,7 @@
 				}
 			]
 			x: 2.0d
-			y: 7.5d
+			y: 7.0d
 		}
 		{
 			dependencies: ["322E5C57B07CF52D"]
@@ -358,7 +358,7 @@
 			]
 			title: "Продвинутая доменная печь"
 			x: 2.0d
-			y: 9.5d
+			y: 9.0d
 		}
 		{
 			dependencies: ["6A2D831720311AB8"]
@@ -371,20 +371,6 @@
 			}]
 			x: -1.0d
 			y: 6.5d
-		}
-		{
-			dependencies: ["600E61639C85730F"]
-			id: "537DDE8FBEFD3C01"
-			shape: "square"
-			size: 2.0d
-			subtitle: "Огнестойкая автоматизация"
-			tasks: [{
-				id: "444095B2A4FED729"
-				item: "create:basin"
-				type: "item"
-			}]
-			x: 2.0d
-			y: 5.5d
 		}
 		{
 			dependencies: ["475DDA192C4EEE18"]
@@ -646,8 +632,8 @@
 				item: "immersive_aircraft:gyrodyne"
 				type: "item"
 			}]
-			x: -1.0d
-			y: 4.5d
+			x: -2.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["28E826E68B70696F"]
@@ -722,6 +708,116 @@
 			title: "Аэроплан"
 			x: -1.5d
 			y: 2.0d
+		}
+		{
+			dependencies: ["2F2785B034872AC6"]
+			id: "342ED3F640FD5B64"
+			tasks: [
+				{
+					amount: 1000L
+					fluid: "immersiveengineering:creosote"
+					id: "2FB478FA9E31DB6F"
+					type: "fluid"
+				}
+				{
+					amount: 1000L
+					fluid: "tfmg:creosote"
+					id: "1283F5F7412E4377"
+					type: "fluid"
+				}
+			]
+			title: "Креозот"
+			x: -2.5d
+			y: 10.5d
+		}
+		{
+			dependencies: ["2F2785B034872AC6"]
+			id: "19F96C79A9D102C6"
+			tasks: [{
+				id: "03E19D0340166054"
+				item: "immersiveengineering:coal_coke"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 9.5d
+		}
+		{
+			dependencies: [
+				"342ED3F640FD5B64"
+				"19F96C79A9D102C6"
+			]
+			id: "57EA49F51CAD0D18"
+			subtitle: "Оказывается, всё настолько просто..."
+			tasks: [{
+				id: "57DE07A228CFDA9D"
+				item: "immersiveengineering:ingot_hop_graphite"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["57EA49F51CAD0D18"]
+			id: "7DFF5F3E2A6F0571"
+			tasks: [{
+				id: "107A035689E1B1E6"
+				item: "tfc:powder/graphite"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 10.0d
+		}
+		{
+			dependencies: [
+				"342ED3F640FD5B64"
+				"322E5C57B07CF52D"
+			]
+			dependency_requirement: "one_started"
+			id: "43B4539D00CD04E3"
+			shape: "square"
+			size: 2.0d
+			tasks: [
+				{
+					id: "623779FFA729D572"
+					item: "tfmg:air_intake"
+					type: "item"
+				}
+				{
+					id: "4ABF355C3EEDD7FD"
+					item: "tfmg:blast_stove"
+					type: "item"
+				}
+				{
+					id: "7C83DFF48C2D0CF7"
+					item: "tfmg:blast_furnace_hatch"
+					type: "item"
+				}
+				{
+					count: 5L
+					id: "38C9A3742761C9BB"
+					item: { Count: 5, id: "tfmg:fireproof_bricks" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "76551167B80D0EAB"
+					item: { Count: 4, id: "tfmg:fireproof_brick_reinforcement" }
+					type: "item"
+				}
+				{
+					id: "0B386402BA0B151B"
+					item: "tfmg:blast_furnace_output"
+					type: "item"
+				}
+				{
+					id: "13F1008393C078CE"
+					item: "tfmg:casting_basin"
+					type: "item"
+				}
+			]
+			title: "Доменная печь"
+			x: 2.0d
+			y: 11.0d
 		}
 	]
 	title: "Железный век"
