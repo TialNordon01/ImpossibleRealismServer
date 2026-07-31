@@ -86,9 +86,18 @@ ServerEvents.tags('item', event => {
   event.add('tfmg:flux', 'tfc:powder/lime')
   //Кокс
   event.add('tfmg:blast_furnace_fuel', 'immersiveengineering:dust_coke')
+  //Битум
+  event.add('forge:bitumen', 'tfmg:bitumen')
 
   // Добавляем чёрную сталь TFC в тег nethersteel
   event.add('forge:ingots/nethersteel', 'tfc:metal/ingot/black_steel')
+
+  //Пластик
+  event.add('forge:plates/plastic', 'tfmg:plastic_sheet')
+  event.add('forge:ingots/plastic', 'immersiveengineering:plate_duroplast')
+
+  //Кварц и кремний
+  event.add('forge:gems/quartz', 'minecraft:flint')
 })
 
 ServerEvents.recipes(event => {
@@ -228,15 +237,19 @@ ServerEvents.recipes(event => {
     'tfc:ore/rich_magnetite', 'tfc:ore/rich_magnetite', 'tfc:ore/rich_magnetite',
     'tfc:ore/rich_magnetite', 'tfc:ore/rich_magnetite', 'tfc:ore/rich_magnetite'
   ])
-  // Обратный рецепт: магнитный блок → 9 богатого магнетита
-  event.shapeless('9x tfc:ore/rich_magnetite', [
-    'create_new_age:magnetite_block'
-  ])
+  // Промышленное прессование 9 отдельных магнитов TFMG в единый мощный блок
+  event.shaped('create_new_age:magnetite_block', [
+    'MMM',
+    'MMM',
+    'MMM'
+  ], {
+    M: 'tfmg:magnet' // 9 магнитов TFMG
+  })
 
   // Светокамень
   event.shapeless('3x minecraft:glowstone_dust', [
     'tfcoreprocessing:refined/sphalerite',
-    'immersiveengineering:dust_sulfur',
+    '#forge:dusts/sulfur',
     'immersiveengineering:dust_copper'
   ])
 
@@ -265,6 +278,18 @@ ServerEvents.recipes(event => {
   ], {
     S: 'minecraft:stick',
     W: 'minecraft:white_wool'
+  })
+
+  // Физический подшипник
+  event.remove({ output: 'vs_clockwork:phys_bearing' })
+  event.shaped('vs_clockwork:phys_bearing', [
+    ' T ',
+    ' M ',
+    ' C '
+  ], {
+    T: 'create:turntable',
+    M: 'create:mechanical_bearing',
+    C: 'create:brass_casing'
   })
 
   // Поводки
@@ -539,7 +564,7 @@ ServerEvents.recipes(event => {
     L: '#minecraft:logs'
   })
   event.shapeless('minecraft:amethyst_shard', [
-    'tfc_ie_addon:mineral/quartz_shard'
+    '#forge:gems/quartz'
   ])
   event.shaped('minecraft:sponge', [
     'W W',
@@ -599,14 +624,15 @@ ServerEvents.recipes(event => {
 
   //Печатная плата для редстоун компонентов
   event.shapeless(
-    Item.of('projectred_core:plate', 1),
-    ['immersiveengineering:circuit_board',]
+    'projectred_core:plate',
+    ['immersiveengineering:circuit_board']
   )
   event.shapeless(
-    Item.of('immersiveengineering:circuit_board', 1),
-    ['projectred_core:plate',]
+    'projectred_core:plate',
+    ['tfmg:coated_circuit_board']
   )
 
+  //Провода
   event.shapeless('projectred_transmission:orange_insulated_wire', [
     '#forge:wires/copper'
   ])
@@ -627,16 +653,231 @@ ServerEvents.recipes(event => {
     '#forge:wires/steel'
   ])
 
-  event.shapeless('projectred_core:infused_silicon', [
-    'afc:rubber_bar',
-    'minecraft:redstone'
-  ])
+  // Кристаллы
+  // Удаляем нереалистичные ванильные крафты
+  event.remove({ output: 'projectred_core:infused_silicon' })
+  event.remove({ output: 'projectred_core:energized_silicon' })
+  // 1. INFUSED SILICON (Базовый полупроводниковый кристалл)
+  // Используется в обычных логических схемах, повторителях, компараторах
+  // ШАГ 1: Создание p-n перехода (легирование)
+  // Кремний + p-тип полупроводник + n-тип полупроводник → базовый кристалл
+  event.recipes.create.sequenced_assembly(
+    'projectred_core:infused_silicon',              // Финальный результат
+    'tfmg:silicon_ingot',                           // Стартовый предмет: кремниевый слиток
+    [
+      // ШАГ 2.1: Нанесение p-типа (бор/алюминий как легирующая добавка)
+      event.recipes.create.deploying(
+        'tfmg:silicon_ingot',
+        ['tfmg:silicon_ingot', 'tfmg:p_semiconductor']
+      ),
+      // ШАГ 2.2: Нанесение n-типа (фосфор/мышьяк как легирующая добавка)
+      event.recipes.create.deploying(
+        'tfmg:silicon_ingot',
+        ['tfmg:silicon_ingot', 'tfmg:n_semiconductor']
+      ),
+      // ШАГ 2.3: Термический отжиг для активации легирующих атомов
+      event.recipes.create.pressing(
+        'projectred_core:infused_silicon',
+        'tfmg:silicon_ingot'
+      )
+    ]
+  )
+    .transitionalItem('tfmg:silicon_ingot')
+    .loops(1)
+  // 2. ENERGIZED SILICON (Светоактивный кристалл)
+  // Используется в рандомайзерах, детекторах, светоизлучающих компонентах
+  // ШАГ 1: Создание светоактивного кристалла на базе infused silicon
+  // Базовый кристалл + транзистор (усилитель света) + конденсатор (накопитель энергии)
+  event.recipes.create.sequenced_assembly(
+    'projectred_core:energized_silicon',              // Финальный результат
+    'projectred_core:infused_silicon',                // Стартовый предмет: базовый кристалл
+    [
+      // ШАГ 1.1: Интеграция транзистора (усиление электролюминесценции)
+      event.recipes.create.deploying(
+        'projectred_core:infused_silicon',
+        ['projectred_core:infused_silicon', 'tfmg:transistor_item']
+      ),
+      // ШАГ 1.2: Добавление конденсатора (накопление и быстрая отдача энергии)
+      event.recipes.create.deploying(
+        'projectred_core:infused_silicon',
+        ['projectred_core:infused_silicon', 'tfmg:capacitor_item']
+      ),
+      // ШАГ 1.3: Нанесение люминофорного слоя (светоизлучающий материал)
+      event.recipes.create.deploying(
+        'projectred_core:infused_silicon',
+        ['projectred_core:infused_silicon', 'minecraft:glowstone_dust']
+      ),
+      // ШАГ 1.4: Электрическая активация редстоуном
+      event.recipes.create.deploying(
+        'projectred_core:infused_silicon',
+        ['projectred_core:infused_silicon', 'minecraft:redstone']
+      ),
+      // ШАГ 1.5: Герметизация и формовка корпуса
+      event.recipes.create.pressing(
+        'projectred_core:energized_silicon',
+        'projectred_core:infused_silicon'
+      )
+    ]
+  )
+    .transitionalItem('projectred_core:infused_silicon')
+    .loops(1)
 
-  event.shapeless('projectred_core:energized_silicon', [
-    'afc:rubber_bar',
-    'minecraft:glowstone_dust'
-  ])
+  // ПРОИЗВОДСТВО ЛОГИЧЕСКИХ ЭЛЕМЕНТОВ
+  // ПРОИЗВОДСТВО АНОДА И КАТОДА (Project Red)
+  // Удаляем нереалистичные ванильные крафты
+  event.remove({ output: 'projectred_core:anode' })
+  event.remove({ output: 'projectred_core:cathode' })
+  // 1. АНОД (p-тип электрод)
+  // Положительный электрод для диодов и выпрямителей
+  // Вариант А: Простой крафт в верстаке (ручная сборка)
+  event.shaped('projectred_core:anode', [
+    ' W ',
+    'PPP',
+    ' M '
+  ], {
+    W: '#forge:wires/copper',        // Медный провод (токоподвод)
+    P: 'tfmg:p_semiconductor',       // p-тип полупроводник (основа анода)
+    M: '#forge:plates/aluminum'      // Алюминиевая пластина (контакт, легко отдает электроны)
+  })
+  // 2. КАТОД (n-тип электрод)
+  // Отрицательный электрод для диодов и выпрямителей
+  // Вариант А: Простой крафт в верстаке (ручная сборка)
+  event.shaped('projectred_core:cathode', [
+    ' W ',
+    'NNN',
+    ' C '
+  ], {
+    W: '#forge:wires/copper',        // Медный провод (токоподвод)
+    N: 'tfmg:n_semiconductor',       // n-тип полупроводник (основа катода)
+    C: '#forge:plates/nickel'        // Никелевая пластина (контакт, высокая работа выхода)
+  })
+  // ПРОИЗВОДСТВО POINTER (Декодер адреса / Мультиплексор)
+  // Используется в таймерах, секвенсерах, счётчиках, state selectors
+  // Удаляем нереалистичные ванильные крафты
+  event.remove({ output: 'projectred_core:pointer' })
+  // ВАРИАНТ 1: Простой крафт в верстаке (ручная сборка)
+  // Для ранней-средней игры, когда игрок ещё не построил линию
+  event.shaped('projectred_core:pointer', [
+    ' R ',
+    'TPT',
+    ' C '
+  ], {
+    R: 'tfmg:resistor',              // Резистор (подтяжка сигнала, стабилизация)
+    T: 'tfmg:transistor_item',       // Транзисторы (логические переключатели, 2 шт.)
+    P: 'projectred_core:plate',      // Печатная плата (основа схемы)
+    C: 'tfmg:capacitor_item'         // Конденсатор (фильтрация тактового сигнала)
+  })
+  // Удаляем нереалистичные ванильные крафты
+  event.remove({ output: 'minecraft:repeater' })
+  event.remove({ output: 'minecraft:comparator' })
+  event.remove({ output: 'projectred_integration:light_sensor_gate' })
+  event.remove({ output: 'projectred_integration:rain_sensor_gate' })
+  // 1. REPEATER (Повторитель сигнала)
+  // Усиливает и восстанавливает форму редстоун-сигнала
+  // Задержка создается RC-цепочкой (резистор + конденсатор)
+  // Простой крафт в верстаке
+  event.shaped('minecraft:repeater', [
+    'T T',
+    'RPR',
+    'CCC'
+  ], {
+    T: 'tfmg:transistor_item',       // 2 транзистора (усилительный каскад)
+    R: 'tfmg:resistor',              // Резистор (подтяжка сигнала)
+    P: 'projectred_core:plate',      // Печатная плата (основа)
+    C: '#forge:nuggets/copper'       // 3 медных самородка (контакты ввода/вывода)
+  })
+  // 2. COMPARATOR (Компаратор)
+  // Сравнивает два сигнала и выдает разницу
+  // Состоит из дифференциального усилителя на 4 транзисторах
+  // Простой крафт в верстаке
+  event.shaped('minecraft:comparator', [
+    ' T ',
+    'TPT',
+    'RRR'
+  ], {
+    T: 'tfmg:transistor_item',       // 4 транзистора (дифференциальный усилитель)
+    P: 'projectred_core:plate',      // Печатная плата
+    R: 'tfmg:resistor'               // 3 резистора (настройка порогов сравнения)
+  })
+  // 3. LIGHT SENSOR GATE (Датчик света)
+  // Фоторезистор меняет сопротивление в зависимости от освещенности
+  // Glowstone = абстракция фоторезистора (светится = проводит ток)
+  // Простой крафт в верстаке
+  event.shaped('projectred_integration:light_sensor_gate', [
+    ' G ',
+    'TPT',
+    'RRR'
+  ], {
+    G: 'minecraft:glowstone',        // Фоторезистор (светочувствительный элемент)
+    T: 'tfmg:transistor_item',       // 2 транзистора (усилитель сигнала)
+    P: 'projectred_core:plate',      // Печатная плата
+    R: 'tfmg:resistor'               // 3 резистора (настройка чувствительности)
+  })
+  // 4. RAIN SENSOR GATE (Датчик дождя)
+  // Два электрода: когда между ними вода - проводимость растет
+  // Простой крафт в верстаке
+  event.shaped('projectred_integration:rain_sensor_gate', [
+    ' C ',
+    'CPC',
+    'TRT'
+  ], {
+    C: '#forge:plates/copper',       // 3 медных электрода (датчик влажности)
+    P: 'projectred_core:plate',      // Печатная плата
+    T: 'tfmg:transistor_item',       // 2 транзистора (усилитель сигнала)
+    R: 'tfmg:resistor'               // Резистор (настройка чувствительности)
+  })
 
+  // Чип
+  // 1. Удаляем любые скрытые или ванильные рецепты
+  event.remove({ output: 'create_connected:control_chip' })
+  // 2. Создаем многоступенчатую сборку
+  event.recipes.create.sequenced_assembly(
+    'create_connected:control_chip',          // Финальный результат
+    'tfmg:coated_circuit_board',              // Стартовый предмет: медная печатная плата
+    [
+      // ШАГ 1: Die Attach (Крепление кристалла)
+      // Деплойер устанавливает кремниевый чип (мозг контроллера) на плату
+      event.recipes.create.deploying(
+        'tfmg:coated_circuit_board',
+        ['tfmg:coated_circuit_board', 'projectred_core:infused_silicon']
+      ),
+      
+      // ШАГ 2: Wire Bonding (Микромонтаж)
+      // Деплойер добавляет золотые самородки. В реальности золото используется для 
+      // тончайших проводников, соединяющих кристалл с контактами платы (не окисляется).
+      event.recipes.create.deploying(
+        'tfmg:coated_circuit_board',
+        ['tfmg:coated_circuit_board', '#forge:nuggets/gold']
+      ),
+      
+      // ШАГ 3: Монтаж пассивных компонентов
+      // Деплойер добавляет миниатюрную плату с резисторами/конденсаторами 
+      // (используем projectred_core:plate как универсальный компонентный модуль)
+      event.recipes.create.deploying(
+        'tfmg:coated_circuit_board',
+        ['tfmg:coated_circuit_board', 'projectred_core:plate']
+      ),
+
+      // ШАГ 4: Инкапсуляция (Encapsulation)
+      // Деплойер накладывает слой дюропласта/пластика сверху для защиты 
+      // хрупкого кремния от влаги, пыли и механических повреждений
+      event.recipes.create.deploying(
+        'tfmg:coated_circuit_board',
+        ['tfmg:coated_circuit_board', '#forge:ingots/plastic']
+      ),
+
+      // ШАГ 5: Отверждение и формовка (Molding & Curing)
+      // Механический пресс под давлением и температурой спрессовывает слои, 
+      // превращая мягкий пластик в твердый черный корпус чипа с контактами
+      event.recipes.create.pressing(
+        'create_connected:control_chip',
+        'tfmg:coated_circuit_board'
+      )
+    ]
+  )
+    .transitionalItem('tfmg:coated_circuit_board') // Визуально на ленте всё это время движется плата
+    .loops(1)
+  
   // Мультиметр
   event.remove({ output: 'projectred_core:multimeter' })
   event.shaped('projectred_core:multimeter', [
@@ -653,64 +894,17 @@ ServerEvents.recipes(event => {
   event.remove({ output: 'projectred_core:screwdriver' })
   event.shapeless('projectred_core:screwdriver', ['immersiveengineering:screwdriver'])
 
-  // =====================================
-  // ПЕРЕДЕЛКА ДРУГИХ РЕДСТОУН КОМПОНЕНТОВ
-  // =====================================
-  rocks.forEach(rock => {
-    event.remove({ output: `tfc:rock/button/${rock}` })
-    event.remove({ output: `tfc:rock/pressure_plate/${rock}` })
-    event.shapeless(`tfc:rock/button/${rock}`, [
-      '#tfc:chisels',
-      `tfc:brick/${rock}`,
-      'create:electron_tube'
-    ]).damageIngredient('#tfc:chisels')
-    event.shapeless(`tfc:rock/pressure_plate/${rock}`, [
-      '#tfc:chisels',
-      `tfc:brick/${rock}`,
-      `tfc:brick/${rock}`,
-      'create:electron_tube'
-    ]).damageIngredient('#tfc:chisels')
-  })
-
-  woods_tfc.forEach(wood => {
-    event.remove({ output: `tfc:wood/planks/${wood}_button` })
-    event.remove({ output: `tfc:wood/planks/${wood}_pressure_plate` })
-    event.shapeless(`tfc:wood/planks/${wood}_button`, [
-      `tfc:wood/lumber/${wood}`,
-      'create:electron_tube'
-    ])
-    event.shapeless(`tfc:wood/planks/${wood}_pressure_plate`, [
-      `tfc:wood/lumber/${wood}`,
-      `tfc:wood/lumber/${wood}`,
-      'create:electron_tube'
-    ])
-  })
-
-  woods_afc.forEach(wood => {
-    event.remove({ output: `afc:wood/planks/${wood}_button` })
-    event.remove({ output: `afc:wood/planks/${wood}_pressure_plate` })
-    event.shapeless(`afc:wood/planks/${wood}_button`, [
-      `afc:wood/lumber/${wood}`,
-      'create:electron_tube'
-    ])
-    event.shapeless(`afc:wood/planks/${wood}_pressure_plate`, [
-      `afc:wood/lumber/${wood}`,
-      `afc:wood/lumber/${wood}`,
-      'create:electron_tube'
-    ])
-  })
-
   // Нотный блок
   event.remove({ output: 'minecraft:note_block' })
   event.shaped('minecraft:note_block', [
     'CCC',  // Медные пластины (звучащий элемент)
     'PMP',  // Доски + молоточек
-    'PRP'   // Доски + редстоун
+    'PRP'   // Доски + источник питания
   ], {
     C: 'tfc:metal/sheet/copper',      // Медные листы (как ксилофонные пластины)
     P: '#minecraft:planks',
     M: 'tfc:metal/rod/copper',
-    R: 'minecraft:redstone'
+    R: 'create:electron_tube'
   })
 
   // Проигрыватель
@@ -726,8 +920,8 @@ ServerEvents.recipes(event => {
       L: '#forge:plates/brass',
       D: 'tfc:gem/diamond',
       P: '#minecraft:planks',
-      C: 'create:cogwheel',
-      E: 'createaddition:electric_motor',
+      C: 'createaddition:electric_motor',
+      E: 'create:electron_tube',
     }
   )
 
@@ -744,7 +938,7 @@ ServerEvents.recipes(event => {
       C: '#forge:cobblestone/normal',
       E: 'createaddition:electric_motor',
       P: 'create:weighted_ejector',
-      R: 'minecraft:redstone'
+      R: 'create:electron_tube'
     }
   )
 
@@ -755,7 +949,23 @@ ServerEvents.recipes(event => {
     'create:deployer'
   ])
 
-  // Integrated Circuit
+  //Наблюдатель
+  event.remove({ output: 'minecraft:observer' })
+  event.shaped(
+    'minecraft:observer',
+    [
+      'CCC',
+      'RRT',
+      'CCC'
+    ],
+    {
+      C: '#forge:cobblestone',
+      R: 'minecraft:redstone',
+      T: 'create:electron_tube'
+    }
+  )
+
+  // Микросхема
   event.remove({ output: 'integrated_circuit:integrated_circuit' })
   event.shaped('integrated_circuit:integrated_circuit', [
     '   ',
@@ -767,31 +977,7 @@ ServerEvents.recipes(event => {
     P: 'projectred_core:plate'
   })
 
-  // Repeater
-  event.remove({ output: 'minecraft:repeater' })
-  event.shaped('minecraft:repeater', [
-    'TRT',
-    'PPP',
-    '   '
-  ], {
-    T: 'minecraft:redstone_torch',
-    R: 'minecraft:redstone',
-    P: 'projectred_core:plate'
-  })
-
-  // Comparator
-  event.remove({ output: 'minecraft:comparator' })
-  event.shaped('minecraft:comparator', [
-    ' T ',
-    'TRT',
-    'PPP'
-  ], {
-    T: 'minecraft:redstone_torch',
-    R: 'minecraft:redstone',
-    P: 'projectred_core:plate'
-  })
-
-  // Redstone Block
+  // Редстоун блок
   event.remove({ output: 'minecraft:redstone_block' })
   event.shaped('minecraft:redstone_block', [
     ' R ',
@@ -802,48 +988,13 @@ ServerEvents.recipes(event => {
     E: 'create:electron_tube'
   })
 
-  // Tripwire Hook
-  event.remove({ output: 'minecraft:tripwire_hook' })
-  event.shapeless('minecraft:tripwire_hook', [
-    'tfc:metal/fish_hook/copper',
-    'create:electron_tube',
-    'minecraft:stick'
-  ])
-  event.shapeless('minecraft:tripwire_hook', [
-    'tfc:metal/fish_hook/wrought_iron',
-    'create:electron_tube',
-    'minecraft:stick'
-  ])
-  event.shapeless('minecraft:tripwire_hook', [
-    'tfc:metal/fish_hook/bronze',
-    'create:electron_tube',
-    'minecraft:stick'
-  ])
-  event.shapeless('minecraft:tripwire_hook', [
-    'tfc:metal/fish_hook/black_bronze',
-    'create:electron_tube',
-    'minecraft:stick'
-  ])
-  event.shapeless('minecraft:tripwire_hook', [
-    'tfc:metal/fish_hook/bismuth_bronze',
-    'create:electron_tube',
-    'minecraft:stick'
-  ])
-
-  // Redstone Torch (shapeless)
+  // Редстоун факел
   event.remove({ output: 'minecraft:redstone_torch' })
   event.shapeless('minecraft:redstone_torch', [
     'create:electron_tube'
   ])
 
-  // Lever
-  event.remove({ output: 'minecraft:lever' })
-  event.shapeless('minecraft:lever', [
-    'minecraft:stick',
-    'create:electron_tube'
-  ])
-
-  // Transmitter (Create)
+  // Передатчик
   event.remove({ output: 'create:transmitter' })
   event.shaped('create:transmitter', [
     ' L ',
@@ -855,7 +1006,7 @@ ServerEvents.recipes(event => {
     E: 'create:electron_tube'
   })
 
-  // Pulse Timer
+  // Генератор пульса
   event.remove({ output: 'create:pulse_timer' })
   event.shaped('create:pulse_timer', [
     'ABR',
@@ -868,7 +1019,7 @@ ServerEvents.recipes(event => {
     P: 'projectred_core:plate'
   })
 
-  // Pulse Repeater
+  // Повторитель импульса
   event.remove({ output: 'create:pulse_repeater' })
   event.shaped('create:pulse_repeater', [
     'RBR',
@@ -880,7 +1031,7 @@ ServerEvents.recipes(event => {
     P: 'projectred_core:plate'
   })
 
-  // Powered Latch
+  // Редстоун-триггер
   event.remove({ output: 'create:powered_latch' })
   event.shaped('create:powered_latch', [
     ' T ',
@@ -893,7 +1044,7 @@ ServerEvents.recipes(event => {
     P: 'projectred_core:plate'
   })
 
-  // Powered Toggle Latch
+  // Триггер-защёлка
   event.remove({ output: 'create:powered_toggle_latch' })
   event.shaped('create:powered_toggle_latch', [
     ' R ',
@@ -905,7 +1056,7 @@ ServerEvents.recipes(event => {
     P: 'projectred_core:plate'
   })
 
-  // Pulse Extender
+  // Удлинитель импульса
   event.remove({ output: 'create:pulse_extender' })
   event.shaped('create:pulse_extender', [
     '  T',
@@ -918,7 +1069,7 @@ ServerEvents.recipes(event => {
     P: 'projectred_core:plate'
   })
 
-  // Daylight Detector
+  // Солнечная панель
   event.remove({ output: 'minecraft:daylight_detector' })
   event.shaped('minecraft:daylight_detector', [
     'LLL',
@@ -930,7 +1081,7 @@ ServerEvents.recipes(event => {
     W: '#tfc:lumber'
   })
 
-  // Piston
+  // Поршень
   event.remove({ output: 'minecraft:piston' })
   event.shaped('minecraft:piston', [
     'WWW',
@@ -942,23 +1093,10 @@ ServerEvents.recipes(event => {
     R: '#forge:rods/iron',
     E: 'createaddition:electric_motor',
     M: 'tfc:brass_mechanisms',
-    S: 'minecraft:redstone'
+    S: 'create:electron_tube'
   })
 
-  // Analog Lever
-  event.remove({ output: 'create:analog_lever' })
-  event.shaped('create:analog_lever', [
-    ' S ',
-    'TCA',
-    '   '
-  ], {
-    S: 'minecraft:stick',
-    T: 'create:electron_tube',
-    C: 'projectred_core:conductive_plate',
-    A: 'projectred_core:anode'
-  })
-
-  // Sequenced Pulse Generator
+  // Последовательный генератор импульса
   event.remove({ output: 'create_connected:sequenced_pulse_generator' })
   event.shaped('create_connected:sequenced_pulse_generator', [
     'TC ',
@@ -972,39 +1110,17 @@ ServerEvents.recipes(event => {
     P: 'projectred_core:plate'
   })
 
-  // ProjectRed removals
+  // Удаляем лишнее из Project RED
   event.remove({ output: 'projectred_core:red_ingot' })
   event.remove({ output: 'projectred_core:red_iron_comp' })
 
-  // Integrated Circuit removals (all colors)
-  event.remove({
-    output: [
-      'integrated_circuit:white_integrated_circuit',
-      'integrated_circuit:light_gray_integrated_circuit',
-      'integrated_circuit:orange_integrated_circuit',
-      'integrated_circuit:magenta_integrated_circuit',
-      'integrated_circuit:light_blue_integrated_circuit',
-      'integrated_circuit:yellow_integrated_circuit',
-      'integrated_circuit:lime_integrated_circuit',
-      'integrated_circuit:pink_integrated_circuit',
-      'integrated_circuit:gray_integrated_circuit',
-      'integrated_circuit:cyan_integrated_circuit',
-      'integrated_circuit:purple_integrated_circuit',
-      'integrated_circuit:blue_integrated_circuit',
-      'integrated_circuit:brown_integrated_circuit',
-      'integrated_circuit:green_integrated_circuit',
-      'integrated_circuit:red_integrated_circuit',
-      'integrated_circuit:black_integrated_circuit'
-    ]
-  })
-
-  // Electron Tube (Shapeless)
+  // Электрическая трубка
   event.shapeless('create:electron_tube', [
     'create:polished_rose_quartz',
     '#forge:plates/copper'
   ])
 
-  // Remove bells and saws
+  // Удаляем колокола и пилы
   event.remove({
     output: [
       'create:haunted_bell',
@@ -1077,181 +1193,6 @@ ServerEvents.recipes(event => {
     'tfc:metal/ingot/nickel'
   ])
 
-
-  // ========================
-  // ИСПРАВЛЕНИЕ РЕЦЕПТОВ ДВС
-  // ========================
-  event.remove({
-    output: [
-      'createdieselgenerators:diesel_engine',
-      'createdieselgenerators:large_diesel_engine',
-      'createdieselgenerators:huge_diesel_engine',
-      'createdieselgenerators:engine_piston'
-    ]
-  })
-
-  // Обычный двигатель
-  event.shaped('createdieselgenerators:diesel_engine', [
-    ' F ',
-    'PBP',
-    'ATA'
-  ], {
-    F: 'minecraft:flint_and_steel',
-    P: 'createdieselgenerators:engine_piston',
-    B: 'immersiveengineering:storage_steel',
-    A: 'create:andesite_alloy',
-    T: 'create:fluid_tank'
-  })
-  event.shaped('createdieselgenerators:diesel_engine', [
-    ' F ',
-    'PBP',
-    'ATA'
-  ], {
-    F: 'minecraft:flint_and_steel',
-    P: 'createdieselgenerators:engine_piston',
-    B: 'createbigcannons:cast_iron_block',
-    A: 'create:andesite_alloy',
-    T: 'create:fluid_tank'
-  })
-  event.shaped('createdieselgenerators:diesel_engine', [
-    ' F ',
-    'PBP',
-    'ATA'
-  ], {
-    F: 'minecraft:flint_and_steel',
-    P: 'createdieselgenerators:engine_piston',
-    B: 'minecraft:iron_block',
-    A: 'create:andesite_alloy',
-    T: 'create:fluid_tank'
-  })
-
-  //Большой дизель
-  event.shaped('createdieselgenerators:large_diesel_engine', [
-    ' A ',
-    'SDS',
-    ' A '
-  ], {
-    A: 'create:andesite_alloy',
-    S: 'tfc:metal/sheet/steel',
-    D: 'createdieselgenerators:diesel_engine'
-  })
-  event.shaped('createdieselgenerators:large_diesel_engine', [
-    ' A ',
-    'SDS',
-    ' A '
-  ], {
-    A: 'create:andesite_alloy',
-    S: 'tfc:metal/sheet/cast_iron',
-    D: 'createdieselgenerators:diesel_engine'
-  })
-  event.shaped('createdieselgenerators:large_diesel_engine', [
-    ' A ',
-    'SDS',
-    ' A '
-  ], {
-    A: 'create:andesite_alloy',
-    S: 'tfc:metal/sheet/wrought_iron',
-    D: 'createdieselgenerators:diesel_engine'
-  })
-
-  //Огромный дизель
-  event.shaped(
-    'createdieselgenerators:huge_diesel_engine',
-    [
-      'AFA',
-      'SES',
-      'TBT'
-    ], {
-    F: 'minecraft:flint_and_steel',
-    E: 'create:steam_engine',
-    B: 'immersiveengineering:storage_steel',
-    A: 'create:andesite_alloy',
-    T: 'create:fluid_pipe',
-    S: 'tfc:metal/sheet/steel'
-  })
-  event.shaped(
-    'createdieselgenerators:huge_diesel_engine', [
-    'AFA',
-    'SES',
-    'TBT'
-  ], {
-    A: 'create:andesite_alloy',
-    B: 'createbigcannons:cast_iron_block',
-    E: 'create:steam_engine',
-    T: 'create:fluid_pipe',
-    F: 'minecraft:flint_and_steel',
-    S: 'tfc:metal/sheet/cast_iron'
-  })
-  event.shaped(
-    'createdieselgenerators:huge_diesel_engine', [
-    'AFA',
-    'SES',
-    'TBT'
-  ], {
-    A: 'create:andesite_alloy',
-    B: 'minecraft:iron_block',
-    E: 'create:steam_engine',
-    T: 'create:fluid_pipe',
-    F: 'minecraft:flint_and_steel',
-    S: 'tfc:metal/sheet/wrought_iron'
-  })
-
-  //Поршень
-  event.shaped(
-    'createdieselgenerators:engine_piston', [
-    'I  ',
-    ' S ',
-    '  N'
-  ], {
-    I: '#forge:ingots/steel',
-    S: '#forge:rods/steel',
-    N: '#forge:nuggets/steel'
-  })
-  event.shaped(
-    'createdieselgenerators:engine_piston', [
-    'I  ',
-    ' S ',
-    '  N'
-  ], {
-    I: '#forge:ingots/cast_iron',
-    S: '#forge:rods/cast_iron',
-    N: '#forge:nuggets/cast_iron'
-  })
-  event.shaped(
-    'createdieselgenerators:engine_piston', [
-    'I  ',
-    ' S ',
-    '  N'
-  ], {
-    I: '#forge:ingots/iron',
-    S: '#forge:rods/wrought_iron',
-    N: '#forge:nuggets/iron'
-  })
-
-  // Глушитель
-  event.remove({ output: 'createdieselgenerators:engine_silencer' })
-  event.shaped('createdieselgenerators:engine_silencer', [
-    'SCS',
-    'SIS',
-    'SCS'
-  ], {
-    S: '#forge:plates/steel',          // СТАЛЬНОЙ корпус (жаропрочный, выдерживает вибрации)
-    C: '#forge:plates/cast_iron',      // ЧУГУННЫЕ торцы/фланцы (отлично держат форму и жар)
-    I: 'create:fluid_pipe'               // Внутренняя перфорированная труба для прохождения газов
-  })
-
-  // Турбонаддув
-  event.remove({ output: 'createdieselgenerators:engine_turbocharger' })
-  event.shaped('createdieselgenerators:engine_turbocharger', [
-    ' P ',
-    'CBC',
-    ' P '
-  ], {
-    P: 'create:propeller',               // Крыльчатки (пропеллер Create идеально символизирует компрессорное и турбинное колесо)
-    C: '#forge:plates/cast_iron',        // ЧУГУН (горячая часть/улитка турбины. Выдерживает 900°C+, заменяет цинк!)
-    B: '#forge:rods/steel'               // СТАЛЬНОЙ вал и подшипниковый узел (выдерживает 100 000+ RPM)
-  })
-
   // НОВЫЕ РЕЦЕПТЫ ДЛЯ ЧАНА (Молот теряет 1 прочность)
   event.remove({ output: 'firmalife:vat' })
   const vatMetals = [
@@ -1307,10 +1248,7 @@ ServerEvents.recipes(event => {
 
   // БИТУМ
   event.shapeless('artisanal:bitumen', [
-    'immersivepetroleum:bitumen'
-  ])
-  event.shapeless('immersivepetroleum:bitumen', [
-    'artisanal:bitumen'
+    '#forge:bitumen'
   ])
 
   //Клей
@@ -1337,16 +1275,26 @@ ServerEvents.recipes(event => {
     Fluid.of('afc:latex', 250),
     'tfc:powder/charcoal'
   ])
-  // 3. БИТУМНО-ЛАТЕКСНАЯ МАСТИКА (Поздняя игра, Immersive Petroleum)
-  event.recipes.create.mixing('3x tfc:glue', [
-    'immersivepetroleum:bitumen',           // Битум из перегонки нефти
-    Fluid.of('afc:latex', 250),             // Латекс из гевеи
-    'tfc:powder/lime'                       // Гашёная известь как наполнитель
-  ]).heated()
+  // 3. БИТУМНО-ЛАТЕКСНАЯ МАСТИКА (Поздняя игра)
+  event.recipes.tfmg.vat_machine_recipe(
+    [
+      '#forge:bitumen',               // Вход 1: Битум (жидкость)
+      Fluid.of('afc:latex', 250),     // Вход 2: Латекс (жидкость)
+      'tfc:powder/lime'               // Вход 3: Известь (предмет)
+    ],
+    [
+      'tfc:glue', 'tfc:glue', 'tfc:glue' // Выход: 3 клея (строго по отдельности, как в доках!)
+    ]
+  )
+    .heated()                                // Требуется базовый нагрев для эмульгирования
+    .machines("tfmg:mixing")                 // Требуется мешалка сверху
+    .allowedVatTypes("tfmg:steel_vat", "tfmg:firebrick_lined_vat") // Сталь или огнеупорный кирпич (битум горячий)
+    .minSize(1)                              // Минимальный размер ванны
+    .processingTime(300)                     // 15 секунд
   // БОНУС: Альтернативный рецепт без латекса (только нефть)
   event.recipes.create.mixing('2x tfc:glue', [
-    'immersivepetroleum:bitumen',
-    'tfc:powder/sand',          // Песок как наполнитель
+    '#forge:bitumen',
+    '#minecraft:sand',          // Песок как наполнитель
     'tfc:powder/lime'           // Известь для отверждения
   ]).heated()
 
@@ -1570,15 +1518,50 @@ ServerEvents.recipes(event => {
     ),
   ]).transitionalItem('vs_clockwork:extendon_hose').loops(5)
 
-  //Дополнительный крафт резины
+  // Дополнительный крафт резины
+  // 1. СИНТЕТИЧЕСКАЯ РЕЗИНА (Поздняя игра, Нефтехимия)
+  // Массивы доступных жидкостей из разных модов
+  const naphthas = [
+    'immersivepetroleum:naphtha',
+    'tfmg:naphtha'
+  ];
+  const lubricants = [
+    'immersivepetroleum:lubricant',
+    'tfmg:lubrication_oil'
+  ];
+  // Вложенный цикл создаст 4 комбинации рецептов (2 x 2 = 4)
+  naphthas.forEach(naphtha => {
+    lubricants.forEach(lubricant => {
+      event.recipes.tfmg.vat_machine_recipe(
+        [
+          Fluid.of(naphtha, 500),       // 500 мБ нафты (из IP или TFMG)
+          Fluid.of(lubricant, 100),     // 100 мБ смазки (из IP или TFMG)
+          '#forge:dusts/sulfur'         // Сера для вулканизации/инициации
+        ],
+        [
+          'afc:rubber_bar',              // Выход 1 (строго по отдельности!)
+          'afc:rubber_bar'               // Выход 2
+        ]
+      )
+        .heated()
+        .machines("tfmg:mixing")
+        .allowedVatTypes("tfmg:steel_vat")
+        .minSize(2)
+        .processingTime(400);
+    });
+  });
+  // 2. ВУЛКАНИЗАЦИЯ НАТУРАЛЬНОГО КАУЧУКА (Средняя-Поздняя игра) 
   event.recipes.create.mixing(
-    'afc:rubber_bar',
     [
-      Fluid.of('immersivepetroleum:naphtha', 500),  // Нафта из IP
-      Fluid.of('immersivepetroleum:lubricant', 100), // Смазка как пластификатор
-      'tfc:powder/sulfur'                            // Сера
+      'afc:rubber_bar' // Выход: 1 готовый резиновый стержень
+    ],
+    [
+      Fluid.of('afc:latex', 1000), // Вход 1: Сырой латекс (1 ведро)
+      '#forge:dusts/sulfur'        // Вход 2: Сера для сшивания полимерных цепей
     ]
-  ).heated()
+  )
+  .heated()            // КРИТИЧЕСКИ ВАЖНО: Вулканизация требует нагрева (имитирует огонь под горшком)
+  .processingTime(200) // 10 секунд на цикл
 
   //Убираем крафты из aleki ships
   event.remove({ mod: 'alekiships', type: 'minecraft:crafting_shaped' })
@@ -1660,7 +1643,7 @@ ServerEvents.recipes(event => {
     }
   )
 
-  //Переделываем крафт коксовых кирпичей
+  //Переделываем крафт кирпичей для коксовой печи
   event.remove({ output: 'immersiveengineering:cokebrick' })
   event.shapeless('immersiveengineering:cokebrick', [
     'tfc:fire_bricks'
@@ -1809,67 +1792,6 @@ ServerEvents.recipes(event => {
       `tfc:rock/gravel/${rock}`,  // Вход: гравий конкретной породы
       150                        // Время обработки (7.5 секунд)
     )
-  })
-
-  //=========================
-  //Нефть из CDG через сталь
-  //=========================
-  //Геофизический прибор для разведки недр
-  event.remove({ output: 'createdieselgenerators:oil_scanner' })
-  event.shaped('createdieselgenerators:oil_scanner', [
-    'LGL',  // Линзы + стекло (оптическая система индикации)
-    'SCS',  // Сталь + компас (сенсор + корпус)
-    'WPW'   // Медная проводка + механика (передача сигнала)
-  ], {
-    L: 'tfc:lens',                           // Линзы (для оптического сенсора)
-    G: 'create:precision_mechanism',         // Точный механизм (сердце прибора
-    S: 'tfc:metal/sheet/steel',              // Стальной корпус (прочность)
-    C: 'minecraft:compass',                  // Компас (геофизический сенсор)
-    W: '#forge:wires/copper',                // Медная проволока (проводка)
-    P: 'create:cogwheel'                     // Шестерня (механика вращения)
-  })
-
-  //Подшипник станка качалки
-  event.remove({ output: 'createdieselgenerators:pumpjack_bearing' })
-  event.shaped('createdieselgenerators:pumpjack_bearing', [
-    'ASA',
-    'SPS',
-    'ASA'
-  ], {
-    A: 'create:andesite_alloy',
-    S: '#forge:plates/obsidian',
-    P: 'create:mechanical_bearing'
-  })
-
-  //Кривошип
-  event.remove({ output: 'createdieselgenerators:pumpjack_crank' })
-  event.recipes.create.mechanical_crafting(
-    'createdieselgenerators:pumpjack_crank',
-    [
-      'AWA',
-      ' I ',
-      'AWA',
-      'SIS',
-      'ASA'
-    ],
-    {
-      A: 'create:andesite_alloy',
-      W: '#forge:plates/iron',
-      S: '#forge:plates/obsidian',
-      I: 'create:shaft'
-    }
-  )
-
-  //Головка балансира
-  event.remove({ output: 'createdieselgenerators:pumpjack_head' })
-  event.shaped('createdieselgenerators:pumpjack_head', [
-    'A A',
-    'SRS',
-    'A A'
-  ], {
-    A: 'create:andesite_alloy',
-    S: '#forge:plates/obsidian',
-    R: 'afc:rubber_bar'
   })
 
 
@@ -2230,7 +2152,6 @@ ServerEvents.recipes(event => {
       'create:wand_of_symmetry',
       'create:mechanical_press',
       'create:netherite_backtank',
-      'create:blaze_burner',
       'create:copper_backtank',
       'create:schematic_table'
     ]
@@ -2253,23 +2174,6 @@ ServerEvents.recipes(event => {
   ).heated() // Требование: Чаша должна быть нагрета (Blaze Burner на уровне Heated или выше)
   //Тесто
   event.replaceInput({}, 'create:dough', '#firmalife:foods/extra_dough')
-
-  // Удаляем старые ванильные рецепты взвешенных нажимных плит
-  event.remove({ output: 'minecraft:light_weighted_pressure_plate' })
-  event.remove({ output: 'minecraft:heavy_weighted_pressure_plate' })
-  // Новый рецепт для ЛЕГКОЙ взвешенной нажимной плиты (Золото + Лампа)
-  event.shapeless('minecraft:light_weighted_pressure_plate', [
-    '#forge:ingots/gold',
-    '#forge:ingots/gold',
-    'create:electron_tube'
-  ])
-  // Новый рецепт для ТЯЖЕЛОЙ взвешенной нажимной плиты (Железо + Лампа)
-  // Примечание: Если хочешь использовать кованое железо из TFC, замени 'minecraft:iron_ingot' на '#forge:ingots/wrought_iron'
-  event.shapeless('minecraft:heavy_weighted_pressure_plate', [
-    '#forge:ingots/wrought_iron',
-    '#forge:ingots/wrought_iron',
-    'create:electron_tube'
-  ])
 
   //Дробление слитков
   // Массив металлов, для которых есть пыль в Immersive Engineering
@@ -2331,6 +2235,15 @@ ServerEvents.recipes(event => {
   )
     .heated() // Требуется нагрев для реакции
     .processingTime(200)
+  event.recipes.create.mixing(
+    'createnuclear:yellowcake', // Выход: Жёлтый кек (U3O8)
+    [
+      '#forge:dusts/uranium',  // Вход: Урановая пыль
+      Fluid.of('tfmg:sulfuric_acid', 250) // Вход: Серная кислота из Шага 0
+    ]
+  )
+    .heated() // Требуется нагрев для реакции
+    .processingTime(200)
 
   // ШАГ 2: Сублимация (Жёлтый кек + Нагрев = Урановый "Газ")
   event.remove({ output: Fluid.of('createnuclear:uranium') })
@@ -2355,7 +2268,7 @@ ServerEvents.recipes(event => {
     ],
     Fluid.of('createnuclear:uranium', 500) // Вход: Урановый "газ" из Шага 2
   )
-    .superheated() // ТРЕБУЕТСЯ МАКСИМАЛЬНЫЙ НАГРЕВ (Seething / Кипящий режим Горелки Всполоха!)
+    .heated() // ТРЕБУЕТСЯ МАКСИМАЛЬНЫЙ НАГРЕВ (Seething / Кипящий режим Горелки Всполоха!)
     .processingTime(400) // Долгий процесс "разделения изотопов"
 
   // ШАГ 4: Плавка обогащённого жёлтого кека в реактивный урановый слиток
@@ -2654,7 +2567,7 @@ ServerEvents.recipes(event => {
       amount: 900
     },
     result_item: {
-      item: "tfc:powder/sulfur",
+      item: '#forge:dusts/sulfur',
       count: 1
     }
   })
@@ -2673,6 +2586,12 @@ ServerEvents.recipes(event => {
 
   //Редактируем рецепт стали в чаше
   event.remove({ type: 'create:mixing', output: 'immersiveengineering:ingot_steel' })
+
+  //Кокс
+  event.replaceInput({}, 'tfmg:coal_coke_block', 'immersiveengineering:coke')
+  event.replaceOutput({}, 'tfmg:coal_coke_block', 'immersiveengineering:coke')
+  event.replaceInput({}, 'tfmg:coal_coke', 'immersiveengineering:coal_coke')  
+  event.replaceOutput({}, 'tfmg:coal_coke', 'immersiveengineering:coal_coke')
 
   //Графит
   event.remove({ type: 'create:milling', input: 'tfc:ore/graphite' })
@@ -2694,14 +2613,14 @@ ServerEvents.recipes(event => {
           'immersiveengineering:coal_coke',      // Вход: Каменноугольный кокс
           Fluid.of('tfmg:creosote', 250)        // Вход: Креозот (побочный продукт коксовой печи)
       ]
-  ).superheated() // Критически важно: требует максимального нагрева горелки!
+  ).heated() // Критически важно: требует максимального нагрева горелки!
   event.recipes.create.mixing(
       'immersiveengineering:ingot_hop_graphite', // Выход: Графитовый слиток (HOP-графит)
       [
           'immersiveengineering:coal_coke',      // Вход: Каменноугольный кокс
           Fluid.of('immersiveengineering:creosote', 250)        // Вход: Креозот (побочный продукт коксовой печи)
       ]
-  ).superheated() // Критически важно: требует максимального нагрева горелки!
+  ).heated() // Критически важно: требует максимального нагрева горелки!
 
   // ШАГ 2: Помол графитового слитка в пыль
   // Создаем рецепт для Create (Механический жернов)
@@ -2752,6 +2671,534 @@ ServerEvents.recipes(event => {
   ])
   event.replaceInput({}, 'tfmg:fireproof_brick', 'tfc:ceramic/fire_brick')
 
+  //Трассер для снарядов из пушек
+  event.remove({ output: 'createbigcannons:tracer_tip' })
+  event.shaped('createbigcannons:tracer_tip', [
+    ' A ',
+    ' P ',
+    ' C '
+  ], {
+    A: '#forge:dusts/aluminum',  // Алюминиевая пыль (горит ярким белым светом)
+    P: 'minecraft:gunpowder',     // Порох (воспламенитель)
+    C: '#forge:plates/copper'     // Медная гильза
+  })
+  //Сварка для пушек
+  event.remove({ output: 'createbigcannons:cannon_welder' })
+  event.shaped('createbigcannons:cannon_welder', [
+    ' F ',
+    ' S ',
+    ' W '
+  ], {
+    F: 'minecraft:flint_and_steel',     // Огниво (источник огня)
+    S: '#forge:ingots/steel',           // Стальной корпус (выдерживает жар)
+    W: '#forge:rods/wooden'             // Деревянная рукоять (изоляция)
+  })
+
+  //Крафт подшипника вертолёта
+  event.remove({ output: 'vs_clockwork:copter_bearing' })
+  event.shaped('vs_clockwork:copter_bearing', [
+    ' P ',
+    'GMG',
+    ' B '
+  ], {
+    P: 'create:precision_mechanism',    // Прецизионный механизм (точное выравнивание)
+    G: 'vs_clockwork:gyro',             // Латунные шестерни (гироскопический эффект)
+    M: 'create_connected:brass_gearbox',// Латунный механизм (подшипниковый узел)
+    B: 'create:mechanical_bearing'      // Механический подшипник (основа вращения)
+  })
+  //Гироскоп
+  event.remove({ output: 'vs_clockwork:gyro' })
+  event.shapeless('vs_clockwork:gyro', [
+    'create:turntable', 'create:flywheel'
+  ])
+  event.shapeless('vs_clockwork:gyro', [
+    'create:turntable', 'tfmg:steel_flywheel'
+  ])
+  event.shapeless('vs_clockwork:gyro', [
+    'create:turntable', 'tfmg:lead_flywheel'
+  ])
+  event.shapeless('vs_clockwork:gyro', [
+    'create:turntable', 'tfmg:cast_iron_flywheel'
+  ])
+  event.shapeless('vs_clockwork:gyro', [
+    'create:turntable', 'tfmg:aluminum_flywheel'
+  ])
+  event.shapeless('vs_clockwork:gyro', [
+    'create:turntable', 'tfmg:nickel_flywheel'
+  ])
+
+  //Горелка вполоха - угольная яма в железной упаковке с роботом
+  //(не спрашивайте про реалистичность, это нужно для нефти из TFMG)
+  event.remove({ output: 'create:blaze_burner' })
+  event.shaped('create:blaze_burner', [
+    'SHS',
+    'SBS',
+    'STS'
+  ], {
+    S: '#forge:coal',
+    H: '#railways:conductor_caps',
+    B: '#create:casing',
+    T: 'create:empty_blaze_burner'
+  })
+
+  // Удаляем нереалистичный ванильный крафт соломинки
+  event.remove({ output: 'createaddition:straw' })
+  event.shapeless('createaddition:straw', [
+    '#tfc:tuyeres'
+  ])
+
+  //Замена резины
+  event.replaceInput({}, 'tfmg:rubber_sheet', 'afc:rubber_bar')
+  event.replaceOutput({}, 'tfmg:rubber_sheet', 'afc:rubber_bar')
+
+  //Замена сот на воск
+  event.replaceInput({}, 'minecraft:honeycomb', 'firmalife:beeswax')
+  //Парафин и воск
+  event.shapeless('firmalife:beeswax', [
+    'immersivepetroleum:paraffin_wax'
+  ])
+  event.shapeless('immersivepetroleum:paraffin_wax', [
+    'firmalife:beeswax'
+  ])
+
+  //Битум
+  event.replaceOutput({}, 'immersivepetroleum:bitumen', '#forge:bitumen')
+  event.replaceOutput({}, 'tfmg:bitumen', '#forge:bitumen')
+
+  //Фильтрация воды
+  event.recipes.create.mixing(
+    [Fluid.of('purified_water:purified_water', 1000)],
+    [Fluid.of('minecraft:water', 1000)]
+  )
+  .heated() // Требуется нагрев для дистилляции
+  .processingTime(200)
+  event.recipes.create.mixing(
+    [
+      Fluid.of('purified_water:purified_water', 1000) // Выход: 1000 мБ очищенной воды
+    ],
+    [
+      Fluid.of('minecraft:water', 1000), // Вход: 1000 мБ обычной воды
+      'minecraft:charcoal' // Активированный уголь как фильтр (не расходуется)
+    ]
+  )
+  .processingTime(100) // 5 секунд на фильтрацию
+
+  //Асфальт
+  event.remove({ output: 'immersivepetroleum:asphalt' })
+  event.remove({ output: 'tfmg:asphalt' })
+  event.remove({ output: 'createdieselgenerators:asphalt_block' })
+  // Горячий асфальтобетон в механическом миксере Create
+  event.recipes.create.mixing(
+    [
+      Item.of('createdieselgenerators:asphalt_block', 4) // Выход: 4 блока асфальта
+    ],
+    [
+      '#forge:bitumen',      // 250 мБ битума (вяжущее вещество)
+      '#forge:gravel',                      // Гравий (крупный заполнитель)
+      '#minecraft:sand',                    // Песок (мелкий заполнитель)
+      Fluid.of('minecraft:water', 100)      // Немного воды для контроля вязкости
+    ]
+  )
+  .heated() // КРИТИЧЕСКИ ВАЖНО: Битум должен быть нагрет до 150-180°C для смешивания
+  .processingTime(200) // 10 секунд на замес
+  event.recipes.create.mixing(
+    [
+      Item.of('createdieselgenerators:asphalt_block', 6) // Выход: 6 блока асфальта
+    ],
+    [
+      '#forge:bitumen',      // 250 мБ битума (вяжущее вещество)
+      '#forge:gravel',                      // Гравий (крупный заполнитель)
+      'tfmg:slag',                    // Шлак (мелкий заполнитель)
+      Fluid.of('minecraft:water', 100)      // Немного воды для контроля вязкости
+    ]
+  )
+  .heated() // КРИТИЧЕСКИ ВАЖНО: Битум должен быть нагрет до 150-180°C для смешивания
+  .processingTime(200) // 10 секунд на замес
+  //Удаление лишнего
+  event.remove({ output: 'tfmg:asphalt_mixture' })
+  event.remove({ output: Fluid.of('tfmg:liquid_asphalt') })
+
+  // ОГНЕУПОРНОЕ ПОКРЫТИЕ ДЛЯ ТРУБ (Глина + Металлические плиты)
+  // Массив металлических труб и соответствующих металлов
+  const metalPipes = [
+    { pipe: 'create:fluid_pipe', metal: 'copper' },       // Медная труба Create
+    { pipe: 'tfmg:brass_pipe', metal: 'brass' },          // Латунная труба TFMG
+    { pipe: 'tfmg:steel_pipe', metal: 'steel' },          // Стальная труба TFMG
+    { pipe: 'tfmg:cast_iron_pipe', metal: 'cast_iron' },  // Чугунная труба TFMG
+    { pipe: 'tfmg:aluminum_pipe', metal: 'aluminum' }     // Алюминиевая труба TFMG
+  ]
+  
+  // Создаём крафты для металлических труб
+  metalPipes.forEach(data => {
+    event.remove({ output: data.pipe })
+    event.shaped(data.pipe, [
+      'P',
+      'C',
+      'P'
+    ], {
+      P: `#forge:plates/${data.metal}`,  // Плита из соответствующего металла
+      C: 'minecraft:clay_ball'            // Глина (огнеупорный изолятор)
+    })
+  })
+  // Отдельный крафт для пластиковой трубы
+  event.remove({ output: 'tfmg:plastic_pipe' })
+  event.shaped('tfmg:plastic_pipe', [
+    'P',
+    'C',
+    'P'
+  ], {
+    P: '#forge:ingots/plastic',  // Пластиковый лист TFMG
+    C: 'minecraft:clay_ball'  // Глина (огнеупорный изолятор)
+  })
+
+  //Шлакоблок
+  event.remove({ output: 'tfmg:cinder_block' })
+  event.shaped('8x tfmg:cinder_block', [
+    'SSS',
+    'ASA',
+    'SSS'
+  ], {
+    S: 'tfmg:cinderblock',  // Шлак (заполнитель, 7 штук) — побочный продукт доменной печи
+    A: 'tfmg:rebar',        // Арматура (2 штуки) — стальное усиление конструкции
+  })
+
+  // Удаляем все цветные бетоны и бетонные порошки
+  const colors = [
+    'white', 'orange', 'magenta', 'light_blue', 'yellow', 
+    'lime', 'pink', 'gray', 'light_gray', 'cyan', 
+    'purple', 'blue', 'brown', 'green', 'red', 'black'
+  ]
+  colors.forEach(color => {
+    // Удаляем рецепты создания цветного бетона
+    event.remove({ output: `minecraft:${color}_concrete` })
+    event.remove({ output: `minecraft:${color}_concrete_powder` })
+    
+    // Удаляем рецепты, где они используются как ингредиент
+    event.remove({ input: `minecraft:${color}_concrete` })
+    event.remove({ input: `minecraft:${color}_concrete_powder` })
+
+    // Удаляем цветной цемент и вёдра из Create Diesel Generators
+    event.remove({ output: `createdieselgenerators:${color}_cement` })
+    event.remove({ output: `createdieselgenerators:${color}_cement_bucket` })
+    event.remove({ input: `createdieselgenerators:${color}_cement` })
+    event.remove({ input: `createdieselgenerators:${color}_cement_bucket` })
+  })
+  //Цемент
+  event.remove({ output: 'tfmg:cement' })
+  // ВАРИАНТ 1: Флюс TFC + Глина → Цемент
+  // Флюс в TFC — это известняковая порода, основа для кальция в цементе
+  event.recipes.create.mixing(
+    [
+      '4x tfmg:cement'
+    ],
+    [
+      'tfc:powder/flux',       // Флюс (источник CaO)
+      'minecraft:clay_ball'    // Глина (источник SiO2 и Al2O3)
+    ]
+  )
+  .heated() // Обжиг клинкера при высокой температуре
+  .processingTime(200)
+  // ВАРИАНТ 2: Известь TFC + Глина → Цемент
+  // Известь — уже обожженный известняк, более быстрый путь
+  event.recipes.create.mixing(
+    [
+      '4x tfmg:cement'
+    ],
+    [
+      'tfc:powder/lime',       // Гашёная известь (готовый CaO)
+      'minecraft:clay_ball'    // Глина (источник SiO2 и Al2O3)
+    ]
+  )
+  .heated() // Спекание клинкера
+  .processingTime(200)
+  //Бетон
+  event.remove({ output: 'tfmg:concrete_mixture' })
+  event.recipes.create.mixing(
+    [
+      '16x tfmg:concrete_mixture'
+    ],
+    [
+      '2x tfmg:cement',
+      '4x #minecraft:sand',
+      '4x #forge:gravel'
+    ]
+  )
+  .processingTime(150)
+  event.recipes.create.mixing(
+    [
+      '32x tfmg:concrete_mixture'
+    ],
+    [
+      '2x tfmg:cement',        // Цемент (связующее вещество)
+      '4x tfmg:slag',          // Шлак (заполнитель, побочный продукт металлургии)
+      '4x #forge:gravel'       // Гравий (крупный заполнитель)
+    ]
+  )
+  .processingTime(150)
+  //Через сухой бетон
+  event.recipes.create.mixing(
+    [
+      '16x tfmg:concrete_mixture'
+    ],
+    [
+      '2x tfc:aggregate',
+      '4x #minecraft:sand',
+      '4x #forge:gravel'
+    ]
+  )
+  .processingTime(150)
+  event.recipes.create.mixing(
+    [
+      '32x tfmg:concrete_mixture'
+    ],
+    [
+      '2x tfc:aggregate',        // Цемент (связующее вещество)
+      '4x tfmg:slag',          // Шлак (заполнитель, побочный продукт металлургии)
+      '4x #forge:gravel'       // Гравий (крупный заполнитель)
+    ]
+  )
+  .processingTime(150)
+
+  //Пластик
+  event.recipes.tfmg.vat_machine_recipe(
+    [
+      Fluid.of('immersivepetroleum:naphtha', 500) // Вход: 1 ведро (1000 мБ) нафты
+    ],
+    [
+      Fluid.of('tfmg:ethylene', 250),    // Выход 1: Этилен (основа для полиэтилена и синт. каучука)
+      Fluid.of('tfmg:propylene', 250)    // Выход 2: Пропилен (основа для полипропилена)
+      // Оставшиеся 200 мБ "теряются" в виде кокса или легких газов, что реалистично
+    ]
+  )
+    .heated()
+    .machines("tfmg:mixing")             // Требуется интенсивное перемешивание/циркуляция для равномерного нагрева
+    .allowedVatTypes("tfmg:firebrick_lined_vat", "tfmg:steel_vat") // Обычный чугун расплавится или прогорит
+    .minSize(2)                          // Промышленный процесс требует ванны минимум 2-го уровня
+    .processingTime(200)                 // 15 секунд на цикл крекинга
+  event.replaceInput({}, 'tfmg:plastic_sheet', '#forge:ingots/plastic')
+  //Печатная плата
+  event.recipes.create.deploying(
+    'tfmg:coated_circuit_board', // Выход: Покрытая медью плата
+    [
+      'tfmg:empty_circuit_board', // Основа: пустая печатная плата (подложка)
+      '#forge:plates/copper'      // Медная пластина (токопроводящий слой)
+    ]
+  )
+  //Серная кислота
+  event.remove({ output: 'tfmg:sulfuric_acid' })
+  event.recipes.tfmg.vat_machine_recipe(
+    [
+      Fluid.of('artisanal:sulfuric_acid', 1) // Вход: 1000 мБ кислоты из Artisanal
+    ],
+    [
+      Fluid.of('tfmg:sulfuric_acid', 1) // Выход: 1000 мБ кислоты TFMG (1:1)
+    ]
+  )
+    .allowAllVatTypes() // Работает в любой ванне
+    .processingTime(10) // Мгновенная конвертация (0.5 секунды)
+  event.recipes.tfmg.vat_machine_recipe(
+    [
+      'tfc:powder/saltpeter',              // Селитра (источник азотной кислоты как катализатора)
+      '#forge:dusts/sulfur',               // Сера 1 (источник SO2)
+      '#forge:dusts/sulfur',               // Сера 2
+      '#forge:dusts/sulfur',               // Сера 3
+      Fluid.of('minecraft:water', 1000)    // Вода (растворитель)
+    ],
+    [
+      Fluid.of('tfmg:sulfuric_acid', 1000) // Выход: 1000 мБ серной кислоты TFMG
+    ]
+  )
+    .machines("tfmg:mixing")               // Требуется перемешивание
+    .allowAllVatTypes()                    // Работает
+
+  //Креозот
+  event.replaceInput({}, 'tfmg:hardened_planks', 'immersiveengineering:treated_wood_horizontal')
+
+  // TOM'S SIMPLE STORAGE - ДЕРЕВЯННЫЕ КОРПУСА
+  // Ранняя промышленная электроника в деревянной изоляции
+
+  // 1. INVENTORY CABLE (Кабель передачи данных)
+  // Медные провода в деревянной изоляции (коробе)
+  event.remove({ output: 'toms_storage:ts.inventory_cable' })
+  event.shaped('8x toms_storage:ts.inventory_cable', [
+    'PPP',
+    'WWW',
+    'PPP'
+  ], {
+    P: '#minecraft:planks',      // Деревянная изоляция/короб (6 шт.)
+    W: '#forge:wires/copper'     // Медные провода (3 шт. - передача данных)
+  })
+  // 2. INVENTORY CABLE CONNECTOR (Разъем кабеля)
+  // Деревянная монтажная плата с железными контактами
+  event.remove({ output: 'toms_storage:ts.inventory_cable_connector' })
+  event.shaped('4x toms_storage:ts.inventory_cable_connector', [
+    ' C ',
+    'IPI',
+    ' W '
+  ], {
+    C: 'toms_storage:ts.inventory_cable', // Кабель
+    P: '#minecraft:planks',               // Деревянная основа (изолятор)
+    I: '#forge:plates/iron',              // Железные контакты (2 шт.)
+    W: '#forge:wires/copper'              // Медный провод подключения
+  })
+  // 3. INVENTORY CABLE CONNECTOR FILTERED (Фильтрованный разъем)
+  // Деревянный разъем с встроенной платой фильтрации
+  event.remove({ output: 'toms_storage:ts.inventory_cable_connector_filtered' })
+  event.shaped('toms_storage:ts.inventory_cable_connector_filtered', [
+    ' F ',
+    'CCC',
+    ' P '
+  ], {
+    F: 'create_connected:control_chip',    // Контроллер фильтрации
+    C: 'toms_storage:ts.inventory_cable_connector', // 3 базовых разъема
+    P: '#minecraft:planks'                 // Деревянный корпус
+  })
+  // 4. INVENTORY CONNECTOR (Главный коннектор сети)
+  // Деревянный ящик с основной электронной начинкой
+  event.remove({ output: 'toms_storage:ts.inventory_connector' })
+  event.shaped('toms_storage:ts.inventory_connector', [
+    'PLP',
+    'RCR',
+    'PFP'
+  ], {
+    P: '#minecraft:planks',              // Деревянный корпус (4 шт.)
+    C: 'create_connected:control_chip',  // Главный контроллер сети
+    R: 'tfmg:resistor',                  // Резисторы (стабилизация сигнала, 2 шт.)
+    F: 'projectred_core:plate',           // Печатная плата (основа)
+    L: 'create:electron_tube'
+  })
+  // 5. STORAGE TERMINAL (Терминал доступа)
+  // Ранний монитор в деревянном корпусе (как первые ЭВМ)
+  event.remove({ output: 'toms_storage:ts.storage_terminal' })
+  event.recipes.create.sequenced_assembly(
+    'toms_storage:ts.storage_terminal',
+    'projectred_core:plate',
+    [
+      // ШАГ 1: Установка контроллера интерфейса
+      event.recipes.create.deploying(
+        'projectred_core:plate',
+        ['projectred_core:plate', 'create_connected:control_chip']
+      ),
+      // ШАГ 2: Установка источника энергии и дисплея
+      event.recipes.create.deploying(
+        'projectred_core:plate',
+        ['projectred_core:plate', 'create:electron_tube']
+      ),
+      // ШАГ 3: Установка транзистора (усилитель видеосигнала)
+      event.recipes.create.deploying(
+        'projectred_core:plate',
+        ['projectred_core:plate', 'tfmg:transistor_item']
+      ),
+      // ШАГ 4: Установка резистора (настройка яркости)
+      event.recipes.create.deploying(
+        'projectred_core:plate',
+        ['projectred_core:plate', 'tfmg:resistor']
+      ),
+      // ШАГ 5: Деревянный корпус (вместо стального!)
+      event.recipes.create.deploying(
+        'projectred_core:plate',
+        ['projectred_core:plate', '#minecraft:planks']
+      ),
+      // ШАГ 6: Финальная сборка под прессом
+      event.recipes.create.pressing(
+        'toms_storage:ts.storage_terminal',
+        'projectred_core:plate'
+      )
+    ]
+  )
+    .transitionalItem('projectred_core:plate')
+    .loops(1)
+  // 6. CRAFTING TERMINAL (Крафт-терминал)
+  // Терминал, встроенный в деревянный верстак
+  event.remove({ output: 'toms_storage:ts.crafting_terminal' })
+  event.shaped('toms_storage:ts.crafting_terminal', [
+    ' T ',
+    'CWC',
+    ' P '
+  ], {
+    T: 'toms_storage:ts.storage_terminal', // Терминал
+    C: 'create_connected:control_chip',    // 2 контроллера (для логики крафта)
+    W: 'minecraft:crafting_table',         // Верстак
+    P: '#minecraft:planks'                 // Деревянная подложка/корпус
+  })
+  // 7. INVENTORY PROXY (Прокси/Ретранслятор)
+  // Деревянная коробка с усилителем сигнала
+  event.remove({ output: 'toms_storage:ts.inventory_proxy' })
+  event.shaped('toms_storage:ts.inventory_proxy', [
+    'PLP',
+    'RCR',
+    'PLP'
+  ], {
+    P: '#minecraft:planks',              // Деревянный корпус (4 шт.)
+    R: 'tfmg:resistor',                  // Резисторы (усиление сигнала, 2 шт.)
+    C: 'create_connected:control_chip',  // Контроллер ретрансляции
+    L: 'create:electron_tube'            // Источник энергии
+  })
+  // 8. LEVEL EMITTER (Датчик уровня)
+  // Деревянный корпус с компаратором внутри
+  event.remove({ output: 'toms_storage:ts.level_emitter' })
+  event.shaped('toms_storage:ts.level_emitter', [
+    ' C ',
+    'TPT',
+    'PRP'
+  ], {
+    C: 'create_connected:control_chip',  // Контроллер подсчета
+    T: 'tfmg:transistor_item',           // 2 транзистора (компаратор)
+    P: '#minecraft:planks',              // Деревянный корпус (3 шт.)
+    R: 'tfmg:resistor'                   // Резистор (настройка порога)
+  })
+  // 9. TRIM (Декоративная деревянная накладка)
+  // Соединяет соседние блоки эстетичными деревянными планками
+  event.remove({ output: 'toms_storage:ts.trim' })
+  event.shaped('4x toms_storage:ts.trim', [
+    'PPP',
+    'PCP',
+    'PPP'
+  ], {
+    C: 'toms_storage:ts.inventory_cable',
+    P: '#minecraft:planks'               // 8 деревянных досок/планок
+  })
+  // ФИЛЬТРЫ ПРЕДМЕТОВ (В деревянных корпусах)
+  // 10. ITEM FILTER (Базовый фильтр)
+  event.remove({ output: 'toms_storage:ts.item_filter' })
+  event.shaped('toms_storage:ts.item_filter', [
+    ' C ',
+    'RPR',
+    'PPP'
+  ], {
+    C: 'create_connected:control_chip',  // Контроллер сравнения ID
+    R: 'tfmg:resistor',                  // 2 резистора (настройка порогов)
+    P: '#minecraft:planks'               // Деревянный корпус (5 шт.)
+  })
+  // 11. TAG ITEM FILTER (Фильтр по тегам)
+  event.remove({ output: 'toms_storage:ts.tag_item_filter' })
+  event.shaped('toms_storage:ts.tag_item_filter', [
+    ' T ',
+    'FIF',
+    'PPP'
+  ], {
+    T: 'tfmg:transistor_item',           // Транзистор (переключение между тегами)
+    F: 'toms_storage:ts.item_filter',    // Базовый фильтр (основа)
+    I: 'create_connected:control_chip',  // Доп. контроллер (база тегов)
+    P: '#minecraft:planks'               // Усиленный деревянный корпус
+  })
+  // 12. POLYMORPHIC ITEM FILTER (Полиморфный фильтр)
+  event.remove({ output: 'toms_storage:ts.polymorphic_item_filter' })
+  event.shaped('toms_storage:ts.polymorphic_item_filter', [
+    ' D ',
+    'TFT',
+    'PPP'
+  ], {
+    D: 'projectred_core:pointer',        // Декодер типов предметов
+    T: 'tfmg:transistor_item',           // 2 транзистора (усилители сигнала)
+    F: 'toms_storage:ts.tag_item_filter',// Тег-фильтр (основа)
+    P: '#minecraft:planks'               // Усиленный деревянный корпус
+  })
+
+  //Кварц и кремний
+  event.replaceInput({}, 'minecraft:quartz', '#forge:gems/quartz')
+
+      
 })
 
 
@@ -2792,6 +3239,28 @@ ServerEvents.tags('fluid', event => {
   event.add('forge:crude_oil', 'artisanal:sour_crude_oil')
   // Креозот для доменной печи
   event.add('tfmg:blast_stove_fuel', 'immersiveengineering:creosote')
+  // Делаем серную кислоту TFMG совместимой с механиками TFC и Artisanal
+  event.add('tfc:usable_in_jug', 'tfmg:sulfuric_acid')
+  event.add('artisanal:sulfuric_acid', 'tfmg:sulfuric_acid')
+  event.add('artisanal:acids', 'tfmg:sulfuric_acid')
+  event.add('artisanal:usable_in_lava_drum', 'tfmg:sulfuric_acid')
+  event.add('artisanal:usable_in_drum', 'tfmg:sulfuric_acid')
+  // Нефтяной газ (попутный газ нефтепереработки)
+  event.add('tfmg:gas', 'immersivepetroleum:petroleum_gas')
+  event.add('forge:lpg', 'immersivepetroleum:petroleum_gas')
+  event.add('tfmg:flammable', 'immersivepetroleum:petroleum_gas')
+  event.add('forge:fuel', 'immersivepetroleum:petroleum_gas')
+  event.add('tfmg:firebox_fuel', 'immersivepetroleum:petroleum_gas')
+  // LPG (сжиженный пропан-бутан)
+  event.add('forge:petroleum_gas', 'tfmg:lpg')
+  event.add('firmalife:usable_in_hollow_shell', 'tfmg:lpg')
+  event.add('artisanal:usable_in_drum', 'tfmg:lpg')
+  event.add('tfc:usable_in_barrel', 'tfmg:lpg')
+  event.add('immersivepetroleum:burnable_in_flarestack', 'tfmg:lpg')
+  event.add('artisanal:usable_in_lava_drum', 'tfmg:lpg')
+  event.add('tfc:usable_in_red_steel_bucket', 'tfmg:lpg')
+  event.add('tfc:usable_in_wooden_bucket', 'tfmg:lpg')
+  event.add('forge:gaseous', 'tfmg:lpg')
 })
 
 

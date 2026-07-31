@@ -186,7 +186,7 @@
 			]
 			title: "Зубило"
 			x: -6.5d
-			y: 7.5d
+			y: 10.0d
 		}
 		{
 			dependencies: ["1C8F2299E1E71664"]
@@ -507,7 +507,7 @@
 				}
 			]
 			title: "Сундук"
-			x: -6.0d
+			x: -6.5d
 			y: 4.5d
 		}
 		{
@@ -773,7 +773,7 @@
 				type: "item"
 			}]
 			x: -12.0d
-			y: 7.5d
+			y: 10.0d
 		}
 		{
 			dependencies: ["61ADC86E119F11B8"]
@@ -915,7 +915,7 @@
 			]
 			title: "Каменные кирпичи"
 			x: -3.0d
-			y: 7.5d
+			y: 10.0d
 		}
 		{
 			dependencies: ["4A87027EB26E4017"]
@@ -1248,7 +1248,7 @@
 				}
 			]
 			title: "Ткацкий станок"
-			x: -4.5d
+			x: -5.5d
 			y: 5.0d
 		}
 		{
@@ -1261,7 +1261,7 @@
 				type: "item"
 			}]
 			title: "Кровать"
-			x: -4.5d
+			x: -5.5d
 			y: 6.5d
 		}
 		{
@@ -1277,7 +1277,7 @@
 				type: "item"
 			}]
 			x: -3.0d
-			y: 10.0d
+			y: 12.5d
 		}
 		{
 			dependencies: [
@@ -1314,7 +1314,7 @@
 			]
 			title: "Жёрнова"
 			x: -6.5d
-			y: 11.0d
+			y: 13.5d
 		}
 		{
 			dependencies: ["3DF82CF323D4525D"]
@@ -1344,7 +1344,7 @@
 			]
 			title: "Дезинфицирующие пасты"
 			x: -7.0d
-			y: 13.0d
+			y: 15.5d
 		}
 		{
 			dependencies: ["6E54C89647EED808"]
@@ -1540,7 +1540,7 @@
 			]
 			title: "Мука"
 			x: -5.5d
-			y: 13.0d
+			y: 15.5d
 		}
 		{
 			dependencies: ["0C81F63EDE1601DB"]
@@ -1559,7 +1559,7 @@
 				}
 			]
 			x: -9.5d
-			y: 11.0d
+			y: 13.5d
 		}
 		{
 			dependencies: ["4A87027EB26E4017"]
@@ -1592,7 +1592,7 @@
 			]
 			title: "Ветряная мельница"
 			x: -9.5d
-			y: 9.5d
+			y: 12.0d
 		}
 		{
 			dependencies: ["4A87027EB26E4017"]
@@ -1622,6 +1622,8 @@
 		{
 			dependencies: ["59DDC9EE65868521"]
 			id: "7926AC60D67F8BB7"
+			shape: "square"
+			size: 2.0d
 			subtitle: "Волшебная палочка кладётся в сборщик"
 			tasks: [
 				{
@@ -1671,7 +1673,7 @@
 			]
 			title: "Колесо"
 			x: 3.5d
-			y: 4.5d
+			y: 5.0d
 		}
 		{
 			id: "73C577CAE8EF5437"
@@ -1682,7 +1684,7 @@
 				type: "item"
 			}]
 			x: -8.5d
-			y: 14.5d
+			y: 17.0d
 		}
 		{
 			dependencies: ["73C577CAE8EF5437"]
@@ -1696,7 +1698,7 @@
 			}]
 			title: "Дрожжи"
 			x: -7.0d
-			y: 14.5d
+			y: 17.0d
 		}
 		{
 			dependencies: [
@@ -1817,7 +1819,7 @@
 			]
 			title: "Хлеб"
 			x: -5.5d
-			y: 16.0d
+			y: 18.5d
 		}
 		{
 			dependencies: ["06373998D19D6D23"]
@@ -1910,7 +1912,7 @@
 				}
 			]
 			x: -4.0d
-			y: 14.5d
+			y: 17.0d
 		}
 		{
 			dependencies: ["1C8F2299E1E71664"]
@@ -2127,7 +2129,7 @@
 				}
 			]
 			x: -9.5d
-			y: 12.5d
+			y: 15.0d
 		}
 		{
 			dependencies: ["1712D124F73A5540"]
@@ -2417,8 +2419,8 @@
 				}
 				type: "item"
 			}]
-			x: 6.5d
-			y: 0.0d
+			x: 3.5d
+			y: 9.5d
 		}
 		{
 			dependencies: ["6ED66EC749E24683"]
@@ -2437,8 +2439,8 @@
 				}
 				type: "item"
 			}]
-			x: 6.5d
-			y: 1.5d
+			x: 3.5d
+			y: 11.0d
 		}
 		{
 			dependencies: ["1BD24F0CD3955E5A"]
@@ -2450,8 +2452,8 @@
 				type: "fluid"
 			}]
 			title: "Медная суспензия"
-			x: 6.5d
-			y: 3.0d
+			x: 3.5d
+			y: 12.5d
 		}
 		{
 			dependencies: ["783B24643635DBCC"]
@@ -2471,8 +2473,8 @@
 				type: "item"
 			}]
 			title: "Очищенный порошок"
-			x: 6.5d
-			y: 4.5d
+			x: 3.5d
+			y: 14.0d
 		}
 		{
 			dependencies: ["6215167629C063CF"]
@@ -2492,8 +2494,8 @@
 				type: "item"
 			}]
 			title: "Сжатый порошок"
-			x: 6.5d
-			y: 6.0d
+			x: 3.5d
+			y: 15.5d
 		}
 		{
 			dependencies: ["05CB32B402002529"]
@@ -2514,8 +2516,8 @@
 				type: "item"
 			}]
 			title: "Обожженный кирпич"
-			x: 6.5d
-			y: 7.5d
+			x: 3.5d
+			y: 17.0d
 		}
 		{
 			dependencies: ["0C81F63EDE1601DB"]
@@ -2527,7 +2529,7 @@
 				type: "item"
 			}]
 			x: -12.0d
-			y: 13.0d
+			y: 15.5d
 		}
 		{
 			dependencies: ["7F13C0E3C9635C6B"]
@@ -2595,7 +2597,7 @@
 				type: "item"
 			}]
 			title: "Медный ящик"
-			x: -6.0d
+			x: -7.5d
 			y: 6.0d
 		}
 		{
@@ -2607,7 +2609,7 @@
 				type: "item"
 			}]
 			x: -12.0d
-			y: 11.0d
+			y: 13.5d
 		}
 		{
 			dependencies: ["184340E792F47CD9"]
@@ -2654,6 +2656,75 @@
 			}]
 			x: -1.0d
 			y: 0.0d
+		}
+		{
+			dependencies: ["1C8F2299E1E71664"]
+			id: "313FC01E5E55706A"
+			tasks: [{
+				id: "0411770CF5E5B812"
+				item: "firmalife:beehive"
+				type: "item"
+			}]
+			x: -4.5d
+			y: 5.5d
+		}
+		{
+			dependencies: ["313FC01E5E55706A"]
+			id: "621A3A42ABF1C196"
+			tasks: [{
+				id: "4C86C526ADD74B4C"
+				item: "firmalife:beeswax"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["313FC01E5E55706A"]
+			id: "15DBD58D1A198716"
+			tasks: [{
+				id: "32CCFC9D5BB1DE4F"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						"tfc:food": {
+							creationDate: -2L
+							traits: [ ]
+						}
+					}
+					id: "firmalife:raw_honey"
+				}
+				type: "item"
+			}]
+			x: -4.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["06A6B8AC2C7F443F"]
+			id: "6B1238EF6445B6C9"
+			tasks: [{
+				id: "587FDBC61C74AE70"
+				item: "tfc:burlap_cloth"
+				type: "item"
+			}]
+			x: -6.5d
+			y: 6.5d
+		}
+		{
+			dependencies: [
+				"6B1238EF6445B6C9"
+				"621A3A42ABF1C196"
+				"15DBD58D1A198716"
+			]
+			id: "386F1507100A2AAC"
+			tasks: [{
+				id: "705CEBBFEB0024AE"
+				item: "immersiveengineering:ersatz_leather"
+				type: "item"
+			}]
+			title: "Искусственная кожа"
+			x: -5.5d
+			y: 9.0d
 		}
 	]
 	title: "Медный век"

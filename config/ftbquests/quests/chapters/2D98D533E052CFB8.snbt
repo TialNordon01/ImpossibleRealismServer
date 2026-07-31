@@ -9,459 +9,1014 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["59D1FD32AE3B9AE4"]
-			id: "1F3EDD6B27528465"
-			subtitle: "Электрический насос для нефти"
-			tasks: [{
-				icon: {
-					Count: 1
-					ForgeCaps: {
-						Parent: {
-							Items: [ ]
-							Size: 0
-						}
-					}
-					id: "immersivepetroleum:projector"
-				}
-				id: "559768BF7BA6712E"
-				observe_type: 0
-				timer: 0L
-				to_observe: "immersivepetroleum:pumpjack"
-				type: "observation"
-			}]
-			title: "Насосный домкрат"
-			x: 3.0d
-			y: -0.5d
-		}
-		{
 			id: "59D1FD32AE3B9AE4"
 			subtitle: "Дробовик для нефти"
-			tasks: [{
-				id: "6EC7FED8B2201ACF"
-				item: "immersivepetroleum:seismic_survey"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "6EC7FED8B2201ACF"
+					item: "immersivepetroleum:seismic_survey"
+					type: "item"
+				}
+				{
+					id: "7E4BF998212C9B35"
+					item: "immersiveengineering:buckshot"
+					type: "item"
+				}
+			]
 			title: "Инструмент для сейсморазведки"
 			x: 3.0d
 			y: -2.0d
 		}
 		{
-			id: "31DA2309F1758382"
-			subtitle: "Геофизический прибор для разведки недр"
+			dependencies: ["6DCBF7DF65AC38C9"]
+			id: "464AA46129776A4A"
+			size: 2.0d
 			tasks: [{
-				id: "7DADA32D03C49AF5"
-				item: "createdieselgenerators:oil_scanner"
-				type: "item"
+				amount: 1000L
+				fluid: "immersivepetroleum:crudeoil"
+				id: "7FC6977FFEF173CB"
+				type: "fluid"
 			}]
-			x: 6.0d
-			y: -2.0d
-		}
-		{
-			dependencies: ["31DA2309F1758382"]
-			id: "2AF2B404EC4E43A1"
-			subtitle: "Механический насос для нефти"
-			tasks: [
-				{
-					id: "469C08CB0130DFD6"
-					item: "createdieselgenerators:pumpjack_bearing"
-					type: "item"
-				}
-				{
-					id: "5C2848C56FCA0372"
-					item: "createdieselgenerators:pumpjack_crank"
-					type: "item"
-				}
-				{
-					id: "3617412146C5B34C"
-					item: "createdieselgenerators:pumpjack_head"
-					type: "item"
-				}
-			]
-			title: "Станок-качалка"
-			x: 6.0d
-			y: -0.5d
-		}
-		{
-			dependencies: [
-				"1F3EDD6B27528465"
-				"2AF2B404EC4E43A1"
-				"464AA46129776A4A"
-			]
-			dependency_requirement: "one_started"
-			id: "1809D777E0C58292"
-			subtitle: "Нефть разлагается на множители"
-			tasks: [{
-				icon: "createdieselgenerators:distillation_controller"
-				id: "419E244620606ECB"
-				observe_type: 0
-				timer: 0L
-				to_observe: "immersivepetroleum:distillation_tower"
-				type: "observation"
-			}]
-			title: "Дистилляционная колонна"
-			x: 4.5d
+			title: "Сырая нефть из электрической качалки"
+			x: 3.0d
 			y: 2.0d
 		}
 		{
-			id: "464AA46129776A4A"
-			size: 2.0d
+			dependencies: ["59D1FD32AE3B9AE4"]
+			id: "6DCBF7DF65AC38C9"
+			subtitle: "Автоматический спуск до точки добычи"
 			tasks: [
 				{
-					amount: 1000L
-					fluid: "createdieselgenerators:crude_oil"
-					id: "593326E8D2BEC5A6"
-					type: "fluid"
+					count: 4L
+					id: "04E450126F45CC2E"
+					item: { Count: 4, id: "immersiveengineering:fluid_pipe" }
+					type: "item"
 				}
 				{
-					amount: 1000L
-					fluid: "immersivepetroleum:crudeoil"
-					id: "7FC6977FFEF173CB"
-					type: "fluid"
+					count: 6L
+					id: "38688E03139397F7"
+					item: { Count: 6, id: "immersiveengineering:treated_fence" }
+					type: "item"
 				}
 				{
-					amount: 1000L
-					fluid: "artisanal:sour_crude_oil"
-					id: "7B7755350E0A8811"
-					type: "fluid"
+					count: 2L
+					id: "4E5FE3C502AD69D0"
+					item: { Count: 2, id: "immersiveengineering:light_engineering" }
+					type: "item"
+				}
+				{
+					id: "5743663813B7F6B7"
+					item: "immersiveengineering:rs_engineering"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "49268DB8FFFDC778"
+					item: { Count: 2, id: "immersiveengineering:storage_steel" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "4E76CA9EAA58FA75"
+					item: { Count: 4, id: "immersiveengineering:sheetmetal_steel" }
+					type: "item"
+				}
+				{
+					count: 11L
+					id: "249D1E41C4A6B6F5"
+					item: { Count: 11, id: "immersiveengineering:steel_scaffolding_standard" }
+					type: "item"
 				}
 			]
-			title: "Сырая нефть"
-			x: 4.535714285714278d
-			y: -1.1428571428571423d
-		}
-		{
-			dependencies: ["1809D777E0C58292"]
-			dependency_requirement: "one_started"
-			id: "59D701CE5541DD40"
-			subtitle: "Легковоспламеняющаяся жидкая углеводородная смесь"
-			tasks: [{
-				amount: 1000L
-				fluid: "immersivepetroleum:naphtha"
-				id: "6471A3EFD8C6CFB8"
-				type: "fluid"
-			}]
-			title: "Нафта"
-			x: 2.0d
-			y: 3.0d
-		}
-		{
-			dependencies: ["1809D777E0C58292"]
-			dependency_requirement: "one_started"
-			id: "228705D6ABAEEA18"
-			subtitle: "Моторное топливо для газотурбинных двигателей различных летательных аппаратов"
-			tasks: [{
-				amount: 1000L
-				fluid: "immersivepetroleum:kerosene"
-				id: "0BDC6CCD31DF08A7"
-				type: "fluid"
-			}]
-			title: "Керосин"
+			title: "Электрический нефтяной насос"
 			x: 3.0d
-			y: 3.5d
+			y: -0.5d
+		}
+		{
+			id: "2B7EB19347B52D11"
+			subtitle: "Автоматический поиск нефти"
+			tasks: [
+				{
+					id: "30E58BEDFEDC6A5B"
+					item: "tfmg:surface_scanner"
+					type: "item"
+				}
+				{
+					id: "01D6E83948410FF6"
+					item: "tfmg:machine_input"
+					type: "item"
+				}
+			]
+			x: 8.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["2B7EB19347B52D11"]
+			id: "16616E31B89FBCC4"
+			subtitle: "Механический насос для нефти"
+			tasks: [
+				{
+					id: "4CA9EC8C002C1BD5"
+					item: "tfmg:pumpjack_hammer_head"
+					type: "item"
+				}
+				{
+					id: "34297E411E61D58B"
+					item: "tfmg:pumpjack_crank"
+					type: "item"
+				}
+				{
+					id: "22B803863FA81BCB"
+					item: "tfmg:machine_input"
+					type: "item"
+				}
+				{
+					id: "2EEF6F63EAE72F92"
+					item: "tfmg:pumpjack_base"
+					type: "item"
+				}
+				{
+					id: "2CB270BD8AC330BD"
+					item: "tfmg:industrial_pipe"
+					type: "item"
+				}
+				{
+					id: "4847549B75DFAE34"
+					item: "tfmg:pumpjack_hammer_part"
+					type: "item"
+				}
+				{
+					id: "18A57CDE44B7969E"
+					item: "tfmg:steel_truss"
+					type: "item"
+				}
+				{
+					id: "42A914A2EA9A3501"
+					item: "tfmg:pumpjack_hammer"
+					type: "item"
+				}
+				{
+					id: "15D75CFAC280CE9A"
+					item: "tfmg:pumpjack_hammer_connector"
+					type: "item"
+				}
+			]
+			title: "Насос-качалка"
+			x: 8.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["16616E31B89FBCC4"]
+			id: "6105D53EAB2B0338"
+			size: 2.0d
+			tasks: [{
+				amount: 1000L
+				fluid: "tfmg:crude_oil"
+				id: "4E40B3B594F9C005"
+				type: "fluid"
+			}]
+			title: "Сырая нефть из механической качалки"
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["464AA46129776A4A"]
+			id: "5F92F4CB10333E83"
+			subtitle: "Нефть разлагается на множители"
+			tasks: [
+				{
+					count: 60L
+					id: "1BB977ED005B83FA"
+					item: { Count: 60, id: "immersiveengineering:sheetmetal_iron" }
+					type: "item"
+				}
+				{
+					count: 17L
+					id: "4F7752809CF47B65"
+					item: { Count: 17, id: "immersiveengineering:fluid_pipe" }
+					type: "item"
+				}
+				{
+					count: 30L
+					id: "7F80B1E46CE4EFFD"
+					item: { Count: 30, id: "immersiveengineering:slab_steel_scaffolding_grate_top" }
+					type: "item"
+				}
+				{
+					id: "2F12F1A323AFDA3F"
+					item: "immersiveengineering:rs_engineering"
+					type: "item"
+				}
+				{
+					count: 25L
+					id: "2735A2CB54CC6D35"
+					item: { Count: 25, id: "immersiveengineering:steel_scaffolding_standard" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "01858CF22293BDAB"
+					item: { Count: 4, id: "immersiveengineering:heavy_engineering" }
+					type: "item"
+				}
+			]
+			title: "Дистилляционная вышка"
+			x: 3.0d
+			y: 4.5d
 		}
 		{
 			dependencies: [
-				"228705D6ABAEEA18"
-				"0704D5275CB2625B"
-				"630728325A6D1A1E"
-				"1809D777E0C58292"
-				"79415FAD79B950F7"
-				"50C692B34DD25E31"
-				"281834A4BFA7CE72"
+				"6105D53EAB2B0338"
+				"71A7C9E3DFA91580"
 			]
-			dependency_requirement: "one_started"
-			id: "53E7B1D89EB9CA05"
-			subtitle: "Требует очистки"
-			tasks: [{
-				amount: 1000L
-				fluid: "immersivepetroleum:diesel_sulfur"
-				id: "4D25DB3FAD1F3DD4"
-				type: "fluid"
-			}]
-			title: "Сернистый дизель"
-			x: 5.0d
+			id: "799AF03DE7D85886"
+			tasks: [
+				{
+					count: 12L
+					id: "702B2ADA9AADCC51"
+					item: { Count: 12, id: "tfmg:steel_fluid_tank" }
+					type: "item"
+				}
+				{
+					count: 6L
+					id: "01CD8B6B0F37F95D"
+					item: { Count: 6, id: "tfmg:steel_distillation_output" }
+					type: "item"
+				}
+				{
+					count: 5L
+					id: "20FCB25E3C3CDB84"
+					item: { Count: 5, id: "tfmg:industrial_pipe" }
+					type: "item"
+				}
+				{
+					id: "127063E1FEFF96E9"
+					item: "tfmg:steel_distillation_controller"
+					type: "item"
+				}
+			]
+			title: "Ректификационная колонна"
+			x: 8.0d
+			y: 4.5d
+		}
+		{
+			id: "71A7C9E3DFA91580"
+			subtitle: "Твёрдотельное топливо и жидкое топливо"
+			tasks: [
+				{
+					id: "472A6F1FC3647FFA"
+					item: "create:blaze_burner"
+					type: "item"
+				}
+				{
+					id: "098EA0ED3784D995"
+					item: "createaddition:straw"
+					type: "item"
+				}
+			]
+			title: "Универсальная горелка"
+			x: 10.5d
 			y: 3.5d
 		}
 		{
-			dependencies: ["1809D777E0C58292"]
-			dependency_requirement: "one_started"
-			id: "630728325A6D1A1E"
-			subtitle: "Для ускорения работы машин из IE"
+			dependencies: ["5F92F4CB10333E83"]
+			id: "5D50A2A1B1989775"
+			subtitle: "Для механизмов IE"
 			tasks: [{
 				amount: 1000L
 				fluid: "immersivepetroleum:lubricant"
-				id: "55CA1D56FF564ECE"
+				id: "36BC01529BDD122E"
 				type: "fluid"
 			}]
 			title: "Смазка"
-			x: 6.0d
-			y: 3.5d
+			x: 0.5d
+			y: 6.5d
 		}
 		{
-			id: "41B5A5B0B31DD243"
+			dependencies: ["5F92F4CB10333E83"]
+			id: "051364B118F063BB"
 			tasks: [{
-				icon: "createdieselgenerators:bulk_fermenter"
-				id: "703AC95F6E4F6A1E"
-				observe_type: 0
-				timer: 0L
-				to_observe: "immersiveengineering:refinery"
-				type: "observation"
+				amount: 1000L
+				fluid: "immersivepetroleum:diesel_sulfur"
+				id: "432BFDA0CD870F43"
+				type: "fluid"
 			}]
-			title: "Очиститель"
-			x: -1.0d
-			y: 6.0d
+			title: "Серный дизель"
+			x: 1.5d
+			y: 7.0d
 		}
 		{
-			id: "281834A4BFA7CE72"
+			dependencies: ["5F92F4CB10333E83"]
+			id: "55ACF7D1722852CD"
 			tasks: [{
-				icon: {
-					Count: 1
-					id: "createdieselgenerators:canister"
-					tag: { }
-				}
-				id: "1C587E8C7C255D48"
-				observe_type: 0
-				timer: 0L
-				to_observe: "immersivepetroleum:hydrotreater"
-				type: "observation"
+				amount: 1000L
+				fluid: "immersivepetroleum:kerosene"
+				id: "1889E14E30CCB26F"
+				type: "fluid"
 			}]
-			title: "Нефтеперерабатывающая установка высокого давления"
+			title: "Керосин"
+			x: 2.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["5F92F4CB10333E83"]
+			id: "19AB0ED67B727F82"
+			tasks: [{
+				amount: 1000L
+				fluid: "immersivepetroleum:naphtha"
+				id: "504391754FD33464"
+				type: "fluid"
+			}]
+			title: "Лигроин"
+			x: 3.5d
+			y: 6.5d
+		}
+		{
+			dependencies: ["799AF03DE7D85886"]
+			id: "73C840074194DE2B"
+			tasks: [{
+				amount: 1000L
+				fluid: "tfmg:heavy_oil"
+				id: "4082FA649B1F5293"
+				type: "fluid"
+			}]
+			title: "Мазут"
+			x: 5.5d
+			y: 6.5d
+		}
+		{
+			dependencies: ["799AF03DE7D85886"]
+			id: "49516E0662137478"
+			tasks: [{
+				amount: 1000L
+				fluid: "tfmg:diesel"
+				id: "53192F951B569642"
+				type: "fluid"
+			}]
+			title: "Дизель"
+			x: 7.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["799AF03DE7D85886"]
+			id: "7AB9D3D295DEEAFB"
+			tasks: [{
+				amount: 1000L
+				fluid: "tfmg:kerosene"
+				id: "1A4C820EDE0570F6"
+				type: "fluid"
+			}]
+			title: "Керосин"
+			x: 8.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["799AF03DE7D85886"]
+			id: "59392CF423E92607"
+			tasks: [{
+				amount: 1000L
+				fluid: "tfmg:gasoline"
+				id: "2DB6BF23FF1B2CD2"
+				type: "fluid"
+			}]
+			title: "Бензин"
 			x: 9.5d
-			y: 6.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["799AF03DE7D85886"]
+			id: "1E9EFC5EDEEEF9A0"
+			tasks: [{
+				amount: 1000L
+				fluid: "tfmg:lpg"
+				id: "0EA92C2952F1E749"
+				type: "fluid"
+			}]
+			title: "Сжиженый газ"
+			x: 11.5d
+			y: 6.5d
 		}
 		{
 			dependencies: [
-				"228705D6ABAEEA18"
-				"1809D777E0C58292"
+				"464AA46129776A4A"
+				"6105D53EAB2B0338"
+				"71A7C9E3DFA91580"
 			]
-			dependency_requirement: "one_started"
-			id: "48BACC64D1491418"
-			subtitle: "Органическое химическое соединение, бесцветная жидкость со специфическим сладковатым запахом"
+			id: "5C4C3DEFB8D4E54C"
+			subtitle: "Да, и такой тоже можно"
+			tasks: [
+				{
+					id: "5DBB7B9C6C9EF22F"
+					item: "createdieselgenerators:distillation_controller"
+					type: "item"
+				}
+				{
+					count: 3L
+					id: "70C5CB26E29ADFD3"
+					item: { Count: 3, id: "create:fluid_tank" }
+					type: "item"
+				}
+			]
+			title: "\"Самовар\" для нефти"
+			x: 13.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["5C4C3DEFB8D4E54C"]
+			id: "1F669676B95EB1EE"
 			tasks: [{
 				amount: 1000L
-				fluid: "immersivepetroleum:benzol"
-				id: "3F23D780A33904F2"
+				fluid: "createdieselgenerators:gasoline"
+				id: "26C77CA4C8720807"
 				type: "fluid"
 			}]
-			title: "Бензол"
-			x: 3.0d
+			title: "Бензин"
+			x: 13.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["5C4C3DEFB8D4E54C"]
+			id: "73D95D03D24D9441"
+			tasks: [{
+				amount: 1000L
+				fluid: "createdieselgenerators:diesel"
+				id: "67E91D9E905F783B"
+				type: "fluid"
+			}]
+			title: "Дизель"
+			x: 14.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["1E9EFC5EDEEEF9A0"]
+			id: "28A4CD5C205D9E32"
+			tasks: [{
+				id: "7A3C79A1C9602543"
+				item: "tfmg:turbine_engine"
+				type: "item"
+			}]
+			x: 11.5d
 			y: 5.0d
 		}
 		{
 			dependencies: [
-				"48BACC64D1491418"
-				"546740179ED57C04"
-				"41B5A5B0B31DD243"
+				"55ACF7D1722852CD"
+				"051364B118F063BB"
+				"59392CF423E92607"
+				"49516E0662137478"
+				"7AB9D3D295DEEAFB"
+				"1F669676B95EB1EE"
+				"73D95D03D24D9441"
 			]
 			dependency_requirement: "one_started"
-			id: "03A46DD71A36AA30"
-			subtitle: "Нормальное топливо"
-			tasks: [{
-				amount: 1000L
-				fluid: "immersivepetroleum:gasoline"
-				id: "34B22F1E249F5C0C"
-				type: "fluid"
-			}]
-			title: "Бензин"
-			x: 3.0d
-			y: 7.5d
-		}
-		{
-			dependency_requirement: "one_started"
-			id: "0704D5275CB2625B"
-			tasks: [{
-				amount: 1000L
-				fluid: "minecraft:water"
-				id: "0E26437D6037602F"
-				type: "fluid"
-			}]
-			title: "Вода"
-			x: 4.364285714285714d
-			y: 5.307142857142857d
-		}
-		{
-			dependencies: [
-				"0704D5275CB2625B"
-				"53E7B1D89EB9CA05"
-				"281834A4BFA7CE72"
+			id: "0B48039E85801D89"
+			subtitle: "Топливо для автомобиля"
+			tasks: [
+				{
+					id: "756FAF65EB24E82A"
+					item: "tfmg:regular_engine"
+					type: "item"
+				}
+				{
+					id: "2B706790D091106E"
+					item: "tfmg:radial_engine"
+					type: "item"
+				}
+				{
+					id: "0EBEAD2664C40902"
+					item: "tfmg:large_engine"
+					type: "item"
+				}
+				{
+					id: "64A68E7AA1B6115F"
+					item: "tfmg:simple_large_engine"
+					type: "item"
+				}
 			]
-			dependency_requirement: "one_started"
-			id: "6D5AD6631FEA23AD"
-			subtitle: "Хорошее топливо"
-			tasks: [{
-				amount: 1000L
-				fluid: "immersivepetroleum:diesel"
-				id: "73766B11DBE3A3E6"
-				type: "fluid"
-			}]
-			title: "Дизель"
-			x: 5.0d
-			y: 7.5d
+			title: "Двигатели"
+			x: 8.0d
+			y: 12.0d
 		}
 		{
-			dependencies: [
-				"0704D5275CB2625B"
-				"53E7B1D89EB9CA05"
-			]
-			dependency_requirement: "one_started"
-			id: "11A73FD72F0A6E6A"
+			dependencies: ["5F92F4CB10333E83"]
+			id: "5C180633F5C78863"
 			tasks: [{
-				id: "5FEF44A0006D5FF6"
-				item: "immersiveengineering:dust_sulfur"
-				type: "item"
-			}]
-			x: 5.935714285714283d
-			y: 5.335714285714282d
-		}
-		{
-			dependencies: [
-				"59D701CE5541DD40"
-				"0704D5275CB2625B"
-				"281834A4BFA7CE72"
-			]
-			dependency_requirement: "one_started"
-			id: "546740179ED57C04"
-			subtitle: "Это смесь газообразных углеводородов"
-			tasks: [{
-				amount: 1000L
-				fluid: "immersivepetroleum:petroleum_gas"
-				id: "59F3D99E5E194A8D"
-				type: "fluid"
-			}]
-			title: "Нефтяной газ"
-			x: 2.0d
-			y: 6.0d
-		}
-		{
-			dependencies: ["1809D777E0C58292"]
-			dependency_requirement: "one_started"
-			id: "79415FAD79B950F7"
-			tasks: [{
-				id: "21EC64C27EC5DDEF"
+				id: "61B1D75CC9E499C2"
 				item: "immersivepetroleum:bitumen"
 				type: "item"
 			}]
 			title: "Битум"
-			x: 6.0d
-			y: 2.5d
+			x: -0.5d
+			y: 6.5d
 		}
 		{
-			dependencies: [
-				"0704D5275CB2625B"
-				"79415FAD79B950F7"
-				"50C692B34DD25E31"
-			]
-			dependency_requirement: "one_started"
-			id: "2494BE090697D032"
+			dependencies: ["73C840074194DE2B"]
+			id: "4ACEC2D6C9C53128"
 			tasks: [{
-				id: "3829FB1AAD8BE9DB"
-				item: "immersivepetroleum:petcoke"
+				id: "7228AE1AC0E661AE"
+				item: "tfmg:bitumen"
 				type: "item"
 			}]
-			title: "Нефтяной кокс"
-			x: 7.5d
-			y: 3.5d
+			x: 5.5d
+			y: 8.5d
 		}
 		{
 			dependencies: [
-				"03A46DD71A36AA30"
-				"61BF4231D69EDA23"
-				"1A1C8A9A3178BCED"
+				"73C840074194DE2B"
+				"1894B9660A6325C8"
+				"61668FF23450B71F"
 			]
-			dependency_requirement: "one_started"
-			id: "3E821B7628AE6FD5"
-			subtitle: "Для огненного шоу"
+			id: "52509F535F392BF8"
 			tasks: [{
-				amount: 1000L
-				fluid: "immersivepetroleum:napalm"
-				id: "5C71CED2050FC3A9"
-				type: "fluid"
-			}]
-			title: "Напалм"
-			x: 1.0d
-			y: 7.5d
-		}
-		{
-			id: "61BF4231D69EDA23"
-			tasks: [{
-				id: "7BE134900C146C9F"
-				item: "immersiveengineering:dust_aluminum"
-				type: "item"
-			}]
-			x: 1.0d
-			y: 5.5d
-		}
-		{
-			icon: "minecraft:cauldron"
-			id: "1A1C8A9A3178BCED"
-			tasks: [{
-				id: "4C318B3046D44661"
-				observe_type: 0
-				timer: 0L
-				to_observe: "immersiveengineering:mixer"
-				type: "observation"
-			}]
-			title: "Смеситель"
-			x: -1.0d
-			y: 7.5d
-		}
-		{
-			icon: "createdieselgenerators:oil_barrel"
-			id: "50C692B34DD25E31"
-			tasks: [{
-				id: "14CF08AAC16DD40B"
-				observe_type: 0
-				timer: 0L
-				to_observe: "immersivepetroleum:coker_unit"
-				type: "observation"
-			}]
-			title: "Установка для крекинга"
-			x: 9.5d
-			y: 7.5d
-		}
-		{
-			dependencies: [
-				"03A46DD71A36AA30"
-				"6D5AD6631FEA23AD"
-			]
-			dependency_requirement: "one_started"
-			id: "5A08E5B1608B6432"
-			shape: "hexagon"
-			subtitle: "Двигатель для автомобиля"
-			tasks: [
-				{
-					id: "1C619E49D8172976"
-					item: "createdieselgenerators:diesel_engine"
-					type: "item"
-				}
-				{
-					id: "7A552A4F123BB2B9"
-					item: "createdieselgenerators:large_diesel_engine"
-					type: "item"
-				}
-				{
-					id: "26CBCD65C13B7D82"
-					item: "createdieselgenerators:huge_diesel_engine"
-					type: "item"
-				}
-			]
-			x: 4.0d
-			y: 9.0d
-		}
-		{
-			dependencies: [
-				"11A73FD72F0A6E6A"
-				"630728325A6D1A1E"
-				"59D701CE5541DD40"
-			]
-			id: "48078B3888AA9541"
-			tasks: [{
-				id: "68A3B2060A25BA2B"
+				id: "6F5A2A19FA838B42"
 				item: "afc:rubber_bar"
 				type: "item"
 			}]
-			x: 7.5d
-			y: 7.5d
+			x: 7.0d
+			y: 9.5d
+		}
+		{
+			dependencies: [
+				"5D50A2A1B1989775"
+				"19AB0ED67B727F82"
+			]
+			id: "687084B3DD3860DB"
+			tasks: [{
+				id: "2329D3239BE43226"
+				item: "afc:rubber_bar"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 9.5d
+		}
+		{
+			dependencies: [
+				"687084B3DD3860DB"
+				"52509F535F392BF8"
+			]
+			id: "6DE7470FFE8DE665"
+			subtitle: "Как настоящая!"
+			tasks: [{
+				id: "28768898B1C8DBAD"
+				item: "tfmg:synthetic_leather"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 12.0d
+		}
+		{
+			dependencies: [
+				"4ACEC2D6C9C53128"
+				"5C180633F5C78863"
+			]
+			id: "25EBE50C55D9C21C"
+			subtitle: "Быстрые ноги"
+			tasks: [{
+				id: "0CDDA58DA2D36AB5"
+				item: "createdieselgenerators:asphalt_block"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 12.0d
+		}
+		{
+			dependencies: [
+				"4ACEC2D6C9C53128"
+				"5C180633F5C78863"
+			]
+			id: "35C7AFCAF458450E"
+			tasks: [{
+				id: "571286F0D7446577"
+				item: "tfc:glue"
+				type: "item"
+			}]
+			x: 3.5d
+			y: 12.0d
+		}
+		{
+			dependencies: ["799AF03DE7D85886"]
+			id: "61668FF23450B71F"
+			tasks: [{
+				amount: 1000L
+				fluid: "tfmg:naphtha"
+				id: "08DE2B6FE63C77A2"
+				type: "fluid"
+			}]
+			title: "Лигроин"
+			x: 10.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["73C840074194DE2B"]
+			id: "1894B9660A6325C8"
+			tasks: [{
+				amount: 1000L
+				fluid: "tfmg:lubrication_oil"
+				id: "3852EC2CFEB6853C"
+				type: "fluid"
+			}]
+			title: "Смазка"
+			x: 6.5d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"61668FF23450B71F"
+				"19AB0ED67B727F82"
+			]
+			id: "6FDF9DA2B8678708"
+			tasks: [{
+				id: "1F768AB9012D8033"
+				item: "tfmg:plastic_sheet"
+				type: "item"
+			}]
+			title: "Пластик"
+			x: 10.5d
+			y: 12.0d
+		}
+		{
+			dependencies: [
+				"7BCF588AFC129F75"
+				"1E9EFC5EDEEEF9A0"
+				"16D08B0415FDB39B"
+			]
+			id: "2826EEC329AFBBD7"
+			tasks: [{
+				id: "5EA561FCEE874E4F"
+				item: "immersiveengineering:plate_duroplast"
+				type: "item"
+			}]
+			x: 11.5d
+			y: 12.0d
+		}
+		{
+			dependencies: ["19AB0ED67B727F82"]
+			id: "7BCF588AFC129F75"
+			tasks: [{
+				amount: 1000L
+				fluid: "immersivepetroleum:petroleum_gas"
+				id: "0AE0D884FE7B6DA3"
+				type: "fluid"
+			}]
+			title: "Сжиженный газ"
+			x: 4.5d
+			y: 6.5d
+		}
+		{
+			id: "51B1F7B76EE8AD3F"
+			subtitle: "Содержат спирт"
+			tasks: [
+				{
+					id: "2936D2452580FDE9"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:food": {
+								creationDate: 3324000L
+								traits: [ ]
+							}
+						}
+						id: "tfc:food/onion"
+					}
+					type: "item"
+				}
+				{
+					id: "6ECF013C02641D02"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:food": {
+								creationDate: 3324000L
+								traits: [ ]
+							}
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+						id: "tfc:food/potato"
+					}
+					type: "item"
+				}
+				{
+					id: "13EEC681ED34716E"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:food": {
+								creationDate: 3324000L
+								traits: [ ]
+							}
+						}
+						id: "tfc:food/tomato"
+					}
+					type: "item"
+				}
+				{
+					id: "28B9728F6E3550F0"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:food": {
+								creationDate: -2L
+								traits: [ ]
+							}
+						}
+						id: "minecraft:sugar"
+					}
+					type: "item"
+				}
+			]
+			title: "Продукты массовой ферментации"
+			x: 16.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["51B1F7B76EE8AD3F"]
+			id: "170CD1ACD367C489"
+			tasks: [{
+				count: 3L
+				id: "7B21EF4A3EEBE290"
+				item: { Count: 3, id: "createdieselgenerators:bulk_fermenter" }
+				type: "item"
+			}]
+			title: "Массовая ферментация"
+			x: 15.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["51B1F7B76EE8AD3F"]
+			id: "7E41395895DE88EE"
+			tasks: [
+				{
+					id: "11DFC76CAF93DFBE"
+					item: "create:basin"
+					type: "item"
+				}
+				{
+					id: "48DE58251170A021"
+					item: "createdieselgenerators:basin_lid"
+					type: "item"
+				}
+			]
+			title: "Чаша с крышкой"
+			x: 16.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["51B1F7B76EE8AD3F"]
+			id: "3BDAFACF959C18D9"
+			subtitle: "Электрический самогон"
+			tasks: [
+				{
+					count: 4L
+					id: "084E55C73650A8C7"
+					item: { Count: 4, id: "immersiveengineering:sheetmetal_iron" }
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "17FAD34B1BCA0B8C"
+					item: { Count: 2, id: "immersiveengineering:fluid_pipe" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "399C2E504745FDF2"
+					item: { Count: 4, id: "minecraft:cauldron" }
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "525B9279760754A0"
+					item: { Count: 2, id: "immersiveengineering:light_engineering" }
+					type: "item"
+				}
+				{
+					id: "389BB2EACE047963"
+					item: "immersiveengineering:rs_engineering"
+					type: "item"
+				}
+				{
+					count: 6L
+					id: "6857960860F90093"
+					item: { Count: 6, id: "immersiveengineering:steel_scaffolding_standard" }
+					type: "item"
+				}
+			]
+			title: "Бродильный аппарат"
+			x: 17.0d
+			y: 2.0d
+		}
+		{
+			id: "7037F53082F5F2E5"
+			tasks: [
+				{
+					id: "0C9EE0C86D2802FB"
+					item: "tfc:seeds/barley"
+					type: "item"
+				}
+				{
+					id: "77CF34F73A9674A1"
+					item: "tfc:seeds/oat"
+					type: "item"
+				}
+				{
+					id: "7B331F644D98A005"
+					item: "tfc:seeds/rye"
+					type: "item"
+				}
+				{
+					id: "27C1A10509D1196C"
+					item: "tfc:seeds/maize"
+					type: "item"
+				}
+				{
+					id: "0F1E7881286FAD15"
+					item: "tfc:seeds/wheat"
+					type: "item"
+				}
+				{
+					id: "6FF88F0C6C904B2B"
+					item: "tfc:seeds/rice"
+					type: "item"
+				}
+				{
+					id: "6485D38208BFFCC1"
+					item: "tfc:seeds/beet"
+					type: "item"
+				}
+				{
+					id: "34579339ABBB9152"
+					item: "tfc:seeds/cabbage"
+					type: "item"
+				}
+				{
+					id: "64E3CCED14B94EC1"
+					item: "tfc:seeds/carrot"
+					type: "item"
+				}
+				{
+					id: "526BE8FCB68DD877"
+					item: "tfc:seeds/garlic"
+					type: "item"
+				}
+				{
+					id: "1E804755CAF1044C"
+					item: "tfc:seeds/green_bean"
+					type: "item"
+				}
+				{
+					id: "08E7229DB75FCDF5"
+					item: "tfc:seeds/potato"
+					type: "item"
+				}
+				{
+					id: "41F9D91A5BBBDBB2"
+					item: "tfc:seeds/onion"
+					type: "item"
+				}
+				{
+					id: "00A2E2A00FA80812"
+					item: "tfc:seeds/soybean"
+					type: "item"
+				}
+				{
+					id: "4B91DA6E83F332CC"
+					item: "tfc:seeds/squash"
+					type: "item"
+				}
+				{
+					id: "51179C19FEBA0B3B"
+					item: "tfc:seeds/sugarcane"
+					type: "item"
+				}
+				{
+					id: "5C83DBD6961EE040"
+					item: "tfc:seeds/tomato"
+					type: "item"
+				}
+				{
+					id: "43A2A9B7830913B1"
+					item: "tfc:seeds/jute"
+					type: "item"
+				}
+				{
+					id: "20C4AA211C732C95"
+					item: "tfc:seeds/papyrus"
+					type: "item"
+				}
+				{
+					id: "2E657DD585F77437"
+					item: "tfc:seeds/pumpkin"
+					type: "item"
+				}
+				{
+					id: "5D8E4C3E2E624B7C"
+					item: "tfc:seeds/melon"
+					type: "item"
+				}
+				{
+					id: "45C8BCC57BEBC725"
+					item: "tfc:seeds/red_bell_pepper"
+					type: "item"
+				}
+				{
+					id: "45350DAE0B6F7B96"
+					item: "tfc:seeds/yellow_bell_pepper"
+					type: "item"
+				}
+			]
+			title: "Семена"
+			x: 18.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["7037F53082F5F2E5"]
+			id: "09BD589903FF87E7"
+			tasks: [
+				{
+					amount: 1000L
+					fluid: "createdieselgenerators:plant_oil"
+					id: "2DC19CFC613BA959"
+					type: "fluid"
+				}
+				{
+					amount: 1000L
+					fluid: "immersiveengineering:plantoil"
+					id: "5576F566A1035B84"
+					type: "fluid"
+				}
+				{
+					amount: 1000L
+					fluid: "createaddition:seed_oil"
+					id: "5F50E11CB5688CEB"
+					type: "fluid"
+				}
+			]
+			title: "Растительное масло"
+			x: 18.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"3BDAFACF959C18D9"
+				"7E41395895DE88EE"
+				"170CD1ACD367C489"
+			]
+			id: "16D08B0415FDB39B"
+			tasks: [
+				{
+					amount: 1000L
+					fluid: "createdieselgenerators:ethanol"
+					id: "0559A5DA5871CD47"
+					type: "fluid"
+				}
+				{
+					amount: 1000L
+					fluid: "immersiveengineering:ethanol"
+					id: "02D1C921CFEC834D"
+					type: "fluid"
+				}
+			]
+			title: "Этанол"
+			x: 16.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"16D08B0415FDB39B"
+				"09BD589903FF87E7"
+				"0B48039E85801D89"
+			]
+			id: "1FF1A6F132F62DAE"
+			tasks: [{
+				amount: 1000L
+				fluid: "createdieselgenerators:biodiesel"
+				id: "227CF3D2EDF91894"
+				type: "fluid"
+			}]
+			title: "Биодизель"
+			x: 17.0d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"6FDF9DA2B8678708"
+				"2826EEC329AFBBD7"
+			]
+			id: "7AE18028D65D32A5"
+			shape: "square"
+			size: 2.0d
+			subtitle: "Платформа для новой эры"
+			tasks: [{
+				id: "0F207E925BF44FEE"
+				item: "projectred_core:plate"
+				type: "item"
+			}]
+			title: "Основа плат"
+			x: 11.0d
+			y: 14.0d
 		}
 	]
 	title: "Нефтяная эпоха"

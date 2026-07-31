@@ -8,16 +8,24 @@
 	order_index: 6
 	quest_links: [
 		{
-			id: "7CA1699AC1AF03BA"
-			linked_quest: "342ED3F640FD5B64"
-			x: -6.0d
-			y: 2.0d
-		}
-		{
 			id: "584EAEDFD569227C"
 			linked_quest: "57EA49F51CAD0D18"
-			x: -1.5d
+			x: -3.0d
 			y: 4.5d
+		}
+		{
+			id: "37C5769FDCA44DE8"
+			linked_quest: "7AE18028D65D32A5"
+			size: 2.0d
+			x: -8.5d
+			y: -1.0d
+		}
+		{
+			id: "065FF4F3E5A925AD"
+			linked_quest: "43B4539D00CD04E3"
+			size: 2.0d
+			x: -3.0d
+			y: -4.0d
 		}
 	]
 	quests: [
@@ -35,8 +43,8 @@
 				item: "minecraft:redstone"
 				type: "item"
 			}]
-			x: -1.0d
-			y: -2.0d
+			x: 0.0d
+			y: -2.5d
 		}
 		{
 			id: "789829916384467C"
@@ -52,22 +60,15 @@
 					item: "tfc_ie_addon:mineral/quartz_shard"
 					type: "item"
 				}
+				{
+					id: "5F4D59B07D805CE5"
+					item: "minecraft:flint"
+					type: "item"
+				}
 			]
-			title: "Кварц"
-			x: 2.0d
-			y: -2.0d
-		}
-		{
-			dependencies: ["37E8F7C7E89A5D3D"]
-			id: "3E179BA684C58E4E"
-			subtitle: "Играй мой клависин"
-			tasks: [{
-				id: "304E44148C6F0873"
-				item: "minecraft:note_block"
-				type: "item"
-			}]
-			x: -1.0d
-			y: 0.0d
+			title: "Кварц и кремний"
+			x: -1.5d
+			y: -1.0d
 		}
 		{
 			id: "616B547C35F96CF5"
@@ -76,7 +77,7 @@
 				item: "tfc:ore/cryolite"
 				type: "item"
 			}]
-			x: 0.0d
+			x: -1.5d
 			y: -3.0d
 		}
 		{
@@ -86,7 +87,7 @@
 				item: "tfc:ore/cinnabar"
 				type: "item"
 			}]
-			x: -1.0d
+			x: -0.5d
 			y: -3.5d
 		}
 		{
@@ -98,13 +99,14 @@
 			dependency_requirement: "one_started"
 			id: "367FE8155E582F98"
 			tasks: [{
-				id: "767EAEBD0FD4F0A8"
-				item: "artisanal:bucket/mercury"
-				type: "item"
+				amount: 1000L
+				fluid: "artisanal:mercury"
+				id: "43FA595BF8269D7A"
+				type: "fluid"
 			}]
 			title: "Ртуть"
-			x: -2.0d
-			y: -3.0d
+			x: 1.5d
+			y: -2.5d
 		}
 		{
 			id: "606339C741CF7ABE"
@@ -113,8 +115,8 @@
 				item: "immersiveengineering:dust_copper"
 				type: "item"
 			}]
-			x: -2.0d
-			y: -4.5d
+			x: 1.0d
+			y: -3.5d
 		}
 		{
 			id: "39DE9D984F3D5029"
@@ -133,8 +135,8 @@
 				type: "item"
 			}]
 			title: "Серная пыль"
-			x: -3.0d
-			y: -4.0d
+			x: 2.0d
+			y: -3.5d
 		}
 		{
 			id: "145605B140FE751A"
@@ -143,8 +145,8 @@
 				item: "immersiveengineering:dust_iron"
 				type: "item"
 			}]
-			x: -3.5d
-			y: -3.0d
+			x: 2.5d
+			y: -2.5d
 		}
 		{
 			dependencies: [
@@ -158,46 +160,8 @@
 				item: "create:electron_tube"
 				type: "item"
 			}]
-			x: 0.5d
-			y: 0.5d
-		}
-		{
-			dependencies: ["789829916384467C"]
-			dependency_requirement: "one_started"
-			id: "5C090A72E2747DF7"
-			subtitle: "Реакционная политика"
-			tasks: [{
-				id: "0FCEE1B1F55E426E"
-				item: "minecraft:observer"
-				type: "item"
-			}]
-			x: 2.0d
-			y: 0.0d
-		}
-		{
-			dependencies: [
-				"09547F3B21D578BF"
-				"333353B79A530BFB"
-				"762AC118AF773D2E"
-			]
-			dependency_requirement: "one_started"
-			id: "2A32998FB2875F74"
-			subtitle: "Основа микросхем"
-			tasks: [
-				{
-					id: "5EC7088ECA4D02BB"
-					item: "projectred_core:plate"
-					type: "item"
-				}
-				{
-					id: "0A41D36D8A806DAF"
-					item: "immersiveengineering:circuit_board"
-					type: "item"
-				}
-			]
-			title: "Печатная плата"
-			x: -2.5d
-			y: 2.0d
+			x: 0.0d
+			y: -1.0d
 		}
 		{
 			id: "72F8369511B39FDB"
@@ -206,8 +170,8 @@
 				item: "create:mechanical_crafter"
 				type: "item"
 			}]
-			x: -5.0d
-			y: 4.5d
+			x: -6.0d
+			y: 3.0d
 		}
 		{
 			dependencies: [
@@ -221,8 +185,8 @@
 				item: "minecraft:furnace"
 				type: "item"
 			}]
-			x: -3.5d
-			y: 6.0d
+			x: -4.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["6AB0211949B09B76"]
@@ -232,8 +196,8 @@
 				item: "minecraft:blast_furnace"
 				type: "item"
 			}]
-			x: -3.5d
-			y: 7.5d
+			x: -4.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["72F8369511B39FDB"]
@@ -243,8 +207,8 @@
 				item: "createaddition:electric_motor"
 				type: "item"
 			}]
-			x: -6.5d
-			y: 6.0d
+			x: -7.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["6F60BFB8BA1394BF"]
@@ -255,8 +219,8 @@
 				item: "minecraft:dropper"
 				type: "item"
 			}]
-			x: -5.5d
-			y: 7.5d
+			x: -6.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["6F60BFB8BA1394BF"]
@@ -267,8 +231,8 @@
 				item: "minecraft:piston"
 				type: "item"
 			}]
-			x: -6.5d
-			y: 7.5d
+			x: -7.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["6F60BFB8BA1394BF"]
@@ -279,8 +243,8 @@
 				item: "minecraft:jukebox"
 				type: "item"
 			}]
-			x: -7.5d
-			y: 7.5d
+			x: -8.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["342E7088557CBF39"]
@@ -291,10 +255,11 @@
 				item: "minecraft:dispenser"
 				type: "item"
 			}]
-			x: -4.5d
-			y: 7.5d
+			x: -5.5d
+			y: 6.0d
 		}
 		{
+			dependency_requirement: "one_started"
 			id: "34130EFCFFC0D140"
 			subtitle: "Вечный магнит"
 			tasks: [{
@@ -302,7 +267,7 @@
 				item: "create_new_age:magnetite_block"
 				type: "item"
 			}]
-			x: 1.5d
+			x: 0.0d
 			y: 4.5d
 		}
 		{
@@ -318,7 +283,7 @@
 				type: "item"
 			}]
 			title: "Динамо-машина"
-			x: 0.0d
+			x: -1.5d
 			y: 6.0d
 		}
 		{
@@ -329,7 +294,7 @@
 				item: "immersiveengineering:dynamo"
 				type: "item"
 			}]
-			x: 1.5d
+			x: 0.0d
 			y: 6.0d
 		}
 		{
@@ -340,7 +305,7 @@
 				item: "createaddition:alternator"
 				type: "item"
 			}]
-			x: 3.0d
+			x: 1.5d
 			y: 6.0d
 		}
 		{
@@ -358,7 +323,7 @@
 				type: "item"
 			}]
 			title: "Коннектор"
-			x: 1.5d
+			x: 0.0d
 			y: 7.5d
 		}
 		{
@@ -370,11 +335,11 @@
 				item: "immersiveengineering:connector_lv_relay"
 				type: "item"
 			}]
-			x: 1.5d
+			x: 0.0d
 			y: 9.0d
 		}
 		{
-			dependencies: ["447D1E654C2593A5"]
+			dependencies: ["5451DEDEC9142DE5"]
 			id: "7F6F3357A47BE14B"
 			subtitle: "Программирование на плате"
 			tasks: [{
@@ -382,13 +347,13 @@
 				item: "create_connected:control_chip"
 				type: "item"
 			}]
-			x: -0.5d
-			y: 2.0d
+			x: -7.0d
+			y: 1.5d
 		}
 		{
 			dependencies: [
 				"7F6F3357A47BE14B"
-				"2A32998FB2875F74"
+				"7AE18028D65D32A5"
 			]
 			id: "37EBC617EF0A7E8F"
 			subtitle: "Собственный функционал"
@@ -398,8 +363,8 @@
 				type: "item"
 			}]
 			title: "Схема"
-			x: -1.5d
-			y: 3.0d
+			x: -8.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["447D1E654C2593A5"]
@@ -409,8 +374,8 @@
 				item: "minecraft:redstone_torch"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 2.0d
+			x: -1.5d
+			y: 0.5d
 		}
 		{
 			dependencies: ["447D1E654C2593A5"]
@@ -420,19 +385,8 @@
 				item: "minecraft:redstone_block"
 				type: "item"
 			}]
-			x: 3.0d
-			y: 2.0d
-		}
-		{
-			dependencies: ["447D1E654C2593A5"]
-			id: "155EBE1F3209C6EA"
-			tasks: [{
-				id: "10D35A2284E5BE2C"
-				item: "minecraft:tripwire_hook"
-				type: "item"
-			}]
-			x: 2.0d
-			y: 2.0d
+			x: -0.5d
+			y: 1.5d
 		}
 		{
 			id: "15A2AAB01DFE973E"
@@ -451,7 +405,7 @@
 				type: "item"
 			}]
 			x: -12.0d
-			y: -2.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["15A2AAB01DFE973E"]
@@ -463,7 +417,7 @@
 			}]
 			title: "Оранжевый логический провод"
 			x: -10.5d
-			y: -2.0d
+			y: -2.5d
 		}
 		{
 			id: "19E9E9539A7ED6CA"
@@ -482,7 +436,7 @@
 				type: "item"
 			}]
 			x: -12.0d
-			y: -1.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["19E9E9539A7ED6CA"]
@@ -494,7 +448,7 @@
 			}]
 			title: "Жёлтый логический провод"
 			x: -10.5d
-			y: -1.0d
+			y: -1.5d
 		}
 		{
 			id: "2657C343F1AEEDD3"
@@ -513,7 +467,7 @@
 				type: "item"
 			}]
 			x: -12.0d
-			y: 0.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["2657C343F1AEEDD3"]
@@ -525,7 +479,7 @@
 			}]
 			title: "Белый логический провод"
 			x: -10.5d
-			y: 0.0d
+			y: -0.5d
 		}
 		{
 			id: "2426B15AD779A7F3"
@@ -544,7 +498,7 @@
 				type: "item"
 			}]
 			x: -12.0d
-			y: 1.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["2426B15AD779A7F3"]
@@ -556,7 +510,7 @@
 			}]
 			title: "Чёрный логический провод"
 			x: -10.5d
-			y: 1.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["12C0EB6D4136F88B"]
@@ -568,7 +522,7 @@
 			}]
 			title: "Серый логический провод"
 			x: -10.5d
-			y: 2.0d
+			y: 1.5d
 		}
 		{
 			id: "12C0EB6D4136F88B"
@@ -587,182 +541,7 @@
 				type: "item"
 			}]
 			x: -12.0d
-			y: 2.0d
-		}
-		{
-			id: "762AC118AF773D2E"
-			tasks: [{
-				id: "5E523E526CF39D65"
-				item: {
-					Count: 1
-					id: "immersiveengineering:blueprint"
-					tag: {
-						blueprint: "components"
-					}
-				}
-				type: "item"
-			}]
-			x: -2.5d
-			y: 0.5d
-		}
-		{
-			dependencies: [
-				"76409626F5D1BE53"
-				"4E0D7A82626EAF93"
-				"5D30C0840BD66185"
-			]
-			dependency_requirement: "one_started"
-			id: "333353B79A530BFB"
-			tasks: [{
-				id: "6A31ABD3DFA0266F"
-				item: "immersiveengineering:plate_duroplast"
-				type: "item"
-			}]
-			title: "Лист дюропласта"
-			x: -4.0d
-			y: 0.5d
-		}
-		{
-			id: "09547F3B21D578BF"
-			tasks: [{
-				id: "29DBD771A3062499"
-				item: "immersiveengineering:plate_copper"
-				type: "item"
-			}]
-			x: -4.0d
-			y: 2.0d
-		}
-		{
-			dependencies: [
-				"522B9C15D82DC7E1"
-				"342ED3F640FD5B64"
-			]
-			dependency_requirement: "one_started"
-			id: "76409626F5D1BE53"
-			tasks: [{
-				amount: 1000L
-				fluid: "immersiveengineering:phenolic_resin"
-				id: "40ADAED2DDD5516E"
-				type: "fluid"
-			}]
-			title: "Фенопласт"
-			x: -5.0d
-			y: -0.5d
-		}
-		{
-			dependencies: [
-				"54B06556EB23543F"
-				"6D3518B81EE1EEE5"
-				"61F660307E7630B9"
-				"764F207779F0820F"
-			]
-			dependency_requirement: "one_started"
-			id: "522B9C15D82DC7E1"
-			tasks: [{
-				amount: 1000L
-				fluid: "immersiveengineering:acetaldehyde"
-				id: "2C28ACAE255DA029"
-				type: "fluid"
-			}]
-			title: "Ацеталдегид"
-			x: -6.5d
-			y: -0.5d
-		}
-		{
-			id: "5D30C0840BD66185"
-			tasks: [{
-				id: "2D98FD947184D1F0"
-				item: {
-					Count: 1
-					id: "createdieselgenerators:mold"
-					tag: {
-						Mold: "createdieselgenerators:bar"
-					}
-				}
-				type: "item"
-			}]
-			x: -5.0d
-			y: 1.0d
-		}
-		{
-			dependencies: ["2DBFFBF91C59757E"]
-			id: "4E0D7A82626EAF93"
-			tasks: [{
-				id: "677C3604A10EFD39"
-				item: "immersiveengineering:mold_plate"
-				type: "item"
-			}]
-			x: -3.5d
-			y: -0.5d
-		}
-		{
-			id: "6D3518B81EE1EEE5"
-			tasks: [
-				{
-					amount: 1000L
-					fluid: "createdieselgenerators:ethanol"
-					id: "47806D3F5E9C4A90"
-					type: "fluid"
-				}
-				{
-					amount: 1000L
-					fluid: "immersiveengineering:ethanol"
-					id: "41399604481F2759"
-					type: "fluid"
-				}
-			]
-			title: "Этанол"
-			x: -7.5d
-			y: -1.5d
-		}
-		{
-			id: "54B06556EB23543F"
-			tasks: [{
-				id: "7A4089E221204882"
-				item: "immersiveengineering:plate_silver"
-				type: "item"
-			}]
-			x: -6.5d
-			y: -2.0d
-		}
-		{
-			id: "61F660307E7630B9"
-			tasks: [{
-				amount: 1000L
-				fluid: "immersivepetroleum:petroleum_gas"
-				id: "2B46A9F10C1F94A8"
-				type: "fluid"
-			}]
-			title: "Нефтяной газ"
-			x: -7.5d
-			y: 0.5d
-		}
-		{
-			id: "764F207779F0820F"
-			tasks: [{
-				id: "32A3196A4307A6EF"
-				item: "immersiveengineering:plate_constantan"
-				type: "item"
-			}]
-			x: -6.5d
-			y: 1.0d
-		}
-		{
-			id: "2DBFFBF91C59757E"
-			tasks: [{
-				id: "0176D0B2F137D26C"
-				item: {
-					Count: 1
-					id: "immersiveengineering:blueprint"
-					tag: {
-						blueprint: "molds"
-					}
-				}
-				type: "item"
-			}]
-			title: "Чертёж пресс-форм"
-			x: -2.5d
-			y: -1.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["6F60BFB8BA1394BF"]
@@ -774,8 +553,8 @@
 				type: "item"
 			}]
 			title: "Мотор для крюка"
-			x: -8.0d
-			y: 4.5d
+			x: -9.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["60C56C4AE04BA8D8"]
@@ -799,8 +578,8 @@
 				type: "item"
 			}]
 			title: "Электрический крюк"
-			x: -9.5d
-			y: 4.5d
+			x: -10.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["14EEFF76D61F2E2C"]
@@ -825,8 +604,458 @@
 				type: "item"
 			}]
 			title: "Умный крюк"
-			x: -11.0d
+			x: -12.0d
+			y: 3.0d
+		}
+		{
+			id: "4D215BFA67346F1E"
+			subtitle: "Сила Зевса"
+			tasks: [{
+				id: "56755C4C74B01A6A"
+				item: "minecraft:lightning_rod"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["447D1E654C2593A5"]
+			id: "0AC93DE7F65CF993"
+			tasks: [{
+				id: "09A3037422466144"
+				item: "minecraft:observer"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["447D1E654C2593A5"]
+			id: "31327E8665A498F4"
+			tasks: [{
+				id: "757D29DD745546A8"
+				item: "minecraft:daylight_detector"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 0.5d
+		}
+		{
+			dependencies: [
+				"133DE732DE57D67A"
+				"21ADBB6A9D735262"
+				"17758009234B6EEA"
+				"7AE18028D65D32A5"
+			]
+			id: "655838AE22B454CF"
+			tasks: [
+				{
+					id: "114835B3483D781D"
+					item: "projectred_integration:and_gate"
+					type: "item"
+				}
+				{
+					id: "3B7E09A9EE64A6E2"
+					item: "projectred_integration:and_cell_gate"
+					type: "item"
+				}
+				{
+					id: "70A5C309BB60E97B"
+					item: "projectred_integration:bus_randomizer_gate"
+					type: "item"
+				}
+				{
+					id: "4A156EEFC16C9574"
+					item: "projectred_integration:bus_converter_gate"
+					type: "item"
+				}
+				{
+					id: "009E4A0B797EEAC1"
+					item: "projectred_integration:bus_input_panel_gate"
+					type: "item"
+				}
+				{
+					id: "1EF632237A5CC2E3"
+					item: "projectred_integration:stacking_latch_gate"
+					type: "item"
+				}
+				{
+					id: "15EF70C435375310"
+					item: "projectred_integration:segment_display_gate"
+					type: "item"
+				}
+				{
+					id: "56C7681BB15BBBA1"
+					item: "projectred_integration:dec_randomizer_gate"
+					type: "item"
+				}
+				{
+					id: "59E4EBD46A8C48E9"
+					item: "minecraft:comparator"
+					type: "item"
+				}
+				{
+					id: "7D0B92CE028C08E4"
+					item: "minecraft:repeater"
+					type: "item"
+				}
+				{
+					id: "357C00207A62C8E5"
+					item: "projectred_integration:sequencer_gate"
+					type: "item"
+				}
+				{
+					id: "7CB07B25F6AEBDEF"
+					item: "projectred_integration:counter_gate"
+					type: "item"
+				}
+				{
+					id: "1D82F51584584EB4"
+					item: "projectred_integration:state_cell_gate"
+					type: "item"
+				}
+				{
+					id: "4B719D0F1C12B71A"
+					item: "projectred_integration:synchronizer_gate"
+					type: "item"
+				}
+				{
+					id: "342B7C1EFCD29140"
+					item: "projectred_integration:bus_transceiver_gate"
+					type: "item"
+				}
+				{
+					id: "04D92112EA2A6397"
+					item: "projectred_integration:null_cell_gate"
+					type: "item"
+				}
+				{
+					id: "7434B4B233CCC29A"
+					item: "projectred_integration:invert_cell_gate"
+					type: "item"
+				}
+				{
+					id: "4C1C7751D24C916C"
+					item: "projectred_integration:buffer_cell_gate"
+					type: "item"
+				}
+				{
+					id: "434D4621E0AC948C"
+					item: "projectred_integration:comparator_gate"
+					type: "item"
+				}
+				{
+					id: "0EA62F4A7F001743"
+					item: "projectred_integration:pulse_gate"
+					type: "item"
+				}
+				{
+					id: "0EDC7D12393AFA7F"
+					item: "projectred_integration:repeater_gate"
+					type: "item"
+				}
+				{
+					id: "2E0118839558CAC7"
+					item: "projectred_integration:repeater_gate"
+					type: "item"
+				}
+				{
+					id: "03810BBE8CDCF401"
+					item: "projectred_integration:randomizer_gate"
+					type: "item"
+				}
+				{
+					id: "429CECB055C0510B"
+					item: "projectred_integration:sr_latch_gate"
+					type: "item"
+				}
+				{
+					id: "076D8BC73BC811AD"
+					item: "projectred_integration:toggle_latch_gate"
+					type: "item"
+				}
+				{
+					id: "2FAB44CA8ABE0D03"
+					item: "projectred_integration:transparent_latch_gate"
+					type: "item"
+				}
+				{
+					id: "023A9B5CD49653F3"
+					item: "projectred_integration:light_sensor_gate"
+					type: "item"
+				}
+				{
+					id: "5AC69B0BC97AE344"
+					item: "projectred_integration:rain_sensor_gate"
+					type: "item"
+				}
+				{
+					id: "58130E08AABC0AAE"
+					item: "projectred_integration:timer_gate"
+					type: "item"
+				}
+				{
+					id: "528FBD399C9EECFA"
+					item: "projectred_integration:or_gate"
+					type: "item"
+				}
+				{
+					id: "4FAD9510BC4EC661"
+					item: "projectred_integration:nor_gate"
+					type: "item"
+				}
+				{
+					id: "204EE2B4F5E07228"
+					item: "projectred_integration:not_gate"
+					type: "item"
+				}
+				{
+					id: "05E71CA7B503BE9B"
+					item: "projectred_integration:xor_gate"
+					type: "item"
+				}
+				{
+					id: "5E62819D1F9D7BFA"
+					item: "projectred_integration:xnor_gate"
+					type: "item"
+				}
+				{
+					id: "05F1437088714DED"
+					item: "projectred_integration:multiplexer_gate"
+					type: "item"
+				}
+				{
+					id: "0A57323D516B37EF"
+					item: "projectred_integration:nand_gate"
+					type: "item"
+				}
+				{
+					id: "274BBEDD21D1BB01"
+					item: "projectred_integration:and_gate"
+					type: "item"
+				}
+				{
+					id: "0FB711332B0D56B1"
+					item: "projectred_integration:buffer_gate"
+					type: "item"
+				}
+			]
+			title: "Микросхемы"
+			x: -6.5d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"789829916384467C"
+				"43B4539D00CD04E3"
+			]
+			id: "37FD1ACE5BA99A48"
+			tasks: [{
+				id: "1325040A7F2E0725"
+				item: "tfmg:silicon_ingot"
+				type: "item"
+			}]
+			x: -3.0d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"37FD1ACE5BA99A48"
+				"5451DEDEC9142DE5"
+			]
+			id: "58BA1516770B29C9"
+			tasks: [{
+				id: "279D3A749BDB0E2E"
+				item: "tfmg:p_semiconductor"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"37FD1ACE5BA99A48"
+				"5451DEDEC9142DE5"
+			]
+			id: "13C5B4B2A1301DAD"
+			tasks: [{
+				id: "7D95FEEDD3F2A482"
+				item: "tfmg:n_semiconductor"
+				type: "item"
+			}]
+			x: -3.0d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"13C5B4B2A1301DAD"
+				"7AE18028D65D32A5"
+			]
+			id: "133DE732DE57D67A"
+			tasks: [{
+				id: "59B01A4E43C5E1DF"
+				item: "projectred_core:cathode"
+				type: "item"
+			}]
+			title: "Катод"
+			x: -6.0d
+			y: -3.0d
+		}
+		{
+			dependencies: [
+				"58BA1516770B29C9"
+				"7AE18028D65D32A5"
+			]
+			id: "21ADBB6A9D735262"
+			tasks: [{
+				id: "276A757F218DB623"
+				item: "projectred_core:anode"
+				type: "item"
+			}]
+			title: "Анод"
+			x: -6.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"13C5B4B2A1301DAD"
+				"58BA1516770B29C9"
+			]
+			id: "53C8A3F7FE43D594"
+			tasks: [{
+				id: "01E4BBBF9801B0CF"
+				item: "tfmg:transistor_item"
+				type: "item"
+			}]
+			x: -4.5d
+			y: -2.0d
+		}
+		{
+			id: "1DD8C579C194303D"
+			tasks: [{
+				id: "6FF44E8F9EA6FE87"
+				item: "tfmg:capacitor_item"
+				type: "item"
+			}]
+			x: -4.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["5531D8EC8B2E659D"]
+			id: "7C037B743A056C63"
+			tasks: [{
+				id: "11F2EBD727CF34C8"
+				item: {
+					Count: 1
+					id: "tfmg:resistor"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -4.5d
+			y: 0.0d
+		}
+		{
+			id: "5451DEDEC9142DE5"
+			tasks: [{
+				id: "60492DA13735F407"
+				item: "projectred_core:infused_silicon"
+				type: "item"
+			}]
+			title: "Кристалл микрочипа"
+			x: -4.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"7C037B743A056C63"
+				"1DD8C579C194303D"
+				"53C8A3F7FE43D594"
+				"7AE18028D65D32A5"
+			]
+			id: "17758009234B6EEA"
+			tasks: [{
+				id: "2DAF8D3D5C279403"
+				item: "projectred_core:pointer"
+				type: "item"
+			}]
+			title: "Декодер адреса"
+			x: -5.5d
+			y: -1.0d
+		}
+		{
+			id: "5531D8EC8B2E659D"
+			tasks: [{
+				id: "2A9C0CDE5A615CA9"
+				item: "tfmg:winding_machine"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 1.5d
+		}
+		{
+			id: "22E20359D48E8CFA"
+			subtitle: "Ваша складская система"
+			tasks: [{
+				id: "3BFA3D87987EEF8F"
+				item: "toms_storage:ts.inventory_connector"
+				type: "item"
+			}]
+			x: -12.0d
 			y: 4.5d
+		}
+		{
+			dependencies: ["22E20359D48E8CFA"]
+			id: "769379F3E311F581"
+			tasks: [{
+				id: "232CD56818125E80"
+				item: "toms_storage:ts.storage_terminal"
+				type: "item"
+			}]
+			x: -10.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["769379F3E311F581"]
+			id: "3BE73DCDC6A28F00"
+			tasks: [{
+				id: "211E4824642CB361"
+				item: "toms_storage:ts.crafting_terminal"
+				type: "item"
+			}]
+			x: -9.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["34130EFCFFC0D140"]
+			id: "14494689E4ADE4FB"
+			subtitle: "Создайте магнитное поле в металле"
+			tasks: [
+				{
+					id: "240C77296C270344"
+					item: "tfmg:polarizer"
+					type: "item"
+				}
+				{
+					count: 9L
+					id: "72B241149A314066"
+					item: { Count: 9, id: "tfmg:magnet" }
+					type: "item"
+				}
+				{
+					count: 9L
+					id: "3B4E5F349476F4A8"
+					item: { Count: 9, id: "tfmg:magnetic_alloy_ingot" }
+					type: "item"
+				}
+				{
+					id: "6E1DD38B878913BB"
+					item: "tfmg:converter"
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 3.0d
 		}
 	]
 	title: "Электронная эпоха"

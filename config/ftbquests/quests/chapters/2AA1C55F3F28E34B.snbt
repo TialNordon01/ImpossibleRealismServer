@@ -20,29 +20,36 @@
 			id: "4CB057D9848D483D"
 			linked_quest: "710ED3E3E49FBE71"
 			size: 2.0d
-			x: -17.5d
-			y: 8.5d
+			x: -17.0d
+			y: 9.0d
 		}
 		{
 			id: "496CE422489425A4"
 			linked_quest: "5ECE04225827B4D8"
 			size: 2.0d
-			x: -19.5d
-			y: 8.5d
+			x: -20.0d
+			y: 9.0d
 		}
 		{
 			id: "2C3584C589F5D568"
 			linked_quest: "2730C5FFA4EE5685"
 			size: 2.0d
-			x: -22.5d
-			y: 8.5d
+			x: -22.0d
+			y: 9.0d
 		}
 		{
 			id: "2518514312308DE1"
 			linked_quest: "43B4539D00CD04E3"
 			size: 2.0d
-			x: -24.5d
-			y: 8.5d
+			x: -24.0d
+			y: 9.0d
+		}
+		{
+			id: "760563D0CF7E2E28"
+			linked_quest: "7926AC60D67F8BB7"
+			size: 2.0d
+			x: -28.0d
+			y: 9.0d
 		}
 	]
 	quests: [
@@ -1588,7 +1595,7 @@
 				type: "item"
 			}]
 			x: -7.0d
-			y: 18.0d
+			y: 20.5d
 		}
 		{
 			id: "7130EC48B1F5F072"
@@ -1598,7 +1605,7 @@
 				type: "item"
 			}]
 			x: -6.0d
-			y: 18.0d
+			y: 20.5d
 		}
 		{
 			dependencies: [
@@ -1616,7 +1623,7 @@
 				type: "item"
 			}]
 			x: -6.5d
-			y: 19.5d
+			y: 22.0d
 		}
 		{
 			dependencies: [
@@ -1631,7 +1638,7 @@
 				type: "item"
 			}]
 			x: -7.0d
-			y: 21.0d
+			y: 23.5d
 		}
 		{
 			dependencies: [
@@ -1646,7 +1653,7 @@
 				type: "item"
 			}]
 			x: -6.0d
-			y: 21.0d
+			y: 23.5d
 		}
 		{
 			id: "64BA36AD2469AAB4"
@@ -1703,6 +1710,786 @@
 			title: "Обожженный кирпич"
 			x: -9.0d
 			y: 25.5d
+		}
+		{
+			id: "15B64FC827EF416A"
+			size: 2.0d
+			subtitle: "Ёмкость для расплавленных металлов"
+			tasks: [{
+				id: "4C7C3D3E5254E0DA"
+				item: "create:basin"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["15B64FC827EF416A"]
+			id: "7D38A28101B4D490"
+			tasks: [
+				{
+					id: "7C5A9BEBB4B03CB6"
+					item: "createbigcannons:basin_foundry_lid"
+					type: "item"
+				}
+				{
+					id: "177A586094BF68A1"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+						id: "tfc:metal/ingot/bronze"
+					}
+					type: "item"
+				}
+				{
+					id: "7F57E5EAF870E221"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+						id: "tfc:metal/ingot/cast_iron"
+					}
+					type: "item"
+				}
+				{
+					id: "38C3C778E9582DE1"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+						id: "immersiveengineering:ingot_steel"
+					}
+					type: "item"
+				}
+				{
+					id: "455B90BA53EBAFF0"
+					item: {
+						Count: 1
+						ForgeCaps: {
+							"tfc:item_heat": {
+								heat: 0.0f
+								ticks: 0L
+							}
+						}
+						id: "tfc:metal/ingot/black_steel"
+					}
+					type: "item"
+				}
+			]
+			title: "Плавка металлов"
+			x: -2.0d
+			y: 11.0d
+		}
+		{
+			dependencies: ["7D38A28101B4D490"]
+			id: "133CE99BC52538A9"
+			tasks: [
+				{
+					count: 9L
+					id: "4F45E322A4223DB4"
+					item: "createbigcannons:casting_sand"
+					type: "item"
+				}
+				{
+					id: "06E8AB15C805A6F5"
+					item: "createbigcannons:very_small_cast_mould"
+					type: "item"
+				}
+				{
+					id: "56B8A431F7B60B1B"
+					item: "createbigcannons:small_cast_mould"
+					type: "item"
+				}
+				{
+					id: "270997B1A5340A78"
+					item: "createbigcannons:medium_cast_mould"
+					type: "item"
+				}
+				{
+					id: "7E124E8AD58ACC0D"
+					item: "createbigcannons:large_cast_mould"
+					type: "item"
+				}
+				{
+					id: "20373463F6C36EFC"
+					item: "createbigcannons:very_large_cast_mould"
+					type: "item"
+				}
+				{
+					id: "4A0454A249E86AB4"
+					item: "createbigcannons:cannon_end_cast_mould"
+					type: "item"
+				}
+				{
+					id: "7B1D23E97347FAB2"
+					item: "createbigcannons:screw_breech_cast_mould"
+					type: "item"
+				}
+				{
+					id: "1A3FF510CC2154A0"
+					item: "createbigcannons:sliding_breech_cast_mould"
+					type: "item"
+				}
+			]
+			title: "Литьё основы для пушки"
+			x: -2.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["133CE99BC52538A9"]
+			id: "0CBFBA07B5BBDDF7"
+			tasks: [
+				{
+					id: "36E5B11C7EEEEA46"
+					item: "create:sticky_mechanical_piston"
+					type: "item"
+				}
+				{
+					id: "7C744137EB039322"
+					item: "create:piston_extension_pole"
+					type: "item"
+				}
+				{
+					id: "6A806D6BCD4BF999"
+					item: "create:rope_pulley"
+					type: "item"
+				}
+				{
+					id: "069A732EEF17FA27"
+					item: "create:hand_crank"
+					type: "item"
+				}
+			]
+			title: "Передвижение заготовки"
+			x: -2.0d
+			y: 14.0d
+		}
+		{
+			dependencies: ["0CBFBA07B5BBDDF7"]
+			id: "4BA1328E81682BBA"
+			tasks: [
+				{
+					id: "65A1EE26E49FFD05"
+					item: "create:mechanical_bearing"
+					type: "item"
+				}
+				{
+					id: "61E4755F36F17EF8"
+					item: "createbigcannons:cannon_drill"
+					type: "item"
+				}
+			]
+			title: "Расточка дула пушки"
+			x: -2.0d
+			y: 15.5d
+		}
+		{
+			dependencies: ["4BA1328E81682BBA"]
+			id: "362A57D2FCF3AE8D"
+			tasks: [
+				{
+					id: "5DD4EA359EEE5825"
+					item: "createbigcannons:cannon_builder"
+					type: "item"
+				}
+				{
+					id: "7AEBCF91A972B167"
+					item: "create:hand_crank"
+					type: "item"
+				}
+				{
+					amount: 1000L
+					fluid: "minecraft:lava"
+					id: "19156809D627777D"
+					type: "fluid"
+				}
+				{
+					id: "313F8B0C0DE2E9B9"
+					item: "create:encased_fan"
+					type: "item"
+				}
+			]
+			title: "Наращивание слоёв для стальной пушки"
+			x: -1.0d
+			y: 16.5d
+		}
+		{
+			dependencies: ["4BA1328E81682BBA"]
+			id: "173111217B2B3899"
+			tasks: [
+				{
+					id: "451EAD83B2E096A1"
+					item: "createbigcannons:cannon_mount"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "0DD024D0AFCB6B50"
+					item: { Count: 2, id: "create:clutch" }
+					type: "item"
+				}
+				{
+					id: "7E3F4F58DBF25CEC"
+					item: "minecraft:lever"
+					type: "item"
+				}
+				{
+					id: "48D161C0041EAA07"
+					item: "createbigcannons:cannon_carriage"
+					type: "item"
+				}
+			]
+			x: -2.0d
+			y: 17.5d
+		}
+		{
+			dependencies: ["173111217B2B3899"]
+			id: "4317D938935BE683"
+			tasks: [
+				{
+					id: "42F7EAD368F0100D"
+					item: "createbigcannons:cannon_loader"
+					type: "item"
+				}
+				{
+					id: "1B6C6984A8BB8A96"
+					item: "createbigcannons:ram_head"
+					type: "item"
+				}
+				{
+					id: "671F8D7A25007C1A"
+					item: "createbigcannons:worm_head"
+					type: "item"
+				}
+				{
+					id: "49174473FF50E257"
+					item: {
+						Count: 1
+						id: "createbigcannons:solid_shot"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "140F4BAEA4A0ECA2"
+					item: {
+						Count: 1
+						id: "createbigcannons:powder_charge"
+						tag: { }
+					}
+					type: "item"
+				}
+			]
+			title: "Зарядка пушки"
+			x: -2.0d
+			y: 19.0d
+		}
+		{
+			id: "17D8EEA0A6AFF2D1"
+			size: 2.0d
+			subtitle: "Ваша первая станция"
+			tasks: [
+				{
+					id: "30150679AD0FE1EB"
+					item: "create:track_station"
+					type: "item"
+				}
+				{
+					id: "54D19CB0B69E4F24"
+					item: "create:railway_casing"
+					type: "item"
+				}
+				{
+					id: "31237F9EA3BA5F0B"
+					item: "create:controls"
+					type: "item"
+				}
+				{
+					id: "3E46C0D075E8EC46"
+					item: {
+						Count: 1
+						id: "create:super_glue"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Железная дорога"
+			x: -28.0d
+			y: 22.0d
+		}
+		{
+			dependencies: ["17D8EEA0A6AFF2D1"]
+			id: "031813BB9E5CADF1"
+			subtitle: "Ваш первый робот"
+			tasks: [
+				{
+					id: "5E2959AC1534C08C"
+					item: "create:andesite_casing"
+					type: "item"
+				}
+				{
+					id: "747A075EC1EF830E"
+					item: "railways:red_conductor_cap"
+					type: "item"
+				}
+			]
+			title: "Кондуктор"
+			x: -28.0d
+			y: 23.5d
+		}
+		{
+			dependencies: ["031813BB9E5CADF1"]
+			id: "3FC5AAB84A8E2D85"
+			subtitle: "Автоматизация"
+			tasks: [
+				{
+					id: "06E070BAFA639B47"
+					item: {
+						Count: 1
+						id: "railways:conductor_whistle"
+						tag: {
+							SelectedColor: 14b
+							SelectedConductor: [I;
+								-376041169
+								-1698805919
+								-2025390786
+								867985203
+							]
+							SelectedTrain: [I;
+								1207023986
+								-118602266
+								-1340289528
+								1061606601
+							]
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "3572620E109AE730"
+					item: "create:schedule"
+					type: "item"
+				}
+			]
+			title: "Управление поездом"
+			x: -28.0d
+			y: 25.0d
+		}
+		{
+			dependencies: ["7926AC60D67F8BB7"]
+			id: "50A2B27D056F4CFB"
+			subtitle: "Ваши детали для сборки"
+			tasks: [
+				{
+					id: "7C7E850A1B4F2C39"
+					item: "vs_clockwork:blade_controller"
+					type: "item"
+				}
+				{
+					id: "65E91AC27246D896"
+					item: "vs_clockwork:brass_propeller_bearing"
+					type: "item"
+				}
+				{
+					id: "7B006A8F24B140A4"
+					item: {
+						Count: 1
+						id: "vs_clockwork:propeller_blade"
+						tag: {
+							BladeLength: 1.0d
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "44F293CB1E51AB0B"
+					item: "vs_clockwork:juryrigged_propeller_bearing"
+					type: "item"
+				}
+				{
+					id: "55F8970154AFC023"
+					item: "create:white_sail"
+					type: "item"
+				}
+				{
+					id: "4C9B0244A7090060"
+					item: "vs_clockwork:copter_bearing"
+					type: "item"
+				}
+				{
+					id: "7F0F202E487FF393"
+					item: {
+						Count: 1
+						id: "vs_clockwork:wide_propeller_blade"
+						tag: {
+							BladeLength: 1.0d
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Вертолёт"
+			x: -30.5d
+			y: 11.5d
+		}
+		{
+			dependencies: ["7926AC60D67F8BB7"]
+			id: "413F4205807C857E"
+			subtitle: "Ваши детали для сборки"
+			tasks: [
+				{
+					id: "6B187358F616AF35"
+					item: "vs_clockwork:flap"
+					type: "item"
+				}
+				{
+					id: "458A3A8554D7EA82"
+					item: "vs_clockwork:brass_propeller_bearing"
+					type: "item"
+				}
+				{
+					id: "3D629586BE03D77D"
+					item: "vs_clockwork:wing"
+					type: "item"
+				}
+				{
+					id: "730B6EEC123AC715"
+					item: "vs_clockwork:juryrigged_propeller_bearing"
+					type: "item"
+				}
+				{
+					id: "3596AC26A75AC5D6"
+					item: "create:white_sail"
+					type: "item"
+				}
+				{
+					id: "190BA65A7CC26D02"
+					item: "vs_clockwork:andesite_flap_bearing"
+					type: "item"
+				}
+				{
+					id: "0118675DE344778F"
+					item: "vs_clockwork:smart_flap_bearing"
+					type: "item"
+				}
+			]
+			title: "Самолёт"
+			x: -25.5d
+			y: 11.5d
+		}
+		{
+			dependencies: ["7926AC60D67F8BB7"]
+			id: "02D65D801BB16FA4"
+			subtitle: "Ваши детали для сборки"
+			tasks: [
+				{
+					id: "1CB0458CF3F9175E"
+					item: "vs_clockwork:balloon_casing"
+					type: "item"
+				}
+				{
+					id: "6E9335FC1EE0B610"
+					item: "vs_clockwork:air_compressor"
+					type: "item"
+				}
+				{
+					id: "61730B25991B01CF"
+					item: "vs_clockwork:coal_burner"
+					type: "item"
+				}
+				{
+					id: "09D97F7524900402"
+					item: "vs_clockwork:gas_nozzle"
+					type: "item"
+				}
+				{
+					id: "283847C5322CF345"
+					item: "create:copper_valve_handle"
+					type: "item"
+				}
+			]
+			title: "Воздушный шар"
+			x: -29.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["7926AC60D67F8BB7"]
+			id: "0C2DB679FB9EA588"
+			subtitle: "Ваши детали для сборки"
+			tasks: [
+				{
+					id: "1DB69118C03C01C0"
+					item: "tfmg:engine_gearbox"
+					type: "item"
+				}
+				{
+					id: "62C56AE4F96C5690"
+					item: "tfmg:regular_engine"
+					type: "item"
+				}
+				{
+					id: "71C353A07039C5BA"
+					item: {
+						Count: 1
+						id: "tfmg:transmission"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "2A9511451B67D672"
+					item: "tfmg:engine_controller"
+					type: "item"
+				}
+				{
+					id: "7A3ACCB3BF0C8D8C"
+					item: "trackwork:simple_wheel"
+					type: "item"
+				}
+			]
+			title: "Машина"
+			x: -27.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["0C2DB679FB9EA588"]
+			id: "50F464DDE97A471E"
+			subtitle: "Сердце автомобиля"
+			tasks: [
+				{
+					id: "7F807701CAFD01C5"
+					item: "tfmg:regular_engine"
+					type: "item"
+				}
+				{
+					id: "7343045AFAC4A77C"
+					item: "tfmg:crankshaft"
+					type: "item"
+				}
+				{
+					id: "01DD2FCD279FD0A5"
+					item: "tfmg:steel_cogwheel"
+					type: "item"
+				}
+				{
+					id: "58B11D39E957A85B"
+					item: "tfmg:large_steel_cogwheel"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "6310E81A31250788"
+					item: { Count: 2, id: "tfmg:steel_pipe" }
+					type: "item"
+				}
+				{
+					id: "3889E9C02892E664"
+					item: "create:belt_connector"
+					type: "item"
+				}
+				{
+					id: "5E751A9BDC638EE5"
+					item: "tfmg:steel_mechanism"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "4564C7F706276A8C"
+					item: {
+						Count: 2
+						id: "tfmg:engine_cylinder"
+						tag: {
+							FuelNames: {
+								gasoline: "Gasoline"
+								kerosene: "Kerosene"
+								naphtha: "Naphtha"
+							}
+							Fuels: {
+								gasoline: "forge:gasoline"
+								kerosene: "forge:kerosene"
+								naphtha: "forge:naphtha"
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "34348CC3653EC7B1"
+					item: { Count: 2, id: "create:mechanical_pump" }
+					type: "item"
+				}
+				{
+					id: "247A8367A76500B8"
+					item: "tfmg:exhaust"
+					type: "item"
+				}
+				{
+					id: "0AEDAF159EC7F62B"
+					item: "create:fluid_tank"
+					type: "item"
+				}
+			]
+			x: -27.0d
+			y: 13.5d
+		}
+		{
+			dependencies: ["50A2B27D056F4CFB"]
+			id: "16F49A30556355C5"
+			subtitle: "Паровой шар"
+			tasks: [
+				{
+					id: "7923300BFC22A798"
+					item: "create:fluid_tank"
+					type: "item"
+				}
+				{
+					id: "0DB13B756E644FC0"
+					item: "vs_clockwork:steam_generator"
+					type: "item"
+				}
+			]
+			title: "Паровой генератор"
+			x: -30.5d
+			y: 13.0d
+		}
+		{
+			id: "506CAFA3C453F532"
+			size: 2.0d
+			subtitle: "Бесконечные ресурсы!"
+			tasks: [
+				{
+					id: "2BC063AEFA446824"
+					item: {
+						Count: 1
+						id: "createoreexcavation:vein_finder"
+						tag: {
+							isFiltered: 1b
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "557B234DBECC172F"
+					item: "createoreexcavation:vein_atlas"
+					type: "item"
+				}
+			]
+			title: "Поиск месторождения"
+			x: -28.0d
+			y: 16.0d
+		}
+		{
+			dependencies: ["506CAFA3C453F532"]
+			id: "4D11922D6C12F218"
+			subtitle: "Место рудной добычи"
+			tasks: [
+				{
+					id: "4F1672F63B2C33E4"
+					item: "createoreexcavation:drilling_machine"
+					type: "item"
+				}
+				{
+					id: "57AAA73857BD99EC"
+					item: "createoreexcavation:drill"
+					type: "item"
+				}
+				{
+					id: "16C87B6708A3E16B"
+					item: "createoreexcavation:diamond_drill"
+					type: "item"
+				}
+			]
+			x: -29.5d
+			y: 18.0d
+		}
+		{
+			dependencies: ["506CAFA3C453F532"]
+			id: "4362C185BAE85DD2"
+			subtitle: "Место жидкостной добычи"
+			tasks: [{
+				id: "7A3F1C032E40A6E1"
+				item: "createoreexcavation:extractor"
+				type: "item"
+			}]
+			x: -26.5d
+			y: 18.0d
+		}
+		{
+			dependencies: ["51D592E710CE5260"]
+			id: "7B507ED219445363"
+			tasks: [{
+				id: "586BE1A0DBD51D2D"
+				item: "tfmg:concrete"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 25.5d
+		}
+		{
+			dependencies: ["0426F1507A772EE2"]
+			id: "51D592E710CE5260"
+			tasks: [{
+				amount: 1000L
+				fluid: "tfmg:liquid_concrete"
+				id: "1C92E480816341E4"
+				type: "fluid"
+			}]
+			title: "Жидкий бетон"
+			x: -2.0d
+			y: 24.0d
+		}
+		{
+			dependencies: [
+				"75B5B2C1F9F35146"
+				"0F9A4FC1713D8F69"
+			]
+			id: "0426F1507A772EE2"
+			tasks: [{
+				id: "6E5B50A1B7343587"
+				item: "tfmg:concrete_mixture"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 22.5d
+		}
+		{
+			id: "75B5B2C1F9F35146"
+			tasks: [{
+				id: "4200C5CFF4F61E6C"
+				item: "tfmg:cement"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 21.0d
+		}
+		{
+			id: "0F9A4FC1713D8F69"
+			tasks: [{
+				id: "529DA79C3591790B"
+				item: "tfc:aggregate"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 21.0d
 		}
 	]
 	title: "Индустриальная эпоха"

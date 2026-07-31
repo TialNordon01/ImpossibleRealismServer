@@ -582,7 +582,6 @@
     
     "minecraft:redstone_ore",
     "minecraft:deepslate_redstone_ore",
-    "minecraft:redstone_block",
     
     "minecraft:amethyst_block",
     "minecraft:budding_amethyst",
@@ -942,9 +941,6 @@
     
     "minecraft:lapis_ore",
     "minecraft:deepslate_lapis_ore",
-    
-    "minecraft:redstone_ore",
-    "minecraft:deepslate_redstone_ore",
 
     // ==========================================
     // Ванильный чернит (Blackstone) и его вариации
@@ -1027,7 +1023,26 @@
     // Ванильная коптильня
     "minecraft:smoker",
 
+    //Бетон
+    "minecraft:white_concrete", "minecraft:white_concrete_powder",
+    "minecraft:orange_concrete", "minecraft:orange_concrete_powder",
+    "minecraft:magenta_concrete", "minecraft:magenta_concrete_powder",
+    "minecraft:light_blue_concrete", "minecraft:light_blue_concrete_powder",
+    "minecraft:yellow_concrete", "minecraft:yellow_concrete_powder",
+    "minecraft:lime_concrete", "minecraft:lime_concrete_powder",
+    "minecraft:pink_concrete", "minecraft:pink_concrete_powder",
+    "minecraft:gray_concrete", "minecraft:gray_concrete_powder",
+    "minecraft:light_gray_concrete", "minecraft:light_gray_concrete_powder",
+    "minecraft:cyan_concrete", "minecraft:cyan_concrete_powder",
+    "minecraft:purple_concrete", "minecraft:purple_concrete_powder",
+    "minecraft:blue_concrete", "minecraft:blue_concrete_powder",
+    "minecraft:brown_concrete", "minecraft:brown_concrete_powder",
+    "minecraft:green_concrete", "minecraft:green_concrete_powder",
+    "minecraft:red_concrete", "minecraft:red_concrete_powder",
+    "minecraft:black_concrete", "minecraft:black_concrete_powder",
+
     //Project RED
+    "projectred_core:electrotine_silicon",
     "projectred_core:red_ingot",
     "projectred_core:electrotine_ingot",
     "projectred_core:electrotine_dust",
@@ -1057,6 +1072,11 @@
     "immersiveengineering:bulwark_spawn_egg",
     "bombs:prospector_spawn_egg",
     "bombs:honse_spawn_egg",
+
+    //Immersive Petrolium
+    "immersivepetroleum:asphalt",
+    "immersivepetroleum:asphalt_stair",
+    "immersivepetroleum:asphalt_slab",
 
     //Clockwork
     "vs_clockwork:lodefocus",
@@ -1119,7 +1139,6 @@
     "createaddition:small_light_connector",
     "createaddition:connector",
     "createaddition:diamond_grit",
-    "createaddition:straw",
     "createaddition:electrum_amulet",
 
     //Create New Age
@@ -1155,9 +1174,51 @@
     "create:experience_nugget",
 
     //Create diesel generators
-    "createdieselgenerators:asphalt_block",
-    "createdieselgenerators:asphalt_stairs",
-    "createdieselgenerators:asphalt_slab",
+    "createdieselgenerators:diesel_engine",
+    "createdieselgenerators:large_diesel_engine",
+    "createdieselgenerators:huge_diesel_engine",
+    "createdieselgenerators:engine_piston",
+    "createdieselgenerators:engine_silencer",
+    "createdieselgenerators:engine_turbocharger",
+    "createdieselgenerators:oil_scanner",
+    "createdieselgenerators:pumpjack_hole",
+    "createdieselgenerators:pumpjack_bearing",
+    "createdieselgenerators:pumpjack_crank",
+    "createdieselgenerators:pumpjack_head",
+
+    "createdieselgenerators:white_cement",
+    "createdieselgenerators:orange_cement",
+    "createdieselgenerators:magenta_cement",
+    "createdieselgenerators:light_blue_cement",
+    "createdieselgenerators:yellow_cement",
+    "createdieselgenerators:lime_cement",
+    "createdieselgenerators:pink_cement",
+    "createdieselgenerators:gray_cement",
+    "createdieselgenerators:light_gray_cement",
+    "createdieselgenerators:cyan_cement",
+    "createdieselgenerators:purple_cement",
+    "createdieselgenerators:blue_cement",
+    "createdieselgenerators:brown_cement",
+    "createdieselgenerators:green_cement",
+    "createdieselgenerators:red_cement",
+    "createdieselgenerators:black_cement",
+    
+    "createdieselgenerators:white_cement_bucket",
+    "createdieselgenerators:orange_cement_bucket",
+    "createdieselgenerators:magenta_cement_bucket",
+    "createdieselgenerators:light_blue_cement_bucket",
+    "createdieselgenerators:yellow_cement_bucket",
+    "createdieselgenerators:lime_cement_bucket",
+    "createdieselgenerators:pink_cement_bucket",
+    "createdieselgenerators:gray_cement_bucket",
+    "createdieselgenerators:light_gray_cement_bucket",
+    "createdieselgenerators:cyan_cement_bucket",
+    "createdieselgenerators:purple_cement_bucket",
+    "createdieselgenerators:blue_cement_bucket",
+    "createdieselgenerators:brown_cement_bucket",
+    "createdieselgenerators:green_cement_bucket",
+    "createdieselgenerators:red_cement_bucket",
+    "createdieselgenerators:black_cement_bucket",
 
     //Create Nuclear
     "createnuclear:reactor_casing",
@@ -1167,7 +1228,6 @@
     "createnuclear:reactor_input",
     "createnuclear:reactor_output",
     "createnuclear:reactor_controller",
-    "createdieselgenerators:asphalt_stairs",
     "createnuclear:reinforced_glass",
 
     "createnuclear:raw_lead_block",
@@ -1295,6 +1355,12 @@
     "vc_gliders:paraglider_iron",
     "vc_gliders:paraglider_netherite",
     "vc_gliders:paraglider_diamond",
+    "vc_gliders:reinforced_paper_netherite",
+    "vc_gliders:reinforced_paper_iron",
+    "vc_gliders:reinforced_paper_gold",
+    "vc_gliders:reinforced_paper_diamond",
+    "vc_gliders:copper_upgrade",
+    "vc_gliders:nether_upgrade",
 
     //Биплан
     "hangglider:reinforced_hang_glider",
@@ -1325,8 +1391,16 @@
     "tfmg:lead_pickaxe",
     "tfmg:lead_axe",
     "tfmg:lead_shovel",
-    "tfmg:lead_hoe"
+    "tfmg:lead_hoe",
 
+    "tfmg:asphalt_mixture",
+
+    //Tom's simple storage
+    "toms_storage:ts.wireless_terminal",
+    "toms_storage:ts.adv_wireless_terminal",
+    "toms_storage:ts.paint_kit",
+    "toms_storage:ts.inventory_hopper_basic",
+    "toms_storage:ts.open_crate"
   ],
 
 
