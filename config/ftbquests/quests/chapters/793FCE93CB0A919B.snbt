@@ -819,6 +819,18 @@
 			x: 2.0d
 			y: 11.0d
 		}
+		{
+			dependencies: ["600E61639C85730F"]
+			id: "2E1323F05FAA0EAE"
+			subtitle: "Не может переносить реки, моря и океаны, но поможет в переносе лавы"
+			tasks: [{
+				id: "66C4156912EEF00A"
+				item: "minecraft:bucket"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 7.5d
+		}
 	]
 	title: "Железный век"
 }

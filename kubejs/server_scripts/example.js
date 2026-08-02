@@ -98,6 +98,9 @@ ServerEvents.tags('item', event => {
 
   //Кварц и кремний
   event.add('forge:gems/quartz', 'minecraft:flint')
+
+  //Радиопассивный и радиоактивный уран
+  event.add('forge:ingots/uranium', 'create_mixed_nuclear:reactive_uranium_ingot')
 })
 
 ServerEvents.recipes(event => {
@@ -193,10 +196,7 @@ ServerEvents.recipes(event => {
     ]
   })
 
-
-  // ============
   // МОД НА КРЮКИ
-  // ============
   event.remove({
     output: [
       'grapplemod:grapplinghook',
@@ -335,9 +335,7 @@ ServerEvents.recipes(event => {
     'immersiveengineering:hammer'
   ]).damageIngredient('immersiveengineering:hammer', 999)
 
-  // ==========================================
   // Вещи из create: new age
-  // ==========================================
   event.remove({
     output: [
       'create_new_age:reinforced_motor',
@@ -504,9 +502,7 @@ ServerEvents.recipes(event => {
   // 15. Теплотрубки
   event.remove({ output: 'create_new_age:heat_pump' })
   event.shaped('create_new_age:heat_pump', [
-    '   ',
-    'PSP',
-    '   '
+    'PSP'
   ], {
     P: 'create_new_age:heat_pipe',
     S: 'tfc:metal/sheet/nickel'
@@ -554,15 +550,6 @@ ServerEvents.recipes(event => {
   })
 
   // Дополнительные крафты для совместимости
-  event.shaped('minecraft:campfire', [
-    ' C ',
-    'CSC',
-    'LLL'
-  ], {
-    S: 'tfc:metal/double_ingot/red_steel',
-    C: 'minecraft:charcoal',
-    L: '#minecraft:logs'
-  })
   event.shapeless('minecraft:amethyst_shard', [
     '#forge:gems/quartz'
   ])
@@ -580,46 +567,34 @@ ServerEvents.recipes(event => {
   event.remove({ output: 'minecraft:amethyst_block' })
   event.remove({ output: 'minecraft:tinted_glass' })
 
-  // ============================================================
   // БИНТЫ
-  // ============================================================
   event.shapeless('6x tfc_medicine:dressing', [
     'tfc:glue',
     '#tfc:high_quality_cloth',
     '#tfc:high_quality_cloth'
   ])
 
-  // ============================================================
-  // БУМАГА ИЗ ОПИЛОК КОРЫ
-  // ============================================================
-  event.shapeless('2x minecraft:paper', [
-    '#forge:bark_powder', '#forge:bark_powder', '#forge:bark_powder', '#forge:bark_powder',
-    Item.of('tfc:metal/bucket/blue_steel', '{Fluid:{FluidName:"minecraft:water",Amount:1000}}')
-  ])
+  // БУМАГА ИЗ ОПИЛОК КОРЫ (Замачивание в бочке TFC)
+  // Реалистичный процесс: кора + вода + время = бумага
+  // Герметичная бочка (требует закрытой крышки)
+  event.recipes.tfc.barrel_sealed(1000) // 1000 тиков = 50 секунд
+    .outputItem('2x minecraft:paper') // Выход: 2 листа бумаги
+    .inputs(
+      '4x #forge:bark_powder', // Вход: 4 порошка коры
+      TFC.fluidStackIngredient('#minecraft:water', 1000) // Вход: 1000 мБ воды (правильный синтаксис TFC!)
+    )
+  event.recipes.create.mixing(
+    ['2x minecraft:paper'], // Выход: 2 листа бумаги
+    [
+      '#forge:bark_powder', 
+      '#forge:bark_powder', 
+      '#forge:bark_powder', 
+      '#forge:bark_powder',
+      Fluid.of('minecraft:water', 1000) // 1000 мБ воды (миксер сам заберет её из любого ведра или трубы)
+    ]
+  ).processingTime(200) // 10 секунд работы миксера (быстрее бочки, но требует энергии)
 
-  event.shapeless('2x minecraft:paper', [
-    '#forge:bark_powder', '#forge:bark_powder', '#forge:bark_powder', '#forge:bark_powder',
-    Item.of('tfc:metal/bucket/red_steel', '{Fluid:{FluidName:"minecraft:water",Amount:1000}}')
-  ])
-
-  event.shapeless('2x minecraft:paper', [
-    '#forge:bark_powder', '#forge:bark_powder', '#forge:bark_powder', '#forge:bark_powder',
-    Item.of('tfc:wooden_bucket', '{Fluid:{FluidName:"minecraft:water",Amount:1000}}')
-  ])
-
-  event.shapeless('2x minecraft:paper', [
-    '#forge:bark_powder', '#forge:bark_powder', '#forge:bark_powder', '#forge:bark_powder',
-    Item.of('tfc:ceramic/jug', '{Fluid:{FluidName:"minecraft:water",Amount:100}}')
-  ])
-
-  event.shapeless('2x minecraft:paper', [
-    '#forge:bark_powder', '#forge:bark_powder', '#forge:bark_powder', '#forge:bark_powder',
-    'minecraft:water_bucket'
-  ])
-
-  // ============================================================
   // ЭЛЕКТРОНИКА PROJECT RED
-  // ============================================================
   event.remove({ output: 'projectred_core:plate' })
 
   //Печатная плата для редстоун компонентов
@@ -833,37 +808,37 @@ ServerEvents.recipes(event => {
   // 2. Создаем многоступенчатую сборку
   event.recipes.create.sequenced_assembly(
     'create_connected:control_chip',          // Финальный результат
-    'tfmg:coated_circuit_board',              // Стартовый предмет: медная печатная плата
+    'projectred_core:plate',              // Стартовый предмет: медная печатная плата
     [
       // ШАГ 1: Die Attach (Крепление кристалла)
       // Деплойер устанавливает кремниевый чип (мозг контроллера) на плату
       event.recipes.create.deploying(
-        'tfmg:coated_circuit_board',
-        ['tfmg:coated_circuit_board', 'projectred_core:infused_silicon']
+        'projectred_core:plate',
+        ['projectred_core:plate', 'projectred_core:infused_silicon']
       ),
       
       // ШАГ 2: Wire Bonding (Микромонтаж)
       // Деплойер добавляет золотые самородки. В реальности золото используется для 
       // тончайших проводников, соединяющих кристалл с контактами платы (не окисляется).
       event.recipes.create.deploying(
-        'tfmg:coated_circuit_board',
-        ['tfmg:coated_circuit_board', '#forge:nuggets/gold']
+        'projectred_core:plate',
+        ['projectred_core:plate', '#forge:nuggets/gold']
       ),
       
       // ШАГ 3: Монтаж пассивных компонентов
       // Деплойер добавляет миниатюрную плату с резисторами/конденсаторами 
       // (используем projectred_core:plate как универсальный компонентный модуль)
       event.recipes.create.deploying(
-        'tfmg:coated_circuit_board',
-        ['tfmg:coated_circuit_board', 'projectred_core:plate']
+        'projectred_core:plate',
+        ['projectred_core:plate', 'projectred_core:plate']
       ),
 
       // ШАГ 4: Инкапсуляция (Encapsulation)
       // Деплойер накладывает слой дюропласта/пластика сверху для защиты 
       // хрупкого кремния от влаги, пыли и механических повреждений
       event.recipes.create.deploying(
-        'tfmg:coated_circuit_board',
-        ['tfmg:coated_circuit_board', '#forge:ingots/plastic']
+        'projectred_core:plate',
+        ['projectred_core:plate', '#forge:ingots/plastic']
       ),
 
       // ШАГ 5: Отверждение и формовка (Molding & Curing)
@@ -871,11 +846,11 @@ ServerEvents.recipes(event => {
       // превращая мягкий пластик в твердый черный корпус чипа с контактами
       event.recipes.create.pressing(
         'create_connected:control_chip',
-        'tfmg:coated_circuit_board'
+        'projectred_core:plate'
       )
     ]
   )
-    .transitionalItem('tfmg:coated_circuit_board') // Визуально на ленте всё это время движется плата
+    .transitionalItem('projectred_core:plate') // Визуально на ленте всё это время движется плата
     .loops(1)
   
   // Мультиметр
@@ -968,7 +943,6 @@ ServerEvents.recipes(event => {
   // Микросхема
   event.remove({ output: 'integrated_circuit:integrated_circuit' })
   event.shaped('integrated_circuit:integrated_circuit', [
-    '   ',
     'RCR',
     'PPP'
   ], {
@@ -1010,8 +984,7 @@ ServerEvents.recipes(event => {
   event.remove({ output: 'create:pulse_timer' })
   event.shaped('create:pulse_timer', [
     'ABR',
-    'PPP',
-    '   '
+    'PPP'
   ], {
     A: 'minecraft:amethyst_shard',
     B: '#forge:sheets/brass',
@@ -1023,8 +996,7 @@ ServerEvents.recipes(event => {
   event.remove({ output: 'create:pulse_repeater' })
   event.shaped('create:pulse_repeater', [
     'RBR',
-    'PPP',
-    '   '
+    'PPP'
   ], {
     R: 'minecraft:redstone',
     B: '#forge:sheets/brass',
@@ -2210,40 +2182,38 @@ ServerEvents.recipes(event => {
     T: '#forge:string'       // Нить
   })
 
-  //================
   //Ядерная энергия
-  //================
-  // ШАГ 0: Производство серной кислоты (Сера + Вода + Нагрев)
-  event.recipes.create.mixing(
-    Fluid.of('artisanal:sulfuric_acid', 500), // Выход: 500 мБ серной кислоты
-    [
-      '#forge:dusts/sulfur',  // Вход: Сера (пыль/порошок). Этот тег включает tfc:powder/sulfur и IE-серу
-      Fluid.of('minecraft:water', 500) // Вход: Вода
-    ]
-  )
-    .heated() // Требуется нагрев (имитация экзотермической химической реакции)
-    .processingTime(200) // 10 секунд (200 тиков)
-
   // ШАГ 1: Химическое выщелачивание (Урановая пыль + Кислота = Жёлтый кек)
   event.remove({ output: 'createnuclear:yellowcake' })
-  event.recipes.create.mixing(
-    'createnuclear:yellowcake', // Выход: Жёлтый кек (U3O8)
+  event.recipes.tfmg.vat_machine_recipe(
     [
-      '#forge:dusts/uranium',  // Вход: Урановая пыль
-      Fluid.of('artisanal:sulfuric_acid', 250) // Вход: Серная кислота из Шага 0
+      '#forge:dusts/uranium',         // Вход 1: Урановая пыль
+      Fluid.of('artisanal:sulfuric_acid', 250) // Вход 2: Серная кислота
+    ],
+    [
+      'createnuclear:yellowcake'      // Выход: Жёлтый кек (U3O8)
     ]
   )
-    .heated() // Требуется нагрев для реакции
-    .processingTime(200)
-  event.recipes.create.mixing(
-    'createnuclear:yellowcake', // Выход: Жёлтый кек (U3O8)
+    .heated() // Нагрев ускоряет выщелачивание
+    .machines("tfmg:mixing") // Перемешивание обязательно
+    .allowedVatTypes("tfmg:firebrick_lined_vat") // Агрессивная химическая среда
+    .minSize(1)
+    .processingTime(300)
+  event.recipes.tfmg.vat_machine_recipe(
     [
-      '#forge:dusts/uranium',  // Вход: Урановая пыль
-      Fluid.of('tfmg:sulfuric_acid', 250) // Вход: Серная кислота из Шага 0
+      '#forge:dusts/uranium',         // Вход 1: Урановая пыль
+      Fluid.of('tfmg:sulfuric_acid', 250) // Вход 2: Серная кислота
+    ],
+    [
+      'createnuclear:yellowcake'      // Выход: Жёлтый кек (U3O8)
     ]
   )
-    .heated() // Требуется нагрев для реакции
-    .processingTime(200)
+    .heated() // Нагрев ускоряет выщелачивание
+    .machines("tfmg:mixing") // Перемешивание обязательно
+    .allowedVatTypes("tfmg:firebrick_lined_vat") // Агрессивная химическая среда
+    .minSize(1)
+    .processingTime(300)
+
 
   // ШАГ 2: Сублимация (Жёлтый кек + Нагрев = Урановый "Газ")
   event.remove({ output: Fluid.of('createnuclear:uranium') })
@@ -2851,6 +2821,14 @@ ServerEvents.recipes(event => {
     C: 'minecraft:clay_ball'  // Глина (огнеупорный изолятор)
   })
 
+  //Печатная плата
+  event.remove({ output: 'tfmg:empty_circuit_board' })
+  event.shaped('tfmg:empty_circuit_board', [
+    'PPP'
+  ], {
+    P: '#forge:ingots/plastic',  // Пластиковый лист TFMG
+  })
+
   //Шлакоблок
   event.remove({ output: 'tfmg:cinder_block' })
   event.shaped('8x tfmg:cinder_block', [
@@ -3198,7 +3176,263 @@ ServerEvents.recipes(event => {
   //Кварц и кремний
   event.replaceInput({}, 'minecraft:quartz', '#forge:gems/quartz')
 
-      
+  // ТЕРМИТОВЫЙ ПОРОШОК (Термитная смесь)
+  // Классическая реакция: 2Al + Fe₂O₃ → Al₂O₃ + 2Fe + 2500°C
+  // Смешивание алюминиевой пудры с оксидом железа (гематитом)
+  event.remove({ output: 'tfmg:thermite_powder' })
+  // 1. Промышленное смешивание в миксере (массовое производство)
+  event.recipes.create.mixing(
+    ['4x tfmg:thermite_powder'],
+    [
+      '#forge:dusts/aluminum',        // Алюминиевый порошок (восстановитель)
+      'tfc:powder/hematite',          // Гематит (Fe₂O₃ — оксид железа)
+      'tfc:powder/hematite'           // Второй гематит для баланса пропорции
+    ]
+  ).processingTime(200)
+  // 2. Ручное смешивание (shapeless, для ранней игры или малых партий)
+  event.shapeless('2x tfmg:thermite_powder', [
+    '#forge:dusts/aluminum',
+    'tfc:powder/hematite'
+  ])
+  // 3. Альтернатива: Использование магнетита или лимонита (другие оксиды железа)
+  event.recipes.create.mixing(
+    ['4x tfmg:thermite_powder'],
+    [
+      '#forge:dusts/aluminum',
+      'tfc:powder/magnetite'          // Магнетит (Fe₃O₄)
+    ]
+  ).processingTime(200)
+  event.recipes.create.mixing(
+    ['4x tfmg:thermite_powder'],
+    [
+      '#forge:dusts/aluminum',
+      'tfc:powder/limonite'           // Лимонит (FeO(OH)·nH₂O)
+    ]
+  ).processingTime(200)
+
+  // ИЗВЛЕЧЕНИЕ ЛИТИЯ ИЗ ГРАНИТА 
+  // Химическое выщелачивание следовых количеств лития
+  // 1. МЕХАНИЧЕСКОЕ ИЗМЕЛЬЧЕНИЕ (Низкий шанс, ранняя игра)
+  // При дроблении гранита иногда выкрашиваются микроскопические включения лития
+  event.remove({ input: 'tfc:rock/cobble/granite' })
+  event.recipes.create.crushing(
+    [
+      Item.of('tfc:rock/gravel/granite', 1),
+      Item.of('tfmg:lithium_nugget', 1).withChance(0.05) // 5% шанс на 1 кусочек
+    ],
+    'tfc:rock/cobble/granite',
+    200
+  )
+  // 2. ХИМИЧЕСКОЕ ВЫЩЕЛАЧИВАНИЕ (Промышленный метод, основной источник) 'artisanal:sulfuric_acid'
+  // Серная кислота разрушает силикатную решетку гранита, высвобождая ионы лития
+  event.recipes.create.mixing(
+    [
+      Item.of('tfmg:lithium_nugget', 2), // 2 кусочка лития за цикл
+      Item.of('tfmg:slag', 1).withChance(0.5) // Побочный шлак
+    ],
+    [
+      'tfc:rock/gravel/granite',          // Измельченный гранит (увеличивает площадь реакции)
+      Fluid.of('tfmg:sulfuric_acid', 250) // Серная кислота (реагент)
+    ]
+  )
+    .heated() // Нагрев ускоряет химическую реакцию выщелачивания
+    .processingTime(400) // 20 секунд (длительный процесс)
+  event.recipes.create.mixing(
+    [
+      Item.of('tfmg:lithium_nugget', 2), // 2 кусочка лития за цикл
+      Item.of('tfmg:slag', 1).withChance(0.5) // Побочный шлак
+    ],
+    [
+      'tfc:rock/gravel/granite',          // Измельченный гранит (увеличивает площадь реакции)
+      Fluid.of('artisanal:sulfuric_acid', 250) // Серная кислота (реагент)
+    ]
+  )
+    .heated() // Нагрев ускоряет химическую реакцию выщелачивания
+    .processingTime(400) // 20 секунд (длительный процесс)
+  // 3. АЛЬТЕРНАТИВА: ИЗ СОЛЯНОЙ РАПЫ (Если есть галит/соль TFC)
+  // В реальности 60% лития добывают из солевых озер, а не из камня!
+  // Если у тебя есть tfc:ore/halite, это более реалистичный источник.
+  event.recipes.create.mixing(
+    [
+      Item.of('tfmg:lithium_nugget', 3)
+    ],
+    [
+      'tfc:ore/halite',                   // Каменная соль (источник рассола)
+      Fluid.of('minecraft:water', 500),   // Вода для растворения
+      Fluid.of('tfmg:sulfuric_acid', 100) // Кислота для осаждения лития
+    ]
+  )
+    .heated()
+    .processingTime(300)
+  event.recipes.create.mixing(
+    [
+      Item.of('tfmg:lithium_nugget', 3)
+    ],
+    [
+      'tfc:ore/halite',                   // Каменная соль (источник рассола)
+      Fluid.of('minecraft:water', 500),   // Вода для растворения
+      Fluid.of('artisanal:sulfuric_acid', 100) // Кислота для осаждения лития
+    ]
+  )
+    .heated()
+    .processingTime(300)
+
+  // МОДУЛЬНЫЙ АККУМУЛЯТОР - ДВА ТИПА (Верстак)
+  // Свинцово-кислотный и литий-ионный
+  event.remove({ output: 'createaddition:modular_accumulator' })
+  // 1. СВИНЦОВО-КИСЛОТНЫЙ АККУМУЛЯТОР (с серной кислотой)
+  // Классическая технология: свинцовые пластины + электролит
+  event.shaped('createaddition:modular_accumulator', [
+    'BCB',
+    'LRL',
+    'PSP'
+  ], {
+    B: '#forge:plates/brass',              // Латунные контакты (верх)
+    C: 'createaddition:copper_spool',      // Медная катушка (токопровод)
+    L: '#forge:plates/lead',               // Свинцовые пластины (электроды)
+    R: 'tfmg:resistor',                    // Резистор (защита от КЗ)
+    P: '#forge:plates/iron',               // Железные пластины (корпус)
+    S: 'tfmg:sulfuric_acid_bucket'         // Ведро с серной кислотой (электролит)
+  })
+  event.shaped('createaddition:modular_accumulator', [
+    'BCB',
+    'LRL',
+    'PSP'
+  ], {
+    B: '#forge:plates/brass',              // Латунные контакты (верх)
+    C: 'createaddition:copper_spool',      // Медная катушка (токопровод)
+    L: '#forge:plates/lead',               // Свинцовые пластины (электроды)
+    R: 'tfmg:resistor',                    // Резистор (защита от КЗ)
+    P: '#forge:plates/iron',               // Железные пластины (корпус)
+    S: 'artisanal:bucket/sulfuric_acid'    // Ведро с серной кислотой (электролит)
+  })
+  //Фикс кислоты для крафта TFMG аккумулятора
+  event.shaped('tfmg:accumulator', [
+    'PWP',
+    'BLB',
+    'PCP'
+  ], {
+    P: '#forge:plates/lead',
+    W: '#forge:wires/copper',
+    B: 'artisanal:bucket/sulfuric_acid',
+    C: 'tfmg:industrial_aluminum_casing'
+  })
+  // 2. ЛИТИЙ-ИОННЫЙ АККУМУЛЯТОР (с литием)
+  // Современная технология: литиевые электроды + контроллер
+  event.shaped('createaddition:modular_accumulator', [
+    'BCB',
+    'LRL',
+    'PSP'
+  ], {
+    B: '#forge:plates/brass',              // Латунные контакты (верх)
+    C: 'create_connected:control_chip',    // Контроллер BMS (Battery Management System)
+    L: 'tfmg:lithium_ingot',               // Литиевые кусочки (электроды)
+    R: 'tfmg:capacitor_item',              // Конденсатор (сглаживание пульсаций)
+    P: '#forge:plates/steel',              // Стальные пластины (легкий корпус)
+    S: 'create:electron_tube'              // Электронная лампа (регулятор напряжения)
+  })
+  //Литиевый меч
+  event.remove({ output: 'tfmg:lithium_blade' })
+  event.shaped('tfmg:lithium_blade', [
+    ' S ',
+    'AWP',
+    'ABC'
+  ], {
+    S: '#forge:plates/steel',
+    A: '#forge:plates/aluminum',
+    W: Item.of('tfc:metal/sword/steel', '{Damage:0}'),
+    B: 'tfmg:circuit_board',
+    C: '#forge:wires/copper',
+    P: 'tfmg:spark_plug'
+  })
+  //Литиевый слиток и его кусочки
+  event.remove({ output: 'tfmg:lithium_ingot' })
+  event.remove({ output: 'tfmg:lithium_nugget' })
+  event.shapeless('4x tfmg:lithium_nugget', [
+    'tfmg:lithium_ingot'
+  ])
+  event.shaped('tfmg:lithium_ingot', [
+    'NN',
+    'NN'
+  ], {
+    N: 'tfmg:lithium_nugget'
+  })
+
+  //Ведро
+  event.remove({ output: 'minecraft:bucket' })
+  event.shaped('minecraft:bucket', [
+    'STS',  // Два слитка формируют верхние стенки ведра Тигель как формовочная основа
+    ' S '  // Слиток формирует дно
+  ], {
+    S: 'tfc:metal/ingot/wrought_iron',  // Слиток кованого железа (3 шт.)
+    T: 'tfc:crucible'                    // Тигель (не расходуется)
+  })
+
+  //Урановый блок
+  event.remove({ output: 'immersiveengineering:storage_uranium' })
+  event.shaped('immersiveengineering:storage_uranium', [
+    'III',
+    'III',
+    'III'
+  ], {
+    I: '#forge:ingots/uranium'
+  })
+  //Магмовый блок
+  event.shapeless('minecraft:magma_block', [
+    '#forge:magma_block'
+  ])
+
+  // КРИОГЕННОЕ РАЗДЕЛЕНИЕ ВОЗДУХА (Расширенный рецепт)
+  // Добавляем CO₂ и LOX к существующему процессу получения неона
+  event.remove({ output: Fluid.of('tfmg:neon') })
+  // Создаём новый рецепт с полным набором газов
+  event.recipes.tfmg.vat_machine_recipe(
+    [
+      Fluid.of('tfmg:air', 1000) // Вход: 1000 мБ воздуха (ПРОВЕРЬ ТОЧНЫЙ ID В JEI!)
+    ],
+    [
+      Fluid.of('tfmg:neon', 10),              // Выход: Неон (сохраняем оригинальный выход)
+      Fluid.of('creatingspace:liquid_co2', 10),     // Выход: CO₂ (для метана)
+      Fluid.of('creatingspace:liquid_oxygen', 200), // Выход: Жидкий кислород (LOX)
+    ]
+  )
+    .machines("tfmg:centrifuge") // Центрифуга для разделения газов
+    .allowedVatTypes("tfmg:steel_vat") // Стальная ванна для криогенных температур
+    .minSize(2) // Требуется установка 2-го уровня
+    .processingTime(300) // 15 секунд на цикл
+  // ПОЛУЧЕНИЕ МЕТАНА ИЗ СЖИЖЕННОГО ГАЗА (LPG)
+  // Перегонка LPG для выделения чистого метана
+  // Из TFMG LPG
+  event.recipes.tfmg.vat_machine_recipe(
+    [
+      Fluid.of('tfmg:lpg', 1000) // Вход: 1000 мБ сжиженного газа TFMG
+    ],
+    [
+      Fluid.of('creatingspace:liquid_methane', 800) // Выход: 800 мБ чистого метана
+    ]
+  )
+    .heated() // Требуется нагрев для испарения и разделения
+    .machines("tfmg:centrifuge") // Центрифуга для разделения газов
+    .allowedVatTypes("tfmg:steel_vat")
+    .minSize(1)
+    .processingTime(200) // 10 секунд
+  // Из Immersive Petroleum Petroleum Gas
+  event.recipes.tfmg.vat_machine_recipe(
+    [
+      Fluid.of('immersivepetroleum:petroleum_gas', 1000) // Вход: 1000 мБ нефтяного газа IP
+    ],
+    [
+      Fluid.of('creatingspace:liquid_methane', 800) // Выход: 800 мБ чистого метана
+    ]
+  )
+    .heated() // Требуется нагрев для испарения и разделения
+    .machines("tfmg:centrifuge") // Центрифуга для разделения газов
+    .allowedVatTypes("tfmg:steel_vat")
+    .minSize(1)
+    .processingTime(200) // 10 секунд
+
+  //Замена костра на уголёк
+  event.replaceInput({}, 'minecraft:campfire', '#forge:coal')
 })
 
 
@@ -3263,6 +3497,25 @@ ServerEvents.tags('fluid', event => {
   event.add('forge:gaseous', 'tfmg:lpg')
 })
 
+// ЗАПРЕТ ВЗАИМОДЕЙСТВИЯ С ВАНИЛЬНЫМ ВЕДРОМ ВОДЫ
+// 1. Запрет выливания воды из ванильного ведра
+ItemEvents.rightClicked(event => {
+  const player = event.player
+  if (player.isCreative()) return // Пропускаем креатив
+  const item = event.item
+  const block = event.block // Блок, по которому кликают (может быть null, если клик в воздух)
+  // 1. ЗАПРЕТ на выливание воды (клик в воздух или по любому блоку)
+  if (item.id === 'minecraft:water_bucket') {
+    event.cancel()
+    return
+  }
+  // 2. ЗАПРЕТ на набор воды (клик по блоку воды пустым ведром)
+  // Проверяем, что клик был по блоку, и этот блок - источник воды
+  if (item.id === 'minecraft:bucket' && block && block.id === 'minecraft:water') {
+    event.cancel()
+    return
+  }
+})
 
 //Убираем функциональность ванильной губки и редстоуна с бочонком
 BlockEvents.placed('minecraft:redstone_wire', event => {

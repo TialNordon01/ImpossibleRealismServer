@@ -618,7 +618,6 @@
     "minecraft:prismarine_shard",
     "minecraft:prismarine_crystals",
     
-    "minecraft:magma_block",
     "minecraft:nether_wart_block",
     "minecraft:warped_wart_block",
     "minecraft:shroomlight",
@@ -1249,9 +1248,7 @@
     "createnuclear:cat_irradiated_spawn_egg",
     "createnuclear:chicken_irradiated_spawn_egg",
 
-    // ==========================================
     // Антирадиационная ткань (все 16 цветов)
-    // ==========================================
     "createnuclear:white_cloth",
     "createnuclear:orange_cloth",
     "createnuclear:magenta_cloth",
@@ -1400,7 +1397,10 @@
     "toms_storage:ts.adv_wireless_terminal",
     "toms_storage:ts.paint_kit",
     "toms_storage:ts.inventory_hopper_basic",
-    "toms_storage:ts.open_crate"
+    "toms_storage:ts.open_crate",
+
+    //Creating Space
+    "creatingspace:air_liquefier"
   ],
 
 

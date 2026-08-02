@@ -26,7 +26,7 @@
 		{
 			id: "1A1C823565F4ABCC"
 			linked_quest: "51D92B45B42AF113"
-			x: 1.0d
+			x: 2.0d
 			y: 7.5d
 		}
 	]
@@ -928,7 +928,7 @@
 				type: "item"
 			}]
 			x: -3.0d
-			y: 6.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["7F13C0E3C9635C6B"]
@@ -1572,7 +1572,7 @@
 				type: "item"
 			}]
 			x: -1.5d
-			y: 6.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["0C81F63EDE1601DB"]
@@ -1605,7 +1605,7 @@
 				type: "item"
 			}]
 			x: 2.0d
-			y: 6.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["72B53635AA55C278"]
@@ -2373,7 +2373,7 @@
 				}
 				type: "item"
 			}]
-			x: 0.0d
+			x: 1.0d
 			y: 7.5d
 		}
 		{
@@ -2627,7 +2627,7 @@
 				type: "item"
 			}]
 			title: "Параплан"
-			x: -1.0d
+			x: 0.0d
 			y: 7.5d
 		}
 		{
@@ -2725,6 +2725,201 @@
 			title: "Искусственная кожа"
 			x: -5.5d
 			y: 9.0d
+		}
+		{
+			dependencies: ["4A87027EB26E4017"]
+			id: "7F0CE5D314C89B7A"
+			subtitle: "Береста"
+			tasks: [
+				{
+					count: 2L
+					id: "5145CEC606A110C4"
+					item: { Count: 2, id: "minecraft:paper" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "40A23A4AB03DA6B0"
+					item: { Count: 4, id: "tfc_debark:ash_bark_powder" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "2243D7AB9D33C079"
+					item: { Count: 4, id: "tfc_debark:acacia_bark_powder" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "4D2B8E0FF8FD8BF7"
+					item: "tfc_debark:aspen_bark_powder"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "7796C12781C5D823"
+					item: { Count: 4, id: "tfc_debark:birch_bark_powder" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "5DA7044685CB0D52"
+					item: { Count: 4, id: "tfc_debark:blackwood_bark_powder" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "53957B7DE21B016C"
+					item: { Count: 4, id: "tfc_debark:chestnut_bark_powder" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "158BC2124F1AB269"
+					item: { Count: 4, id: "tfc_debark:douglas_fir_bark_powder" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "730474ADA4FCF79F"
+					item: { Count: 4, id: "tfc_debark:hickory_bark_powder" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "13876312C1E9980E"
+					item: { Count: 4, id: "tfc_debark:kapok_bark_powder" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "2FDA4BEABB629DBF"
+					item: { Count: 4, id: "tfc_debark:mangrove_bark_powder" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "195F08DE81982F4F"
+					item: { Count: 4, id: "tfc_debark:maple_bark_powder" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "1D859770BB82266F"
+					item: { Count: 4, id: "tfc_debark:oak_bark_powder" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "2B4C90BE2A900D35"
+					item: { Count: 4, id: "tfc_debark:palm_bark_powder" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "5934920A1A571C86"
+					item: { Count: 4, id: "tfc_debark:pine_bark_powder" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "7D2A332E70A99A84"
+					item: { Count: 4, id: "tfc_debark:rosewood_bark_powder" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "06E475DC7E8AAD2D"
+					item: { Count: 4, id: "tfc_debark:sequoia_bark_powder" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "4C18604737583FCB"
+					item: { Count: 4, id: "tfc_debark:sycamore_bark_powder" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "2EB7EE89395480AD"
+					item: { Count: 4, id: "tfc_debark:spruce_bark_powder" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "1D74DD8897EF4C01"
+					item: { Count: 4, id: "tfc_debark:white_cedar_bark_powder" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "6A492E85C98C7EB2"
+					item: { Count: 4, id: "tfc_debark:willow_bark_powder" }
+					type: "item"
+				}
+			]
+			title: "Бумага"
+			x: 1.0d
+			y: 5.5d
+		}
+		{
+			dependencies: [
+				"184340E792F47CD9"
+				"7AE25F115AE1F7D1"
+				"25A2EBFC579D062C"
+			]
+			dependency_requirement: "one_started"
+			id: "2FA409867717E180"
+			subtitle: "Защита от радиации"
+			tasks: [
+				{
+					id: "6F38A1A66CFB7E73"
+					item: {
+						Count: 1
+						id: "minecraft:leather_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "44A9497C5C0F3785"
+					item: {
+						Count: 1
+						id: "minecraft:leather_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "391847BA25A8766F"
+					item: {
+						Count: 1
+						id: "minecraft:leather_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "451E155D5E22F0BD"
+					item: {
+						Count: 1
+						id: "minecraft:leather_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Кожанная одежда"
+			x: -1.0d
+			y: 7.5d
 		}
 	]
 	title: "Медный век"
