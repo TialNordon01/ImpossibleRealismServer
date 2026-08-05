@@ -1683,7 +1683,7 @@
 				item: "firmalife:drying_mat"
 				type: "item"
 			}]
-			x: -8.5d
+			x: -2.5d
 			y: 17.0d
 		}
 		{
@@ -1697,7 +1697,7 @@
 				type: "fluid"
 			}]
 			title: "Дрожжи"
-			x: -7.0d
+			x: -4.0d
 			y: 17.0d
 		}
 		{
@@ -1819,7 +1819,7 @@
 			]
 			title: "Хлеб"
 			x: -5.5d
-			y: 18.5d
+			y: 17.0d
 		}
 		{
 			dependencies: ["06373998D19D6D23"]
@@ -1912,7 +1912,7 @@
 				}
 			]
 			x: -4.0d
-			y: 17.0d
+			y: 15.5d
 		}
 		{
 			dependencies: ["1C8F2299E1E71664"]
@@ -2920,6 +2920,127 @@
 			title: "Кожанная одежда"
 			x: -1.0d
 			y: 7.5d
+		}
+		{
+			dependencies: ["4A87027EB26E4017"]
+			id: "0876CC5AC08E4E14"
+			tasks: [{
+				id: "683EF28D6D505D1D"
+				item: "tfc_medicine:charcoal_paste"
+				type: "item"
+			}]
+			title: "Угольная паста"
+			x: -2.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["4DCCC999B883A0D2"]
+			id: "49F5F8148437D80A"
+			subtitle: "Больно в месте пореза..."
+			tasks: [{
+				id: "7B52CE447831104B"
+				item: "tfc_medicine:primative_bandage"
+				type: "item"
+			}]
+			title: "Примитивная мазь"
+			x: -7.0d
+			y: 17.0d
+		}
+		{
+			dependencies: ["668FBF1815623CAE"]
+			id: "6D723DDA98DCD35B"
+			tasks: [
+				{
+					id: "5174175D2E16079B"
+					item: "tfc_medicine:gauze"
+					type: "item"
+				}
+				{
+					id: "2A98A5111C725B51"
+					item: "tfc_medicine:dressing"
+					type: "item"
+				}
+			]
+			title: "Марля и перевязочные материалы"
+			x: -9.5d
+			y: 17.0d
+		}
+		{
+			dependencies: ["6D723DDA98DCD35B"]
+			id: "1A587689CE2A2544"
+			subtitle: "Удобно в поле сражения"
+			tasks: [{
+				id: "5B09DDEEE089834F"
+				item: "tfc_medicine:battlefield_bandage"
+				type: "item"
+			}]
+			title: "Полевая перевязка"
+			x: -10.5d
+			y: 17.0d
+		}
+		{
+			dependencies: ["1A587689CE2A2544"]
+			id: "4A3CAC90CB3173C5"
+			subtitle: "Победа над бактериями"
+			tasks: [{
+				id: "2486C985A1338609"
+				item: "tfc_medicine:antibiotic_pills"
+				type: "item"
+			}]
+			title: "Антибиотик"
+			x: -12.0d
+			y: 17.0d
+		}
+		{
+			dependencies: ["6B1238EF6445B6C9"]
+			id: "0269FB6F0AF491C4"
+			subtitle: "Лоснится по краям..."
+			tasks: [{
+				id: "18109B19573C20F0"
+				item: "tfc_medicine:shoddy_bandage"
+				type: "item"
+			}]
+			title: "Некачественный бинт"
+			x: -7.0d
+			y: 8.5d
+		}
+		{
+			dependencies: ["49F5F8148437D80A"]
+			id: "668FBF1815623CAE"
+			tasks: [{
+				id: "2045E95B171D655E"
+				item: "tfc_medicine:plaster"
+				type: "item"
+			}]
+			title: "Пластырь"
+			x: -8.5d
+			y: 17.0d
+		}
+		{
+			dependencies: ["4A3CAC90CB3173C5"]
+			id: "7992710B0EF4D940"
+			subtitle: "Поможет в трудный момент"
+			tasks: [{
+				id: "50D3E441154EF1D6"
+				item: "tfc_medicine:trauma_kit"
+				type: "item"
+			}]
+			title: "Набор первой помощи"
+			x: -12.0d
+			y: 18.5d
+		}
+		{
+			dependencies: ["7992710B0EF4D940"]
+			id: "1C8317315FD4846E"
+			subtitle: "Старший брат аптечки"
+			tasks: [{
+				id: "27DF74DB8D690C33"
+				item: "tfc_medicine:aid_pack"
+				type: "item"
+			}]
+			title: "Медицинский набор"
+			x: -9.5d
+			y: 18.5d
 		}
 	]
 	title: "Медный век"

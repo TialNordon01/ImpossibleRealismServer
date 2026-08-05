@@ -3433,6 +3433,25 @@ ServerEvents.recipes(event => {
 
   //Замена костра на уголёк
   event.replaceInput({}, 'minecraft:campfire', '#forge:coal')
+
+  // УГОЛЬНАЯ ПАСТА (Charcoal Paste)
+  //Удаление рецепта крафта стерилизованной воды из TFC Medicine
+  event.remove({ output: Fluid.of('tfc_medicine:sterile_charcoal_water') })
+  // 1. Вымачивание в герметичной бочке TFC (Длительный процесс)
+  event.recipes.tfc.barrel_sealed(4000) // 4000 тиков = 4 минуты
+    .outputItem('tfc_medicine:charcoal_paste') // Выход: угольная паста
+    .inputs(
+      'minecraft:clay_ball', // Вход: комок глины (связующее вещество)
+      TFC.fluidStackIngredient('purified_water:purified_water', 200) // Вход: 200 мБ очищенной воды
+    )
+  // 2. Промышленное смешивание в миксере Create (Быстрый процесс)
+  event.recipes.create.mixing(
+    ['tfc_medicine:charcoal_paste'], // Выход: угольная паста
+    [
+      'minecraft:clay_ball', // Комок глины
+      Fluid.of('purified_water:purified_water', 200) // 200 мБ очищенной воды (миксер сам заберет её из любого ведра или трубы)
+    ]
+  ).processingTime(100) // 100 тиков = 5 секунд работы миксера (быстрее бочки и без долгого ожидания)
 })
 
 
@@ -3464,13 +3483,13 @@ ServerEvents.tags('block', event => {
       event.remove('minecraft:needs_iron_tool', oreBlock)
     })
   })
-
 })
 
 
 ServerEvents.tags('fluid', event => {
   // Нефть из artisanal
   event.add('forge:crude_oil', 'artisanal:sour_crude_oil')
+  event.add('forge:crude_oil', 'artisanal:sweet_crude_oil')
   // Креозот для доменной печи
   event.add('tfmg:blast_stove_fuel', 'immersiveengineering:creosote')
   // Делаем серную кислоту TFMG совместимой с механиками TFC и Artisanal
