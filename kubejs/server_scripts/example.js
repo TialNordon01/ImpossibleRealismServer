@@ -3452,6 +3452,18 @@ ServerEvents.recipes(event => {
       Fluid.of('purified_water:purified_water', 200) // 200 мБ очищенной воды (миксер сам заберет её из любого ведра или трубы)
     ]
   ).processingTime(100) // 100 тиков = 5 секунд работы миксера (быстрее бочки и без долгого ожидания)
+
+  // Лошадиный рычаг
+  event.remove({ output: 'createhorsepower:horse_crank' })
+  event.shaped('createhorsepower:horse_crank', [
+    ' F ',
+    ' C ',
+    'AAA'
+  ], {
+    F: '#minecraft:wooden_fences',
+    C: 'create:cogwheel',
+    A: 'create:andesite_alloy'
+  })
 })
 
 
