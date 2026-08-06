@@ -1,0 +1,10 @@
+#Maximum amount of small Workers on a single Crank
+#Range: > 0
+smallWorkerCapacity = 8
+#Maximum amount of medium Workers on a single Crank
+#Range: > 0
+mediumWorkerCapacity = 6
+#Maximum amount of large Workers on a single Crank
+#Range: > 0
+largeWorkerCapacity = 4
+

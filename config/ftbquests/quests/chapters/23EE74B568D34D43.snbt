@@ -1285,6 +1285,7 @@
 				"7F2A7323AAAE29D6"
 				"176C4E1D5DDCB3FF"
 				"718E095176E6DC12"
+				"56DCBD2241F226B9"
 			]
 			dependency_requirement: "one_started"
 			id: "3DF82CF323D4525D"
@@ -1559,7 +1560,7 @@
 				}
 			]
 			x: -9.5d
-			y: 13.5d
+			y: 14.0d
 		}
 		{
 			dependencies: ["4A87027EB26E4017"]
@@ -1592,7 +1593,7 @@
 			]
 			title: "Ветряная мельница"
 			x: -9.5d
-			y: 12.0d
+			y: 12.5d
 		}
 		{
 			dependencies: ["4A87027EB26E4017"]
@@ -2129,7 +2130,7 @@
 				}
 			]
 			x: -9.5d
-			y: 15.0d
+			y: 15.5d
 		}
 		{
 			dependencies: ["1712D124F73A5540"]
@@ -2608,8 +2609,8 @@
 				item: "create:andesite_alloy"
 				type: "item"
 			}]
-			x: -12.0d
-			y: 13.5d
+			x: -11.964285714285708d
+			y: 13.446428571428562d
 		}
 		{
 			dependencies: ["184340E792F47CD9"]
@@ -3041,6 +3042,51 @@
 			title: "Медицинский набор"
 			x: -9.5d
 			y: 18.5d
+		}
+		{
+			dependencies: ["0C81F63EDE1601DB"]
+			id: "56DCBD2241F226B9"
+			subtitle: "Энергия домашних животных"
+			tasks: [
+				{
+					id: "23F1BC65A33D6AAD"
+					item: "createhorsepower:horse_crank"
+					type: "item"
+				}
+				{
+					id: "7EA1BC2E6F4324A1"
+					item: "tfc:dirt/sandy_loam"
+					type: "item"
+				}
+				{
+					id: "62AEAAD47F00D82C"
+					item: "tfc:grass/sandy_loam"
+					type: "item"
+				}
+				{
+					id: "3C1D18E4DE1C6DDF"
+					item: "tfc:grass_path/sandy_loam"
+					type: "item"
+				}
+				{
+					id: "01AD3A4622732348"
+					item: "tfc:rock/gravel/granite"
+					type: "item"
+				}
+				{
+					id: "2223B8D9CAC26AB6"
+					item: "tfmg:concrete"
+					type: "item"
+				}
+				{
+					id: "3D83165C964C8115"
+					item: "createdieselgenerators:asphalt_block"
+					type: "item"
+				}
+			]
+			title: "Лошадиный рычаг"
+			x: -9.5d
+			y: 11.0d
 		}
 	]
 	title: "Медный век"

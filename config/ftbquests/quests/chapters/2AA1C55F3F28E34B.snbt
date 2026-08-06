@@ -2491,6 +2491,24 @@
 			x: -1.5d
 			y: 21.0d
 		}
+		{
+			id: "174D6EE0EA9AB672"
+			subtitle: "Велосипед"
+			tasks: [{
+				id: "168719CE164858A6"
+				item: {
+					Count: 1
+					id: "modernlife:bicycle_item"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "Велосипед"
+			x: -28.0d
+			y: 19.5d
+		}
 	]
 	title: "Индустриальная эпоха"
 }

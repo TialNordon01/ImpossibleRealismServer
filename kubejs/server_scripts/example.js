@@ -3464,6 +3464,20 @@ ServerEvents.recipes(event => {
     C: 'create:cogwheel',
     A: 'create:andesite_alloy'
   })
+
+  //Велосипед
+  event.remove({ mod: 'modernlife' })
+  event.shaped('modernlife:bicycle_item', [
+    'WSW',
+    'ICI',
+    'W W'
+  ], {
+    W: 'create:shaft',          // Оси колёс
+    S: '#forge:plates/steel',   // Стальные пластины рамы
+    I: '#forge:ingots/steel',   // Сталь рамы
+    C: 'minecraft:chain'        // Цепной привод
+  })
+
 })
 
 
